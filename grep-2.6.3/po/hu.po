@@ -1,0 +1,693 @@
+# Hungarian translation of grep.
+# This file is distributed under the same license as the grep package.
+# Copyright (C) 2002, 2009 Free Software Foundation, Inc.
+#
+# Emese Kovács <emese@gnome.hu>, 2002.
+# Gabor Kelemen <kelemeng@gnome.hu>, 2009.
+msgid ""
+msgstr ""
+"Project-Id-Version: grep 2.5.4-pre6\n"
+"Report-Msgid-Bugs-To: bug-grep@gnu.org\n"
+"POT-Creation-Date: 2010-04-02 10:57+0200\n"
+"PO-Revision-Date: 2009-08-02 16:50+0200\n"
+"Last-Translator: Emese Kovács <emese@instantweb.hu>\n"
+"Language-Team: Hungarian <translation-team-hu@lists.sourceforge.net>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms:  nplurals=2; plural=(n != 1);\n"
+
+#: lib/closeout.c:112
+msgid "write error"
+msgstr "íráshiba"
+
+#: lib/error.c:153
+msgid "Unknown system error"
+msgstr "Ismeretlen rendszerhiba"
+
+#: lib/getopt.c:525 lib/getopt.c:541
+#, fuzzy, c-format
+msgid "%s: option '%s' is ambiguous\n"
+msgstr "%s: a `%s' kapcsoló nem egyértelmű\n"
+
+#: lib/getopt.c:574 lib/getopt.c:578
+#, fuzzy, c-format
+msgid "%s: option '--%s' doesn't allow an argument\n"
+msgstr "%s: a `--%s' kapcsoló nem enged meg argumentumot\n"
+
+#: lib/getopt.c:587 lib/getopt.c:592
+#, fuzzy, c-format
+msgid "%s: option '%c%s' doesn't allow an argument\n"
+msgstr "%s: a `%c%s' kapcsoló nem enged meg argumentumot\n"
+
+#: lib/getopt.c:635 lib/getopt.c:654 lib/getopt.c:957 lib/getopt.c:976
+#, fuzzy, c-format
+msgid "%s: option '%s' requires an argument\n"
+msgstr "%s: a `%s' kapcsolóhoz argumentum szükséges\n"
+
+#: lib/getopt.c:692 lib/getopt.c:695
+#, fuzzy, c-format
+msgid "%s: unrecognized option '--%s'\n"
+msgstr "%s: a `--%s' kapcsoló ismeretlen\n"
+
+#: lib/getopt.c:703 lib/getopt.c:706
+#, fuzzy, c-format
+msgid "%s: unrecognized option '%c%s'\n"
+msgstr "%s: a `%c%s' kapcsoló ismeretlen\n"
+
+#: lib/getopt.c:755 lib/getopt.c:758
+#, fuzzy, c-format
+msgid "%s: invalid option -- '%c'\n"
+msgstr "%s: érvénytelen kapcsoló -- %c\n"
+
+#: lib/getopt.c:808 lib/getopt.c:825 lib/getopt.c:1028 lib/getopt.c:1046
+#, fuzzy, c-format
+msgid "%s: option requires an argument -- '%c'\n"
+msgstr "%s: a kapcsolónak szüksége van egy argumentumra -- %c\n"
+
+#: lib/getopt.c:878 lib/getopt.c:894
+#, fuzzy, c-format
+msgid "%s: option '-W %s' is ambiguous\n"
+msgstr "%s: a `-W %s' kapcsoló nem egyértelmű\n"
+
+#: lib/getopt.c:918 lib/getopt.c:936
+#, fuzzy, c-format
+msgid "%s: option '-W %s' doesn't allow an argument\n"
+msgstr "%s: a `-W %s' kapcsoló nem enged meg argumentumot\n"
+
+#: lib/obstack.c:423 lib/obstack.c:425 lib/xalloc-die.c:34 src/dfasearch.c:153
+#: src/kwset.c:178 src/kwset.c:186 src/kwset.c:409 src/pcresearch.c:149
+#, c-format
+msgid "memory exhausted"
+msgstr "elfogyott a memória"
+
+#. TRANSLATORS:
+#. Get translations for open and closing quotation marks.
+#.
+#. The message catalog should translate "`" to a left
+#. quotation mark suitable for the locale, and similarly for
+#. "'".  If the catalog has no translation,
+#. locale_quoting_style quotes `like this', and
+#. clocale_quoting_style quotes "like this".
+#.
+#. For example, an American English Unicode locale should
+#. translate "`" to U+201C (LEFT DOUBLE QUOTATION MARK), and
+#. should translate "'" to U+201D (RIGHT DOUBLE QUOTATION
+#. MARK).  A British English Unicode locale should instead
+#. translate these to U+2018 (LEFT SINGLE QUOTATION MARK)
+#. and U+2019 (RIGHT SINGLE QUOTATION MARK), respectively.
+#.
+#. If you don't know what to put here, please see
+#. <http://en.wikipedia.org/wiki/Quotation_mark#Glyphs>
+#. and use glyphs suitable for your language.
+#: lib/quotearg.c:272
+msgid "`"
+msgstr "„"
+
+#: lib/quotearg.c:273
+msgid "'"
+msgstr "”"
+
+#: lib/regcomp.c:134
+msgid "Success"
+msgstr "Sikerült"
+
+#: lib/regcomp.c:137
+msgid "No match"
+msgstr "Nincs találat"
+
+#: lib/regcomp.c:140
+msgid "Invalid regular expression"
+msgstr "Érvénytelen szabályos kifejezés"
+
+#: lib/regcomp.c:143
+msgid "Invalid collation character"
+msgstr "Érvénytelen leválogatási karakter"
+
+#: lib/regcomp.c:146
+msgid "Invalid character class name"
+msgstr "Érvénytelen karakterosztálynév"
+
+#: lib/regcomp.c:149
+msgid "Trailing backslash"
+msgstr "Záró visszaper"
+
+#: lib/regcomp.c:152
+msgid "Invalid back reference"
+msgstr "Érvénytelen visszahivatkozás"
+
+#: lib/regcomp.c:155
+msgid "Unmatched [ or [^"
+msgstr "Pár nélküli [ vagy [^"
+
+#: lib/regcomp.c:158
+msgid "Unmatched ( or \\("
+msgstr "Pár nélküli ( vagy \\("
+
+#: lib/regcomp.c:161
+msgid "Unmatched \\{"
+msgstr "Pár nélküli \\{"
+
+#: lib/regcomp.c:164
+msgid "Invalid content of \\{\\}"
+msgstr "A \\{\\} tartalma érvénytelen"
+
+#: lib/regcomp.c:167
+msgid "Invalid range end"
+msgstr "Érvénytelen tartományvég"
+
+#: lib/regcomp.c:170
+msgid "Memory exhausted"
+msgstr "Elfogyott a memória"
+
+#: lib/regcomp.c:173
+msgid "Invalid preceding regular expression"
+msgstr "Érvénytelen megelőző szabályos kifejezés"
+
+#: lib/regcomp.c:176
+msgid "Premature end of regular expression"
+msgstr "A szabályos kifejezés túl korán véget ért"
+
+#: lib/regcomp.c:179
+msgid "Regular expression too big"
+msgstr "A szabályos kifejezés túl nagy"
+
+#: lib/regcomp.c:182
+msgid "Unmatched ) or \\)"
+msgstr "Pár nélküli ) vagy \\)"
+
+#: lib/regcomp.c:703
+msgid "No previous regular expression"
+msgstr "Nincs megelőző szabályos kifejezés"
+
+#: lib/xstrtol-error.c:63
+#, c-format
+msgid "invalid %s%s argument `%s'"
+msgstr ""
+
+#: lib/xstrtol-error.c:68
+#, c-format
+msgid "invalid suffix in %s%s argument `%s'"
+msgstr ""
+
+#: lib/xstrtol-error.c:72
+#, c-format
+msgid "%s%s argument `%s' too large"
+msgstr ""
+
+#: src/dfa.c:501 src/dfa.c:504 src/dfa.c:522 src/dfa.c:535 src/dfa.c:547
+#: src/dfa.c:613 src/dfa.c:622 src/dfa.c:625 src/dfa.c:630 src/dfa.c:644
+#: src/dfa.c:696
+#, fuzzy
+msgid "unbalanced ["
+msgstr "Pár nélküli ["
+
+#: src/dfa.c:574
+#, fuzzy
+msgid "invalid character class"
+msgstr "Érvénytelen karakterosztálynév"
+
+#: src/dfa.c:805
+#, fuzzy
+msgid "unfinished \\ escape"
+msgstr "Befejezetlen \\ escape"
+
+#: src/dfa.c:938 src/dfa.c:944 src/dfa.c:954 src/dfa.c:962 src/dfa.c:977
+msgid "unfinished repeat count"
+msgstr "befejezetlen ismétlési szám"
+
+#: src/dfa.c:951 src/dfa.c:968 src/dfa.c:976 src/dfa.c:980
+msgid "malformed repeat count"
+msgstr "rosszul megadott ismétlési szám"
+
+#: src/dfa.c:1264
+#, fuzzy
+msgid "unbalanced ("
+msgstr "Pár nélküli ("
+
+#: src/dfa.c:1395
+#, fuzzy
+msgid "no syntax specified"
+msgstr "Nincs szintaxis megadva"
+
+#: src/dfa.c:1403
+#, fuzzy
+msgid "unbalanced )"
+msgstr "Pár nélküli )"
+
+#: src/egrep.c:16
+msgid "PATTERN is an extended regular expression (ERE).\n"
+msgstr "A MINTA egy bővített reguláris kifejezés (ERE).\n"
+
+#: src/egrep.c:18
+msgid "Invocation as `egrep' is deprecated; use `grep -E' instead.\n"
+msgstr ""
+"A hívás „egrep” formában elavult, használja helyette a „grep -E” alakot.\n"
+
+#: src/fgrep.c:10
+msgid "PATTERN is a set of newline-separated fixed strings.\n"
+msgstr "A MINTA egy újsorokkal elválasztott rögzített karakterlánc.\n"
+
+#: src/fgrep.c:12
+msgid "Invocation as `fgrep' is deprecated; use `grep -F' instead.\n"
+msgstr ""
+"A hívás „fgrep” formában elavult, használja helyette a „grep -F” alakot.\n"
+
+#: src/grep.c:35
+msgid "PATTERN is, by default, a basic regular expression (BRE).\n"
+msgstr "A MINTA egy alapszintű reguláris kifejezés (BRE).\n"
+
+#: src/grep.c:37
+msgid ""
+"`egrep' means `grep -E'.  `fgrep' means `grep -F'.\n"
+"Direct invocation as either `egrep' or `fgrep' is deprecated.\n"
+msgstr ""
+"Az „egrep” jelentése „grep -E”. Az „fgrep” jelentése „grep -F”.\n"
+"A közvetlen hívás „egrep” vagy „fgrep” formában elavult.\n"
+
+#: src/main.c:398
+msgid "invalid context length argument"
+msgstr "érvénytelen szövegkörnyezethossz argumentum"
+
+#: src/main.c:453
+#, c-format
+msgid "lseek failed"
+msgstr ""
+
+#: src/main.c:600
+#, c-format
+msgid "input is too large to count"
+msgstr "a bemenet túl nagy a megszámláláshoz"
+
+#: src/main.c:842
+#, c-format
+msgid "writing output"
+msgstr "eredmény kiírása"
+
+#: src/main.c:1165
+#, c-format
+msgid "Binary file %s matches\n"
+msgstr "%s bináris fájl illeszkedik\n"
+
+#: src/main.c:1179
+msgid "(standard input)"
+msgstr "(szabványos bemenet)"
+
+#: src/main.c:1310
+#, c-format
+msgid "warning: %s: %s\n"
+msgstr "vigyázat: %s: %s\n"
+
+#: src/main.c:1311
+msgid "recursive directory loop"
+msgstr "rekurzív könyvtárhurok"
+
+#: src/main.c:1359 src/main.c:1366
+#, c-format
+msgid "Usage: %s [OPTION]... PATTERN [FILE]...\n"
+msgstr "Használat: %s [KAPCSOLÓ]... MINTA [FÁJL]...\n"
+
+#: src/main.c:1361
+#, c-format
+msgid "Try `%s --help' for more information.\n"
+msgstr "Próbáld a `%s --help'-et.\n"
+
+#: src/main.c:1367
+#, c-format
+msgid "Search for PATTERN in each FILE or standard input.\n"
+msgstr "A MINTA keresése minden FÁJLBAN vagy a szabványos bemeneten.\n"
+
+#: src/main.c:1370
+#, c-format
+msgid ""
+"Example: %s -i 'hello world' menu.h main.c\n"
+"\n"
+"Regexp selection and interpretation:\n"
+msgstr ""
+"Példa: %s -i 'szia világ' menu.h main.c\n"
+"\n"
+"Reguláris kifejezés kiválasztása és értelmezése:\n"
+
+#: src/main.c:1375
+#, c-format
+msgid ""
+"  -E, --extended-regexp     PATTERN is an extended regular expression (ERE)\n"
+"  -F, --fixed-strings       PATTERN is a set of newline-separated fixed "
+"strings\n"
+"  -G, --basic-regexp        PATTERN is a basic regular expression (BRE)\n"
+"  -P, --perl-regexp         PATTERN is a Perl regular expression\n"
+msgstr ""
+"  -E, --extended-regexp     a MINTA kiterjesztett reguláris kifejezés (ERE)\n"
+"  -F, --fixed-strings       a MINTA újsorokkal elválasztott karakterláncok\n"
+"                              halmaza\n"
+"  -G, --basic-regexp        a MINTA alapvető reguláris kifejezés (BRE)\n"
+"  -P, --perl-regexp         a MINTA Perl reguláris kifejezés\n"
+
+#: src/main.c:1381
+#, c-format
+msgid ""
+"  -e, --regexp=PATTERN      use PATTERN for matching\n"
+"  -f, --file=FILE           obtain PATTERN from FILE\n"
+"  -i, --ignore-case         ignore case distinctions\n"
+"  -w, --word-regexp         force PATTERN to match only whole words\n"
+"  -x, --line-regexp         force PATTERN to match only whole lines\n"
+"  -z, --null-data           a data line ends in 0 byte, not newline\n"
+msgstr ""
+"  -e, --regexp=MINTA        a MINTA használata illesztésre\n"
+"  -f, --file=FÁJL           a MINTA beolvasása a FÁJLBÓL\n"
+"  -i, --ignore-case         a kis- és nagybetűk megegyeznek\n"
+"  -w, --word-regexp         a MINTA csak egész szóra illeszkedik\n"
+"  -x, --line-regexp         a MINTA csak egész sorra illeszkedik\n"
+"  -z, --null-data           az adat sorai 0 bájtra végződnek, nem újsorra\n"
+
+#: src/main.c:1388
+#, fuzzy, c-format
+msgid ""
+"\n"
+"Miscellaneous:\n"
+"  -s, --no-messages         suppress error messages\n"
+"  -v, --invert-match        select non-matching lines\n"
+"  -V, --version             print version information and exit\n"
+"      --help                display this help and exit\n"
+"      --mmap                ignored for backwards compatibility\n"
+msgstr ""
+"\n"
+"Egyéb:\n"
+"  -s, --no-messages         hibaüzenetek elnémítása\n"
+"  -v, --invert-match        a nem illeszkedő sorok kiválogatása\n"
+"  -V, --version             verzióinformációk kiírása és kilépés\n"
+"      --help                ezen súgó kiírása és kilépés\n"
+"      --mmap                memory-mapped bemenet használata, ha lehetséges\n"
+
+#: src/main.c:1396
+#, c-format
+msgid ""
+"\n"
+"Output control:\n"
+"  -m, --max-count=NUM       stop after NUM matches\n"
+"  -b, --byte-offset         print the byte offset with output lines\n"
+"  -n, --line-number         print line number with output lines\n"
+"      --line-buffered       flush output on every line\n"
+"  -H, --with-filename       print the filename for each match\n"
+"  -h, --no-filename         suppress the prefixing filename on output\n"
+"      --label=LABEL         print LABEL as filename for standard input\n"
+msgstr ""
+
+#: src/main.c:1407
+#, c-format
+msgid ""
+"  -o, --only-matching       show only the part of a line matching PATTERN\n"
+"  -q, --quiet, --silent     suppress all normal output\n"
+"      --binary-files=TYPE   assume that binary files are TYPE;\n"
+"                            TYPE is `binary', `text', or `without-match'\n"
+"  -a, --text                equivalent to --binary-files=text\n"
+msgstr ""
+
+#: src/main.c:1414
+#, c-format
+msgid ""
+"  -I                        equivalent to --binary-files=without-match\n"
+"  -d, --directories=ACTION  how to handle directories;\n"
+"                            ACTION is `read', `recurse', or `skip'\n"
+"  -D, --devices=ACTION      how to handle devices, FIFOs and sockets;\n"
+"                            ACTION is `read' or `skip'\n"
+"  -R, -r, --recursive       equivalent to --directories=recurse\n"
+msgstr ""
+
+#: src/main.c:1422
+#, c-format
+msgid ""
+"      --include=FILE_PATTERN  search only files that match FILE_PATTERN\n"
+"      --exclude=FILE_PATTERN  skip files and directories matching "
+"FILE_PATTERN\n"
+"      --exclude-from=FILE   skip files matching any file pattern from FILE\n"
+"      --exclude-dir=PATTERN  directories that match PATTERN will be "
+"skipped.\n"
+msgstr ""
+
+#: src/main.c:1428
+#, c-format
+msgid ""
+"  -L, --files-without-match  print only names of FILEs containing no match\n"
+"  -l, --files-with-matches  print only names of FILEs containing matches\n"
+"  -c, --count               print only a count of matching lines per FILE\n"
+"  -T, --initial-tab         make tabs line up (if needed)\n"
+"  -Z, --null                print 0 byte after FILE name\n"
+msgstr ""
+
+#: src/main.c:1434
+#, c-format
+msgid ""
+"\n"
+"Context control:\n"
+"  -B, --before-context=NUM  print NUM lines of leading context\n"
+"  -A, --after-context=NUM   print NUM lines of trailing context\n"
+"  -C, --context=NUM         print NUM lines of output context\n"
+msgstr ""
+
+#: src/main.c:1441
+#, fuzzy, c-format
+msgid ""
+"  -NUM                      same as --context=NUM\n"
+"      --color[=WHEN],\n"
+"      --colour[=WHEN]       use markers to highlight the matching strings;\n"
+"                            WHEN is `always', `never', or `auto'\n"
+"  -U, --binary              do not strip CR characters at EOL (MSDOS)\n"
+"  -u, --unix-byte-offsets   report offsets as if CRs were not there (MSDOS)\n"
+"\n"
+msgstr ""
+"\n"
+"Szövegkörnyezet beállításai:\n"
+"  -B, --before-context=SZÁM SZÁM db. sor kiírása a találat előtti "
+"környezetből\n"
+"  -A, --after-context=SZÁM  SZÁM db. sor kiírása a találat utáni "
+"környezetből\n"
+"  -C, -- context=SZÁM       SZÁM darab sor kiírása a környezetből\n"
+"  -SZÁM                     ugyanaz, mint a --context=SZÁM\n"
+"      --color[=EKKOR],\n"
+"      --colour[=EKKOR]      az illeszkedő karakterláncot beszínezi\n"
+"                              EKKOR lehet 'always', 'never' vagy 'auto'\n"
+"  -U, --binary              nem vágja le a CR karaktereket sor végén "
+"(MSDOS)\n"
+"  -u, --unix-byte-offsets   eltolások kiírása, mintha nem lenne CR (MSDOS)\n"
+"\n"
+
+#: src/main.c:1450
+#, c-format
+msgid ""
+"With no FILE, or when FILE is -, read standard input.  If less than two "
+"FILEs\n"
+"are given, assume -h.  Exit status is 0 if any line was selected, 1 "
+"otherwise;\n"
+"if any error occurs and -q was not given, the exit status is 2.\n"
+msgstr ""
+"Ha nincs megadva FÁJL, vagy a FÁJL a -, akkor a szabványos bemenetről "
+"olvas.\n"
+"Ha kevesebb mint két FÁJL van megadva, a -h kapcsolót feltételezi. A "
+"kilépési\n"
+"érték: 0, ha van találat, egyébként 1, ha hiba történt és a -q nincs "
+"megadva: 2\n"
+
+#: src/main.c:1454
+#, fuzzy, c-format
+msgid ""
+"\n"
+"Report bugs to: %s\n"
+msgstr ""
+"\n"
+"A hibák a <%s> címen jelenthetők\n"
+
+#: src/main.c:1455
+#, c-format
+msgid "GNU Grep home page: <%s>\n"
+msgstr "A GNU Grep honlapja: <%s>\n"
+
+#: src/main.c:1457
+msgid "General help using GNU software: <http://www.gnu.org/gethelp/>\n"
+msgstr ""
+"Általános segítség a GNU szoftverek használatához: <http://www.gnu.org/"
+"gethelp/>\n"
+
+#: src/main.c:1487
+#, c-format
+msgid "%s can only use the %s pattern syntax"
+msgstr ""
+
+#: src/main.c:1490
+#, c-format
+msgid "conflicting matchers specified"
+msgstr "ütköző illesztők lettek megadva"
+
+#: src/main.c:1504
+#, fuzzy, c-format
+msgid "invalid matcher %s"
+msgstr "Érvénytelen karakterosztálynév"
+
+#: src/main.c:1693
+#, c-format
+msgid ""
+"In GREP_COLORS=\"%s\", the \"%s\" capacity needs a value (\"=...\"); skipped."
+msgstr ""
+"A GREP_COLORS=„%s”, a(z) „%s” képességnek értéket kell adni („=...”); "
+"kihagyva."
+
+#: src/main.c:1697
+#, c-format
+msgid ""
+"In GREP_COLORS=\"%s\", the \"%s\" capacity is boolean and cannot take a "
+"value (\"=%s\"); skipped."
+msgstr ""
+"A GREP_COLORS=„%s”, a(z) „%s” képesség logikai és nem kaphat értéket („=%"
+"s”); kihagyva."
+
+#: src/main.c:1706
+#, c-format
+msgid "In GREP_COLORS=\"%s\", the \"%s\" capacity %s."
+msgstr "A GREP_COLORS=„%s”, a(z) „%s” képesség %s."
+
+#: src/main.c:1729
+#, c-format
+msgid ""
+"Stopped processing of ill-formed GREP_COLORS=\"%s\" at remaining substring "
+"\"%s\"."
+msgstr ""
+"A hibásan formázott GREP_COLORS=„%s” feldolgozása leállt a hátralévő „%s” "
+"részkarakterláncnál."
+
+#: src/main.c:1800
+#, c-format
+msgid "unknown devices method"
+msgstr "ismeretlen eszközmódszer"
+
+#: src/main.c:1872
+#, c-format
+msgid "unknown directories method"
+msgstr "ismeretlen könyvtármódszer"
+
+#: src/main.c:1940
+#, c-format
+msgid "invalid max count"
+msgstr "érvénytelen maximális szám"
+
+#: src/main.c:1995
+#, c-format
+msgid "unknown binary-files type"
+msgstr "ismeretlen bináris fájl típus"
+
+#: src/main.c:2104
+#, c-format
+msgid ""
+"Copyright (C) %s Free Software Foundation, Inc.\n"
+"License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl."
+"html>\n"
+"This is free software: you are free to change and redistribute it.\n"
+"There is NO WARRANTY, to the extent permitted by law.\n"
+msgstr ""
+"Copyright (C) %s Free Software Foundation, Inc.\n"
+"Licence: a GNU GPL 3. vagy újabb változata: <http://gnu.org/licenses/gpl."
+"html>\n"
+"Ez szabad szoftver, szabadon módosíthatja és továbbadhatja.\n"
+"NINCS GARANCIA, a törvény által engedélyezett mértékig.\n"
+
+#: src/pcresearch.c:42
+#, fuzzy
+msgid ""
+"support for the -P option is not compiled into this --disable-perl-regexp "
+"binary"
+msgstr ""
+"A -P kapcsoló támogatása nincs belefordítva ebbe a --disable-perl-regexp "
+"binárisba"
+
+#: src/pcresearch.c:56
+#, fuzzy, c-format
+msgid "the -P option only supports a single pattern"
+msgstr "A -P kapcsoló csak egy mintát támogat"
+
+#~ msgid "The -P and -z options cannot be combined"
+#~ msgstr "A -P és -z kapcsolókat nem lehet egyszerre használni"
+
+#, fuzzy
+#~ msgid ""
+#~ "\n"
+#~ "Output control:\n"
+#~ "  -m, --max-count=NUM       stop after NUM matches\n"
+#~ "  -b, --byte-offset         print the byte offset with output lines\n"
+#~ "  -n, --line-number         print line number with output lines\n"
+#~ "      --line-buffered       flush output on every line\n"
+#~ "  -H, --with-filename       print the filename for each match\n"
+#~ "  -h, --no-filename         suppress the prefixing filename on output\n"
+#~ "      --label=LABEL         print LABEL as filename for standard input\n"
+#~ "  -o, --only-matching       show only the part of a line matching "
+#~ "PATTERN\n"
+#~ "  -q, --quiet, --silent     suppress all normal output\n"
+#~ "      --binary-files=TYPE   assume that binary files are TYPE;\n"
+#~ "                            TYPE is `binary', `text', or `without-match'\n"
+#~ "  -a, --text                equivalent to --binary-files=text\n"
+#~ "  -I                        equivalent to --binary-files=without-match\n"
+#~ "  -d, --directories=ACTION  how to handle directories;\n"
+#~ "                            ACTION is `read', `recurse', or `skip'\n"
+#~ "  -D, --devices=ACTION      how to handle devices, FIFOs and sockets;\n"
+#~ "                            ACTION is `read' or `skip'\n"
+#~ "  -R, -r, --recursive       equivalent to --directories=recurse\n"
+#~ "      --include=FILE_PATTERN  search only files that match FILE_PATTERN\n"
+#~ "      --exclude=FILE_PATTERN  skip files and directories matching "
+#~ "FILE_PATTERN\n"
+#~ "      --exclude-from=FILE   skip files matching any file pattern from "
+#~ "FILE\n"
+#~ "      --exclude-dir=PATTERN  directories that match PATTERN will be "
+#~ "skipped.\n"
+#~ "  -L, --files-without-match  print only names of FILEs containing no "
+#~ "match\n"
+#~ "  -l, --files-with-matches  print only names of FILEs containing matches\n"
+#~ "  -c, --count               print only a count of matching lines per "
+#~ "FILE\n"
+#~ "  -T, --initial-tab         make tabs line up (if needed)\n"
+#~ "  -Z, --null                print 0 byte after FILE name\n"
+#~ msgstr ""
+#~ "\n"
+#~ "Kimenet beállítása:\n"
+#~ "  -m, --max-count=SZÁM      megáll SZÁM találat után\n"
+#~ "  -b, --byte-offset         a kimenetben szerepel a sor helye is "
+#~ "(bájteltolás)\n"
+#~ "  -n, --line-number         a kimenetben szerepel a sor száma is\n"
+#~ "      --line-buffered       kimenet kiürítése minden sor után\n"
+#~ "  -H, --with-filename       fájlnév kiírása minden találathoz\n"
+#~ "  -h, --no-filename         a kimenetbe nem írja ki a fájlnév előtagot\n"
+#~ "      --label=CÍMKE         a CÍMKE kiírása fájlnévként a szabványos "
+#~ "bemenet\n"
+#~ "                              használatakor\n"
+#~ "  -o, --only-matching       a sornak csak a MINTÁRA illeszkedő részét "
+#~ "írja ki\n"
+#~ "  -q, --quiet, --silent     minden szokványos kimenet elhagyása\n"
+#~ "      --binary-files=TÍPUS  a bináris fájlokat adott TÍPUSÚNAK veszi, a "
+#~ "TÍPUS\n"
+#~ "                              a „binary”, „text” vagy „without-match” "
+#~ "egyike\n"
+#~ "  -a, --text                ugyanaz, mint a --binary-files=text\n"
+#~ "  -I                        ugyanaz, mint a --binary-files=without-"
+#~ "match \n"
+#~ "  -d, --directories=MŰVELET mi történjen a könyvtárakkal; a MŰVELET\n"
+#~ "                              a „read”, „recurse” vagy „skip” egyike\n"
+#~ "  -D, --devices=MŰVELET     mi történjen az eszközökkel, fifokkal és\n"
+#~ "                              foglalatokkal, a MŰVELET a „read” vagy "
+#~ "„skip”\n"
+#~ "                              egyike\n"
+#~ "  -R, -r, --recursive       ugyanaz, mint a --directories=recurse\n"
+#~ "      --include=FÁJLMINTA   csak a FÁJLMINTÁRA illeszkedő fájlokat "
+#~ "vizsgálja\n"
+#~ "      --exclude=FÁJLMINTA   a FÁJLMINTÁRA illeszkedő fájlok kihagyása\n"
+#~ "      --exclude-from=FÁJL   a FÁJLBAN található mintákra illeszkedő \n"
+#~ "                              fájlok kihagyása.\n"
+#~ "      --exclude-dir=MINTA   a MINTÁRA illeszkedő könyvtárak kihagyása\n"
+#~ "  -L, --files-without-match csak azon fájlnevek kiírása, ahol nem volt "
+#~ "találat\n"
+#~ "  -l, --files-with-matches  csak azon fájlnevek kiírása, ahol volt "
+#~ "találat\n"
+#~ "  -c, --count               csak az illeszkedő sorok számának kiírása, "
+#~ "FÁJLONKÉNT\n"
+#~ "  -T, --initial-tab         sorok feltöltése tabokkal (ha szükséges)\n"
+#~ "  -Z, --null                0 bájt írása a FÁJLNÉV után\n"
+
+#~ msgid "%s: illegal option -- %c\n"
+#~ msgstr "%s: illegális kapcsoló -- %c\n"

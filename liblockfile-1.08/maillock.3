@@ -1,0 +1,80 @@
+.TH MAILOCK 3  "28 March 2001" "Linux Manpage" "Linux Programmer's Manual"
+.SH NAME
+maillock, mailunlock, touchlock \- manage mailbox lockfiles
+.SH SYNOPSIS
+.B #include <maillock.h>
+.sp
+.BI "cc [ "flag " ... ] "file " ... -llockfile [ "library " ] "
+.sp
+.BI "int maillock( const char *" user ", int " retrycnt " );"
+.br
+.BI "void mailunlock( "void " );"
+.br
+.BI "void touchlock( "void " );"
+.SH DESCRIPTION
+The
+.B maillock
+function tries to create a lockfile for the users mailbox in an
+NFS-safe (or resistant) way. The algorithm is documented in
+.BR lockfile_create "(3)".
+.PP
+The mailbox is typically located in
+.B /var/mail.
+The name of the lockfile then becomes
+.B /var/mail/USERNAME.lock.
+If the environment variable \fI$MAIL\fP is set, and it ends with the same
+username as the username passed to \fBmaillock\fP(), then that file
+is taken as the mailbox to lock instead.
+.PP
+There is no good way to see if a lockfile is stale. Therefore if the lockfile
+is older then 5 minutes, it will be removed. That is why the
+.B touchlock
+function is provided: while holding the lock, it needs to be refreshed
+regulary (every minute or so) by calling
+.B touchlock "() ".
+.PP
+Finally the
+.B mailunlock
+function removes the lockfile.
+
+.SH RETURN VALUES
+.B maillock
+returns one of the following status codes:
+.nf
+
+   #define L_SUCCESS   0    /* Lockfile created                     */
+   #define L_NAMELEN   1    /* Recipient name too long (> 13 chars) */
+   #define L_TMPLOCK   2    /* Error creating tmp lockfile          */
+   #define L_TMPWRITE  3    /* Can't write pid int tmp lockfile     */
+   #define L_MAXTRYS   4    /* Failed after max. number of attempts */
+   #define L_ERROR     5    /* Unknown error; check errno           */
+
+.fi
+
+.SH NOTES
+These functions are not thread safe. If you need thread safe functions,
+or you need to lock other mailbox (like) files that are not in the
+standard location, use
+.BR lockfile_create "(3)"
+instead.
+.PP
+These functions call
+.BR lockfile_create "(3)"
+to do the work. That function might spawn a set group-id executable
+to do the actual locking if the current process doesn't have enough
+priviliges.
+.PP
+There are some issues with flushing the kernels attribute cache if
+you are using NFS - see the
+.I lockfile_create(3)
+manpage.
+.SH FILES
+/var/mail/user.lock,
+.br
+/usr/lib/liblockfile.so.1
+
+.SH AUTHOR
+Miquel van Smoorenburg <miquels@cistron.nl>
+
+.SH "SEE ALSO"
+.BR lockfile_create "(3), " lockfile_touch " (3), " lockfile_remove (3)

@@ -1,0 +1,102 @@
+'\" t
+.\"     Title: chsh
+.\"    Author: [FIXME: author] [see http://docbook.sf.net/el/author]
+.\" Generator: DocBook XSL Stylesheets v1.75.2 <http://docbook.sf.net/>
+.\"      Date: 05/09/2010
+.\"    Manual: Commandes utilisateur
+.\"    Source: Commandes utilisateur
+.\"  Language: French
+.\"
+.TH "CHSH" "1" "05/09/2010" "Commandes utilisateur" "Commandes utilisateur"
+.\" -----------------------------------------------------------------
+.\" * set default formatting
+.\" -----------------------------------------------------------------
+.\" disable hyphenation
+.nh
+.\" disable justification (adjust text to left margin only)
+.ad l
+.\" -----------------------------------------------------------------
+.\" * MAIN CONTENT STARTS HERE *
+.\" -----------------------------------------------------------------
+.SH "NOM"
+chsh \- Changer l\*(Aqinterpr\('eteur de commandes initial
+.SH "SYNOPSIS"
+.HP \w'\fBchsh\fR\ 'u
+\fBchsh\fR [\fIoptions\fR] [\fILOGIN\fR]
+.SH "DESCRIPTION"
+.PP
+La commande
+\fBchsh\fR
+modifie l\*(Aqinterpr\('eteur de commandes initial (\(Fo\ \&login shell\ \&\(Fc) de l\*(Aqutilisateur qui sera invoqu\('e lors des connexions de l\*(Aqutilisateur\&. Un utilisateur normal ne peut changer que l\*(Aqinterpr\('eteur associ\('e \(`a son propre compte\&. Le superutilisateur peut changer l\*(Aqinterpr\('eteur de commandes initial de n\*(Aqimporte quel compte\&.
+.SH "OPTIONS"
+.PP
+Les options applicables \(`a la commande
+\fBchsh\fR
+sont\ \&:
+.PP
+\fB\-h\fR, \fB\-\-help\fR
+.RS 4
+Afficher un message d\*(Aqaide et quitter\&.
+.RE
+.PP
+\fB\-s\fR, \fB\-\-shell\fR \fIINTERPR\('ETEUR\fR
+.RS 4
+Nom du nouvel interpr\('eteur de commandes initial (\(Fo\ \&login shell\ \&\(Fc) de l\*(Aqutilisateur\&. Si ce champ est vide, le syst\(`eme s\('electionnera l\*(Aqinterpr\('eteur de commandes initial par d\('efaut\&.
+.RE
+.PP
+Quand l\*(Aqoption
+\fB\-s\fR
+n\*(Aqest pas s\('electionn\('ee,
+\fBchsh\fR
+op\(`ere de fa\(,con interactive, demandant \(`a l\*(Aqutilisateur quel doit \(^etre le nouvel interpr\('eteur de commandes initial (\(Fo\ \&login shell\ \&\(Fc)\&. L\*(Aqutilisateur pourra entrer une nouvelle valeur pour modifier l\*(Aqinterpr\('eteur, ou laisser la ligne blanche pour conserver l\*(Aqinterpr\('eteur actuel\&. L\*(Aqinterpr\('eteur actuel est indiqu\('e entre crochets (\fI[\ \&]\fR)\&.
+.SH "NOTE"
+.PP
+The only restriction placed on the login shell is that the command name must be listed in
+/etc/shells, unless the invoker is the superuser, and then any value may be added\&. An account with a restricted login shell may not change her login shell\&. For this reason, placing
+/bin/rsh
+in
+/etc/shells
+is discouraged since accidentally changing to a restricted shell would prevent the user from ever changing her login shell back to its original value\&.
+.SH "CONFIGURATION"
+.PP
+Les variables de configuration suivantes de
+/etc/login\&.defs
+modifient le comportement de cet outil\ \&:
+.PP
+\fBCHSH_AUTH\fR (bool\('een)
+.RS 4
+La valeur
+\fIyes\fR
+indique que le programme
+\fBchsh\fR
+n\('ecessitera une authentification avant de proc\('eder \(`a tout changement, \(`a moins qu\*(Aqils ne soient ex\('ecut\('es par le superutilisateur\&.
+.RE
+.PP
+\fBLOGIN_STRING\fR (cha\(^ine ce caract\(`eres)
+.RS 4
+La cha\(^ine de caract\(`eres utilis\('ee pour l\*(Aqinvite de mot de passe\&. La valeur par d\('efaut est d\*(Aqutiliser "Password: " (\(Fo\ \&mot de passe\ \&:\ \&\(Fc), ou une traduction de cette cha\(^ine\&. Si vous d\('efinissez cette variable, l\*(Aqinvite ne sera pas traduite\&.
+.sp
+Si la cha\(^ine contient
+\fI%s\fR, ces caract\(`eres seront remplac\('es par le nom de l\*(Aqutilisateur\&.
+.RE
+.SH "FICHIERS"
+.PP
+/etc/passwd
+.RS 4
+Informations sur les comptes des utilisateurs\&.
+.RE
+.PP
+/etc/shells
+.RS 4
+Liste des interpr\('eteurs de commandes initiaux valables\&.
+.RE
+.PP
+/etc/login\&.defs
+.RS 4
+Configuration de la suite des mots de passe cach\('es \(Fo\ \&shadow password\ \&\(Fc\&.
+.RE
+.SH "VOIR AUSSI"
+.PP
+\fBchfn\fR(1),
+\fBlogin.defs\fR(5),
+\fBpasswd\fR(5)\&.

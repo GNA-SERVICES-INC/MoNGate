@@ -1,0 +1,366 @@
+# eject Japanese PO File.
+# Copyright (C) 2001 Free Software Foundation, Inc.
+# TAKEDA Hirofumi <takepin@turbolinux.co.jp>, 2001
+# 
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: eject 2.0.10\n"
+"POT-Creation-Date: 2001-08-01 16:29+0900\n"
+"PO-Revision-Date: 2001-08-01 16:32+0900\n"
+"Last-Translator: TAKEDA Hirofumi <takepin@turbolinux.co.jp>\n"
+"Language-Team: Japanese <ja@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=euc-jp\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../eject.c:112
+#, c-format
+msgid ""
+"Eject version %s by Jeff Tranter (tranter@pobox.com)\n"
+"Usage:\n"
+"  eject -h\t\t\t\t-- display command usage and exit\n"
+"  eject -V\t\t\t\t-- display program version and exit\n"
+"  eject [-vnrsfq] [<name>]\t\t-- eject device\n"
+"  eject [-vn] -d\t\t\t-- display default device\n"
+"  eject [-vn] -a on|off|1|0 [<name>]\t-- turn auto-eject feature on or off\n"
+"  eject [-vn] -c <slot> [<name>]\t-- switch discs on a CD-ROM changer\n"
+"  eject [-vn] -t [<name>]\t\t-- close tray\n"
+"  eject [-vn] -x <speed> [<name>]\t-- set CD-ROM max speed\n"
+"Options:\n"
+"  -v\t-- enable verbose output\n"
+"  -n\t-- don't eject, just show device found\n"
+"  -r\t-- eject CD-ROM\n"
+"  -s\t-- eject SCSI device\n"
+"  -f\t-- eject floppy\n"
+"  -q\t-- eject tape\n"
+"  -p\t-- use /proc/mounts instead of /etc/mtab\n"
+msgstr ""
+"Eject バージョン %s by Jeff Tranter (tranter@pobox.com)\n"
+"使い方:\n"
+"  eject -h\t\t\t\t-- コマンドの使い方を表示して終了\n"
+"  eject -V\t\t\t\t-- プログラムのバージョンを表示して終了\n"
+"  eject [-vnrsfq] [<名前>]\t\t-- デバイスのイジェクト\n"
+"  eject [-vn] -d\t\t\t-- デフォルトのデバイスを表示\n"
+"  eject [-vn] -a on|off|1|0 [<名前>]\t-- 自動イジェクト機能をオン/オフ\n"
+"  eject [-vn] -c <スロット> [<名前>]\t-- CD-ROM チェンジャのディスクを切り替え\n"
+"  eject [-vn] -t [<名前>]\t\t-- トレーを閉じる\n"
+"  eject [-vn] -x <速度> [<名前>]\t-- CD-ROM の最大速度を設定\n"
+"オプション:\n"
+"  -v\t-- 詳細表示を有効にする\n"
+"  -n\t-- イジェクトを行わず、見つけたデバイスの表示のみを行う\n"
+"  -r\t-- CD-ROM のイジェクト\n"
+"  -s\t-- SCSI デバイスのイジェクト\n"
+"  -f\t-- フロッピーのイジェクト\n"
+"  -q\t-- テープのイジェクト\n"
+"  -p\t-- /etc/mtab の代わりに /proc/mounts を使う\n"
+
+#: ../eject.c:133
+msgid ""
+"Long options:\n"
+"  -h --help   -v --verbose\t -d --default\n"
+"  -a --auto   -c --changerslot  -t --trayclose  -x --cdspeed\n"
+"  -r --cdrom  -s --scsi\t -f --floppy\n"
+"  -q --tape   -n --noop\t -V --version\n"
+"  -p --proc\n"
+msgstr ""
+"詳細表記によるオプション:\n"
+"  -h --help   -v --verbose\t -d --default\n"
+"  -a --auto   -c --changerslot  -t --trayclose  -x --cdspeed\n"
+"  -r --cdrom  -s --scsi\t -f --floppy\n"
+"  -q --tape   -n --noop\t -V --version\n"
+"  -p --proc\n"
+
+#: ../eject.c:141
+#, c-format
+msgid ""
+"Parameter <name> can be a device file or a mount point.\n"
+"If omitted, name defaults to `%s'.\n"
+"By default tries -r, -s, -f, and -q in order until success.\n"
+msgstr ""
+"パラメタの <名前> にはデバイスファイルまたはマウントポイントが指定できます。\n"
+"省略された場合のデフォルトには `%s' が使われます。\n"
+"デフォルトの動作は -r, -s, -f, -q の順に成功するまで実行します。\n"
+
+#: ../eject.c:193
+#, c-format
+msgid "%s: invalid argument to --auto/-a option\n"
+msgstr "%s: --auto/-a オプションに対して不当な引数\n"
+
+#: ../eject.c:205
+#, c-format
+msgid "%s: invalid argument to --changerslot/-c option\n"
+msgstr "%s: --changerslot/-c オプションに対して不当な引数\n"
+
+#: ../eject.c:217
+#, c-format
+msgid "%s: invalid argument to --cdspeed/-x option\n"
+msgstr "%s: --cdspeed/-x オプションに対して不当な引数\n"
+
+#: ../eject.c:254
+#, c-format
+msgid "eject version %s by Jeff Tranter (tranter@pobox.com)\n"
+msgstr "eject バージョン %s by Jeff Tranter (tranter@pobox.com)\n"
+
+#: ../eject.c:264
+#, c-format
+msgid "%s: too many arguments\n"
+msgstr "%s: 引数が多すぎます\n"
+
+#: ../eject.c:366
+#, c-format
+msgid "%s: CD-ROM auto-eject command failed: %s\n"
+msgstr "%s: CD-ROM 自動イジェクトコマンド失敗: %s\n"
+
+#: ../eject.c:383
+#, c-format
+msgid "%s: CD-ROM select disc command failed: %s\n"
+msgstr "%s: CD-ROM ディスク選択コマンド失敗: %s\n"
+
+#: ../eject.c:389
+#, c-format
+msgid "%s: CD-ROM load from slot command failed: %s\n"
+msgstr "%s: スロットからの CD-ROM ロードコマンド失敗: %s\n"
+
+#: ../eject.c:393
+#, c-format
+msgid "%s: IDE/ATAPI CD-ROM changer not supported by this kernel\n"
+msgstr "%s: IDE/ATAPI CD-ROM チェンジャはカーネルがサポートしていません\n"
+
+#: ../eject.c:408
+#, c-format
+msgid "%s: CD-ROM tray close command failed: %s\n"
+msgstr "%s: CD-ROM トレークローズコマンド失敗: %s\n"
+
+#: ../eject.c:412
+#, c-format
+msgid "%s: CD-ROM tray close command not supported by this kernel\n"
+msgstr "%s: CD-ROM トレークローズコマンドはカーネルがサポートしていません\n"
+
+#: ../eject.c:429
+#, c-format
+msgid "%s: CD-ROM select speed command failed: %s\n"
+msgstr "%s: CD-ROM 速度選択コマンド失敗: %s\n"
+
+#: ../eject.c:433
+#, c-format
+msgid "%s: CD-ROM select speed command not supported by this kernel\n"
+msgstr "%s: CD-ROM 速度選択コマンドはカーネルがサポートしていません\n"
+
+#: ../eject.c:543
+#, c-format
+msgid "%s: unable to exec /bin/umount of `%s': %s\n"
+msgstr "%s: `%s' について /bin/umount が実行できません: %s\n"
+
+#: ../eject.c:548
+#, c-format
+msgid "%s: unable to fork: %s\n"
+msgstr "%s: フォークできません: %s\n"
+
+#: ../eject.c:553
+#, c-format
+msgid "%s: unmount of `%s' did not exit normally\n"
+msgstr "%s: `%s' のアンマウントが異常終了しました\n"
+
+#: ../eject.c:557
+#, c-format
+msgid "%s: unmount of `%s' failed\n"
+msgstr "%s: `%s' のアンマウントに失敗\n"
+
+#: ../eject.c:570
+#, c-format
+msgid "%s: unable to open `%s'\n"
+msgstr "%s: `%s' がオープンできません\n"
+
+#: ../eject.c:615 ../eject.c:691
+#, c-format
+msgid "unable to open %s: %s\n"
+msgstr "%s がオープンできません: %s\n"
+
+#: ../eject.c:655
+#, c-format
+msgid "%s: unable to open /etc/fstab: %s\n"
+msgstr "%s: /etc/fstab がオープンできません: %s\n"
+
+#: ../eject.c:701 ../eject.c:928
+#, c-format
+msgid "%s: unmounting `%s'\n"
+msgstr "%s: `%s' をアンマウントしています\n"
+
+#: ../eject.c:768
+#, c-format
+msgid "%s: `%s' is a multipartition device\n"
+msgstr "%s: `%s' はマルチパーティションデバイスです\n"
+
+#: ../eject.c:773
+#, c-format
+msgid "%s: `%s' is not a multipartition device\n"
+msgstr "%s: `%s' はマルチパーティションデバイスではありません\n"
+
+#: ../eject.c:786
+#, c-format
+msgid "%s: setting CD-ROM speed to auto\n"
+msgstr "%s: CD-ROM 速度を自動に設定しています\n"
+
+#: ../eject.c:788
+#, c-format
+msgid "%s: setting CD-ROM speed to %dX\n"
+msgstr "%s: CD-ROM 速度を %d倍速に設定しています\n"
+
+#: ../eject.c:824
+#, c-format
+msgid "%s: default device: `%s'\n"
+msgstr "%s: デフォルトのデバイス: `%s'\n"
+
+#: ../eject.c:832
+#, c-format
+msgid "%s: using default device `%s'\n"
+msgstr "%s: `%s' をデフォルトのデバイスにしています\n"
+
+#: ../eject.c:841
+#, c-format
+msgid "%s: device name is `%s'\n"
+msgstr "%s: デバイス名は `%s' です\n"
+
+#: ../eject.c:846
+#, c-format
+msgid "%s: unable to find or open device for: `%s'\n"
+msgstr "%s: デバイスが見つからないかオープンできません: `%s'\n"
+
+#: ../eject.c:850
+#, c-format
+msgid "%s: expanded name is `%s'\n"
+msgstr "%s: 展開した名前は `%s' です\n"
+
+#: ../eject.c:855
+#, c-format
+msgid "%s: `%s' is a link to `%s'\n"
+msgstr "%s: `%s' は `%s' へのリンクです\n"
+
+#: ../eject.c:864
+#, c-format
+msgid "%s: maximum symbolic link depth exceeded: `%s'\n"
+msgstr "%s: 最大シンボリックリンク数を越えました: `%s'\n"
+
+#: ../eject.c:872
+#, c-format
+msgid "%s: `%s' is mounted at `%s'\n"
+msgstr "%s: `%s' は `%s' にマウントされています\n"
+
+#: ../eject.c:874
+#, c-format
+msgid "%s: `%s' is not mounted\n"
+msgstr "%s: `%s' はマウントされていません\n"
+
+#: ../eject.c:885
+#, c-format
+msgid "%s: `%s' can be mounted at `%s'\n"
+msgstr "%s: `%s' は `%s' にマウントできます\n"
+
+#: ../eject.c:887
+#, c-format
+msgid "%s: `%s' is not a mount point\n"
+msgstr "%s: `%s' はマウントポイントではありません\n"
+
+#: ../eject.c:893
+#, c-format
+msgid "%s: device is `%s'\n"
+msgstr "%s: デバイスは `%s' です\n"
+
+#: ../eject.c:895
+#, c-format
+msgid "%s: exiting due to -n/--noop option\n"
+msgstr "%s: -n/--noop オプションにより終了します\n"
+
+#: ../eject.c:903
+#, c-format
+msgid "%s: enabling auto-eject mode for `%s'\n"
+msgstr "%s: `%s' は自動イジェクトモードが有効です\n"
+
+#: ../eject.c:905
+#, c-format
+msgid "%s: disabling auto-eject mode for `%s'\n"
+msgstr "%s: `%s' は自動イジェクトモードが無効です\n"
+
+#: ../eject.c:915
+#, c-format
+msgid "%s: closing tray\n"
+msgstr "%s: トレーを閉じています\n"
+
+#: ../eject.c:941
+#, c-format
+msgid "%s: selecting CD-ROM disc #%d\n"
+msgstr "%s: CD-ROM ディスク #%d を選択中\n"
+
+#: ../eject.c:959
+#, c-format
+msgid "%s: trying to eject `%s' using CD-ROM eject command\n"
+msgstr "%s: CD-ROM イジェクトコマンドを使って `%s' をイジェクトしようとしています\n"
+
+#: ../eject.c:963
+#, c-format
+msgid "%s: CD-ROM eject command succeeded\n"
+msgstr "%s: CD-ROM イジェクトコマンドが成功しました\n"
+
+#: ../eject.c:965
+#, c-format
+msgid "%s: CD-ROM eject command failed\n"
+msgstr "%s: CD-ROM イジェクトコマンドが失敗しました\n"
+
+#: ../eject.c:971
+#, c-format
+msgid "%s: trying to eject `%s' using SCSI commands\n"
+msgstr "%s: SCSI コマンドを使って `%s' をイジェクトしようとしています\n"
+
+#: ../eject.c:975
+#, c-format
+msgid "%s: SCSI eject succeeded\n"
+msgstr "%s: SCSI イジェクト成功\n"
+
+#: ../eject.c:977
+#, c-format
+msgid "%s: SCSI eject failed\n"
+msgstr "%s: SCSI イジェクト失敗\n"
+
+#: ../eject.c:983
+#, c-format
+msgid "%s: trying to eject `%s' using floppy eject command\n"
+msgstr "%s: フロッピーイジェクトコマンドを使って `%s' をイジェクトしようとしています\n"
+
+#: ../eject.c:987
+#, c-format
+msgid "%s: floppy eject command succeeded\n"
+msgstr "%s: フロッピーイジェクトコマンド成功\n"
+
+#: ../eject.c:989
+#, c-format
+msgid "%s: floppy eject command failed\n"
+msgstr "%s: フロッピーイジェクトコマンド失敗\n"
+
+#: ../eject.c:995
+#, c-format
+msgid "%s: trying to eject `%s' using tape offline command\n"
+msgstr "%s: テープオフラインコマンドを使って `%s' をイジェクトしようとしています\n"
+
+#: ../eject.c:999
+#, c-format
+msgid "%s: tape offline command succeeded\n"
+msgstr "%s: テープオフラインコマンド成功\n"
+
+#: ../eject.c:1001
+#, c-format
+msgid "%s: tape offline command failed\n"
+msgstr "%s: テープオフラインコマンド失敗\n"
+
+#: ../eject.c:1006
+#, c-format
+msgid "%s: unable to eject, last error: %s\n"
+msgstr "%s: イジェクトできません, 直近のエラー: %s\n"
+
+#: ../volname.c:57
+msgid "usage: volname [<device-file>]\n"
+msgstr "使い方: ボリューム名 [<デバイスファイル>]\n"
+
+#: ../ ""
+msgid "volname"
+msgstr "ボリューム名"

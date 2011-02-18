@@ -1,0 +1,21 @@
+Version 2.1.5 fixes a bug in the -T option and adds some new translations
+
+Version 2.1.4 incorporates Debian patches from Frank Lichtenheld.
+
+Version 2.1.3 incorporates several Gentoo patches from Mike Frysinger.
+
+Version 2.1.2 incorporates several Red Hat patches from Than Ngo.
+
+Version 2.1.1 incorporates Debian patch for the deprecated SCSO ioctl error.
+
+Version 2.1.0 incorporates Debian patches including a new -m option.
+
+Version 2.0.11 adds localized strings with support for Japanese.
+
+Version 2.0.10 adds localized strings with support for Taiwanese and French.
+
+Version 2.0.9 adds the --proc/-p option.
+
+Version 2.0.8 adds the --cdspeed/-x option.
+
+Version 2.0.6 now uses GNU automake/autoconf.

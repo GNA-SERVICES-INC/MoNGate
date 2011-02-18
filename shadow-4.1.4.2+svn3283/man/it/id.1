@@ -1,0 +1,52 @@
+'\" t
+.\"     Title: id
+.\"    Author: [FIXME: author] [see http://docbook.sf.net/el/author]
+.\" Generator: DocBook XSL Stylesheets v1.75.2 <http://docbook.sf.net/>
+.\"      Date: 05/09/2010
+.\"    Manual: User Commands
+.\"    Source: User Commands
+.\"  Language: Italian
+.\"
+.TH "ID" "1" "05/09/2010" "User Commands" "User Commands"
+.\" -----------------------------------------------------------------
+.\" * set default formatting
+.\" -----------------------------------------------------------------
+.\" disable hyphenation
+.nh
+.\" disable justification (adjust text to left margin only)
+.ad l
+.\" -----------------------------------------------------------------
+.\" * MAIN CONTENT STARTS HERE *
+.\" -----------------------------------------------------------------
+.SH "NOME"
+id \- display current user and group ID names
+.SH "SINOSSI"
+.HP \w'\fBid\fR\ 'u
+\fBid\fR [\-a]
+.SH "DESCRIZIONE"
+.PP
+The
+\fBid\fR
+command displays the current real and effective user and group ID names or values\&. If the value does not have a corresponding entry in
+/etc/passwd
+or
+/etc/group, the value will be displayed without the corresponding name\&. The optional
+\fB\-a\fR
+flag will display the group set on systems which support multiple concurrent group membership\&.
+.SH "FILE"
+.PP
+/etc/group
+.RS 4
+Informazioni sugli account di gruppo\&.
+.RE
+.PP
+/etc/passwd
+.RS 4
+informazioni sugli account utente\&.
+.RE
+.SH "VEDERE ANCHE"
+.PP
+
+\fBgetgid\fR(2),
+\fBgetgroups\fR(2),
+\fBgetuid\fR(2)

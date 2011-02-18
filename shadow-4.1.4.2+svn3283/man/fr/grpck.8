@@ -1,0 +1,216 @@
+'\" t
+.\"     Title: grpck
+.\"    Author: [FIXME: author] [see http://docbook.sf.net/el/author]
+.\" Generator: DocBook XSL Stylesheets v1.75.2 <http://docbook.sf.net/>
+.\"      Date: 05/09/2010
+.\"    Manual: Commandes de gestion du syst\(`eme
+.\"    Source: Commandes de gestion du syst\(`eme
+.\"  Language: French
+.\"
+.TH "GRPCK" "8" "05/09/2010" "Commandes de gestion du syst\(`em" "Commandes de gestion du syst\(`em"
+.\" -----------------------------------------------------------------
+.\" * set default formatting
+.\" -----------------------------------------------------------------
+.\" disable hyphenation
+.nh
+.\" disable justification (adjust text to left margin only)
+.ad l
+.\" -----------------------------------------------------------------
+.\" * MAIN CONTENT STARTS HERE *
+.\" -----------------------------------------------------------------
+.SH "NOM"
+grpck \- V\('erifier l\*(Aqint\('egrit\('e des fichiers d\*(Aqadministration des groupes
+.SH "SYNOPSIS"
+.HP \w'\fBgrpck\fR\ 'u
+\fBgrpck\fR [\-r] [\fIgroupe\fR\ [\ \fIshadow\fR\ ]]
+.HP \w'\fBgrpck\fR\ 'u
+\fBgrpck\fR [\-s] [\fIgroupe\fR\ [\ \fIshadow\fR\ ]]
+.SH "DESCRIPTION"
+.PP
+La commande
+\fBgrpck\fR
+v\('erifie l\*(Aqint\('egrit\('e des informations sur les groupes du syst\(`eme\&. Toutes les entr\('ees des fichiers
+/etc/groupet /etc/gshadow
+sont v\('erifi\('ees afin de s\*(Aqassurer qu\*(Aqelles ont le bon format et qu\*(Aqelles contiennent des donn\('ees valables dans chaque champ\&. Une confirmation de l\*(Aqutilisateur sera demand\('ee pour d\('etruire les entr\('ees mal format\('ees ou ayant d\*(Aqautres erreurs non r\('ecup\('erables\&.
+.PP
+Voici les v\('erifications effectu\('ees\ \&:
+.sp
+.RS 4
+.ie n \{\
+\h'-04'\(bu\h'+03'\c
+.\}
+.el \{\
+.sp -1
+.IP \(bu 2.3
+.\}
+nombre correct de champs
+.RE
+.sp
+.RS 4
+.ie n \{\
+\h'-04'\(bu\h'+03'\c
+.\}
+.el \{\
+.sp -1
+.IP \(bu 2.3
+.\}
+a unique and valid group name
+.RE
+.sp
+.RS 4
+.ie n \{\
+\h'-04'\(bu\h'+03'\c
+.\}
+.el \{\
+.sp -1
+.IP \(bu 2.3
+.\}
+a valid group identifier
+(/etc/group only)
+.RE
+.sp
+.RS 4
+.ie n \{\
+\h'-04'\(bu\h'+03'\c
+.\}
+.el \{\
+.sp -1
+.IP \(bu 2.3
+.\}
+a valid list of members
+and administrators
+.RE
+.sp
+.RS 4
+.ie n \{\
+\h'-04'\(bu\h'+03'\c
+.\}
+.el \{\
+.sp -1
+.IP \(bu 2.3
+.\}
+a corresponding entry in the
+/etc/gshadow
+file (respectively
+/etc/group
+for the
+gshadow
+checks)
+.RE
+.PP
+The checks for correct number of fields and unique group name are fatal\&. If an entry has the wrong number of fields, the user will be prompted to delete the entire line\&. If the user does not answer affirmatively, all further checks are bypassed\&. An entry with a duplicated group name is prompted for deletion, but the remaining checks will still be made\&. All other errors are warnings and the user is encouraged to run the
+\fBgroupmod\fR
+command to correct the error\&.
+.PP
+The commands which operate on the
+/etc/group
+and /etc/gshadow files
+are not able to alter corrupted or duplicated entries\&.
+\fBgrpck\fR
+should be used in those circumstances to remove the offending entries\&.
+.SH "OPTIONS"
+.PP
+Les options disponibles pour la commande
+\fBgrpck\fR
+sont\ \&:
+.PP
+\fB\-r\fR
+.RS 4
+Execute the
+\fBgrpck\fR
+command in read\-only mode\&. This causes all questions regarding changes to be answered
+\fIno\fR
+without user intervention\&.
+.RE
+.PP
+\fB\-s\fR
+.RS 4
+Trie les entr\('ees de
+/etc/groupet /etc/gshadow
+par GID\&.
+.RE
+.PP
+By default,
+\fBgrpck\fR
+operates on
+/etc/groupand /etc/gshadow\&. The user may select alternate files with the
+\fIgroup\fR
+and \fIshadow\fR parameters\&.
+.SH "CONFIGURATION"
+.PP
+Les variables de configuration suivantes de
+/etc/login\&.defs
+modifient le comportement de cet outil\ \&:
+.PP
+\fBMAX_MEMBERS_PER_GROUP\fR (nombre)
+.RS 4
+Nombre maximum de membres par entr\('ee de groupe\&. Lorsque le maximum est atteint, une nouvelle entr\('ee de groupe (ligne) est d\('emarr\('ee dans
+/etc/group
+(avec le m\(^eme nom, m\(^eme mot de passe, et m\(^eme GID)\&.
+.sp
+La valeur par d\('efaut est 0, ce qui signifie qu\*(Aqil n\*(Aqy a pas de limites pour le nombre de membres dans un groupe\&.
+.sp
+Cette fonctionnalit\('e (groupe d\('ecoup\('e) permet de limiter la longueur des lignes dans le fichier de groupes\&. Ceci est utile pour s\*(Aqassurer que les lignes pour les groupes NIS ne sont pas plus grandes que 1024 caract\(`eres\&.
+.sp
+Si vous avez besoin de fixer cette limite, vous pouvez utiliser 25\&.
+.sp
+Remarque\ \&: les groupes d\('ecoup\('es ne sont peut\-\(^etre pas pris en charge par tous les outils (m\(^eme dans la suite d\*(Aqoutils Shadow)\&. Vous ne devriez pas utiliser cette variable, sauf si vous en avez vraiment besoin\&.
+.RE
+.SH "FICHIERS"
+.PP
+/etc/group
+.RS 4
+Informations sur les groupes\&.
+.RE
+.PP
+/etc/gshadow
+.RS 4
+Informations s\('ecuris\('ees sur les groupes\&.
+.RE
+.PP
+/etc/passwd
+.RS 4
+Informations sur les comptes des utilisateurs\&.
+.RE
+.SH "VALEURS DE RETOUR"
+.PP
+La commande
+\fBgrpck\fR
+retourne les valeurs suivantes en quittant\ \&:
+.PP
+\fI0\fR
+.RS 4
+succ\(`es
+.RE
+.PP
+\fI1\fR
+.RS 4
+erreur de syntaxe
+.RE
+.PP
+\fI2\fR
+.RS 4
+une entr\('ee de groupe ou plus est incorrecte
+.RE
+.PP
+\fI3\fR
+.RS 4
+impossible d\*(Aqouvrir les fichiers group
+.RE
+.PP
+\fI4\fR
+.RS 4
+impossible de verrouiller les fichiers group
+.RE
+.PP
+\fI5\fR
+.RS 4
+impossible de mettre \(`a jour les fichiers group
+.RE
+.SH "VOIR AUSSI"
+.PP
+\fBgroup\fR(5),
+\fBgroupmod\fR(8),
+\fBgshadow\fR(5),\fBpasswd\fR(5),
+\fBpwck\fR(8),
+\fBshadow\fR(5)\&.

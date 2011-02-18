@@ -1,0 +1,169 @@
+'\" t
+.\"     Title: groupmod
+.\"    Author: [FIXME: author] [see http://docbook.sf.net/el/author]
+.\" Generator: DocBook XSL Stylesheets v1.75.2 <http://docbook.sf.net/>
+.\"      Date: 05/09/2010
+.\"    Manual: Commandes de gestion du syst\(`eme
+.\"    Source: Commandes de gestion du syst\(`eme
+.\"  Language: French
+.\"
+.TH "GROUPMOD" "8" "05/09/2010" "Commandes de gestion du syst\(`em" "Commandes de gestion du syst\(`em"
+.\" -----------------------------------------------------------------
+.\" * set default formatting
+.\" -----------------------------------------------------------------
+.\" disable hyphenation
+.nh
+.\" disable justification (adjust text to left margin only)
+.ad l
+.\" -----------------------------------------------------------------
+.\" * MAIN CONTENT STARTS HERE *
+.\" -----------------------------------------------------------------
+.SH "NOM"
+groupmod \- Modifier la d\('efinition d\*(Aqun groupe du syst\(`eme
+.SH "SYNOPSIS"
+.HP \w'\fBgroupmod\fR\ 'u
+\fBgroupmod\fR [\fIoptions\fR] \fIGROUPE\fR
+.SH "DESCRIPTION"
+.PP
+La commande
+\fBgroupmod\fR
+modifie la d\('efinition du
+\fIGROUPE\fR
+sp\('ecifi\('e en modifiant l\*(Aqentr\('ee correspondante de la base de donn\('ees des groupes\&.
+.SH "OPTIONS"
+.PP
+Les options disponibles pour la commande
+\fBgroupmod\fR
+sont\ \&:
+.PP
+\fB\-g\fR, \fB\-\-gid\fR \fIGID\fR
+.RS 4
+The group ID of the given
+\fIGROUP\fR
+will be changed to
+\fIGID\fR\&.
+.sp
+The value of
+\fIGID\fR
+must be a non\-negative decimal integer\&. This value must be unique, unless the
+\fB\-o\fR
+option is used\&. Values between 0 and 999 are typically reserved for system groups\&.
+.sp
+Any files that have the old group ID and must continue to belong to
+\fIGROUP\fR, must have their group ID changed manually\&.
+.RE
+.PP
+\fB\-h\fR, \fB\-\-help\fR
+.RS 4
+Afficher un message d\*(Aqaide et quitter\&.
+.RE
+.PP
+\fB\-n\fR, \fB\-\-new\-name\fR \fINOUVEAU_NOM_GROUPE\fR
+.RS 4
+Le nom du groupe sera modifi\('e de
+\fIGROUPE\fR
+vers
+\fINOUVEAU_NOM_GROUPE\fR\&.
+.RE
+.PP
+\fB\-o\fR, \fB\-\-non\-unique\fR
+.RS 4
+When used with the
+\fB\-g\fR
+option, allow to change the group
+\fIGID\fR
+to a non\-unique value\&.
+.RE
+.PP
+\fB\-p\fR, \fB\-\-password\fR \fIMOT_DE_PASSE\fR
+.RS 4
+Mot de passe chiffr\('e, comme renvoy\('e par
+\fBcrypt\fR(3)\&.
+.sp
+\fBNote:\fR
+l\*(Aqutilisation de cette option est d\('econseill\('ee car le mot de passe (ou le mot de passe chiffr\('e) peut \(^etre visible des utilisateurs qui affichent la liste des processus\&.
+.sp
+Il est n\('ecessaire de v\('erifier si le mot de passe respecte la politique de mots de passe du syst\(`eme\&.
+.RE
+.SH "CONFIGURATION"
+.PP
+Les variables de configuration suivantes de
+/etc/login\&.defs
+modifient le comportement de cet outil\ \&:
+.PP
+\fBMAX_MEMBERS_PER_GROUP\fR (nombre)
+.RS 4
+Nombre maximum de membres par entr\('ee de groupe\&. Lorsque le maximum est atteint, une nouvelle entr\('ee de groupe (ligne) est d\('emarr\('ee dans
+/etc/group
+(avec le m\(^eme nom, m\(^eme mot de passe, et m\(^eme GID)\&.
+.sp
+La valeur par d\('efaut est 0, ce qui signifie qu\*(Aqil n\*(Aqy a pas de limites pour le nombre de membres dans un groupe\&.
+.sp
+Cette fonctionnalit\('e (groupe d\('ecoup\('e) permet de limiter la longueur des lignes dans le fichier de groupes\&. Ceci est utile pour s\*(Aqassurer que les lignes pour les groupes NIS ne sont pas plus grandes que 1024 caract\(`eres\&.
+.sp
+Si vous avez besoin de fixer cette limite, vous pouvez utiliser 25\&.
+.sp
+Remarque\ \&: les groupes d\('ecoup\('es ne sont peut\-\(^etre pas pris en charge par tous les outils (m\(^eme dans la suite d\*(Aqoutils Shadow)\&. Vous ne devriez pas utiliser cette variable, sauf si vous en avez vraiment besoin\&.
+.RE
+.SH "FICHIERS"
+.PP
+/etc/group
+.RS 4
+Informations sur les groupes\&.
+.RE
+.PP
+/etc/gshadow
+.RS 4
+Informations s\('ecuris\('ees sur les groupes\&.
+.RE
+.SH "VALEURS DE RETOUR"
+.PP
+La commande
+\fBgroupmod\fR
+retourne les valeurs suivantes en quittant\ \&:
+.PP
+\fI0\fR
+.RS 4
+succ\(`es
+.RE
+.PP
+\fI2\fR
+.RS 4
+erreur de syntaxe
+.RE
+.PP
+\fI3\fR
+.RS 4
+param\(`etre non valable pour l\*(Aqoption
+.RE
+.PP
+\fI4\fR
+.RS 4
+le groupe sp\('ecifi\('e n\*(Aqexiste pas
+.RE
+.PP
+\fI6\fR
+.RS 4
+le groupe sp\('ecifi\('e n\*(Aqexiste pas
+.RE
+.PP
+\fI9\fR
+.RS 4
+nom de groupe d\('ej\(`a utilis\('e
+.RE
+.PP
+\fI10\fR
+.RS 4
+impossible de mettre \(`a jour le fichier des groupes
+.RE
+.SH "VOIR AUSSI"
+.PP
+\fBchfn\fR(1),
+\fBchsh\fR(1),
+\fBpasswd\fR(1),
+\fBgpasswd\fR(8),
+\fBgroupadd\fR(8),
+\fBgroupdel\fR(8),
+\fBuseradd\fR(8),
+\fBuserdel\fR(8),
+\fBusermod\fR(8)\&.

@@ -1,0 +1,120 @@
+'\" t
+.\"     Title: vipw
+.\"    Author: [FIXME: author] [see http://docbook.sf.net/el/author]
+.\" Generator: DocBook XSL Stylesheets v1.75.2 <http://docbook.sf.net/>
+.\"      Date: 05/09/2010
+.\"    Manual: System Management Commands
+.\"    Source: System Management Commands
+.\"  Language: Italian
+.\"
+.TH "VIPW" "8" "05/09/2010" "System Management Commands" "System Management Commands"
+.\" -----------------------------------------------------------------
+.\" * set default formatting
+.\" -----------------------------------------------------------------
+.\" disable hyphenation
+.nh
+.\" disable justification (adjust text to left margin only)
+.ad l
+.\" -----------------------------------------------------------------
+.\" * MAIN CONTENT STARTS HERE *
+.\" -----------------------------------------------------------------
+.SH "NOME"
+vipw, vigr \- edit the password, group, shadow\-password or shadow\-group file
+.SH "SINOSSI"
+.HP \w'\fBvipw\fR\ 'u
+\fBvipw\fR [\fIopzioni\fR]
+.HP \w'\fBvigr\fR\ 'u
+\fBvigr\fR [\fIopzioni\fR]
+.SH "DESCRIZIONE"
+.PP
+The
+\fBvipw\fR
+and
+\fBvigr\fR
+commands edits the files
+/etc/passwd
+and
+/etc/group, respectively\&. With the
+\fB\-s\fR
+flag, they will edit the shadow versions of those files,
+/etc/shadow
+and
+/etc/gshadow, respectively\&. The programs will set the appropriate locks to prevent file corruption\&. When looking for an editor, the programs will first try the environment variable
+\fB$VISUAL\fR, then the environment variable
+\fB$EDITOR\fR, and finally the default editor,
+\fBvi\fR(1)\&.
+.SH "OPZIONI"
+.PP
+The options which apply to the
+\fBvipw\fR
+and
+\fBvigr\fR
+commands are:
+.PP
+\fB\-g\fR, \fB\-\-group\fR
+.RS 4
+Edit group database\&.
+.RE
+.PP
+\fB\-h\fR, \fB\-\-help\fR
+.RS 4
+Mostra un messaggio di aiuto ed esce\&.
+.RE
+.PP
+\fB\-p\fR, \fB\-\-passwd\fR
+.RS 4
+Edit passwd database\&.
+.RE
+.PP
+\fB\-q\fR, \fB\-\-quiet\fR
+.RS 4
+Quiet mode\&.
+.RE
+.PP
+\fB\-s\fR, \fB\-\-shadow\fR
+.RS 4
+Edit shadow or gshadow database\&.
+.RE
+.SH "ENVIRONMENT"
+.PP
+\fBVISUAL\fR
+.RS 4
+Editor to be used\&.
+.RE
+.PP
+\fBEDITOR\fR
+.RS 4
+Editor to be used if
+\fBVISUAL\fR
+is not set\&.
+.RE
+.SH "FILE"
+.PP
+/etc/group
+.RS 4
+Informazioni sugli account di gruppo\&.
+.RE
+.PP
+/etc/gshadow
+.RS 4
+Informazioni sicure sugli account di gruppo\&.
+.RE
+.PP
+/etc/passwd
+.RS 4
+informazioni sugli account utente\&.
+.RE
+.PP
+/etc/shadow
+.RS 4
+Informazioni sicure sugli account di utenti\&.
+.RE
+.SH "VEDERE ANCHE"
+.PP
+
+\fBvi\fR(1),
+\fBgroup\fR(5),
+\fBgshadow\fR(5)
+,
+\fBpasswd\fR(5), ,
+\fBshadow\fR(5)\&.

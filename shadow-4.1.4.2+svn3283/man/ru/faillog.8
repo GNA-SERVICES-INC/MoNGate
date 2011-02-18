@@ -1,0 +1,144 @@
+'\" t
+.\"     Title: faillog
+.\"    Author: [FIXME: author] [see http://docbook.sf.net/el/author]
+.\" Generator: DocBook XSL Stylesheets v1.75.2 <http://docbook.sf.net/>
+.\"      Date: 09/05/2010
+.\"    Manual: Команды управления системой
+.\"    Source: Команды управления системой
+.\"  Language: Russian
+.\"
+.TH "faillog" "8" "09/05/2010" "Команды управления системой" "Команды управления системой"
+.\" -----------------------------------------------------------------
+.\" * set default formatting
+.\" -----------------------------------------------------------------
+.\" disable hyphenation
+.nh
+.\" disable justification (adjust text to left margin only)
+.ad l
+.\" -----------------------------------------------------------------
+.\" * MAIN CONTENT STARTS HERE *
+.\" -----------------------------------------------------------------
+.SH "НАЗВАНИЕ"
+faillog \- показывает записи из файла faillog или задаёт предел неудачных попыток входа в систему
+.SH "СИНТАКСИС"
+.HP \w'\fBfaillog\fR\ 'u
+\fBfaillog\fR [\fIпараметры\fR]
+.SH "ОПИСАНИЕ"
+.PP
+
+\fBfaillog\fR
+displays the contents of the failure log database (/var/log/faillog)\&. It can also set the failure counters and limits\&. When
+\fBfaillog\fR
+is run without arguments, it only displays the faillog records of the users who had a login failure\&.
+.SH "ПАРАМЕТРЫ"
+.PP
+Параметры команды
+\fBfaillog\fR:
+.PP
+\fB\-a\fR, \fB\-\-all\fR
+.RS 4
+Display (or act on) faillog records for all users having an entry in the
+faillog
+database\&.
+.sp
+The range of users can be restricted with the
+\fB\-u\fR
+option\&.
+.sp
+In display mode, this is still restricted to existing users but forces the display of the faillog entries even if they are empty\&.
+.sp
+With the
+\fB\-l\fR,
+\fB\-m\fR,
+\fB\-r\fR,
+\fB\-t\fR
+options, the users\*(Aq records are changed, even if the user does not exist on the system\&. This is useful to reset records of users that have been deleted or to set a policy in advance for a range of users\&.
+.RE
+.PP
+\fB\-h\fR, \fB\-\-help\fR
+.RS 4
+Показать краткую справку и закончить работу\&.
+.RE
+.PP
+\fB\-l\fR, \fB\-\-lock\-secs\fR \fISEC\fR
+.RS 4
+Lock account for
+\fISEC\fR
+seconds after failed login\&.
+.sp
+Write access to
+/var/log/faillog
+is required for this option\&.
+.RE
+.PP
+\fB\-m\fR, \fB\-\-maximum\fR\fIМАКС_ЧИСЛО\fR
+.RS 4
+Set the maximum number of login failures after the account is disabled to
+\fIMAX\fR\&.
+.sp
+Selecting a
+\fIMAX\fR
+value of 0 has the effect of not placing a limit on the number of failed logins\&.
+.sp
+The maximum failure count should always be 0 for
+\fIroot\fR
+to prevent a denial of services attack against the system\&.
+.sp
+Write access to
+/var/log/faillog
+is required for this option\&.
+.RE
+.PP
+\fB\-r\fR, \fB\-\-reset\fR
+.RS 4
+Reset the counters of login failures\&.
+.sp
+Write access to
+/var/log/faillog
+is required for this option\&.
+.RE
+.PP
+\fB\-t\fR, \fB\-\-time\fR\fIДНЕЙ\fR
+.RS 4
+Display faillog records more recent than
+\fIDAYS\fR\&.
+.RE
+.PP
+\fB\-u\fR, \fB\-\-user\fR \fILOGIN\fR|\fIRANGE\fR
+.RS 4
+Display faillog record or maintains failure counters and limits (if used with
+\fB\-l\fR,
+\fB\-m\fR
+or
+\fB\-r\fR
+options) only for the specified user(s)\&.
+.sp
+The users can be specified by a login name, a numerical user ID, or a
+\fIRANGE\fR
+of users\&. This
+\fIRANGE\fR
+of users can be specified with a min and max values (\fIUID_MIN\-UID_MAX\fR), a max value (\fI\-UID_MAX\fR), or a min value (\fIUID_MIN\-\fR)\&.
+.RE
+.PP
+When none of the
+\fB\-l\fR,
+\fB\-m\fR, or
+\fB\-r\fR
+options are used,
+\fBfaillog\fR
+displays the faillog record of the specified user(s)\&.
+.SH "ПРЕДОСТЕРЕЖЕНИЯ"
+.PP
+Программа
+\fBfaillog\fRвыводит только записи о пользователях, последняя попытка входа которых была неудачной\&. Чтобы увидеть запись о пользователе, последняя попытка входа которого была удачной, вы должны специально указать имя пользователя с помощью параметра
+\fB\-a\fR\&.
+.SH "ФАЙЛЫ"
+.PP
+/var/log/faillog
+.RS 4
+содержит журнал неудавшихся попыток входа в систему
+.RE
+.SH "СМОТРИТЕ ТАКЖЕ"
+.PP
+\fBlogin\fR(1),
+\fBfaillog\fR(5)\&.

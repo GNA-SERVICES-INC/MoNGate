@@ -1,0 +1,373 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# Jeff Tranter <tranter@pobox.com>, 2005.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: eject 2.0.13deb-4\n"
+"POT-Creation-Date: 2004-05-07 01:11+0200\n"
+"PO-Revision-Date: 2006-05-29 13:50+0200\n"
+"Last-Translator: Marek Černocký <marek@manet.cz>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../eject.c:125
+#, c-format
+msgid ""
+"Eject version %s by Jeff Tranter (tranter@pobox.com)\n"
+"Usage:\n"
+"  eject -h\t\t\t\t-- display command usage and exit\n"
+"  eject -V\t\t\t\t-- display program version and exit\n"
+"  eject [-vnrsfq] [<name>]\t\t-- eject device\n"
+"  eject [-vn] -d\t\t\t-- display default device\n"
+"  eject [-vn] -a on|off|1|0 [<name>]\t-- turn auto-eject feature on or off\n"
+"  eject [-vn] -c <slot> [<name>]\t-- switch discs on a CD-ROM changer\n"
+"  eject [-vn] -t [<name>]\t\t-- close tray\n"
+"  eject [-vn] -x <speed> [<name>]\t-- set CD-ROM max speed\n"
+"Options:\n"
+"  -v\t-- enable verbose output\n"
+"  -n\t-- don't eject, just show device found\n"
+"  -r\t-- eject CD-ROM\n"
+"  -s\t-- eject SCSI device\n"
+"  -f\t-- eject floppy\n"
+"  -q\t-- eject tape\n"
+"  -p\t-- use /proc/mounts instead of /etc/mtab\n"
+"  -m\t-- do not unmount device even if it is mounted\n"
+msgstr ""
+"Eject verze %s od Jeffa Trantera (tranter@pobox.com), český překlad Marv\n"
+"Použití:\n"
+"  eject -h\t\t\t\t-- zobrazí tuto nápovědu a skončí\n"
+"  eject -V\t\t\t\t-- zobrazí verzi programu a skončí\n"
+"  eject [-vnrsfq] [<název>]\t\t-- vysune zařízení\n"
+"  eject [-vn] -d\t\t\t-- zobrazí výchozí zařízení\n"
+"  eject [-vn] -a on|off|1|0 [<název>]\t-- zapne (on)/vypne (off) automatické vysouvání\n"
+"  eject [-vn] -c <pozice> [<název>]\t-- vymění disk v CD-ROM měniči\n"
+"  eject [-vn] -t [<název>]\t\t-- zavře dvířka\n"
+"  eject [-vn] -x <rychlost> [<název>]\t-- nastaví rychlost CD-ROM\n"
+"Volby:\n"
+"  -v\t-- povolí výpis komentářů\n"
+"  -n\t-- nevysouvat, jen ukázat, jestli zařízení existuje\n"
+"  -r\t-- vysunout CD-ROM\n"
+"  -s\t-- vysunout SCSI zařízení\n"
+"  -f\t-- vysunout disketu\n"
+"  -q\t-- vysunout pásku\n"
+"  -p\t-- použít /proc/mounts místo /etc/mtab\n"
+"  -m\t-- neodpojovat zařízení ikdyž je připojeno\n"
+
+#: ../eject.c:148
+msgid ""
+"Long options:\n"
+"  -h --help   -v --verbose\t -d --default\n"
+"  -a --auto   -c --changerslot  -t --trayclose  -x --cdspeed\n"
+"  -r --cdrom  -s --scsi\t -f --floppy\n"
+"  -q --tape   -n --noop\t -V --version\n"
+"  -p --proc   -m --no-unmount\n"
+msgstr ""
+"Dlouhé volby:\n"
+"  -h --help   -v --verbose\t -d --default\n"
+"  -a --auto   -c --changerslot  -t --trayclose  -x --cdspeed\n"
+"  -r --cdrom  -s --scsi\t -f --floppy\n"
+"  -q --tape   -n --noop\t -V --version\n"
+"  -p --proc   -m --no-unmount\n"
+
+#: ../eject.c:156
+#, c-format
+msgid ""
+"Parameter <name> can be a device file or a mount point.\n"
+"If omitted, name defaults to `%s'.\n"
+"By default tries -r, -s, -f, and -q in order until success.\n"
+msgstr ""
+"Parametr <název> může být soubor zařízení nebo přípojný bod.\n"
+"Pokud jej vynecháte, jako výchozí se zvolí \"%s\".\n"
+"Jako výchozí se zkouší -r, -s, -f, a -q v tomto pořadí, dokud se nezadaří.\n"
+
+#: ../eject.c:209
+#, c-format
+msgid "%s: invalid argument to --auto/-a option\n"
+msgstr "%s: neplatný argument pro volbu --auto/-a\n"
+
+#: ../eject.c:221
+#, c-format
+msgid "%s: invalid argument to --changerslot/-c option\n"
+msgstr "%s: neplatný argument pro volbu --changerslot/-c\n"
+
+#: ../eject.c:233
+#, c-format
+msgid "%s: invalid argument to --cdspeed/-x option\n"
+msgstr "%s: neplatný argument pro volbu --cdspeed/-x\n"
+
+#: ../eject.c:273
+#, c-format
+msgid "eject version %s by Jeff Tranter (tranter@pobox.com)\n"
+msgstr "eject verze %s od Jeffa Trantera (tranter@pobox.com), český překlad Marv\n"
+
+#: ../eject.c:283
+#, c-format
+msgid "%s: too many arguments\n"
+msgstr "%s: příliš mnoho argumentů\n"
+
+#: ../eject.c:331
+#, c-format
+msgid "%s: could not allocate memory\n"
+msgstr "%s: nelze přidělit paměť\n"
+
+#: ../eject.c:404
+#, c-format
+msgid "%s: CD-ROM auto-eject command failed: %s\n"
+msgstr "%s: příkaz pro automatické vysunutí CD-ROM selhal: %s\n"
+
+#: ../eject.c:421
+#, c-format
+msgid "%s: CD-ROM select disc command failed: %s\n"
+msgstr "%s: příkaz pro volbu disku CD-ROM selhal: %s\n"
+
+#: ../eject.c:427
+#, c-format
+msgid "%s: CD-ROM load from slot command failed: %s\n"
+msgstr "%s: příkaz pro načtení CD-ROM ze zásobníku měniče selhal: %s\n"
+
+#: ../eject.c:431
+#, c-format
+msgid "%s: IDE/ATAPI CD-ROM changer not supported by this kernel\n"
+msgstr "%s: toto jádro nepodporuje IDE/ATAPI CD-ROM měnič\n"
+
+#: ../eject.c:446
+#, c-format
+msgid "%s: CD-ROM tray close command failed: %s\n"
+msgstr "%s: příkaz pro zavření dvířek CD-ROM selhal: %s\n"
+
+#: ../eject.c:450
+#, c-format
+msgid "%s: CD-ROM tray close command not supported by this kernel\n"
+msgstr "%s: toto jádro nepodporuje příkaz pro zavření dvířek CD-ROM\n"
+
+#: ../eject.c:467
+#, c-format
+msgid "%s: CD-ROM select speed command failed: %s\n"
+msgstr "%s: příkaz pro volbu rychlosti CD-ROM selhal: %s\n"
+
+#: ../eject.c:471
+#, c-format
+msgid "%s: CD-ROM select speed command not supported by this kernel\n"
+msgstr "%s: toto jádro nepodporuje příkaz pro volbu rychlosti CD-ROM\n"
+
+#: ../eject.c:581
+#, c-format
+msgid "%s: unable to exec /bin/umount of `%s': %s\n"
+msgstr "%s: nelze spustit /bin/umount pro \"%s\": %s\n"
+
+#: ../eject.c:586
+#, c-format
+msgid "%s: unable to fork: %s\n"
+msgstr "%s: nelze rozvětvit proces: %s\n"
+
+#: ../eject.c:591
+#, c-format
+msgid "%s: unmount of `%s' did not exit normally\n"
+msgstr "%s: odopojení \"%s\" neskončilo normálně\n"
+
+#: ../eject.c:595
+#, c-format
+msgid "%s: unmount of `%s' failed\n"
+msgstr "%s: odpojení \"%s\" selhalo\n"
+
+#: ../eject.c:608
+#, c-format
+msgid "%s: unable to open `%s'\n"
+msgstr "%s: nelze otevřít \"%s\"\n"
+
+#: ../eject.c:653 ../eject.c:740
+#, c-format
+msgid "unable to open %s: %s\n"
+msgstr "nelze otevřít %s: %s\n"
+
+#: ../eject.c:700
+#, c-format
+msgid "%s: unable to open /etc/fstab: %s\n"
+msgstr "%s: nelze otevřít /etc/fstab: %s\n"
+
+#: ../eject.c:750 ../eject.c:984
+#, c-format
+msgid "%s: unmounting `%s'\n"
+msgstr "%s: odpojuje se \"%s\"\n"
+
+#: ../eject.c:823
+#, c-format
+msgid "%s: `%s' is a multipartition device\n"
+msgstr "%s: \"%s\" je zařízení s více oddíly\n"
+
+#: ../eject.c:828
+#, c-format
+msgid "%s: `%s' is not a multipartition device\n"
+msgstr "%s: \"%s\" není zařízení s více oddíly\n"
+
+#: ../eject.c:841
+#, c-format
+msgid "%s: setting CD-ROM speed to auto\n"
+msgstr "%s: nastavuje se rychlost CD-ROM na auto\n"
+
+#: ../eject.c:843
+#, c-format
+msgid "%s: setting CD-ROM speed to %dX\n"
+msgstr "%s: nastavuje se rychlost CD-ROM na %dX\n"
+
+#: ../eject.c:879
+#, c-format
+msgid "%s: default device: `%s'\n"
+msgstr "%s: výchozí zařízení: \"%s\"\n"
+
+#: ../eject.c:887
+#, c-format
+msgid "%s: using default device `%s'\n"
+msgstr "%s: použivá se výchozího zařízení \"%s\"\n"
+
+#: ../eject.c:896
+#, c-format
+msgid "%s: device name is `%s'\n"
+msgstr "%s: název zařízení je \"%s\"\n"
+
+#: ../eject.c:901
+#, c-format
+msgid "%s: unable to find or open device for: `%s'\n"
+msgstr "%s: nelze nalézt nebo otevřít zařízení pro: \"%s\"\n"
+
+#: ../eject.c:905
+#, c-format
+msgid "%s: expanded name is `%s'\n"
+msgstr "%s: rozšířený název je \"%s\"\n"
+
+#: ../eject.c:910
+#, c-format
+msgid "%s: `%s' is a link to `%s'\n"
+msgstr "%s: \"%s\" je odkaz na \"%s\"\n"
+
+#: ../eject.c:919
+#, c-format
+msgid "%s: maximum symbolic link depth exceeded: `%s'\n"
+msgstr "%s: překročena maximální hloubka symbolického odkazu: \"%s\"\n"
+
+#: ../eject.c:927
+#, c-format
+msgid "%s: `%s' is mounted at `%s'\n"
+msgstr "%s: \"%s\" je připojený v \"%s\"\n"
+
+#: ../eject.c:929
+#, c-format
+msgid "%s: `%s' is not mounted\n"
+msgstr "%s: \"%s\" není připojený\n"
+
+#: ../eject.c:941
+#, c-format
+msgid "%s: `%s' can be mounted at `%s'\n"
+msgstr "%s: \"%s\" může být připojený v \"%s\"\n"
+
+#: ../eject.c:943
+#, c-format
+msgid "%s: `%s' is not a mount point\n"
+msgstr "%s: \"%s\" není přípojný bod\n"
+
+#: ../eject.c:949
+#, c-format
+msgid "%s: device is `%s'\n"
+msgstr "%s: zařízení je \"%s\"\n"
+
+#: ../eject.c:951
+#, c-format
+msgid "%s: exiting due to -n/--noop option\n"
+msgstr "%s: ukončuje se na základě volby -n/--noop\n"
+
+#: ../eject.c:959
+#, c-format
+msgid "%s: enabling auto-eject mode for `%s'\n"
+msgstr "%s: povoluje režim automatického vysunutí pro \"%s\"\n"
+
+#: ../eject.c:961
+#, c-format
+msgid "%s: disabling auto-eject mode for `%s'\n"
+msgstr "%s: zakazuje se režim automatického vysunutí pro \"%s\"\n"
+
+#: ../eject.c:971
+#, c-format
+msgid "%s: closing tray\n"
+msgstr "%s: zavírají se dvířka\n"
+
+#: ../eject.c:997
+#, c-format
+msgid "%s: selecting CD-ROM disc #%d\n"
+msgstr "%s: volí se CD-ROM disk #%d\n"
+
+#: ../eject.c:1015
+#, c-format
+msgid "%s: trying to eject `%s' using CD-ROM eject command\n"
+msgstr "%s: zkouší se vysunout \"%s\" s použitím příkazu pro vysunutí CD-ROM\n"
+
+#: ../eject.c:1019
+#, c-format
+msgid "%s: CD-ROM eject command succeeded\n"
+msgstr "%s: příkaz pro vysunutí CD-ROM uspěl\n"
+
+#: ../eject.c:1021
+#, c-format
+msgid "%s: CD-ROM eject command failed\n"
+msgstr "%s: příkaz pro vysunutí CD-ROM selhal\n"
+
+#: ../eject.c:1027
+#, c-format
+msgid "%s: trying to eject `%s' using SCSI commands\n"
+msgstr "%s: zkouší se vysunout \"%s\" s použitím příkazu SCSI pro vysunutí\n"
+
+#: ../eject.c:1031
+#, c-format
+msgid "%s: SCSI eject succeeded\n"
+msgstr "%s: příkaz SCSI pro vysunutí uspěl\n"
+
+#: ../eject.c:1033
+#, c-format
+msgid "%s: SCSI eject failed\n"
+msgstr "%s: příkaz SCSI pro vysunutí selhal\n"
+
+#: ../eject.c:1039
+#, c-format
+msgid "%s: trying to eject `%s' using floppy eject command\n"
+msgstr "%s: zkouší se vysunout \"%s\" s použitím příkazu pro vysunutí diskety\n"
+
+#: ../eject.c:1043
+#, c-format
+msgid "%s: floppy eject command succeeded\n"
+msgstr "%s: příkaz pro vysunutí diskety uspěl\n"
+
+#: ../eject.c:1045
+#, c-format
+msgid "%s: floppy eject command failed\n"
+msgstr "%s: příkaz pro vysunutí diskety selhal\n"
+
+#: ../eject.c:1051
+#, c-format
+msgid "%s: trying to eject `%s' using tape offline command\n"
+msgstr "%s: zkouší se vysunout \"%s\" s použitím příkazu pro odpojení pásky\n"
+
+#: ../eject.c:1055
+#, c-format
+msgid "%s: tape offline command succeeded\n"
+msgstr "%s: příkaz pro odpojení pásky uspěl\n"
+
+#: ../eject.c:1057
+#, c-format
+msgid "%s: tape offline command failed\n"
+msgstr "%s: příkaz pro odpojení pásky selhal\n"
+
+#: ../eject.c:1062
+#, c-format
+msgid "%s: unable to eject, last error: %s\n"
+msgstr "%s: není možné vysunout, poslední chyba: %s\n"
+
+#: ../volname.c:58
+msgid "usage: volname [<device-file>]\n"
+msgstr "použití: volname [<soubor-zařízení>]\n"
+
+#: ../volname.c:64 ../volname.c:70 ../volname.c:76
+msgid "volname"
+msgstr "název svazku"
+

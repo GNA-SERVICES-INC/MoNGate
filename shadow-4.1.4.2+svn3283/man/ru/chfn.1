@@ -1,0 +1,109 @@
+'\" t
+.\"     Title: chfn
+.\"    Author: [FIXME: author] [see http://docbook.sf.net/el/author]
+.\" Generator: DocBook XSL Stylesheets v1.75.2 <http://docbook.sf.net/>
+.\"      Date: 09/05/2010
+.\"    Manual: Пользовательские команды
+.\"    Source: Пользовательские команды
+.\"  Language: Russian
+.\"
+.TH "chfn" "1" "09/05/2010" "Пользовательские команды" "Пользовательские команды"
+.\" -----------------------------------------------------------------
+.\" * set default formatting
+.\" -----------------------------------------------------------------
+.\" disable hyphenation
+.nh
+.\" disable justification (adjust text to left margin only)
+.ad l
+.\" -----------------------------------------------------------------
+.\" * MAIN CONTENT STARTS HERE *
+.\" -----------------------------------------------------------------
+.SH "НАЗВАНИЕ"
+chfn \- изменяет информацию о пользователе
+.SH "СИНТАКСИС"
+.HP \w'\fBchfn\fR\ 'u
+\fBchfn\fR [\-f\ \fIФИО\fR] [\-r\ \fIномер\ комнаты\fR] [\-w\ \fIрабочий\ телефон\fR] [\-h\ \fIдомашний\ телефон\fR] [\-o\ \fIдругое\fR] [\fIимя\fR]
+.SH "ОПИСАНИЕ"
+.PP
+Программа
+\fBchfn\fR
+изменяет ФИО, рабочий телефон, рабочие координаты и домашний номер телефона учётной записи пользователя\&. Обычно, эти данные выводятся командой
+\fBfinger\fR(1)
+и ей подобными программами\&. Обычный пользователь может изменить только определённые поля собственной учётной записи, разрешённые в файле
+/etc/login\&.defs\&. (Настройкой по умолчанию пользователю не разрешается менять своё имя и фамилию\&.) Суперпользователь может изменять любое поле любой учётной записи\&. Кроме того, только суперпользователь может использовать параметр
+\fB\-o\fR
+для изменения нестандартизованной части поля GECOS\&.
+.PP
+These fields must not contain any colons\&. Except for the
+\fIother\fR
+field, they should not contain any comma or equal sign\&. It is also recommended to avoid non\-US\-ASCII characters, but this is only enforced for the phone numbers\&. The
+\fIother\fR
+field is used to store accounting information used by other applications\&.
+.PP
+Если ни один параметр не указан, то
+\fBchfn\fR
+переходит в интерактивный режим, предлагая запустившему пользователю изменить значения полей своей учётной записи\&. Вводимое значение заменяет текущее значение поля; если введена пустая строка, то текущее значение остаётся неизменным\&. Текущее значение показано в скобках
+\fB[ ]\fR\&. Без параметров, программа
+\fBchfn\fR
+изменяет учётную запись запустившего пользователя\&.
+.SH "CONFIGURATION"
+.PP
+The following configuration variables in
+/etc/login\&.defs
+change the behavior of this tool:
+.PP
+\fBCHFN_AUTH\fR (boolean)
+.RS 4
+If
+\fIyes\fR, the
+\fBchfn\fR
+program will require authentication before making any changes, unless run by the superuser\&.
+.RE
+.PP
+\fBCHFN_RESTRICT\fR (string)
+.RS 4
+This parameter specifies which values in the
+\fIgecos\fR
+field of the
+/etc/passwd
+file may be changed by regular users using the
+\fBchfn\fR
+program\&. It can be any combination of letters
+\fIf\fR,
+\fIr\fR,
+\fIw\fR,
+\fIh\fR, for Full name, Room number, Work phone, and Home phone, respectively\&. For backward compatibility,
+\fIyes\fR
+is equivalent to
+\fIrwh\fR
+and
+\fIno\fR
+is equivalent to
+\fIfrwh\fR\&. If not specified, only the superuser can make any changes\&. The most restrictive setting is better achieved by not installing
+\fBchfn\fR
+SUID\&.
+.RE
+.PP
+\fBLOGIN_STRING\fR (string)
+.RS 4
+The string used for prompting a password\&. The default is to use "Password: ", or a translation of that string\&. If you set this variable, the prompt will no be translated\&.
+.sp
+If the string contains
+\fI%s\fR, this will be replaced by the user\*(Aqs name\&.
+.RE
+.SH "ФАЙЛЫ"
+.PP
+/etc/login\&.defs
+.RS 4
+содержит конфигурацию подсистемы теневых паролей
+.RE
+.PP
+/etc/passwd
+.RS 4
+содержит информацию о пользователях
+.RE
+.SH "СМОТРИТЕ ТАКЖЕ"
+.PP
+\fBchsh\fR(1),
+\fBlogin.defs\fR(5),
+\fBpasswd\fR(5)\&.

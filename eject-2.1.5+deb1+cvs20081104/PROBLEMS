@@ -1,0 +1,67 @@
+Possible Problems
+-----------------
+
+Problem: Unable to find <linux/version.h> when compiling.
+
+You need the kernel source installed (at least the include files from
+the kernel source).
+
+
+Problem: Unable to find an include file when compiling
+(e.g. <regex.h>).
+
+You are either running a very old kernel, and/or a Linux distribution
+which either installs some files in a non-standard location or is
+missing some files. I have only tested eject under Red Hat Linux
+for Intel.
+
+
+Problem: Option -c produces "eject: IDE/ATAPI CD-ROM changer not
+supported by this kernel".
+
+You are running a very old kernel. If you want multi-disc changer
+support upgrade to the 2.0 kernel or later.
+
+
+Problem: Option -t produces "eject: CD-ROM tray close command not
+supported by this kernel".
+
+You are running a very old kernel. If you want multi-disc changer
+support upgrade to the 2.0 kernel or later.
+
+
+Problem: You get an error such as "eject: unable to find or open
+device for: `foo'"
+
+1. You did not specify a valid device or file, even after checking
+/dev and /mnt.
+
+2. The device is not readable by you. Change the permissions or
+install eject setuid root.
+
+3. Some devices (e.g. SCSI) can only be ejected by root. Run as root
+or install eject setuid root.
+
+
+Problem: eject doesn't work and the above solutions are no help.
+
+Send me a description of the problem including the symptoms, what
+Linux kernel and distribution you are running, the version of eject,
+and the output of eject when the problem occurs, with the -v option.
+
+Notes
+-----
+
+What I find is a convenient setup for accessing removable devices is
+to use the auto-mounter built in to the kernel to automatically mount
+the devices whenever the mount point is referenced. I have this set up
+for /mnt/cdrom (IDE CD-ROM), /mnt/zip (IDE ZIP drive), /mnt/floppy
+(VFAT-formatted floppy), and /mnt/dos (Windows 95 partition on hard
+drive). The automounter also automatically unmounts the devices when
+they are idle for a period of time. I set up /etc/fstab so that
+non-root users can also unmount the devices at any time. I do not
+need to install eject setuid root.
+
+References
+----------
+See the man pages autofs(8), automount(8), mount(8)

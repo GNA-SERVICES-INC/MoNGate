@@ -1,0 +1,338 @@
+'\" t
+.\"     Title: passwd
+.\"    Author: [FIXME: author] [see http://docbook.sf.net/el/author]
+.\" Generator: DocBook XSL Stylesheets v1.75.2 <http://docbook.sf.net/>
+.\"      Date: 05/09/2010
+.\"    Manual: Commandes utilisateur
+.\"    Source: Commandes utilisateur
+.\"  Language: French
+.\"
+.TH "PASSWD" "1" "05/09/2010" "Commandes utilisateur" "Commandes utilisateur"
+.\" -----------------------------------------------------------------
+.\" * set default formatting
+.\" -----------------------------------------------------------------
+.\" disable hyphenation
+.nh
+.\" disable justification (adjust text to left margin only)
+.ad l
+.\" -----------------------------------------------------------------
+.\" * MAIN CONTENT STARTS HERE *
+.\" -----------------------------------------------------------------
+.SH "NOM"
+passwd \- Modifier le mot de passe d\*(Aqun utilisateur
+.SH "SYNOPSIS"
+.HP \w'\fBpasswd\fR\ 'u
+\fBpasswd\fR [\fIoptions\fR] [\fILOGIN\fR]
+.SH "DESCRIPTION"
+.PP
+The
+\fBpasswd\fR
+command changes passwords for user accounts\&. A normal user may only change the password for his/her own account, while the superuser may change the password for any account\&.
+\fBpasswd\fR
+also changes the account or associated password validity period\&.
+.SS "Modifications du mot de passe"
+.PP
+The user is first prompted for his/her old password, if one is present\&. This password is then encrypted and compared against the stored password\&. The user has only one chance to enter the correct password\&. The superuser is permitted to bypass this step so that forgotten passwords may be changed\&.
+.PP
+Une fois que le mot de passe a \('et\('e entr\('e, les informations de limite de validit\('e du mot de passe sont v\('erifi\('ees pour s\*(Aqassurer que l\*(Aqutilisateur est autoris\('e \(`a modifier son mot de passe \(`a cet instant\&. Dans le cas contraire,
+\fBpasswd\fR
+refuse de changer le mot de passe, et quitte\&.
+.PP
+Le nouveau mot de passe sera demand\('e deux fois \(`a l\*(Aqutilisateur\&. Le second mot de passe est compar\('e avec le premier\&. Ces deux mots de passe devront \(^etre identiques pour que le mot de passe soit chang\('e\&.
+.PP
+La complexit\('e de ce mot de passe est alors test\('ee\&. Comme ligne de conduite g\('en\('erale, un mot de passe doit toujours \(^etre constitu\('e de 6 \(`a 8 caract\(`eres en en choisissant un ou plus parmi chacun des ensembles suivants\ \&:
+.sp
+.RS 4
+.ie n \{\
+\h'-04'\(bu\h'+03'\c
+.\}
+.el \{\
+.sp -1
+.IP \(bu 2.3
+.\}
+caract\(`eres alphab\('etiques minuscules
+.RE
+.sp
+.RS 4
+.ie n \{\
+\h'-04'\(bu\h'+03'\c
+.\}
+.el \{\
+.sp -1
+.IP \(bu 2.3
+.\}
+chiffres de 0 \(`a 9
+.RE
+.sp
+.RS 4
+.ie n \{\
+\h'-04'\(bu\h'+03'\c
+.\}
+.el \{\
+.sp -1
+.IP \(bu 2.3
+.\}
+marques de ponctuation
+.RE
+.PP
+Il faudra faire attention \(`a ne pas utiliser les caract\(`eres de suppression ou d\*(Aqeffacement\&.
+\fBPasswd\fR
+rejettera tout mot de passe dont la complexit\('e ne sera pas suffisante\&.
+.SS "Astuces pour les mots de passe"
+.PP
+La s\('ecurit\('e d\*(Aqun mot de passe repose sur la force de l\*(Aqalgorithme de chiffrement et sur la taille de l\*(Aqespace de cl\('es utilis\('e\&. La m\('ethode de chiffrement des syst\(`emes
+\fIUNIX\fR
+est bas\('ee sur l\*(Aqalgorithme NBS DES\&. Des m\('ethodes plus r\('ecentes sont maintenant recommand\('ees (voir
+\fBENCRYPT_METHOD\fR)\&. La taille de l\*(Aqespace de cl\('es d\('epend de l\*(Aqal\('ea du mot de passe utilis\('e\&.
+.PP
+Les compromissions de la s\('ecurit\('e des mots de passe r\('esultent le plus souvent d\*(Aqune n\('egligence dans le choix du mot de passe, ou lors de son utilisation\&. Pour cette raison, vous ne devez pas s\('electionner de mot de passe apparaissant dans un dictionnaire ou devant \(^etre \('ecrit\&. Le mot de passe ne doit pas non plus \(^etre un nom propre, un num\('ero min\('eralogique, une date de naissance, ou une adresse\&. En effet ceux\-ci pourraient \(^etre devin\('es pour violer la s\('ecurit\('e du syst\(`eme\&.
+.PP
+You can find advices on how to choose a strong password on http://en\&.wikipedia\&.org/wiki/Password_strength
+.SH "OPTIONS"
+.PP
+Les options disponibles pour la commande
+\fBpasswd\fR
+sont\ \&:
+.PP
+\fB\-a\fR, \fB\-\-all\fR
+.RS 4
+Cette option ne peut \(^etre utilis\('ee qu\*(Aqavec
+\fB\-S\fR
+et permet d\*(Aqafficher l\*(Aq\('etat des mots de passe pour tous les utilisateurs\&.
+.RE
+.PP
+\fB\-d\fR, \fB\-\-delete\fR
+.RS 4
+Supprime le mot de passe (le rend vide) d\*(Aqun utilisateur\&. C\*(Aqest une fa\(,con rapide de supprimer l\*(Aqauthentification par mot de passe pour un compte\&. Il rend le compte indiqu\('e sans mot de passe\&.
+.RE
+.PP
+\fB\-e\fR, \fB\-\-expire\fR
+.RS 4
+Annule imm\('ediatement la validit\('e du mot de passe d\*(Aqun compte\&. Ceci permet d\*(Aqobliger un utilisateur \(`a changer son mot de passe lors de sa prochaine connexion\&.
+.RE
+.PP
+\fB\-h\fR, \fB\-\-help\fR
+.RS 4
+Afficher un message d\*(Aqaide et quitter\&.
+.RE
+.PP
+\fB\-i\fR, \fB\-\-inactive\fR \fIDUR\('EE_INACTIVIT\('E\fR
+.RS 4
+Cette option permet de d\('esactiver un compte un certain nombre de jours apr\(`es que son mot de passe soit arriv\('e en fin de validit\('e\&. Apr\(`es qu\*(Aqun mot de passe soit arriv\('e en fin de validit\('e depuis plus de
+\fIDUR\('EE_INACTIVIT\('E\fR
+jours, l\*(Aqutilisateur ne pourra plus se connecter avec ce compte\&.
+.RE
+.PP
+\fB\-k\fR, \fB\-\-keep\-tokens\fR
+.RS 4
+Indicate password change should be performed only for expired authentication tokens (passwords)\&. The user wishes to keep their non\-expired tokens as before\&.
+.RE
+.PP
+\fB\-l\fR, \fB\-\-lock\fR
+.RS 4
+Lock the password of the named account\&. This option disables a password by changing it to a value which matches no possible encrypted value (it adds a \(aa!\(aa at the beginning of the password)\&.
+.sp
+Note that this does not disable the account\&. The user may still be able to login using another authentication token (e\&.g\&. an SSH key)\&. To disable the account, administrators should use
+\fBusermod \-\-expiredate 1\fR
+(this set the account\*(Aqs expire date to Jan 2, 1970)\&.
+.sp
+Users with a locked password are not allowed to change their password\&.
+.RE
+.PP
+\fB\-n\fR, \fB\-\-mindays\fR \fIJOURS_MIN\fR
+.RS 4
+D\('efinit le nombre minimum de jours entre chaque changement de mot de passe \(`a
+\fIMIN_DAYS\fR\&. Une valeur de z\('ero pour ce champ indique que l\*(Aqutilisateur peut changer son mot de passe quand il le souhaite\&.
+.RE
+.PP
+\fB\-q\fR, \fB\-\-quiet\fR
+.RS 4
+Mode silencieux\&.
+.RE
+.PP
+\fB\-r\fR, \fB\-\-repository\fR \fIREPOSITORY\fR
+.RS 4
+change password in
+\fIREPOSITORY\fR
+repository
+.RE
+.PP
+\fB\-S\fR, \fB\-\-status\fR
+.RS 4
+Afficher l\*(Aq\('etat d\*(Aqun compte\&. Cet \('etat est constitu\('e de 7 champs\&. Le premier champ est le nom du compte\&. Le second champ indique si le mot de passe est bloqu\('e (L), n\*(Aqa pas de mot de passe (NP) ou a un mot de passe utilisable (P)\&. Le troisi\(`eme champ donne la date de derni\(`ere modification du mot de passe\&. Les quatre champs suivants sont\ \&: la dur\('ee minimum avant modification, la dur\('ee maximum de validit\('e, la dur\('ee d\*(Aqavertissement, et la dur\('ee d\*(Aqinactivit\('e autoris\('ee pour le mot de passe\&. Les dur\('ees sont exprim\('ees en jours\&.
+.RE
+.PP
+\fB\-u\fR, \fB\-\-unlock\fR
+.RS 4
+D\('everrouille le mot de passe du compte indiqu\('e\&. Cette option r\('eactive un mot de passe en remettant le mot de passe \(`a sa valeur pr\('ec\('edente (la valeur pr\('esente avant l\*(Aqutilisation de l\*(Aqoption
+\fB\-l\fR)\&.
+.RE
+.PP
+\fB\-w\fR, \fB\-\-warndays\fR \fIDUR\('EE_AVERTISSEMENT\fR
+.RS 4
+Fixe le nombre de jours d\*(Aqavertissement avant que le changement de mot de passe ne soit obligatoire\&. La valeur
+\fIDUR\('EE_AVERTISSEMENT\fR
+est le nombre de jours pr\('ec\('edant la fin de validit\('e pendant lesquels un utilisateur sera pr\('evenu que son mot de passe est sur le point d\*(Aqarriver en fin de validit\('e\&.
+.RE
+.PP
+\fB\-x\fR, \fB\-\-maxdays\fR \fIJOURS_MAX\fR
+.RS 4
+Fixe le nombre maximum de jours pendant lesquels un mot de passe reste valable\&. Apr\(`es
+\fIJOURS_MAX\fR, le mot de passe devra \(^etre modifi\('e\&.
+.RE
+.SH "AVERTISSEMENTS"
+.PP
+La v\('erification de la complexit\('e des mots de passe peut varier d\*(Aqun site \(`a l\*(Aqautre\&. Il est vivement conseill\('e aux utilisateurs de choisir un mot de passe aussi complexe que possible dans la limite de ce qu\*(Aqil est capable de m\('emoriser\&.
+.PP
+Il se peut que les utilisateurs ne puisse pas changer leur mot de passe sur un syst\(`eme si NIS est activ\('e et qu\*(Aqils ne sont pas connect\('es au serveur NIS\&.
+.SH "CONFIGURATION"
+.PP
+Les variables de configuration suivantes de
+/etc/login\&.defs
+modifient le comportement de cet outil\ \&:
+.PP
+\fBENCRYPT_METHOD\fR (cha\(^ine ce caract\(`eres)
+.RS 4
+D\('efinit les algorithmes de chiffrement par d\('efaut du syst\(`eme pour coder les mots de passes (si aucun algorithme n\*(Aqa \('et\('e indiqu\('e sur la ligne de commandes)\&.
+.sp
+Les valeurs suivantes sont accept\('ees\ \&:
+\fIDES\fR
+(default),
+\fIMD5\fR, \fISHA256\fR, \fISHA512\fR\&.
+.sp
+Remarque\ \&: ce param\(`etre remplace la variable
+\fBMD5_CRYPT_ENAB\fR\&.
+.RE
+.PP
+\fBMD5_CRYPT_ENAB\fR (bool\('een)
+.RS 4
+Indicate if passwords must be encrypted using the MD5\-based algorithm\&. If set to
+\fIyes\fR, new passwords will be encrypted using the MD5\-based algorithm compatible with the one used by recent releases of FreeBSD\&. It supports passwords of unlimited length and longer salt strings\&. Set to
+\fIno\fR
+if you need to copy encrypted passwords to other systems which don\*(Aqt understand the new algorithm\&. Default is
+\fIno\fR\&.
+.sp
+This variable is superceded by the
+\fBENCRYPT_METHOD\fR
+variable or by any command line option used to configure the encryption algorithm\&.
+.sp
+This variable is deprecated\&. You should use
+\fBENCRYPT_METHOD\fR\&.
+.RE
+.PP
+\fBOBSCURE_CHECKS_ENAB\fR (bool\('een)
+.RS 4
+Enable additional checks upon password changes\&.
+.RE
+.PP
+\fBPASS_ALWAYS_WARN\fR (bool\('een)
+.RS 4
+Warn about weak passwords (but still allow them) if you are root\&.
+.RE
+.PP
+\fBPASS_CHANGE_TRIES\fR (nombre)
+.RS 4
+Maximum number of attempts to change password if rejected (too easy)\&.
+.RE
+.PP
+\fBPASS_MAX_LEN\fR (nombre), \fBPASS_MIN_LEN\fR (nombre)
+.RS 4
+Number of significant characters in the password for crypt()\&.
+\fBPASS_MAX_LEN\fR
+is 8 by default\&. Don\*(Aqt change unless your crypt() is better\&. This is ignored if
+\fBMD5_CRYPT_ENAB\fR
+set to
+\fIyes\fR\&.
+.RE
+.PP
+\fBSHA_CRYPT_MIN_ROUNDS\fR (nombre), \fBSHA_CRYPT_MAX_ROUNDS\fR (nombre)
+.RS 4
+When
+\fBENCRYPT_METHOD\fR
+is set to
+\fISHA256\fR
+or
+\fISHA512\fR, this defines the number of SHA rounds used by the encryption algorithm by default (when the number of rounds is not specified on the command line)\&.
+.sp
+With a lot of rounds, it is more difficult to brute forcing the password\&. But note also that more CPU resources will be needed to authenticate users\&.
+.sp
+If not specified, the libc will choose the default number of rounds (5000)\&.
+.sp
+The values must be inside the 1000\-999999999 range\&.
+.sp
+If only one of the
+\fBSHA_CRYPT_MIN_ROUNDS\fR
+or
+\fBSHA_CRYPT_MAX_ROUNDS\fR
+values is set, then this value will be used\&.
+.sp
+If
+\fBSHA_CRYPT_MIN_ROUNDS\fR
+>
+\fBSHA_CRYPT_MAX_ROUNDS\fR, the highest value will be used\&.
+.RE
+.SH "FICHIERS"
+.PP
+/etc/passwd
+.RS 4
+Informations sur les comptes des utilisateurs\&.
+.RE
+.PP
+/etc/shadow
+.RS 4
+Informations s\('ecuris\('ees sur les comptes utilisateurs\&.
+.RE
+.PP
+/etc/login\&.defs
+.RS 4
+Configuration de la suite des mots de passe cach\('es \(Fo\ \&shadow password\ \&\(Fc\&.
+.RE
+.SH "VALEURS DE RETOUR"
+.PP
+La commande
+\fBpasswd\fR
+retourne les valeurs suivantes en quittant\ \&:
+.PP
+\fI0\fR
+.RS 4
+succ\(`es
+.RE
+.PP
+\fI1\fR
+.RS 4
+permission refus\('ee
+.RE
+.PP
+\fI2\fR
+.RS 4
+combinaison d\*(Aqoptions non valable
+.RE
+.PP
+\fI3\fR
+.RS 4
+\('echec inattendu, rien n\*(Aqa \('et\('e fait
+.RE
+.PP
+\fI4\fR
+.RS 4
+\('echec inattendu, le fichier
+passwd
+est manquant
+.RE
+.PP
+\fI5\fR
+.RS 4
+fichier
+passwd
+en cours d\*(Aqutilisation, veuillez r\('eessayer plus tard
+.RE
+.PP
+\fI6\fR
+.RS 4
+param\(`etre non valable pour l\*(Aqoption
+.RE
+.SH "VOIR AUSSI"
+.PP
+\fBpasswd\fR(5),
+\fBshadow\fR(5),
+\fBlogin.defs\fR(5),\fBusermod\fR(8)\&.

@@ -1,0 +1,45 @@
+'\" t
+.\"     Title: expiry
+.\"    Author: [FIXME: author] [see http://docbook.sf.net/el/author]
+.\" Generator: DocBook XSL Stylesheets v1.75.2 <http://docbook.sf.net/>
+.\"      Date: 05/09/2010
+.\"    Manual: User Commands
+.\"    Source: User Commands
+.\"  Language: Italian
+.\"
+.TH "EXPIRY" "1" "05/09/2010" "User Commands" "User Commands"
+.\" -----------------------------------------------------------------
+.\" * set default formatting
+.\" -----------------------------------------------------------------
+.\" disable hyphenation
+.nh
+.\" disable justification (adjust text to left margin only)
+.ad l
+.\" -----------------------------------------------------------------
+.\" * MAIN CONTENT STARTS HERE *
+.\" -----------------------------------------------------------------
+.SH "NOME"
+expiry \- controlla e fa rispettare la scadenza della password
+.SH "SINOSSI"
+.HP \w'\fBexpiry\fR\ 'u
+\fBexpiry\fR [\-c] [\-f]
+.SH "DESCRIZIONE"
+.PP
+The
+\fBexpiry\fR
+command checks (\fB\-c\fR) the current password expiration and forces (\fB\-f\fR) changes when required\&. It is callable as a normal user command\&.
+.SH "FILE"
+.PP
+/etc/passwd
+.RS 4
+informazioni sugli account utente\&.
+.RE
+.PP
+/etc/shadow
+.RS 4
+Informazioni sicure sugli account di utenti\&.
+.RE
+.SH "VEDERE ANCHE"
+.PP
+\fBpasswd\fR(5),
+\fBshadow\fR(5)\&.

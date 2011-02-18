@@ -1,0 +1,92 @@
+'\" t
+.\"     Title: gshadow
+.\"    Author: [FIXME: author] [see http://docbook.sf.net/el/author]
+.\" Generator: DocBook XSL Stylesheets v1.75.2 <http://docbook.sf.net/>
+.\"      Date: 05/09/2010
+.\"    Manual: Formats et conversions de fichiers
+.\"    Source: Formats et conversions de fichiers
+.\"  Language: French
+.\"
+.TH "GSHADOW" "5" "05/09/2010" "Formats et conversions de fich" "Formats et conversions de fich"
+.\" -----------------------------------------------------------------
+.\" * set default formatting
+.\" -----------------------------------------------------------------
+.\" disable hyphenation
+.nh
+.\" disable justification (adjust text to left margin only)
+.ad l
+.\" -----------------------------------------------------------------
+.\" * MAIN CONTENT STARTS HERE *
+.\" -----------------------------------------------------------------
+.SH "NOM"
+gshadow \- informations cach\('ees sur les groupes
+.SH "DESCRIPTION"
+.PP
+/etc/gshadow
+contient les informations cach\('ees sur les groupes\&.
+.PP
+Ce fichier ne doit pas \(^etre accessible en lecture par les utilisateurs normaux afin de maintenir la s\('ecurit\('e des mots de passe, en particuliers pour pr\('evenir les attaques par dictionnaires\&.
+.PP
+Chaque ligne de ce fichier contient les champs suivants, s\('epar\('es par des deux\-points (\(Fo\ \&:\ \&\(Fc)\ \&:
+.PP
+\fBnom du groupe\fR
+.RS 4
+It must be a valid group name, which exist on the system\&.
+.RE
+.PP
+\fBmot de passe chiffr\('e\fR
+.RS 4
+Consultez
+\fBcrypt\fR(3)
+pour plus d\*(Aqinformations sur le traitement de cette cha\(^ine\&.
+.sp
+Si le champ du mot de passe contient une cha\(^ine qui ne peut pas \(^etre un r\('esultat valable de
+\fBcrypt\fR(3), par exemple si elle contient les caract\(`eres ! ou *, les utilisateurs ne pourront pas utiliser le mot de passe UNIX pour acc\('eder au groupe (mais les membres du groupe n\*(Aqont pas besoin de mot de passe)\&.
+.sp
+The password is used when an user who is not a member of the group wants to gain the permissions of this group (see
+\fBnewgrp\fR(1))\&.
+.sp
+This field may be empty, in which case only the group members can gain the group permissions\&.
+.sp
+A password field which starts with a exclamation mark means that the password is locked\&. The remaining characters on the line represent the password field before the password was locked\&.
+.sp
+Ce mot de passe remplace tout mot de passe indiqu\('e dans
+/etc/group\&.
+.RE
+.PP
+\fBadministrateurs\fR
+.RS 4
+Ce champ doit \(^etre une liste d\*(Aqutilisateurs, s\('epar\('es par des virgules\&.
+.sp
+Administrators can change the password or the members of the group\&.
+.sp
+Administrators also have the same permissions as the members (see below)\&.
+.RE
+.PP
+\fBmembres\fR
+.RS 4
+Ce champ doit \(^etre une liste d\*(Aqutilisateurs, s\('epar\('es par des virgules\&.
+.sp
+Members can access the group without being prompted for a password\&.
+.sp
+You should use the same list of users as in
+/etc/group\&.
+.RE
+.SH "FICHIERS"
+.PP
+/etc/group
+.RS 4
+Informations sur les groupes\&.
+.RE
+.PP
+/etc/gshadow
+.RS 4
+Informations s\('ecuris\('ees sur les groupes\&.
+.RE
+.SH "VOIR AUSSI"
+.PP
+\fBgpasswd\fR(5),
+\fBgroup\fR(5),
+\fBgrpck\fR(8),
+\fBgrpconv\fR(8),
+\fBnewgrp\fR(1)\&.

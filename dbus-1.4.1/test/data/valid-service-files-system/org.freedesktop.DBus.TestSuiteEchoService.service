@@ -1,0 +1,5 @@
+[D-BUS Service]
+Name=org.freedesktop.DBus.TestSuiteEchoService
+Exec=/home/wjt/src/dbus/test/test-service
+User=anyrandomuser
+

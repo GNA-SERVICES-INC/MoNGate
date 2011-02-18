@@ -1,0 +1,4 @@
+@set UPDATED 22 March 2010
+@set UPDATED-MONTH March 2010
+@set EDITION 2.6.3
+@set VERSION 2.6.3

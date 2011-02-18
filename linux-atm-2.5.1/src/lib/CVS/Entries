@@ -1,0 +1,23 @@
+/.cvsignore/1.1.2.1/Fri Aug 31 14:50:27 2007//TV2_5_1
+/Makefile-0.79/1.2/Tue Oct  9 22:33:07 2001//TV2_5_1
+/Makefile.am/1.2.2.2/Wed Jul 11 15:26:17 2007//TV2_5_1
+/ans.c/1.2/Tue Oct  9 22:33:07 2001//TV2_5_1
+/atm2text.c/1.2/Tue Oct  9 22:33:07 2001//TV2_5_1
+/atmequal.c/1.2/Tue Oct  9 22:33:07 2001//TV2_5_1
+/atmres.h/1.2/Tue Oct  9 22:33:07 2001//TV2_5_1
+/common.c/1.2/Tue Oct  9 22:33:07 2001//TV2_5_1
+/diag.c/1.2.2.2/Thu Jan  6 21:44:11 2005//TV2_5_1
+/kptr.c/1.2/Tue Oct  9 22:33:07 2001//TV2_5_1
+/misc.c/1.2/Tue Oct  9 22:33:07 2001//TV2_5_1
+/qos2text.c/1.2/Tue Oct  9 22:33:07 2001//TV2_5_1
+/qosequal.c/1.2/Tue Oct  9 22:33:07 2001//TV2_5_1
+/sap2text.c/1.2.2.1/Thu May  1 13:23:18 2003//TV2_5_1
+/sapequal.c/1.2.2.1/Fri Dec 10 17:46:56 2004//TV2_5_1
+/sdu2cell.c/1.2/Tue Oct  9 22:33:07 2001//TV2_5_1
+/text2atm.c/1.2/Tue Oct  9 22:33:07 2001//TV2_5_1
+/text2ip.c/1.2/Tue Oct  9 22:33:07 2001//TV2_5_1
+/text2qos.c/1.2/Tue Oct  9 22:33:07 2001//TV2_5_1
+/text2sap.c/1.2/Tue Oct  9 22:33:07 2001//TV2_5_1
+/timer.c/1.2/Tue Oct  9 22:33:07 2001//TV2_5_1
+/unix.c/1.2/Tue Oct  9 22:33:07 2001//TV2_5_1
+D

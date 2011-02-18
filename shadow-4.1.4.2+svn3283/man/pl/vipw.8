@@ -1,0 +1,124 @@
+'\" t
+.\"     Title: vipw
+.\"    Author: [FIXME: author] [see http://docbook.sf.net/el/author]
+.\" Generator: DocBook XSL Stylesheets v1.75.2 <http://docbook.sf.net/>
+.\"      Date: 09/05/2010
+.\"    Manual: Polecenia Zarządzania Systemem
+.\"    Source: Polecenia Zarządzania Systemem
+.\"  Language: Polish
+.\"
+.TH "VIPW" "8" "09/05/2010" "Polecenia Zarządzania Systemem" "Polecenia Zarządzania Systemem"
+.\" -----------------------------------------------------------------
+.\" * set default formatting
+.\" -----------------------------------------------------------------
+.\" disable hyphenation
+.nh
+.\" disable justification (adjust text to left margin only)
+.ad l
+.\" -----------------------------------------------------------------
+.\" * MAIN CONTENT STARTS HERE *
+.\" -----------------------------------------------------------------
+.SH "NAZWA"
+vipw, vigr \- edytuj plik hase\(/l, grup lub ich wersji chronionych
+.SH "SK\(/LADNIA"
+.HP \w'\fBvipw\fR\ 'u
+\fBvipw\fR [\fIopcje\fR]
+.HP \w'\fBvigr\fR\ 'u
+\fBvigr\fR [\fIopcje\fR]
+.SH "OPIS"
+.PP
+Polecenia
+\fBvipw\fR
+i
+\fBvigr\fR
+umożliwiają modyfikację plik\('ow odpowiednio
+/etc/passwd
+i
+/etc/group\&. Przy zastosowaniu flagi
+\fB\-s\fR
+modyfikują także dodatkowe wersje chronione tych plik\('ow \- odpowiednio
+/etc/shadow
+i
+/etc/gshadow\&. Dla ochrony przed uszkodzeniem w trakcie modyfikacji tych plik\('ow programy te ustawiają odpowiednie blokady\&. Szukając edytora programy te używają w pierwszej kolejności zmiennej środowiska
+\fB$VISUAL\fR, a następnie
+\fB$EDITOR\fR, a na końcu a na końcu domyślnego edytora
+\fBvi\fR(1)\&.
+.SH "OPCJE"
+.PP
+Polecenia
+\fBvipw\fR
+i
+\fBvigr\fR
+posiadają następujące opcje:Polecenia
+\fBvipw\fR
+i
+\fBvigr\fR
+posiadają następujące opcje:
+.PP
+\fB\-g\fR, \fB\-\-group\fR
+.RS 4
+Edycja bazy grup\&.
+.RE
+.PP
+\fB\-h\fR, \fB\-\-help\fR
+.RS 4
+Wyświetlenie komunikatu pomocy i zakończenie dzia\(/lania\&.
+.RE
+.PP
+\fB\-p\fR, \fB\-\-passwd\fR
+.RS 4
+Edycja bazy passwd\&.
+.RE
+.PP
+\fB\-q\fR, \fB\-\-quiet\fR
+.RS 4
+Cichy tryb pracy\&.
+.RE
+.PP
+\fB\-s\fR, \fB\-\-shadow\fR
+.RS 4
+Edycja bazy shadow lub gshadow\&.
+.RE
+.SH "ENVIRONMENT"
+.PP
+\fBVISUAL\fR
+.RS 4
+Editor to be used\&.
+.RE
+.PP
+\fBEDITOR\fR
+.RS 4
+Editor to be used if
+\fBVISUAL\fR
+is not set\&.
+.RE
+.SH "PLIKI"
+.PP
+/etc/group
+.RS 4
+Informacje o grupach użytkownik\('ow\&.
+.RE
+.PP
+/etc/gshadow
+.RS 4
+Informacje chronione o grupach użytkownik\('ow\&.
+.RE
+.PP
+/etc/passwd
+.RS 4
+Informacja o kontach użytkownik\('ow\&.
+.RE
+.PP
+/etc/shadow
+.RS 4
+Informacje chronione o użytkownikach\&.
+.RE
+.SH "ZOBACZ TAKŻE"
+.PP
+
+\fBvi\fR(1),
+\fBgroup\fR(5),
+\fBgshadow\fR(5)
+,
+\fBpasswd\fR(5), ,
+\fBshadow\fR(5)\&.

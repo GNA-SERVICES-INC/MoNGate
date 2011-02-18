@@ -1,0 +1,127 @@
+# Copyright (C) 2007-2010 Red Hat, Inc. All rights reserved.
+#
+# This file is part of LVM2.
+#
+# This copyrighted material is made available to anyone wishing to use,
+# modify, copy, or redistribute it subject to the terms and conditions
+# of the GNU General Public License v.2.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software Foundation,
+# Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+
+#TEST_OPTS=--verbose --debug
+SHELL_PATH ?= $(SHELL)
+TAR ?= $(TAR)
+RM ?= rm -f
+
+subdir := $(shell pwd|sed 's,.*/,,')
+
+srcdir = @srcdir@
+top_srcdir = @top_srcdir@
+top_builddir = @top_builddir@
+abs_srcdir = @abs_srcdir@
+abs_builddir = @abs_builddir@
+abs_top_builddir = @abs_top_builddir@
+abs_top_srcdir = @abs_top_srcdir@
+
+T ?= .
+RUN = $(shell find -regextype posix-egrep -name t-\*.sh -and -regex ".*($(T)).*" | sort)
+
+# Shell quote;
+SHELL_PATH_SQ = $(subst ','\'',$(SHELL_PATH))
+
+SCRIPTS := $(wildcard $(srcdir)/t-*.sh) \
+ $(srcdir)/test-utils.sh \
+ $(srcdir)/lvm-utils.sh
+
+ifeq ("@UDEV_SYNC@", "yes")
+dm_udev_synchronisation = 1
+endif
+
+ifeq ("@APPLIB@", "yes")
+SCRIPTS += $(srcdir)/lvm2app.sh
+all: api/vgtest
+api/vgtest:
+	$(MAKE) -C api vgtest
+endif
+
+all check: init.sh
+	@echo Testing with locking_type 1
+	./bin/harness $(RUN)
+	@echo Testing with locking_type 3
+	LVM_TEST_LOCKING=3 ./bin/harness $(RUN)
+
+check_cluster: init.sh
+	@echo Testing with locking_type 3
+	LVM_TEST_LOCKING=3 ./bin/harness $(RUN)
+
+check_local: init.sh
+	@echo Testing with locking_type 1
+	LVM_TEST_LOCKING=1 ./bin/harness $(RUN)
+
+bin/not: $(srcdir)/not.c .bin-dir-stamp
+	$(CC) -o bin/not $<
+	ln -sf not bin/should
+
+bin/harness: $(srcdir)/harness.c .bin-dir-stamp
+	$(CC) -o bin/harness $<
+
+bin/check: $(srcdir)/check.sh .bin-dir-stamp
+	cp $< bin/check
+	chmod +x bin/check
+
+init.sh: $(srcdir)/Makefile.in .bin-dir-stamp bin/not bin/check bin/harness $(SCRIPTS)
+	rm -f $@-t $@
+	echo 'top_srcdir=$(top_srcdir)' >> $@-t
+	echo 'abs_top_builddir=$(abs_top_builddir)' >> $@-t
+	echo 'abs_top_srcdir=$(abs_top_builddir)' >> $@-t
+	echo 'PATH=$$abs_top_builddir/test/bin:$$PATH' >> $@-t
+	LDLPATH="\$$abs_top_builddir/libdm"; \
+	LDLPATH="$$LDLPATH:\$$abs_top_builddir/tools"; \
+	LDLPATH="$$LDLPATH:\$$abs_top_builddir/daemons/dmeventd"; \
+	LDLPATH="$$LDLPATH:\$$abs_top_builddir/daemons/dmeventd/plugins/lvm2"; \
+	LDLPATH="$$LDLPATH:\$$abs_top_builddir/daemons/dmeventd/plugins/mirror"; \
+	LDLPATH="$$LDLPATH:\$$abs_top_builddir/daemons/dmeventd/plugins/snapshot"; \
+	echo "export LD_LIBRARY_PATH=\"$$LDLPATH\"" >> $@-t
+	echo 'top_srcdir=$(top_srcdir)' >> $@-t
+	echo 'abs_srcdir=$(abs_srcdir)' >> $@-t
+	echo 'abs_builddir=$(abs_builddir)' >> $@-t
+	echo 'export PATH' >> $@-t
+	echo 'export DM_UDEV_SYNCHRONISATION=$(dm_udev_synchronisation)' >> $@-t
+	chmod a-w $@-t
+	mv $@-t $@
+	@if test "$(srcdir)" != . ; then echo "Copying tests to builddir."; cp $(SCRIPTS) . ; fi
+
+Makefile: $(srcdir)/Makefile.in $(top_builddir)/config.status
+	cd $(top_builddir) && $(SHELL) ./config.status $(subdir)/$@
+
+.bin-dir-stamp: lvm-wrapper
+	rm -rf bin
+	mkdir bin
+	for i in lvm $$(cat ../tools/.commands); do \
+	  ln -s ../lvm-wrapper bin/$$i; \
+	done
+	ln -s "$(abs_top_builddir)/tools/dmsetup" bin/dmsetup
+	ln -s "$(abs_top_builddir)/daemons/clvmd/clvmd" bin/clvmd
+	ln -s "$(abs_top_builddir)/daemons/dmeventd/dmeventd" bin/dmeventd
+	touch $@
+
+lvm-wrapper: Makefile
+	rm -f $@-t $@
+	echo '#!/bin/sh'                                          >  $@-t
+	echo 'cmd=$$(echo ./$$0|sed "s,.*/,,")'                   >> $@-t
+	echo 'test "$$cmd" = lvm &&'                              >> $@-t
+	echo 'exec "$(abs_top_builddir)/tools/lvm" "$$@"'         >> $@-t
+	echo 'exec "$(abs_top_builddir)/tools/lvm" "$$cmd" "$$@"' >> $@-t
+	chmod a-w,a+x $@-t
+	mv $@-t $@
+
+clean:
+	rm -rf init.sh lvm-wrapper bin .bin-dir-stamp
+	if test "$(srcdir)" != . ; then rm -f $(subst $(srcdir)/, ,$(SCRIPTS)) lvm2app.sh ; fi
+
+distclean: clean
+	rm -f Makefile
+
+.NOTPARALLEL:

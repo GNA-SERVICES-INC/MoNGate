@@ -1,0 +1,117 @@
+'\" t
+.\"     Title: vipw
+.\"    Author: [FIXME: author] [see http://docbook.sf.net/el/author]
+.\" Generator: DocBook XSL Stylesheets v1.75.2 <http://docbook.sf.net/>
+.\"      Date: 09/05/2010
+.\"    Manual: Команды управления системой
+.\"    Source: Команды управления системой
+.\"  Language: Russian
+.\"
+.TH "vipw" "8" "09/05/2010" "Команды управления системой" "Команды управления системой"
+.\" -----------------------------------------------------------------
+.\" * set default formatting
+.\" -----------------------------------------------------------------
+.\" disable hyphenation
+.nh
+.\" disable justification (adjust text to left margin only)
+.ad l
+.\" -----------------------------------------------------------------
+.\" * MAIN CONTENT STARTS HERE *
+.\" -----------------------------------------------------------------
+.SH "НАЗВАНИЕ"
+vipw, vigr \- служат для редактирования файлов паролей, групп, теневых паролей пользователей или групп\&.
+.SH "СИНТАКСИС"
+.HP \w'\fBvipw\fR\ 'u
+\fBvipw\fR [\fIпараметры\fR]
+.HP \w'\fBvigr\fR\ 'u
+\fBvigr\fR [\fIпараметры\fR]
+.SH "ОПИСАНИЕ"
+.PP
+\fBvipw\fR
+и
+\fBvigr\fR
+редактируют файлы
+/etc/passwd
+и
+/etc/group, соответственно\&. Если указан параметр
+\fB\-s\fR, то будут редактироваться теневые версии этих файлов,
+/etc/shadow
+и
+/etc/gshadow, соответственно\&. На время работы программы устанавливают блокировку для предотвращения повреждения файла\&. При выборе редактора программы сначала проверяют переменную среды
+\fB$VISUAL\fR, затем
+\fB$EDITOR\fR, и если ничего не найдено, запускают стандартный редактор
+\fBvi\fR(1)\&.
+.SH "ПАРАМЕТРЫ"
+.PP
+Параметры команд
+\fBvipw\fR
+и
+\fBvigr\fR:
+.PP
+\fB\-g\fR, \fB\-\-group\fR
+.RS 4
+Редактирует базу данных групп\&.
+.RE
+.PP
+\fB\-h\fR, \fB\-\-help\fR
+.RS 4
+Показать краткую справку и закончить работу\&.
+.RE
+.PP
+\fB\-p\fR, \fB\-\-passwd\fR
+.RS 4
+Редактировать базу данных passwd\&.
+.RE
+.PP
+\fB\-q\fR, \fB\-\-quiet\fR
+.RS 4
+Не выводить сообщений при работе\&.
+.RE
+.PP
+\fB\-s\fR, \fB\-\-shadow\fR
+.RS 4
+Редактировать базу данных shadow или gshadow\&.
+.RE
+.SH "ENVIRONMENT"
+.PP
+\fBVISUAL\fR
+.RS 4
+Editor to be used\&.
+.RE
+.PP
+\fBEDITOR\fR
+.RS 4
+Editor to be used if
+\fBVISUAL\fR
+is not set\&.
+.RE
+.SH "ФАЙЛЫ"
+.PP
+/etc/group
+.RS 4
+содержит информацию о группах
+.RE
+.PP
+/etc/gshadow
+.RS 4
+содержит защищаемую информацию о группах
+.RE
+.PP
+/etc/passwd
+.RS 4
+содержит информацию о пользователях
+.RE
+.PP
+/etc/shadow
+.RS 4
+содержит защищаемую информацию о пользователях
+.RE
+.SH "СМОТРИТЕ ТАКЖЕ"
+.PP
+
+\fBvi\fR(1),
+\fBgroup\fR(5),
+\fBgshadow\fR(5)
+,
+\fBpasswd\fR(5), ,
+\fBshadow\fR(5)\&.

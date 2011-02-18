@@ -1,0 +1,56 @@
+'\" t
+.\"     Title: faillog
+.\"    Author: [FIXME: author] [see http://docbook.sf.net/el/author]
+.\" Generator: DocBook XSL Stylesheets v1.75.2 <http://docbook.sf.net/>
+.\"      Date: 05/09/2010
+.\"    Manual: Formats et conversions de fichiers
+.\"    Source: Formats et conversions de fichiers
+.\"  Language: French
+.\"
+.TH "FAILLOG" "5" "05/09/2010" "Formats et conversions de fich" "Formats et conversions de fich"
+.\" -----------------------------------------------------------------
+.\" * set default formatting
+.\" -----------------------------------------------------------------
+.\" disable hyphenation
+.nh
+.\" disable justification (adjust text to left margin only)
+.ad l
+.\" -----------------------------------------------------------------
+.\" * MAIN CONTENT STARTS HERE *
+.\" -----------------------------------------------------------------
+.SH "NOM"
+faillog \- journal des \('echecs de connexion
+.SH "DESCRIPTION"
+.PP
+
+/var/log/faillog
+maintains a count of login failures and the limits for each account\&.
+.PP
+The file contains fixed length records, indexed by numerical UID\&. Each record contains the count of login failures since the last successful login; the maximum number of failures before the account is disabled; the line on whiche the last login failure occurred; the date of the last login failure; and the duration (in seconds) during which the account will be locked after a failure\&.
+.PP
+La structure du fichier est la suivante\ \&:
+.sp
+.if n \{\
+.RS 4
+.\}
+.nf
+struct	faillog {
+	short   fail_cnt;      /* compteur des \('echecs */
+	short   fail_max;      /* nb max avant d\('esactivation */
+	char    fail_line[12]; /* ligne du dernier \('echec */
+	time_t  fail_time;     /* date du dernier \('echec */
+	long    fail_locktime;};
+.fi
+.if n \{\
+.RE
+.\}
+.SH "FICHIERS"
+.PP
+/var/log/faillog
+.RS 4
+Journal des \('echecs de connexion\&.
+.RE
+.SH "VOIR AUSSI"
+.PP
+
+\fBfaillog\fR(8)

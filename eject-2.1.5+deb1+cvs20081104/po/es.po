@@ -1,0 +1,250 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2001-06-07 12:23+0800\n"
+"PO-Revision-Date: 2005-02-15 18:57GMT\n"
+"Last-Translator: Daniel <dfranganillo@gmail.com>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=ISO-8859-1\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "%s: CD-ROM auto-eject command failed: %s\n"
+msgstr "%s: la orden de autoexpulsión del CD-ROM ha fallado: %s\n"
+
+msgid "%s: CD-ROM eject command failed\n"
+msgstr "%s: la orden de expulsión del CD-ROM ha fallado\n"
+
+msgid "%s: CD-ROM eject command succeeded\n"
+msgstr "%s: la orden de expulsión ha sido exitosa\n"
+
+msgid "%s: CD-ROM load from slot command failed: %s\n"
+msgstr "%s: la inserción desde la bandeja del CD-ROM ha fallado: %s\n"
+
+msgid "%s: CD-ROM select disc command failed: %s\n"
+msgstr "%s: la selección del lector de CD-ROM ha fallado: %s\n"
+
+msgid "%s: CD-ROM select speed command failed: %s\n"
+msgstr "%s: la selección de la velocidad del CD-ROM ha fallado: %s\n"
+
+msgid "%s: CD-ROM select speed command not supported by this kernel\n"
+msgstr ""
+"%s: la orden de selección de velocidad del CD-ROM no esta soportada por" 
+"éste kernel\n"
+
+msgid "%s: CD-ROM tray close command failed: %s\n"
+msgstr "%s: la orden de cierre de la bandeja del CD-ROM ha fallado: %s\n"
+
+msgid "%s: CD-ROM tray close command not supported by this kernel\n"
+msgstr ""
+"%s: la orden de cierre de la bandeja del CD-ROM no esta soportada por" 
+"éste kernel\n"
+
+msgid "%s: IDE/ATAPI CD-ROM changer not supported by this kernel\n"
+msgstr "%s: el cambiador IDE/ATAPI CD-ROM no está soportado por"
+"este kernel\n"
+
+msgid "%s: SCSI eject failed\n"
+msgstr "%s: la orden de expulsion SCSI ha fallado\n"
+
+msgid "%s: SCSI eject succeeded\n"
+msgstr "%s: la orden de expusión SCSI ha sido exitosa\n"
+
+msgid "%s: `%s' can be mounted at `%s'\n"
+msgstr "%s: `%s' no puede ser montado en `%s'\n"
+
+msgid "%s: `%s' is a link to `%s'\n"
+msgstr "%s: `%s' es un enlace a `%s'\n"
+
+msgid "%s: `%s' is a multipartition device\n"
+msgstr "%s: `%s' es un dispositivo con múltiples particiones\n"
+
+msgid "%s: `%s' is mounted at `%s'\n"
+msgstr "%s: `%s' esta montado en `%s'\n"
+
+msgid "%s: `%s' is not a mount point\n"
+msgstr "%s: `%s' no es un punto de montaje\n"
+
+msgid "%s: `%s' is not a multipartition device\n"
+msgstr "%s: `%s' no es un dispositivo con múltiples particiones\n"
+
+msgid "%s: `%s' is not mounted\n"
+msgstr "%s: `%s' no está montado\n"
+
+msgid "%s: closing tray\n"
+msgstr "%s: cerrando la bandeja\n"
+
+msgid "%s: default device: `%s'\n"
+msgstr "%s: dispositivo por defecto: `%s'\n"
+
+msgid "%s: device is `%s'\n"
+msgstr "%s: el dispositivo es `%s'\n"
+
+msgid "%s: device name is `%s'\n"
+msgstr "%s: el nombre del dispositivo es `%s'\n"
+
+msgid "%s: disabling auto-eject mode for `%s'\n"
+msgstr "%s: desactivando el modo de autoexpulsión para `%s'\n"
+
+msgid "%s: enabling auto-eject mode for `%s'\n"
+msgstr "%s: activando el modo de autoexpulsión para `%s'\n"
+
+msgid "%s: exiting due to -n/--noop option\n"
+msgstr "%s: saliendo debido a la opción -n/--noop\n"
+
+msgid "%s: expanded name is `%s'\n"
+msgstr "%s: el nombre extendido es `%s'\n"
+
+msgid "%s: floppy eject command failed\n"
+msgstr "%s: la orden de expulsión del disquete falló\n"
+
+msgid "%s: floppy eject command succeeded\n"
+msgstr "%s: la orden de expulsión del disquete ha sido exitosa\n"
+
+msgid "%s: invalid argument to --auto/-a option\n"
+msgstr "%s: argumento invalido para la opción --auto/-a\n"
+
+msgid "%s: invalid argument to --cdspeed/-x option\n"
+msgstr "%s: argumento invalido para la opción --cdspeed/-x\n"
+
+msgid "%s: invalid argument to --changerslot/-c option\n"
+msgstr "%s: argumento invalido para la opción --changerslot/-c\n"
+
+msgid "%s: maximum symbolic link depth exceeded: `%s'\n"
+msgstr "%s: profundidad de elace máxima excedida: `%s'\n"
+
+msgid "%s: selecting CD-ROM disc #%d\n"
+msgstr "%s: seleccionando disco CD-ROM #%d\n"
+
+msgid "%s: setting CD-ROM speed to %dX\n"
+msgstr "%s: estableciendo la velocidad del CD-ROM a %dX\n"
+
+msgid "%s: setting CD-ROM speed to auto\n"
+msgstr "%s: estableciendo la velocidad del CD-ROM en modo automatico\n"
+
+msgid "%s: tape offline command failed\n"
+msgstr "%s: la orden de desconexión de la cinta falló\n"
+
+msgid "%s: tape offline command succeeded\n"
+msgstr "%s: la orden de desconexión de la cinta ha sido exitosa\n"
+
+msgid "%s: too many arguments\n"
+msgstr "%s: demasiados argumentos\n"
+
+msgid "%s: trying to eject `%s' using CD-ROM eject command\n"
+msgstr "%s: intentando expulsar `%s' usando la orden de expulsión CD-ROM\n"
+
+msgid "%s: trying to eject `%s' using SCSI commands\n"
+msgstr "%s: intentando expulsar `%s' usando la orden de expulsion SCSI\n"
+
+msgid "%s: trying to eject `%s' using floppy eject command\n"
+msgstr "%s: intentando expulsar `%s' usando la orden de ejecucion disquete\n"
+
+msgid "%s: trying to eject `%s' using tape offline command\n"
+msgstr "%s: intentando expulsar `%s' usando la orden de cinta desconectada\n"
+
+msgid "%s: unable to eject, last error: %s\n"
+msgstr "%s: incapaz de expulsar, último error: %s\n"
+
+msgid "%s: unable to exec /bin/umount of `%s': %s\n"
+msgstr "%s: incapaz de ejecutar /bin/unmount of `%s': %s\n"
+
+msgid "%s: unable to find or open device for: `%s'\n"
+msgstr "%s: incapaz de encontrar o abrir el dispositivo para: `%s'\n"
+
+msgid "%s: unable to fork: %s\n"
+msgstr "%s: incapaz de hacer fork: %s\n"
+
+msgid "%s: unable to open /etc/fstab: %s\n"
+msgstr "%s: incapaz de abrir /etc/fstab: %s\n"
+
+msgid "%s: unable to open `%s'\n"
+msgstr "%s: incapaz de abrir `%s'\n"
+
+msgid "%s: unmount of `%s' did not exit normally\n"
+msgstr "%s: el desmontaje de `%s' no salió normalmente\n"
+
+msgid "%s: unmount of `%s' failed\n"
+msgstr "%s: el desmontaje de `%s' ha fallado\n"
+
+msgid "%s: unmounting `%s'\n"
+msgstr "%s: desmontando `%s'\n"
+
+msgid "%s: using default device `%s'\n"
+msgstr "%s: usando el dispositivo por defecto `%s'\n"
+
+msgid ""
+"Eject version %s by Jeff Tranter (tranter@pobox.com)\n"
+"Usage:\n"
+"  eject -h\t\t\t\t-- display command usage and exit\n"
+"  eject -V\t\t\t\t-- display program version and exit\n"
+"  eject [-vnrsfq] [<name>]\t\t-- eject device\n"
+"  eject [-vn] -d\t\t\t-- display default device\n"
+"  eject [-vn] -a on|off|1|0 [<name>]\t-- turn auto-eject feature on or off\n"
+"  eject [-vn] -c <slot> [<name>]\t-- switch discs on a CD-ROM changer\n"
+"  eject [-vn] -t [<name>]\t\t-- close tray\n"
+"  eject [-vn] -x <speed> [<name>]\t-- set CD-ROM max speed\n"
+"Options:\n"
+"  -v\t-- enable verbose output\n"
+"  -n\t-- don't eject, just show device found\n"
+"  -r\t-- eject CD-ROM\n"
+"  -s\t-- eject SCSI device\n"
+"  -f\t-- eject floppy\n"
+"  -q\t-- eject tape\n"
+"  -p\t-- use /proc/mounts instead of /etc/mtab\n"
+msgstr ""
+"Eject versión %s por Jeff Tranter (tranter@pobox.com)\n"
+"Uso:\n"
+"  eject -h\t\t\t\t-- mostrar modo de uso y salir\n"
+"  eject -V\t\t\t\t-- mostrar versión del programa y salir\n"
+"  eject [-vnrsfq] [<nombre>]\t\t-- expulsar el dispositivo\n"
+"  eject [-vn] -d\t\t\t-- mostrar dispositivo por defecto\n"
+"  eject [-vn] -a on|off|1|0 [<nombre>]\t-- activar o desactivar autoexplusión\n"
+"  eject [-vn] -c <slot> [<nombre>]\t-- cambiar discos en un cambiador de CD-ROM\n"
+"  eject [-vn] -t [<nombre>]\t\t-- cerrar la bandeja\n"
+"  eject [-vn] -x <velocidad> [<nombre>]\t-- establecer velocidad máxima del CD-ROM\n"
+"Opciones:\n"
+"  -v\t-- activar salida prolija\n"
+"  -n\t-- no expulsar, sólo mostrar dispositivo encontrado\n"
+"  -r\t-- expulsar el CD-ROM\n"
+"  -s\t-- expulsar el dispositivo SCSI\n"
+"  -f\t-- expulsar el disquete\n"
+"  -q\t-- expulsar la cinta\n"
+"  -p\t-- usar /proc/mounts en vez de /etc/mtab\n"
+
+msgid ""
+"Long options:\n"
+"  -h --help   -v --verbose\t -d --default\n"
+"  -a --auto   -c --changerslot  -t --trayclose  -x --cdspeed\n"
+"  -r --cdrom  -s --scsi\t -f --floppy\n"
+"  -q --tape   -n --noop\t -V --version\n"
+"  -p --proc\n"
+msgstr ""
+"Opciones largas:\n"
+"  -h --help   -v --verbose\t -d --default\n"
+"  -a --auto   -c --changerslot  -t --trayclose  -x --cdspeed\n"
+"  -r --cdrom  -s --scsi\t -f --floppy\n"
+"  -q --tape   -n --noop\t -V --version\n"
+"  -p --proc\n"
+
+msgid ""
+"Parameter <name> can be a device file or a mount point.\n"
+"If omitted, name defaults to `%s'.\n"
+"By default tries -r, -s, -f, and -q in order until success.\n"
+msgstr ""
+"El parámetro <nombre> puede ser un fichero de dispositivo o un punto"
+" de montaje.\n"
+"Si omitido, el nombre por defecto es`%s'.\n"
+"Por defecto prueba -r, -s, -f, et -q en orden hasta tener éxito.\n"
+
+msgid "eject version %s by Jeff Tranter (tranter@pobox.com)\n"
+msgstr "eject versión %s por Jeff Tranter (tranter@pobox.com)\n"
+
+msgid "unable to open %s: %s\n"
+msgstr "incapaz de abrir %s: %s\n"
+
+msgid "usage: volname [<device-file>]\n"
+msgstr "uso: volname [<fichero de dispositivo>]\n"
+
+msgid "volname"
+msgstr "volname"

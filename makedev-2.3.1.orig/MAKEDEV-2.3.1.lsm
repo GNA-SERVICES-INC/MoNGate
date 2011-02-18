@@ -1,0 +1,20 @@
+Begin3
+Title:          MAKEDEV
+Version:        2.3.1
+Entered-date:   24OCT1997
+Description:    MAKEDEV is the script that is used to create the block and
+                character devices needed by a system.
+                Requires /bin/sh to be a bourne/POSIX compatible shell (bash,
+                ksh or ash) and the external commands expr, rm, mknod, chown,
+                chmod and ln.
+Keywords:       MAKEDEV, mknod, devices, /dev
+Author:         Nick Holloway <Nick.Holloway@alfie.demon.co.uk>
+Maintained-by:  Michael K. Johnson <johnsonm@redhat.com>
+Primary-site:   tsx-11.mit.edu /pub/linux/sources/sbin
+                        6k MAKEDEV-2.3.tar.gz
+Alternate-site: sunsite.unc.edu /pub/Linux/system/admin
+                        6k MAKEDEV-2.3.tar.gz
+Platform:       Linux/x86.
+Copying-policy: FRS Freely Redistributable Software
+End
+

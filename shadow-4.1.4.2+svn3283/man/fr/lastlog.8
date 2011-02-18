@@ -1,0 +1,89 @@
+'\" t
+.\"     Title: lastlog
+.\"    Author: [FIXME: author] [see http://docbook.sf.net/el/author]
+.\" Generator: DocBook XSL Stylesheets v1.75.2 <http://docbook.sf.net/>
+.\"      Date: 05/09/2010
+.\"    Manual: Commandes de gestion du syst\(`eme
+.\"    Source: Commandes de gestion du syst\(`eme
+.\"  Language: French
+.\"
+.TH "LASTLOG" "8" "05/09/2010" "Commandes de gestion du syst\(`em" "Commandes de gestion du syst\(`em"
+.\" -----------------------------------------------------------------
+.\" * set default formatting
+.\" -----------------------------------------------------------------
+.\" disable hyphenation
+.nh
+.\" disable justification (adjust text to left margin only)
+.ad l
+.\" -----------------------------------------------------------------
+.\" * MAIN CONTENT STARTS HERE *
+.\" -----------------------------------------------------------------
+.SH "NOM"
+lastlog \- signaler les connexions les plus r\('ecentes de tous les utilisateurs ou d\*(Aqun utilisateur donn\('e
+.SH "SYNOPSIS"
+.HP \w'\fBlastlog\fR\ 'u
+\fBlastlog\fR [\fIoptions\fR]
+.SH "DESCRIPTION"
+.PP
+\fBLastlog\fR
+affiche le contenu du journal des derni\(`eres connexions (/var/log/lastlog)\&. Les champs
+\fIUtilisateur\fR,
+\fIPort\fR, date de
+\fIDerni\(`ere\fR
+connexion sont affich\('es\&. Par d\('efaut (aucune option de sp\('ecifi\('ee), les entr\('ees de laslog sont affich\('ees tri\('ees par ordre d\*(Aqapparition dans
+/etc/passwd\&.
+.SH "OPTIONS"
+.PP
+Les options disponibles pour la commande
+\fBlastlog\fR
+sont\ \&:
+.PP
+\fB\-b\fR, \fB\-\-before\fR \fIJOURS\fR
+.RS 4
+N\*(Aqaffiche que les entr\('ees du fichier lastlog plus anciennes que
+\fIJOURS\fR\&.
+.RE
+.PP
+\fB\-h\fR, \fB\-\-help\fR
+.RS 4
+Afficher un message d\*(Aqaide et quitter\&.
+.RE
+.PP
+\fB\-t\fR, \fB\-\-time\fR \fIJOURS\fR
+.RS 4
+Affiche les entr\('ees du fichier lastlog plus r\('ecentes que
+\fIJOURS\fR\&.
+.RE
+.PP
+\fB\-u\fR, \fB\-\-user\fR \fILOGIN\fR|\fIINTERVALLE\fR
+.RS 4
+N\*(Aqafficher que les entr\('ees correspondant aux utilisateurs indiqu\('es\&.
+.sp
+The users can be specified by a login name, a numerical user ID, or a
+\fIRANGE\fR
+of users\&. This
+\fIRANGE\fR
+of users can be specified with a min and max values (\fIUID_MIN\-UID_MAX\fR), a max value (\fI\-UID_MAX\fR), or a min value (\fIUID_MIN\-\fR)\&.
+.RE
+.PP
+Dans le cas o\(`u l\*(Aqutilisateur ne s\*(Aqest jamais connect\('e, le message \(Fo\ \&\fI**Never logged in**\fR\ \&\(Fc (\(Fo\ \&\fI**Jamais connect\('e**\fR\ \&\(Fc) est affich\('e \(`a la place des champs
+\fIPort\fR
+et date de
+\fIDerni\(`ere\fR
+connexion\&.
+.PP
+Only the entries for the current users of the system will be displayed\&. Other entries may exist for users that were deleted previously\&.
+.SH "NOTE"
+.PP
+Le fichier
+lastlog
+est une base de donn\('ees qui contient des informations concernant la derni\(`ere connexion de chaque utilisateur\&. Vous n\*(Aqavez pas \(`a faire de rotation (avec rotate) sur ce fichier\&. C\*(Aqest un fichier \(Fo\ \&creux\ \&\(Fc, donc sa taille sur le disque est bien plus petite que celle affich\('ee par \(Fo\ \&\fBls \-l\fR\ \&\(Fc (qui peut indiquer un tr\(`es gros fichier si vous avez des utilisateurs avec des UID \('elev\('es)\&. Vous pouvez afficher sa taille r\('eelle avec \(Fo\ \&\fBls \-s\fR\ \&\(Fc\&.
+.SH "FICHIERS"
+.PP
+/var/log/lastlog
+.RS 4
+Base de donn\('ees de l\*(Aqheure des connexions pr\('ec\('edentes des utilisateurs\&.
+.RE
+.SH "AVERTISSEMENTS"
+.PP
+S\*(Aqil y a des trous importants dans les valeurs des UID, lastlog s\*(Aqex\('ecutera plus lentement, sans affichage \(`a l\*(Aq\('ecran (par exemple, s\*(Aqil n\*(Aqy a pas d\*(Aqentr\('ee pour les utilisateurs ayant un UID compris entre 170 et 800 dans base de donn\('ees lastlog, le programme lastlog semblera bloqu\('e comme s\*(Aqil traitait les entr\('ees correspondant aux UID 171 \(`a 799)\&.

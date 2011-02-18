@@ -1,0 +1,214 @@
+'\" t
+.\"     Title: gpasswd
+.\"    Author: [FIXME: author] [see http://docbook.sf.net/el/author]
+.\" Generator: DocBook XSL Stylesheets v1.75.2 <http://docbook.sf.net/>
+.\"      Date: 05/09/2010
+.\"    Manual: Commandes utilisateur
+.\"    Source: Commandes utilisateur
+.\"  Language: French
+.\"
+.TH "GPASSWD" "1" "05/09/2010" "Commandes utilisateur" "Commandes utilisateur"
+.\" -----------------------------------------------------------------
+.\" * set default formatting
+.\" -----------------------------------------------------------------
+.\" disable hyphenation
+.nh
+.\" disable justification (adjust text to left margin only)
+.ad l
+.\" -----------------------------------------------------------------
+.\" * MAIN CONTENT STARTS HERE *
+.\" -----------------------------------------------------------------
+.SH "NOM"
+gpasswd \- Administrer /etc/group et /etc/gshadow
+.SH "SYNOPSIS"
+.HP \w'\fBgpasswd\fR\ 'u
+\fBgpasswd\fR [\fIoption\fR] \fIgroupe\fR
+.SH "DESCRIPTION"
+.PP
+The
+\fBgpasswd\fR
+command is used to administer
+/etc/group, and /etc/gshadow\&. Every group can have
+administrators,
+members and a password\&.
+.PP
+System administrators can use the
+\fB\-A\fR
+option to define group administrator(s) and the
+\fB\-M\fR
+option to define members\&. They have all rights of group administrators and members\&.
+.PP
+
+\fBgpasswd\fR
+called by
+a group administrator
+with a group name only prompts for the new password of the
+\fIgroup\fR\&.
+.PP
+If a password is set the members can still use
+\fBnewgrp\fR(1)
+without a password, and non\-members must supply the password\&.
+.SS "Notes sur les mots de passe de groupe"
+.PP
+Les mots de passe de groupe repr\('esentent naturellement un risque en mati\(`ere de s\('ecurit\('e, puisque plusieurs personnes ont connaissance du mot de passe\&. Cependant, les groupes sont utiles pour permettre la coop\('eration entre diff\('erents utilisateurs\&.
+.SH "OPTIONS"
+.PP
+Except for the
+\fB\-A\fR
+and
+\fB\-M\fR
+options, the options cannot be combined\&.
+.PP
+Les options disponibles pour la commande
+\fBgpasswd\fR
+sont\ \&:
+.PP
+\fB\-a\fR, \fB\-\-add\fR \fIutilisateur\fR
+.RS 4
+Add the
+\fIuser\fR
+to the named
+\fIgroup\fR\&.
+.RE
+.PP
+\fB\-d\fR, \fB\-\-delete\fR \fIutilisateur\fR
+.RS 4
+Remove the
+\fIuser\fR
+from the named
+\fIgroup\fR\&.
+.RE
+.PP
+\fB\-h\fR, \fB\-\-help\fR
+.RS 4
+Afficher un message d\*(Aqaide et quitter\&.
+.RE
+.PP
+\fB\-r\fR, \fB\-\-remove\-password\fR
+.RS 4
+Remove the password from the named
+\fIgroup\fR\&. Only group members will be allowed to use
+\fBnewgrp\fR
+to join the named
+\fIgroup\fR\&.
+.RE
+.PP
+\fB\-R\fR, \fB\-\-restrict\fR
+.RS 4
+Restrict the access to the named
+\fIgroup\fR\&. Only group members will be allowed to use
+\fBnewgrp\fR
+to join the named
+\fIgroup\fR\&.
+.RE
+.PP
+\fB\-A\fR, \fB\-\-administrators\fR \fIutilisateur\fR,\&.\&.\&.
+.RS 4
+Set the list of administrative users\&.
+.RE
+.PP
+\fB\-M\fR, \fB\-\-members\fR \fIutilisateur\fR,\&.\&.\&.
+.RS 4
+Set the list of group members\&.
+.RE
+.SH "AVERTISSEMENTS"
+.PP
+This tool only operates on the
+/etc/group
+and /etc/gshadow files\&.
+Thus you cannot change any NIS or LDAP group\&. This must be performed on the corresponding server\&.
+.SH "CONFIGURATION"
+.PP
+Les variables de configuration suivantes de
+/etc/login\&.defs
+modifient le comportement de cet outil\ \&:
+.PP
+\fBENCRYPT_METHOD\fR (cha\(^ine ce caract\(`eres)
+.RS 4
+D\('efinit les algorithmes de chiffrement par d\('efaut du syst\(`eme pour coder les mots de passes (si aucun algorithme n\*(Aqa \('et\('e indiqu\('e sur la ligne de commandes)\&.
+.sp
+Les valeurs suivantes sont accept\('ees\ \&:
+\fIDES\fR
+(default),
+\fIMD5\fR, \fISHA256\fR, \fISHA512\fR\&.
+.sp
+Remarque\ \&: ce param\(`etre remplace la variable
+\fBMD5_CRYPT_ENAB\fR\&.
+.RE
+.PP
+\fBMAX_MEMBERS_PER_GROUP\fR (nombre)
+.RS 4
+Nombre maximum de membres par entr\('ee de groupe\&. Lorsque le maximum est atteint, une nouvelle entr\('ee de groupe (ligne) est d\('emarr\('ee dans
+/etc/group
+(avec le m\(^eme nom, m\(^eme mot de passe, et m\(^eme GID)\&.
+.sp
+La valeur par d\('efaut est 0, ce qui signifie qu\*(Aqil n\*(Aqy a pas de limites pour le nombre de membres dans un groupe\&.
+.sp
+Cette fonctionnalit\('e (groupe d\('ecoup\('e) permet de limiter la longueur des lignes dans le fichier de groupes\&. Ceci est utile pour s\*(Aqassurer que les lignes pour les groupes NIS ne sont pas plus grandes que 1024 caract\(`eres\&.
+.sp
+Si vous avez besoin de fixer cette limite, vous pouvez utiliser 25\&.
+.sp
+Remarque\ \&: les groupes d\('ecoup\('es ne sont peut\-\(^etre pas pris en charge par tous les outils (m\(^eme dans la suite d\*(Aqoutils Shadow)\&. Vous ne devriez pas utiliser cette variable, sauf si vous en avez vraiment besoin\&.
+.RE
+.PP
+\fBMD5_CRYPT_ENAB\fR (bool\('een)
+.RS 4
+Indicate if passwords must be encrypted using the MD5\-based algorithm\&. If set to
+\fIyes\fR, new passwords will be encrypted using the MD5\-based algorithm compatible with the one used by recent releases of FreeBSD\&. It supports passwords of unlimited length and longer salt strings\&. Set to
+\fIno\fR
+if you need to copy encrypted passwords to other systems which don\*(Aqt understand the new algorithm\&. Default is
+\fIno\fR\&.
+.sp
+This variable is superceded by the
+\fBENCRYPT_METHOD\fR
+variable or by any command line option used to configure the encryption algorithm\&.
+.sp
+This variable is deprecated\&. You should use
+\fBENCRYPT_METHOD\fR\&.
+.RE
+.PP
+\fBSHA_CRYPT_MIN_ROUNDS\fR (nombre), \fBSHA_CRYPT_MAX_ROUNDS\fR (nombre)
+.RS 4
+When
+\fBENCRYPT_METHOD\fR
+is set to
+\fISHA256\fR
+or
+\fISHA512\fR, this defines the number of SHA rounds used by the encryption algorithm by default (when the number of rounds is not specified on the command line)\&.
+.sp
+With a lot of rounds, it is more difficult to brute forcing the password\&. But note also that more CPU resources will be needed to authenticate users\&.
+.sp
+If not specified, the libc will choose the default number of rounds (5000)\&.
+.sp
+The values must be inside the 1000\-999999999 range\&.
+.sp
+If only one of the
+\fBSHA_CRYPT_MIN_ROUNDS\fR
+or
+\fBSHA_CRYPT_MAX_ROUNDS\fR
+values is set, then this value will be used\&.
+.sp
+If
+\fBSHA_CRYPT_MIN_ROUNDS\fR
+>
+\fBSHA_CRYPT_MAX_ROUNDS\fR, the highest value will be used\&.
+.RE
+.SH "FICHIERS"
+.PP
+/etc/group
+.RS 4
+Informations sur les groupes\&.
+.RE
+.PP
+/etc/gshadow
+.RS 4
+Informations s\('ecuris\('ees sur les groupes\&.
+.RE
+.SH "VOIR AUSSI"
+.PP
+\fBnewgrp\fR(1),
+\fBgroupadd\fR(8),
+\fBgroupdel\fR(8),
+\fBgroupmod\fR(8),
+\fBgrpck\fR(8),
+\fBgroup\fR(5), \fBgshadow\fR(5)\&.

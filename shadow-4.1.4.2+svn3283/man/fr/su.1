@@ -1,0 +1,433 @@
+'\" t
+.\"     Title: su
+.\"    Author: [FIXME: author] [see http://docbook.sf.net/el/author]
+.\" Generator: DocBook XSL Stylesheets v1.75.2 <http://docbook.sf.net/>
+.\"      Date: 05/09/2010
+.\"    Manual: Commandes utilisateur
+.\"    Source: Commandes utilisateur
+.\"  Language: French
+.\"
+.TH "SU" "1" "05/09/2010" "Commandes utilisateur" "Commandes utilisateur"
+.\" -----------------------------------------------------------------
+.\" * set default formatting
+.\" -----------------------------------------------------------------
+.\" disable hyphenation
+.nh
+.\" disable justification (adjust text to left margin only)
+.ad l
+.\" -----------------------------------------------------------------
+.\" * MAIN CONTENT STARTS HERE *
+.\" -----------------------------------------------------------------
+.SH "NOM"
+su \- Changer d\*(Aqidentifiant d\*(Aqutilisateur ou devenir superutilisateur
+.SH "SYNOPSIS"
+.HP \w'\fBsu\fR\ 'u
+\fBsu\fR [\fIoptions\fR] [\fInom_utilisateur\fR]
+.SH "DESCRIPTION"
+.PP
+La commande
+\fBsu\fR
+permet de devenir un autre utilisateur pour la dur\('ee d\*(Aqune session\&. Invoqu\('e sans nom d\*(Aq\fButilisateur\fR, le comportement par d\('efaut de
+\fBsu\fRest de devenir superutilisateur\&. Le param\(`etre optionnel
+\fB\-\fR
+permet d\*(Aqobtenir un environnement similaire \(`a celui que l\*(Aqutilisateur aurait obtenu lors d\*(Aqune connexion directe\&.
+.PP
+Des param\(`etres suppl\('ementaires peuvent \(^etre fournis apr\(`es le nom de l\*(Aqutilisateur\&. Dans ce cas, ils sont donn\('es \(`a l\*(Aqinterpr\('eteur de commandes de connexion de l\*(Aqutilisateur\&. En particulier, le param\(`etre \(Fo\ \&\fB\-c\fR\ \&\(Fc consid\(`ere que le param\(`etre suivant est une commande pour la plupart des interpr\('eteurs de commandes\&. La commande sera ex\('ecut\('ee par l\*(Aqinterpr\('eteur indiqu\('e dans
+/etc/passwd
+pour l\*(Aqutilisateur cible\&.
+.PP
+Vous pouvez utiliser le param\(`etre
+\fB\-\-\fR
+pour s\('eparer les options de
+\fBsu\fR
+des param\(`etres fournis par l\*(Aqinterpr\('eteur de commandes\&.
+.PP
+Un mot de passe sera demand\('e \(`a l\*(Aqutilisateur, si n\('ecessaire\&. Les mots de passe incorrects produisent un message d\*(Aqerreur\&. Toutes les tentatives, r\('eussies ou non, sont enregistr\('ees afin de d\('etecter tout abus du syst\(`eme\&.
+.PP
+The current environment is passed to the new shell\&. The value of
+\fB$PATH\fR
+is reset to
+/bin:/usr/bin
+for normal users, or
+/sbin:/bin:/usr/sbin:/usr/bin
+for the superuser\&. This may be changed with the
+\fBENV_PATH\fR
+and
+\fBENV_SUPATH\fR
+definitions in
+/etc/login\&.defs\&.
+.PP
+Une connexion \(`a un sous\-syst\(`eme est indiqu\('ee par la pr\('esence d\*(Aqun \(Fo\ \&*\ \&\(Fc comme premier caract\(`ere de l\*(Aqinterpr\('eteur de commandes initial\&. Le r\('epertoire personnel sera utilis\('e comme racine d\*(Aqun nouveau syst\(`eme de fichiers dans lequel l\*(Aqutilisateur sera connect\('e\&.
+.SH "OPTIONS"
+.PP
+Les options applicables \(`a la commande
+\fBsu\fR
+sont\ \&:
+.PP
+\fB\-c\fR, \fB\-\-commande\fR \fICOMMANDE\fR
+.RS 4
+Indiquer une commande qui sera invoqu\('ee par l\*(Aqinterpr\('eteur de commandes en utilisant son option
+\fB\-c\fR
+.RE
+.PP
+\fB\-\fR, \fB\-l\fR, \fB\-\-login\fR
+.RS 4
+Fournir \(`a l\*(Aqutilisateur un environnement similaire \(`a celui qu\*(Aqil aurait obtenu s\*(Aqil s\*(Aq\('etait connect\('e directement\&.
+.sp
+Lorsque
+\fB\-\fR
+est utilis\('e, il doit \(^etre indiqu\('e comme dernier param\(`etre de
+\fBsu\fR
+option\&. Les autres formes (\fB\-l\fR
+et
+\fB\-\-login\fR) ne pr\('esentent pas cette restriction\&.
+.RE
+.PP
+\fB\-s\fR, \fB\-\-shell\fR \fIINTERPR\('ETEUR\fR
+.RS 4
+Interpr\('eteur de commande devant \(^etre appel\('e\&.
+.sp
+L\*(Aqinterpr\('eteur de commandes a appeler est choisi parmi (le choix de plus haute priorit\('e en t\(^ete)\ \&:
+.PP
+.RS 4
+Interpr\('eteur de commande indiqu\('e par \-\-shell\&.
+.RE
+.PP
+.RS 4
+Si
+\fB\-\-preserve\-environment\fR
+est utilis\('e, l\*(Aqinterpr\('eteur de commandes indiqu\('e par la variable d\*(Aqenvironnement
+\fB$SHELL\fR
+sera utilis\('e\&.
+.RE
+.PP
+.RS 4
+Interpr\('eteur de commandes indiqu\('e dans
+/etc/passwd
+pour l\*(Aqutilisateur cible\&.
+.RE
+.PP
+.RS 4
+/bin/sh
+si aucun interpr\('eteur de commandes ne peut \(^etre trouv\('e par l\*(Aqune des m\('ethodes ci\-dessus\&.
+.RE
+.sp
+If the target user has a restricted shell (i\&.e\&. the shell field of this user\*(Aqs entry in
+/etc/passwd
+is not listed in
+/etc/shell), then the
+\fB\-\-shell\fR
+option or the
+\fB$SHELL\fR
+environment variable won\*(Aqt be taken into account, unless
+\fBsu\fR
+is called by root\&.
+.RE
+.PP
+\fB\-m\fR, \fB\-p\fR, \fB\-\-preserve\-environment\fR
+.RS 4
+Pr\('eserver l\*(Aqenvironnement actuel, sauf pour\ \&:
+.PP
+\fB$PATH\fR
+.RS 4
+reset according to the
+/etc/login\&.defs
+options
+\fBENV_PATH\fR
+or
+\fBENV_SUPATH\fR
+(see below);
+.RE
+.PP
+\fB$IFS\fR
+.RS 4
+reset to
+\(Fo\ \&<space><tab><newline>\ \&\(Fc, if it was set\&.
+.RE
+.sp
+Si l\*(Aqutilisateur cible poss\(`ede un interpr\('eteur de commandes restreint, cette option n\*(Aqa aucun effet (\(`a moins que
+\fBsu\fR
+ne soit appel\('e par le superutilisateur)\&.
+.sp
+Note that the default behavior for the environment is the following:
+.PP
+.RS 4
+The
+\fB$HOME\fR,
+\fB$SHELL\fR,
+\fB$USER\fR,
+\fB$LOGNAME\fR,
+\fB$PATH\fR, and
+\fB$IFS\fR
+environment variables are reset\&.
+.RE
+.PP
+.RS 4
+If
+\fB\-\-login\fR
+is not used, the environment is copied, except for the variables above\&.
+.RE
+.PP
+.RS 4
+If
+\fB\-\-login\fR
+is used, the
+\fB$TERM\fR,
+\fB$COLORTERM\fR,
+\fB$DISPLAY\fR, and
+\fB$XAUTHORITY\fR
+environment variables are copied if they were set\&.
+.RE
+.PP
+.RS 4
+If
+\fB\-\-login\fR
+is used, the
+\fB$TZ\fR,
+\fB$HZ\fR, and
+\fB$MAIL\fR
+environment variables are set according to the
+/etc/login\&.defs
+options
+\fBENV_TZ\fR,
+\fBENV_HZ\fR,
+\fBMAIL_DIR\fR, and
+\fBMAIL_FILE\fR
+(see below)\&.
+.RE
+.PP
+.RS 4
+If
+\fB\-\-login\fR
+is used, other environment variables might be set by the
+\fBENVIRON_FILE\fR
+file (see below)\&.
+.RE
+.sp
+.RE
+.SH "AVERTISSEMENTS"
+.PP
+Cette version de
+\fBsu\fR
+a de nombreuses options de compilation\&. Seules certaines d\*(Aqentre elles peuvent avoir \('et\('e activ\('ees sur votre site\&.
+.SH "CONFIGURATION"
+.PP
+Les variables de configuration suivantes de
+/etc/login\&.defs
+modifient le comportement de cet outil\ \&:
+.PP
+\fBCONSOLE\fR (cha\(^ine ce caract\(`eres)
+.RS 4
+S\*(Aqil est d\('efini, soit un chemin complet du fichier contenant les noms de p\('eriph\('eriques (un par ligne), soit une liste de noms du p\('eriph\('erique d\('elimit\('ee par des \(Fo\ \&:\ \&\(Fc\&. Les connexions d\*(Aqun administrateur ne seront autoris\('ees que depuis ces p\('eriph\('eriques\&.
+.sp
+S\*(Aqil n\*(Aqest pas d\('efini, root pourra se connecter depuis n\*(Aqimporte quel p\('eriph\('erique\&.
+.sp
+The device should be specified without the /dev/ prefix\&.
+.RE
+.PP
+\fBCONSOLE_GROUPS\fR (cha\(^ine ce caract\(`eres)
+.RS 4
+Une liste de groupes \(`a rajouter aux groupes suppl\('ementaires de l\*(Aqutilisateur lors d\*(Aqune connexion sur une console (d\('etermin\('e par le param\(`etre CONSOLE)\&. Par d\('efaut, aucun groupe n\*(Aqest ajout\('e\&.
+
+\(`A utiliser avec pr\('ecaution\ \&: il est possible que les utilisateurs aient un acc\(`es permanent \(`a\ \&ces groupes, et cela m\(^eme s\*(Aqils ne sont pas connect\('es sur la console\&.
+.RE
+.PP
+\fBDEFAULT_HOME\fR (bool\('een)
+.RS 4
+Indiquer si la connexion est permise si on ne peut pas acc\('eder au r\('epertoire personnel\&. Le r\('eglage par d\('efaut est \(Fo\ \&no\ \&\(Fc\&.
+.sp
+S\*(Aqil est r\('egl\('e sur
+\fIyes\fR, l\*(Aqutilisateur va se connecter dans le r\('epertoire racine (/) s\*(Aqil n\*(Aqest pas possible d\*(Aqacc\('eder \(`a\ \&son r\('epertoire personnel\&.
+.RE
+.PP
+\fBENV_HZ\fR (cha\(^ine ce caract\(`eres)
+.RS 4
+S\*(Aqil est d\('efini, il sera utilis\('e pour d\('efinir la variable d\*(Aqenvironnement HZ lorsqu\*(Aqun utilisateur se connecte\&. La valeur doit \(^etre pr\('ec\('ed\('ee par
+\fIHZ=\fR\&. Une valeur commune sur Linux est
+\fIHZ=100\fR\&.
+.RE
+.PP
+\fBENVIRON_FILE\fR (cha\(^ine ce caract\(`eres)
+.RS 4
+Si ce fichier existe et est lisible, l\*(Aqenvironnement de connexion sera lu \(`a\ \& partir de lui\&. Chaque ligne doit \(^etre sous la forme nom=valeur\&.
+.sp
+Les lignes commen\(,cant par un \(Fo\ \&#\ \&\(Fc sont consid\('er\('es comme des commentaires, et sont ignor\('ees\&.
+.RE
+.PP
+\fBENV_PATH\fR (cha\(^ine ce caract\(`eres)
+.RS 4
+S\*(Aqil est d\('efini, il sera utilis\('e pour d\('efinir la variable d\*(Aqenvironnement PATH quand un utilisateur ordinaire se connecte\&. La valeur peut \(^etre pr\('ec\('ed\('ee par
+\fIPATH=\fR, ou une liste de chemins s\('epar\('es par des deux points (par exemple
+\fI/bin:/usr/bin\fR)\&. La valeur par d\('efaut est
+\fIPATH=/bin:/usr/bin\fR\&.
+.RE
+.PP
+\fBENV_SUPATH\fR (cha\(^ine ce caract\(`eres)
+.RS 4
+S\*(Aqil est d\('efini, il sera utilis\('e pour d\('efinir la variable d\*(Aqenvironnement PATH quand le super\-utilisateur se connecte\&. La valeur peut \(^etre pr\('ec\('ed\('ee par
+\fIPATH=\fR
+ou une liste de chemins s\('epar\('es par deux points (par exemple
+\fI/sbin:/bin:/usr/sbin:/usr/bin\fR)\&. La valeur par d\('efaut est
+\fIPATH=/sbin:/bin:/usr/sbin:/usr/bin\fR\&.
+.RE
+.PP
+\fBENV_TZ\fR (cha\(^ine ce caract\(`eres)
+.RS 4
+S\*(Aqil est d\('efini, il sera utilis\('e pour d\('efinir la variable d\*(Aqenvironnement TZ quand un utilisateur se connecte\&. La valeur peut \(^etre le nom d\*(Aqun fuseau horaire pr\('ec\('ed\('e par
+\fITZ=\fR
+(par exemple
+\fITZ=CST6CDT\fR), ou le chemin complet vers le fichier contenant la sp\('ecification du fuseau horaire (par exemple
+/etc/tzname)\&.
+.sp
+Si un chemin complet est sp\('ecifi\('e mais que le fichier n\*(Aqexiste pas ou ne peut pas \(^etre lu, la valeur par d\('efaut utilis\('ee est
+\fITZ=CST6CDT\fR\&.
+.RE
+.PP
+\fBLOGIN_STRING\fR (cha\(^ine ce caract\(`eres)
+.RS 4
+La cha\(^ine de caract\(`eres utilis\('ee pour l\*(Aqinvite de mot de passe\&. La valeur par d\('efaut est d\*(Aqutiliser "Password: " (\(Fo\ \&mot de passe\ \&:\ \&\(Fc), ou une traduction de cette cha\(^ine\&. Si vous d\('efinissez cette variable, l\*(Aqinvite ne sera pas traduite\&.
+.sp
+Si la cha\(^ine contient
+\fI%s\fR, ces caract\(`eres seront remplac\('es par le nom de l\*(Aqutilisateur\&.
+.RE
+.PP
+\fBMAIL_CHECK_ENAB\fR (bool\('een)
+.RS 4
+Activer le contr\(^ole et l\*(Aqaffichage du statut de la bo\(^ite aux lettres durant la connexion\&.
+.sp
+Vous devriez le d\('esactiver si les fichiers de d\('emarrage de l\*(Aqinterpr\('eteur de commandes v\('erifie d\('ej\(`a la pr\('esence de courriers (\(Fo\ \&mail \-e\ \&\(Fc ou \('equivalent)\&.
+.RE
+.PP
+\fBMAIL_DIR\fR (cha\(^ine ce caract\(`eres)
+.RS 4
+R\('epertoire d\*(Aqattente des courriels (\(Fo\ \&mail spool directory\ \&\(Fc)\&. Ce param\(`etre est n\('ecessaire pour manipuler les bo\(^ites \(`a lettres lorsque le compte d\*(Aqun utilisateur est modifi\('e ou supprim\('e\&. S\*(Aqil n\*(Aqest pas sp\('ecifi\('e, une valeur par d\('efaut d\('efinie \(`a la compilation est utilis\('ee\&.
+.RE
+.PP
+\fBMAIL_FILE\fR (cha\(^ine ce caract\(`eres)
+.RS 4
+D\('efinit l\*(Aqemplacement des bo\(^ites aux lettres des utilisateurs relativement \(`a leur r\('epertoire personnel\&.
+.RE
+.PP
+Les param\(`etres
+\fBMAIL_DIR\fR
+et
+\fBMAIL_FILE\fR
+sont utilis\('ees par
+\fBuseradd\fR,
+\fBusermod\fR, et
+\fBuserdel\fR
+pour cr\('eer, d\('eplacer, ou supprimer les bo\(^ites aux lettres des utilisateurs\&.
+.PP
+Si
+\fBMAIL_CHECK_ENAB\fR
+est r\('egl\('e sur
+\fIyes\fR, ces variables servent \('egalement \(`a d\('efinir la variable d\*(Aqenvironnement
+\fBMAIL\fR\&.
+.PP
+\fBQUOTAS_ENAB\fR (bool\('een)
+.RS 4
+Enable setting of ulimit, umask, and niceness from passwd gecos field\&.
+.RE
+.PP
+\fBSULOG_FILE\fR (cha\(^ine ce caract\(`eres)
+.RS 4
+S\*(Aqil est d\('efini, les activit\('es de su seront enregistr\('ees dans ce fichier\&.
+.RE
+.PP
+\fBSU_NAME\fR (cha\(^ine ce caract\(`eres)
+.RS 4
+If defined, the command name to display when running "su \-"\&. For example, if this is defined as "su" then a "ps" will display the command is "\-su"\&. If not defined, then "ps" would display the name of the shell actually being run, e\&.g\&. something like "\-sh"\&.
+.RE
+.PP
+\fBSU_WHEEL_ONLY\fR (bool\('een)
+.RS 4
+If
+\fIyes\fR, the user must be listed as a member of the first gid 0 group in
+/etc/group
+(called
+\fIroot\fR
+on most Linux systems) to be able to
+\fBsu\fR
+to uid 0 accounts\&. If the group doesn\*(Aqt exist or is empty, no one will be able to
+\fBsu\fR
+to uid 0\&.
+.RE
+.PP
+\fBSYSLOG_SU_ENAB\fR (bool\('een)
+.RS 4
+Enable "syslog" logging of
+\fBsu\fR
+activity \- in addition to sulog file logging\&.
+.RE
+.PP
+\fBUSERGROUPS_ENAB\fR (bool\('een)
+.RS 4
+Activer la mise en place de bits de masque de groupe (\(Fo\ \&umask group bits\ \&\(Fc) identiques \(`a ceux du propri\('etaire (exemple\ \&:\ \&022 \-> 002, 077 \-> 007) pou rles utilisateurs non privil\('egi\('es, si l\*(AqUID est identique au GID et que l\*(Aqidentifiant de connexion est identique au groupe principal\&.
+.sp
+Si cette variable est positionn\('ee \(`a
+\fIyes\fR,
+\fBuserdel\fR
+supprimera le groupe de l\*(Aqutilisateur s\*(Aqil ne contient pas d\*(Aqautres membres, et
+\fBuseradd\fR
+cr\('eera par d\('efaut un groupe portant le nom de l\*(Aqutilisateur\&.
+.RE
+.SH "FICHIERS"
+.PP
+/etc/passwd
+.RS 4
+Informations sur les comptes des utilisateurs\&.
+.RE
+.PP
+/etc/shadow
+.RS 4
+Informations s\('ecuris\('ees sur les comptes utilisateurs\&.
+.RE
+.PP
+/etc/login\&.defs
+.RS 4
+Configuration de la suite des mots de passe cach\('es \(Fo\ \&shadow password\ \&\(Fc\&.
+.RE
+.SH "VALEURS DE RETOUR"
+.PP
+On success,
+\fBsu\fR
+returns the exit value of the command it executed\&.
+.PP
+If this command was terminated by a signal,
+\fBsu\fR
+returns the number of this signal plus 128\&.
+.PP
+If su has to kill the command (because it was asked to terminate, and the command did not terminate in time),
+\fBsu\fR
+returns 255\&.
+.PP
+Some exit values from
+\fBsu\fR
+are independent from the executed command:
+.PP
+\fI0\fR
+.RS 4
+success (\fB\-\-help\fR
+only)
+.RE
+.PP
+\fI1\fR
+.RS 4
+System or authentication failure
+.RE
+.PP
+\fI126\fR
+.RS 4
+The requested command was not found
+.RE
+.PP
+\fI127\fR
+.RS 4
+The requested command could not be executed
+.RE
+.SH "VOIR AUSSI"
+.PP
+\fBlogin\fR(1),
+\fBlogin.defs\fR(5),
+\fBsg\fR(1),
+\fBsh\fR(1)\&.

@@ -1,0 +1,3228 @@
+# Swedish translation of shadow.
+# Copyright (C) 2006, 2008 Free Software Foundation, Inc.
+# This file is distributed under the same license as the shadow package.
+# Daniel Nylander <po@danielnylander.se>, 2006, 2008.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: shadow 4.1.1\n"
+"Report-Msgid-Bugs-To: pkg-shadow-devel@lists.alioth.debian.org\n"
+"POT-Creation-Date: 2010-08-29 17:53+0200\n"
+"PO-Revision-Date: 2008-03-26 12:23+0100\n"
+"Last-Translator: Daniel Nylander <po@danielnylander.se>\n"
+"Language-Team: Swedish <debian-l10n-swedish@lists.debian.org>\n"
+"Language: sv\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1\n"
+
+#, c-format
+msgid ""
+"Multiple entries named '%s' in %s. Please fix this with pwck or grpck.\n"
+msgstr ""
+"Flera poster med namnet \"%s\" finns i %s. Rätta till detta med pwck eller "
+"grpck.\n"
+
+#, c-format
+msgid "crypt method not supported by libcrypt? (%s)\n"
+msgstr "krypteringsmetoden stöds inte av libcrypt? (%s)\n"
+
+#, c-format
+msgid "configuration error - cannot parse %s value: '%s'"
+msgstr ""
+
+msgid "Could not allocate space for config info.\n"
+msgstr "Kunde inte allokera plats för konfigurationsinformationen.\n"
+
+#, c-format
+msgid "configuration error - unknown item '%s' (notify administrator)\n"
+msgstr "konfigurationsfel - okänd post \"%s\" (informera administratören)\n"
+
+msgid "Password: "
+msgstr "Lösenord: "
+
+#, c-format
+msgid "%s's Password: "
+msgstr "%s lösenord: "
+
+#, c-format
+msgid "%s: out of memory\n"
+msgstr "%s: slut på minne\n"
+
+#, fuzzy, c-format
+#| msgid "%s: cannot update file %s\n"
+msgid "%s: Cannot stat %s: %s\n"
+msgstr "%s: kan inte uppdatera filen %s\n"
+
+#, fuzzy, c-format
+#| msgid "%s: invalid home directory '%s'\n"
+msgid "%s: %s is neither a directory, nor a symlink.\n"
+msgstr "%s: ogiltig hemkatalog \"%s\"\n"
+
+#, fuzzy, c-format
+#| msgid "%s: cannot rename directory %s to %s\n"
+msgid "%s: Cannot read symbolic link %s: %s\n"
+msgstr "%s: kunde inte byta namn på katalogen %s till %s\n"
+
+#, c-format
+msgid "%s: Suspiciously long symlink: %s\n"
+msgstr ""
+
+#, fuzzy, c-format
+#| msgid "%s: cannot create directory %s\n"
+msgid "%s: Cannot create directory %s: %s\n"
+msgstr "%s: kan inte skapa katalog %s\n"
+
+#, fuzzy, c-format
+#| msgid "%s: warning: can't remove "
+msgid "%s: Cannot change owner of %s: %s\n"
+msgstr "%s: varning: kan inte ta bort "
+
+#, fuzzy, c-format
+#| msgid "%s: warning: can't remove "
+msgid "%s: Cannot change mode of %s: %s\n"
+msgstr "%s: varning: kan inte ta bort "
+
+#, fuzzy, c-format
+#| msgid "%s: rename: %s"
+msgid "%s: unlink: %s: %s\n"
+msgstr "%s: byt namn: %s"
+
+#, fuzzy, c-format
+#| msgid "%s: cannot rename directory %s to %s\n"
+msgid "%s: Cannot remove directory %s: %s\n"
+msgstr "%s: kunde inte byta namn på katalogen %s till %s\n"
+
+#, fuzzy, c-format
+#| msgid "%s: cannot rename directory %s to %s\n"
+msgid "%s: Cannot rename %s to %s: %s\n"
+msgstr "%s: kunde inte byta namn på katalogen %s till %s\n"
+
+#, fuzzy, c-format
+#| msgid "%s: warning: can't remove "
+msgid "%s: Cannot remove %s: %s\n"
+msgstr "%s: varning: kan inte ta bort "
+
+#, fuzzy, c-format
+#| msgid "%s: cannot create directory %s\n"
+msgid "%s: Cannot create symbolic link %s: %s\n"
+msgstr "%s: kan inte skapa katalog %s\n"
+
+#, fuzzy, c-format
+#| msgid "%s: warning: can't remove "
+msgid "%s: Cannot change owners of %s: %s\n"
+msgstr "%s: varning: kan inte ta bort "
+
+#, fuzzy, c-format
+#| msgid "%s: cannot update file %s\n"
+msgid "%s: Cannot lstat %s: %s\n"
+msgstr "%s: kan inte uppdatera filen %s\n"
+
+#, fuzzy, c-format
+#| msgid "%s: can't update shadow file\n"
+msgid "%s: Warning, user %s has no tcb shadow file.\n"
+msgstr "%s: kan inte uppdatera skuggfilen\n"
+
+#, c-format
+msgid ""
+"%s: Emergency: %s's tcb shadow is not a regular file with st_nlink=1.\n"
+"The account is left locked.\n"
+msgstr ""
+
+#, fuzzy, c-format
+#| msgid "%s: rename: %s"
+msgid "%s: mkdir: %s: %s\n"
+msgstr "%s: byt namn: %s"
+
+#, fuzzy, c-format
+#| msgid "%s: cannot open file %s\n"
+msgid "%s: Cannot open %s: %s\n"
+msgstr "%s: kan inte öppna filen %s\n"
+
+#, c-format
+msgid "Warning: unknown group %s\n"
+msgstr "Varning: okänd grupp %s\n"
+
+msgid "Warning: too many groups\n"
+msgstr "Varning: för många grupper\n"
+
+msgid "Your password has expired."
+msgstr "Ditt lösenord har upphört att gälla."
+
+msgid "Your password is inactive."
+msgstr "Ditt lösenord är inaktivt."
+
+msgid "Your login has expired."
+msgstr "Ditt inloggningskonto har upphört att gälla."
+
+msgid "  Contact the system administrator."
+msgstr "  Kontakta systemadministratören."
+
+msgid "  Choose a new password."
+msgstr "  Välj ett nytt lösenord."
+
+msgid "You must change your password."
+msgstr ""
+
+#, c-format
+msgid "Your password will expire in %ld days.\n"
+msgstr "Ditt lösenord upphör att gälla om %ld dagar.\n"
+
+msgid "Your password will expire tomorrow."
+msgstr "Ditt lösenord upphör att gälla imorgon."
+
+msgid "Your password will expire today."
+msgstr "Ditt lösenord upphör att gälla idag."
+
+msgid "Cannot open audit interface - aborting.\n"
+msgstr ""
+
+#, fuzzy, c-format
+#| msgid "Unable to change tty %s"
+msgid "Unable to change owner or mode of tty stdin: %s"
+msgstr "Kunde inte ändra tty %s"
+
+#, fuzzy, c-format
+#| msgid "%s: fields too long\n"
+msgid "%s: failed to unlock %s\n"
+msgstr "%s: fälten för långa\n"
+
+#, fuzzy, c-format
+#| msgid "%s: %s\n"
+msgid "%s: "
+msgstr "%s: %s\n"
+
+msgid ": "
+msgstr ""
+
+msgid "Environment overflow\n"
+msgstr "Överskott av miljövariabler\n"
+
+#, c-format
+msgid "You may not change $%s\n"
+msgstr "Du får inte ändra $%s\n"
+
+#, c-format
+msgid ""
+"%d failure since last login.\n"
+"Last was %s on %s.\n"
+msgid_plural ""
+"%d failures since last login.\n"
+"Last was %s on %s.\n"
+msgstr[0] ""
+"%d misslyckade sedan förra inloggningen\n"
+"Senast var %s den %s.\n"
+msgstr[1] ""
+"%d misslyckanden sedan förra inloggningen\n"
+"Senast var %s den %s.\n"
+
+#, c-format
+msgid "%s: Invalid configuration: GID_MIN (%lu), GID_MAX (%lu)\n"
+msgstr ""
+
+#, c-format
+msgid ""
+"%s: Invalid configuration: SYS_GID_MIN (%lu), GID_MIN (%lu), SYS_GID_MAX "
+"(%lu)\n"
+msgstr ""
+
+#, fuzzy, c-format
+#| msgid "Can't get unique UID (no more available UIDs)\n"
+msgid "%s: Can't get unique system GID (no more available GIDs)\n"
+msgstr "Kan inte få tag i unikt UID (inga fler tillgängliga UID)\n"
+
+#, fuzzy, c-format
+#| msgid "Can't get unique GID (no more available GIDs)\n"
+msgid "%s: Can't get unique GID (no more available GIDs)\n"
+msgstr "Kan inte få tag i unikt GID (inga fler tillgängliga GID)\n"
+
+#, c-format
+msgid "%s: Invalid configuration: UID_MIN (%lu), UID_MAX (%lu)\n"
+msgstr ""
+
+#, c-format
+msgid ""
+"%s: Invalid configuration: SYS_UID_MIN (%lu), UID_MIN (%lu), SYS_UID_MAX "
+"(%lu)\n"
+msgstr ""
+
+#, fuzzy, c-format
+#| msgid "Can't get unique UID (no more available UIDs)\n"
+msgid "%s: Can't get unique system UID (no more available UIDs)\n"
+msgstr "Kan inte få tag i unikt UID (inga fler tillgängliga UID)\n"
+
+#, fuzzy, c-format
+#| msgid "Can't get unique UID (no more available UIDs)\n"
+msgid "%s: Can't get unique UID (no more available UIDs)\n"
+msgstr "Kan inte få tag i unikt UID (inga fler tillgängliga UID)\n"
+
+msgid "Too many logins.\n"
+msgstr "För många inloggningsförsök.\n"
+
+msgid "You have new mail."
+msgstr "Du har ny post."
+
+msgid "No mail."
+msgstr "Ingen post."
+
+msgid "You have mail."
+msgstr "Du har post."
+
+msgid "no change"
+msgstr "ingen ändring"
+
+msgid "a palindrome"
+msgstr "en palindrom"
+
+msgid "case changes only"
+msgstr "endast ändring av gemener/versaler"
+
+msgid "too similar"
+msgstr "för likt"
+
+msgid "too simple"
+msgstr "för enkelt"
+
+msgid "rotated"
+msgstr "roterat"
+
+msgid "too short"
+msgstr "för kort"
+
+#, c-format
+msgid "Bad password: %s.  "
+msgstr "Felaktigt lösenord: %s. "
+
+#, c-format
+msgid "passwd: pam_start() failed, error %d\n"
+msgstr "passwd: pam_start() misslyckades, fel %d\n"
+
+#, c-format
+msgid "passwd: %s\n"
+msgstr "passwd: %s\n"
+
+#, fuzzy
+#| msgid "Password changed."
+msgid "passwd: password unchanged\n"
+msgstr "Lösenordet ändrat."
+
+msgid "passwd: password updated successfully\n"
+msgstr "passwd: uppdatering av lösenord lyckades\n"
+
+#, c-format
+msgid "Incorrect password for %s.\n"
+msgstr "Felaktigt lösenord för %s.\n"
+
+#, c-format
+msgid ""
+"Invalid ENCRYPT_METHOD value: '%s'.\n"
+"Defaulting to DES.\n"
+msgstr ""
+"Ogiltigt värde för ENCRYPT_METHOD: \"%s\".\n"
+"Faller tillbaka på DES.\n"
+
+#, c-format
+msgid "Unable to cd to '%s'\n"
+msgstr "Kunde inte byta katalog till \"%s\"\n"
+
+msgid "No directory, logging in with HOME=/"
+msgstr "Ingen katalog, loggar in med HOME=/"
+
+#, c-format
+msgid "Cannot execute %s"
+msgstr "Kunde inte starta %s"
+
+#, c-format
+msgid "Invalid root directory '%s'\n"
+msgstr "Felaktig rotkatalog \"%s\"\n"
+
+#, c-format
+msgid "Can't change root directory to '%s'\n"
+msgstr "Kan inte ändra rotkatalog till \"%s\"\n"
+
+msgid "Unable to determine your tty name."
+msgstr "Kunde inte fastställa ditt tty-namn."
+
+#, c-format
+msgid "malloc(%d) failed\n"
+msgstr "malloc(%d) misslyckades\n"
+
+#, fuzzy
+#| msgid "No\n"
+msgid "No"
+msgstr "Nej\n"
+
+#, fuzzy
+#| msgid ""
+#| "Usage: chage [options] [LOGIN]\n"
+#| "\n"
+#| "Options:\n"
+#| "  -d, --lastday LAST_DAY        set last password change to LAST_DAY\n"
+#| "  -E, --expiredate EXPIRE_DATE  set account expiration date to "
+#| "EXPIRE_DATE\n"
+#| "  -h, --help                    display this help message and exit\n"
+#| "  -I, --inactive INACTIVE       set password inactive after expiration\n"
+#| "                                to INACTIVE\n"
+#| "  -l, --list                    show account aging information\n"
+#| "  -m, --mindays MIN_DAYS        set minimum number of days before "
+#| "password\n"
+#| "                                change to MIN_DAYS\n"
+#| "  -M, --maxdays MAX_DAYS        set maximim number of days before "
+#| "password\n"
+#| "                                change to MAX_DAYS\n"
+#| "  -W, --warndays WARN_DAYS      set expiration warning days to WARN_DAYS\n"
+#| "\n"
+msgid ""
+"Usage: chage [options] [LOGIN]\n"
+"\n"
+"Options:\n"
+"  -d, --lastday LAST_DAY        set date of last password change to "
+"LAST_DAY\n"
+"  -E, --expiredate EXPIRE_DATE  set account expiration date to EXPIRE_DATE\n"
+"  -h, --help                    display this help message and exit\n"
+"  -I, --inactive INACTIVE       set password inactive after expiration\n"
+"                                to INACTIVE\n"
+"  -l, --list                    show account aging information\n"
+"  -m, --mindays MIN_DAYS        set minimum number of days before password\n"
+"                                change to MIN_DAYS\n"
+"  -M, --maxdays MAX_DAYS        set maximim number of days before password\n"
+"                                change to MAX_DAYS\n"
+"  -W, --warndays WARN_DAYS      set expiration warning days to WARN_DAYS\n"
+"\n"
+msgstr ""
+"Användning: chage [flaggor] [KONTO]\n"
+"\n"
+"Flaggor:\n"
+"  -d, --lastday DAG             ställ in senaste lösenordsändringen till "
+"DAG\n"
+"  -E, --expiredate DATUM        ställ in utgångsdatum för konto till DATUM\n"
+"  -h, --help                    visa detta hjälpmeddelande och avsluta\n"
+"  -I, --inactive INAKTIV        ställ in lösenordet till inaktivt efter\n"
+"                                utgångsdatum till INAKTIV\n"
+"  -l, --list                    visa åldringsinformation för konto\n"
+"  -m, --mindays MIN_DAG         ställ in minimum antal dagar innan "
+"lösenordet\n"
+"                                måste bytas till MIN_DAG\n"
+"  -M, --maxdays MAX_DAG         ställ in maximum antal dagar innan "
+"lösenordet\n"
+"                                måste bytas till MAX_DAG\n"
+"  -W, --warndays VARN_DAG       ställ in antal dagar för varning innan\n"
+"                                utgångsdatum till VARN_DAG\n"
+"\n"
+
+msgid "Enter the new value, or press ENTER for the default"
+msgstr "Ange det nya värdet eller tryck ENTER för standardvärdet"
+
+msgid "Minimum Password Age"
+msgstr "Minimum lösenordsålder"
+
+msgid "Maximum Password Age"
+msgstr "Maximum lösenordsålder"
+
+msgid "Last Password Change (YYYY-MM-DD)"
+msgstr "Senaste lösenordsändringen (ÅÅÅÅ-MM-DD)"
+
+msgid "Password Expiration Warning"
+msgstr "Utlöpsvarning för lösenord"
+
+msgid "Password Inactive"
+msgstr "Lösenordet inaktivt"
+
+msgid "Account Expiration Date (YYYY-MM-DD)"
+msgstr "Utlöpsdatum för kontot (ÅÅÅÅ-MM-DD)"
+
+msgid "Last password change\t\t\t\t\t: "
+msgstr "Senaste lösenordsändringen\t\t\t\t: "
+
+msgid "never"
+msgstr "aldrig"
+
+msgid "password must be changed"
+msgstr "lösenordet måste ändras"
+
+msgid "Password expires\t\t\t\t\t: "
+msgstr "Lösenordet löper ut\t\t\t\t\t: "
+
+msgid "Password inactive\t\t\t\t\t: "
+msgstr "Lösenordet inaktivt\t\t\t\t\t: "
+
+msgid "Account expires\t\t\t\t\t\t: "
+msgstr "Kontot löper ut\t\t\t\t\t\t: "
+
+#, c-format
+msgid "Minimum number of days between password change\t\t: %ld\n"
+msgstr "Minimum antal dagar mellan lösenordsändringar\t\t: %ld\n"
+
+#, c-format
+msgid "Maximum number of days between password change\t\t: %ld\n"
+msgstr "Maximum antal dagar mellan lösenordsändringar\t\t: %ld\n"
+
+#, c-format
+msgid "Number of days of warning before password expires\t: %ld\n"
+msgstr "Antal dagar med varningar före lösenordet löper ut\t: %ld\n"
+
+#, c-format
+msgid "%s: invalid date '%s'\n"
+msgstr "%s: ogiltigt datum \"%s\"\n"
+
+#, c-format
+msgid "%s: invalid numeric argument '%s'\n"
+msgstr "%s: ogiltigt numeriskt argument \"%s\"\n"
+
+#, c-format
+msgid "%s: do not include \"l\" with other flags\n"
+msgstr "%s: inkludera inte \"l\" med andra flaggor\n"
+
+#, c-format
+msgid "%s: Permission denied.\n"
+msgstr "%s: Åtkomst nekad.\n"
+
+#, c-format
+msgid "%s: Cannot determine your user name.\n"
+msgstr "%s: Kan inte fastställa ditt användarnamn.\n"
+
+#, c-format
+msgid "%s: PAM authentication failed\n"
+msgstr "%s: PAM autentisering misslyckades\n"
+
+#, fuzzy, c-format
+#| msgid "%s: can't lock files, try again later\n"
+msgid "%s: cannot lock %s; try again later.\n"
+msgstr "%s: kan inte låsa filer, försök igen senare\n"
+
+#, fuzzy, c-format
+#| msgid "%s: cannot open file %s\n"
+msgid "%s: cannot open %s\n"
+msgstr "%s: kan inte öppna filen %s\n"
+
+#, fuzzy, c-format
+#| msgid "%s: failure forking: %s\n"
+msgid "%s: failure while writing changes to %s\n"
+msgstr "%s: fel vid processgrening: %s\n"
+
+#, fuzzy, c-format
+#| msgid "%s: failed to drop privileges (%s)\n"
+msgid "%s: failed to prepare the new %s entry '%s'\n"
+msgstr "%s: misslyckades med att kasta rättigheterna (%s)\n"
+
+#, c-format
+msgid "%s: the shadow password file is not present\n"
+msgstr "%s: skugglösenordsfilen finns inte\n"
+
+#, c-format
+msgid "%s: failed to drop privileges (%s)\n"
+msgstr "%s: misslyckades med att kasta rättigheterna (%s)\n"
+
+#, fuzzy, c-format
+#| msgid "%s: user `%s' does not exist\n"
+msgid "%s: user '%s' does not exist in %s\n"
+msgstr "%s: användaren \"%s\" finns inte\n"
+
+#, c-format
+msgid "Changing the aging information for %s\n"
+msgstr "Ändrar åldersinformationen för %s\n"
+
+#, c-format
+msgid "%s: error changing fields\n"
+msgstr "%s: fel vid ändring av fält\n"
+
+#, c-format
+msgid ""
+"Usage: %s [-f full_name] [-r room_no] [-w work_ph]\n"
+"\t[-h home_ph] [-o other] [user]\n"
+msgstr ""
+"Användning: %s [-f fullt_namn] [-r rums_nr] [-w arb_tel]\n"
+"\t[-h hem_tel] [-o annat] [användare]\n"
+
+#, c-format
+msgid "Usage: %s [-f full_name] [-r room_no] [-w work_ph] [-h home_ph]\n"
+msgstr ""
+"Användning: %s [-f fullt_namn] [-r rums_nr] [-w arb_tel] [-h hem_tel]\n"
+
+msgid "Full Name"
+msgstr "Helt namn"
+
+#, fuzzy, c-format
+#| msgid "%s: %s\n"
+msgid "\t%s: %s\n"
+msgstr "%s: %s\n"
+
+msgid "Room Number"
+msgstr "Rumsnummer"
+
+msgid "Work Phone"
+msgstr "Telefonnummer (arbete)"
+
+msgid "Home Phone"
+msgstr "Telefonnummer (hem)"
+
+msgid "Other"
+msgstr "Övrigt"
+
+msgid "Cannot change ID to root.\n"
+msgstr "Kan inte ändra ID till root.\n"
+
+#, c-format
+msgid "%s: name with non-ASCII characters: '%s'\n"
+msgstr ""
+
+#, c-format
+msgid "%s: invalid name: '%s'\n"
+msgstr "%s: ogiltigt namn: \"%s\"\n"
+
+#, c-format
+msgid "%s: room number with non-ASCII characters: '%s'\n"
+msgstr ""
+
+#, c-format
+msgid "%s: invalid room number: '%s'\n"
+msgstr "%s: ogiltigt rumsnummer: \"%s\"\n"
+
+#, c-format
+msgid "%s: invalid work phone: '%s'\n"
+msgstr "%s: ogiltigt telefonnummer (arbete): \"%s\"\n"
+
+#, c-format
+msgid "%s: invalid home phone: '%s'\n"
+msgstr "%s: ogiltigt telefonnummer (hem): \"%s\"\n"
+
+#, fuzzy, c-format
+#| msgid "%s: '%s' contains illegal characters\n"
+msgid "%s: '%s' contains non-ASCII characters\n"
+msgstr "%s: \"%s\" innehåller ogiltiga tecken\n"
+
+#, c-format
+msgid "%s: '%s' contains illegal characters\n"
+msgstr "%s: \"%s\" innehåller ogiltiga tecken\n"
+
+#, fuzzy, c-format
+#| msgid "%s: user `%s' does not exist\n"
+msgid "%s: user '%s' does not exist\n"
+msgstr "%s: användaren \"%s\" finns inte\n"
+
+#, c-format
+msgid "%s: cannot change user '%s' on NIS client.\n"
+msgstr "%s: kan inte ändra användare \"%s\" på en NIS-klient.\n"
+
+#, c-format
+msgid "%s: '%s' is the NIS master for this client.\n"
+msgstr "%s: \"%s\" är NIS-master för denna klient.\n"
+
+#, c-format
+msgid "Changing the user information for %s\n"
+msgstr "Ändrar användarinformationen för %s\n"
+
+#, c-format
+msgid "%s: fields too long\n"
+msgstr "%s: fälten för långa\n"
+
+#, c-format
+msgid ""
+"Usage: %s [options]\n"
+"\n"
+"Options:\n"
+"  -c, --crypt-method            the crypt method (one of %s)\n"
+"  -e, --encrypted               supplied passwords are encrypted\n"
+"  -h, --help                    display this help message and exit\n"
+"  -m, --md5                     encrypt the clear text password using\n"
+"                                the MD5 algorithm\n"
+"%s\n"
+msgstr ""
+"Användning: %s [flaggor]\n"
+"\n"
+"Flaggor:\n"
+"  -c, --crypt-method            krypteringsmetoden (en av %s)\n"
+"  -e, --encrypted               angivna lösenord är krypterade\n"
+"  -h, --help                    visa detta hjälpmeddelande och avsluta.\n"
+"  -m, --md5                     kryptera klartextlösenordet med\n"
+"                                MD5-algoritmen\n"
+"%s\n"
+
+msgid ""
+"  -s, --sha-rounds              number of SHA rounds for the SHA*\n"
+"                                crypt algorithms\n"
+msgstr ""
+"  -s, --sha-rounds              antal SHA-rundor för SHA*-\n"
+"                                krypteringsalgoritmerna\n"
+
+#, fuzzy, c-format
+#| msgid "%s: %s flag is ONLY allowed with the %s flag\n"
+msgid "%s: %s flag is only allowed with the %s flag\n"
+msgstr "%s: flaggan %s tillåts ENDAST med flaggan %s\n"
+
+#, c-format
+msgid "%s: the -c, -e, and -m flags are exclusive\n"
+msgstr "%s: flaggorna -c, -e och -m är uteslutande\n"
+
+#, c-format
+msgid "%s: unsupported crypt method: %s\n"
+msgstr "%s: krypteringsmetoden stöds inte: %s\n"
+
+#, c-format
+msgid "%s: line %d: line too long\n"
+msgstr "%s: rad %d: raden för lång\n"
+
+#, c-format
+msgid "%s: line %d: missing new password\n"
+msgstr "%s: rad %d: saknar nytt lösenord\n"
+
+#, fuzzy, c-format
+#| msgid "%s: group %s does not exist\n"
+msgid "%s: line %d: group '%s' does not exist\n"
+msgstr "%s: gruppen %s finns inte\n"
+
+#, fuzzy, c-format
+#| msgid "%s: line %d: can't update entry\n"
+msgid "%s: line %d: failed to prepare the new %s entry '%s'\n"
+msgstr "%s: rad %d: kan inte uppdatera post\n"
+
+#, c-format
+msgid "%s: error detected, changes ignored\n"
+msgstr "%s: ett fel upptäcktes, ändringar ignorerade\n"
+
+#, fuzzy, c-format
+#| msgid "Usage: %s [input]\n"
+msgid ""
+"Usage: %s [options]\n"
+"\n"
+"Options:\n"
+msgstr "Användning: %s [inmatning]\n"
+
+#, c-format
+msgid "  -c, --crypt-method <METHOD>   the crypt method (one of %s)\n"
+msgstr ""
+
+msgid "  -e, --encrypted               supplied passwords are encrypted\n"
+msgstr ""
+
+msgid "  -h, --help                    display this help message and exit\n"
+msgstr ""
+
+#, fuzzy
+#| msgid ""
+#| "  -s, --sha-rounds              number of SHA rounds for the SHA*\n"
+#| "                                crypt algorithms\n"
+msgid ""
+"  -m, --md5                     encrypt the clear text password using\n"
+"                                the MD5 algorithm\n"
+msgstr ""
+"  -s, --sha-rounds              antal SHA-rundor för SHA*-\n"
+"                                krypteringsalgoritmerna\n"
+
+#, fuzzy, c-format
+#| msgid "%s: user `%s' does not exist\n"
+msgid "%s: (line %d, user %s) password not changed\n"
+msgstr "%s: användaren \"%s\" finns inte\n"
+
+#, fuzzy, c-format
+#| msgid "%s: user `%s' does not exist\n"
+msgid "%s: line %d: user '%s' does not exist\n"
+msgstr "%s: användaren \"%s\" finns inte\n"
+
+msgid ""
+"Usage: chsh [options] [LOGIN]\n"
+"\n"
+"Options:\n"
+"  -h, --help                    display this help message and exit\n"
+"  -s, --shell SHELL             new login shell for the user account\n"
+"\n"
+msgstr ""
+"Användning: chsh [flaggor] [KONTO]\n"
+"\n"
+"Flaggor:\n"
+"  -h, --help                    visa detta hjälpmeddelande och avsluta\n"
+"  -s, --shell SHELL             nytt inloggningsskal för användarkontot\n"
+"\n"
+
+msgid "Login Shell"
+msgstr "Inloggningsskal"
+
+#, fuzzy, c-format
+#| msgid "You may not change the shell for %s.\n"
+msgid "You may not change the shell for '%s'.\n"
+msgstr "Du får inte ändra skalet för %s.\n"
+
+#, c-format
+msgid "Changing the login shell for %s\n"
+msgstr "Ändrar inloggningsskal för %s\n"
+
+#, c-format
+msgid "%s: Invalid entry: %s\n"
+msgstr "%s: Ogiltig post: %s\n"
+
+#, fuzzy, c-format
+#| msgid "%s is an invalid shell.\n"
+msgid "%s: %s is an invalid shell\n"
+msgstr "%s är ett ogiltigt skal.\n"
+
+#, fuzzy, c-format
+#| msgid "%s: user %s does not exist\n"
+msgid "%s: Warning: %s does not exist\n"
+msgstr "%s: användaren %s finns inte\n"
+
+#, fuzzy, c-format
+#| msgid "%s: warning: %s not owned by %s\n"
+msgid "%s: Warning: %s is not executable\n"
+msgstr "%s: varning: %s ägs inte av %s\n"
+
+msgid "Usage: expiry {-f|-c}\n"
+msgstr "Användning: expiry {-f|-c}\n"
+
+msgid "  -a, --all                     display faillog records for all users\n"
+msgstr ""
+
+msgid ""
+"  -l, --lock-secs SEC           after failed login lock account for SEC "
+"seconds\n"
+msgstr ""
+
+msgid ""
+"  -m, --maximum MAX             set maximum failed login counters to MAX\n"
+msgstr ""
+
+msgid "  -r, --reset                   reset the counters of login failures\n"
+msgstr ""
+
+msgid ""
+"  -t, --time DAYS               display faillog records more recent than "
+"DAYS\n"
+msgstr ""
+
+msgid ""
+"  -u, --user LOGIN/RANGE        display faillog record or maintains failure\n"
+"                                counters and limits (if used with -r, -m,\n"
+"                                or -l) only for the specified LOGIN(s)\n"
+msgstr ""
+
+#, c-format
+msgid "faillog: Failed to get the entry for UID %lu\n"
+msgstr ""
+
+msgid "Login       Failures Maximum Latest                   On\n"
+msgstr "Användare       Fel      Max Senaste                  På\n"
+
+#, fuzzy, c-format
+#| msgid " [%lds left]"
+msgid " [%lus left]"
+msgstr " [%lds kvar]"
+
+#, c-format
+msgid " [%lds lock]"
+msgstr " [%lds låsta]"
+
+#, c-format
+msgid "faillog: Failed to reset fail count for UID %lu\n"
+msgstr ""
+
+#, c-format
+msgid "faillog: Failed to set max for UID %lu\n"
+msgstr ""
+
+#, c-format
+msgid "faillog: Failed to set locktime for UID %lu\n"
+msgstr ""
+
+#, fuzzy, c-format
+#| msgid "Unknown user or range: %s\n"
+msgid "lastlog: Unknown user or range: %s\n"
+msgstr "Okänd användare eller intervall: %s\n"
+
+#, fuzzy, c-format
+#| msgid "%s: cannot open file %s\n"
+msgid "faillog: Cannot open %s: %s\n"
+msgstr "%s: kan inte öppna filen %s\n"
+
+#, c-format
+msgid "faillog: Cannot get the size of %s: %s\n"
+msgstr ""
+
+#, fuzzy, c-format
+#| msgid "Usage: %s [input]\n"
+msgid ""
+"Usage: %s [option] GROUP\n"
+"\n"
+"Options:\n"
+msgstr "Användning: %s [inmatning]\n"
+
+msgid "  -a, --add USER                add USER to GROUP\n"
+msgstr ""
+
+msgid "  -d, --delete USER             remove USER from GROUP\n"
+msgstr ""
+
+msgid "  -r, --remove-password         remove the GROUP's password\n"
+msgstr ""
+
+msgid ""
+"  -R, --restrict                restrict access to GROUP to its members\n"
+msgstr ""
+
+msgid "  -M, --members USER,...        set the list of members of GROUP\n"
+msgstr ""
+
+msgid ""
+"  -A, --administrators ADMIN,...\n"
+"                                set the list of administrators for GROUP\n"
+msgstr ""
+
+#, fuzzy
+#| msgid "The password for %s cannot be changed.\n"
+msgid "Except for the -A and -M options, the options cannot be combined.\n"
+msgstr "Lösenordet för %s kan inte ändras.\n"
+
+#, fuzzy
+#| msgid "The password for %s cannot be changed.\n"
+msgid "The options cannot be combined.\n"
+msgstr "Lösenordet för %s kan inte ändras.\n"
+
+#, c-format
+msgid "%s: shadow group passwords required for -A\n"
+msgstr "%s: lösenord för skuggrupper krävs för -A\n"
+
+#, fuzzy, c-format
+#| msgid "%s: group %s does not exist\n"
+msgid "%s: group '%s' does not exist in %s\n"
+msgstr "%s: gruppen %s finns inte\n"
+
+#, fuzzy, c-format
+#| msgid "%s: failure forking: %s\n"
+msgid "%s: failure while closing read-only %s\n"
+msgstr "%s: fel vid processgrening: %s\n"
+
+#, c-format
+msgid "Changing the password for group %s\n"
+msgstr "Ändrar lösenordet för gruppen %s\n"
+
+msgid "New Password: "
+msgstr "Nytt lösenord: "
+
+msgid "Re-enter new password: "
+msgstr "Ange nytt lösenord igen: "
+
+msgid "They don't match; try again"
+msgstr "De stämde inte överens, försök igen"
+
+#, c-format
+msgid "%s: Try again later\n"
+msgstr "%s: Försök igen senare\n"
+
+#, c-format
+msgid "Adding user %s to group %s\n"
+msgstr "Lägger till användaren %s till gruppen %s\n"
+
+#, c-format
+msgid "Removing user %s from group %s\n"
+msgstr "Ta bort användaren %s från gruppen %s\n"
+
+#, fuzzy, c-format
+#| msgid "%s: user `%s' does not exist\n"
+msgid "%s: user '%s' is not a member of '%s'\n"
+msgstr "%s: användaren \"%s\" finns inte\n"
+
+#, c-format
+msgid "%s: Not a tty\n"
+msgstr "%s: Inte en tty\n"
+
+#, fuzzy, c-format
+#| msgid "Usage: %s [input]\n"
+msgid ""
+"Usage: %s [options] GROUP\n"
+"\n"
+"Options:\n"
+msgstr "Användning: %s [inmatning]\n"
+
+#, fuzzy
+#| msgid ""
+#| "  -s, --sha-rounds              number of SHA rounds for the SHA*\n"
+#| "                                crypt algorithms\n"
+msgid ""
+"  -f, --force                   exit successfully if the group already "
+"exists,\n"
+"                                and cancel -g if the GID is already used\n"
+msgstr ""
+"  -s, --sha-rounds              antal SHA-rundor för SHA*-\n"
+"                                krypteringsalgoritmerna\n"
+
+msgid "  -g, --gid GID                 use GID for the new group\n"
+msgstr ""
+
+msgid "  -K, --key KEY=VALUE           override /etc/login.defs defaults\n"
+msgstr ""
+
+#, fuzzy
+#| msgid ""
+#| "  -s, --sha-rounds              number of SHA rounds for the SHA*\n"
+#| "                                crypt algorithms\n"
+msgid ""
+"  -o, --non-unique              allow to create groups with duplicate\n"
+"                                (non-unique) GID\n"
+msgstr ""
+"  -s, --sha-rounds              antal SHA-rundor för SHA*-\n"
+"                                krypteringsalgoritmerna\n"
+
+msgid ""
+"  -p, --password PASSWORD       use this encrypted password for the new "
+"group\n"
+msgstr ""
+
+msgid "  -r, --system                  create a system account\n"
+msgstr ""
+
+#, fuzzy, c-format
+#| msgid "%s: %s is not a valid group name\n"
+msgid "%s: '%s' is not a valid group name\n"
+msgstr "%s: %s är inte ett giltigt gruppnamn\n"
+
+#, fuzzy, c-format
+#| msgid "%s: invalid group name `%s'\n"
+msgid "%s: invalid group ID '%s'\n"
+msgstr "%s: ogiltigt gruppnamn \"%s\"\n"
+
+#, c-format
+msgid "%s: -K requires KEY=VALUE\n"
+msgstr "%s: -K kräver KEY=VÄRDE\n"
+
+#, fuzzy, c-format
+#| msgid "%s: group %s exists\n"
+msgid "%s: group '%s' already exists\n"
+msgstr "%s: gruppen %s finns redan\n"
+
+#, fuzzy, c-format
+#| msgid "Member already exists\n"
+msgid "%s: GID '%lu' already exists\n"
+msgstr "Medlemmen finns redan\n"
+
+msgid "Usage: groupdel group\n"
+msgstr "Användning: groupdel grupp\n"
+
+#, fuzzy, c-format
+#| msgid "%s: cannot rename directory %s to %s\n"
+msgid "%s: cannot remove entry '%s' from %s\n"
+msgstr "%s: kunde inte byta namn på katalogen %s till %s\n"
+
+#, fuzzy, c-format
+#| msgid "%s: cannot change the primary group of user '%s' from %u to %u.\n"
+msgid "%s: cannot remove the primary group of user '%s'\n"
+msgstr ""
+"%s: kan inte ändra primära gruppen för användaren \"%s\" från %u till %u.\n"
+
+#, fuzzy, c-format
+#| msgid "%s: group %s does not exist\n"
+msgid "%s: group '%s' does not exist\n"
+msgstr "%s: gruppen %s finns inte\n"
+
+#, fuzzy, c-format
+#| msgid "%s: group '%s' is a NIS group.\n"
+msgid "%s: group '%s' is a NIS group\n"
+msgstr "%s: gruppen \"%s\" är en NIS-grupp.\n"
+
+#, c-format
+msgid "%s: %s is the NIS master\n"
+msgstr "%s: %s är NIS master\n"
+
+#, fuzzy, c-format
+#| msgid "%s: user %s is a NIS user\n"
+msgid "%s: user '%s' is already a member of '%s'\n"
+msgstr "%s: användaren %s är en NIS-användare\n"
+
+#, fuzzy, c-format
+#| msgid "%s: Out of memory. Cannot update the group database.\n"
+msgid "%s: Out of memory. Cannot update %s.\n"
+msgstr "%s: Slut på minne. Kan inte uppdatera gruppdatabasen.\n"
+
+#, fuzzy, c-format
+#| msgid "Usage: %s [input]\n"
+msgid ""
+"Usage: %s [options] [action]\n"
+"\n"
+"Options:\n"
+msgstr "Användning: %s [inmatning]\n"
+
+#, fuzzy
+#| msgid ""
+#| "  -s, --sha-rounds              number of SHA rounds for the SHA*\n"
+#| "                                crypt algorithms\n"
+msgid ""
+"  -g, --group groupname         change groupname instead of the user's "
+"group\n"
+"                                (root only)\n"
+msgstr ""
+"  -s, --sha-rounds              antal SHA-rundor för SHA*-\n"
+"                                krypteringsalgoritmerna\n"
+
+msgid "\n"
+msgstr ""
+
+msgid "Actions:\n"
+msgstr ""
+
+msgid ""
+"  -a, --add username            add username to the members of the group\n"
+msgstr ""
+
+msgid ""
+"  -d, --delete username         remove username from the members of the "
+"group\n"
+msgstr ""
+
+msgid "  -p, --purge                   purge all members from the group\n"
+msgstr ""
+
+msgid "  -l, --list                    list the members of the group\n"
+msgstr ""
+
+#, c-format
+msgid "%s: your groupname does not match your username\n"
+msgstr ""
+
+#, c-format
+msgid "%s: only root can use the -g/--group option\n"
+msgstr ""
+
+msgid "  -g, --gid GID                 change the group ID to GID\n"
+msgstr ""
+
+msgid "  -n, --new-name NEW_GROUP      change the name to NEW_GROUP\n"
+msgstr ""
+
+msgid ""
+"  -o, --non-unique              allow to use a duplicate (non-unique) GID\n"
+msgstr ""
+
+msgid ""
+"  -p, --password PASSWORD       change the password to this (encrypted)\n"
+"                                PASSWORD\n"
+msgstr ""
+
+#, fuzzy, c-format
+#| msgid "%s: invalid group name `%s'\n"
+msgid "%s: invalid group name '%s'\n"
+msgstr "%s: ogiltigt gruppnamn \"%s\"\n"
+
+#, c-format
+msgid "%s: group %s is a NIS group\n"
+msgstr "%s: gruppen %s är en NIS-grupp\n"
+
+#, c-format
+msgid "%s: unknown user %s\n"
+msgstr "%s: okänd användare %s\n"
+
+#, c-format
+msgid "Usage: %s [-r] [-s] [group [gshadow]]\n"
+msgstr "Användning: %s [-r] [-s] [grupp [gshadow]]\n"
+
+#, c-format
+msgid "Usage: %s [-r] [-s] [group]\n"
+msgstr "Användning: %s [-r] [-s] [grupp]\n"
+
+#, c-format
+msgid "%s: -s and -r are incompatibile\n"
+msgstr "%s: -s och -r är inkompatibla\n"
+
+msgid "invalid group file entry"
+msgstr "ogiltig post i gruppfil"
+
+#, c-format
+msgid "delete line '%s'? "
+msgstr "ta bort rad \"%s\"? "
+
+msgid "duplicate group entry"
+msgstr "dubblerade grupposter"
+
+#, c-format
+msgid "invalid group name '%s'\n"
+msgstr "ogiltigt gruppnamn \"%s\"\n"
+
+#, fuzzy, c-format
+#| msgid "invalid group name '%s'\n"
+msgid "invalid group ID '%lu'\n"
+msgstr "ogiltigt gruppnamn \"%s\"\n"
+
+#, c-format
+msgid "group %s: no user %s\n"
+msgstr "grupp %s: ingen användare %s\n"
+
+#, c-format
+msgid "delete member '%s'? "
+msgstr "ta bort medlem \"%s\"? "
+
+#, c-format
+msgid "no matching group file entry in %s\n"
+msgstr "ingen matchande gruppfilspost i %s\n"
+
+#, fuzzy, c-format
+#| msgid "add group '%s' in %s ?"
+msgid "add group '%s' in %s? "
+msgstr "lägg till grupp \"%s\" i %s ?"
+
+#, c-format
+msgid ""
+"group %s has an entry in %s, but its password field in %s is not set to 'x'\n"
+msgstr ""
+
+msgid "invalid shadow group file entry"
+msgstr "ogiltig post i fil för skuggrupper"
+
+msgid "duplicate shadow group entry"
+msgstr "duplikata poster i skuggrupp"
+
+#, c-format
+msgid "shadow group %s: no administrative user %s\n"
+msgstr "skuggrupp %s: ingen administrativ användare %s\n"
+
+#, c-format
+msgid "delete administrative member '%s'? "
+msgstr "ta bort administrativ medlem \"%s\"? "
+
+#, c-format
+msgid "shadow group %s: no user %s\n"
+msgstr "skuggrupp %s: ingen användare %s\n"
+
+#, c-format
+msgid "%s: the files have been updated\n"
+msgstr "%s: filerna har uppdaterats\n"
+
+#, c-format
+msgid "%s: no changes\n"
+msgstr "%s: inga ändringar\n"
+
+#, fuzzy
+#| msgid "Usage: groupdel group\n"
+msgid "Usage: grpconv\n"
+msgstr "Användning: groupdel grupp\n"
+
+#, fuzzy
+#| msgid "Usage: groupdel group\n"
+msgid "Usage: grpunconv\n"
+msgstr "Användning: groupdel grupp\n"
+
+#, fuzzy, c-format
+#| msgid "%s: cannot update file %s\n"
+msgid "%s: cannot delete %s\n"
+msgstr "%s: kan inte uppdatera filen %s\n"
+
+msgid "Usage: id [-a]\n"
+msgstr "Usage: id [-a]\n"
+
+msgid "Usage: id\n"
+msgstr "Användning: id\n"
+
+msgid " groups="
+msgstr " grupper="
+
+msgid ""
+"Usage: lastlog [options]\n"
+"\n"
+"Options:\n"
+"  -b, --before DAYS             print only lastlog records older than DAYS\n"
+"  -h, --help                    display this help message and exit\n"
+"  -t, --time DAYS               print only lastlog records more recent than "
+"DAYS\n"
+"  -u, --user LOGIN              print lastlog record of the specified LOGIN\n"
+"\n"
+msgstr ""
+"Användning: lastlog [flaggor]\n"
+"\n"
+"Flaggor:\n"
+"  -b, --before DAGAR    skriv endast ut lastlog information äldre än DAGAR\n"
+"  -h, --help            visa detta hjälpmeddelande och avsluta\n"
+"  -t, --time DAGAR      skriv endast ut lastlog information senare än DAGAR\n"
+"  -u, --user LOGIN      skriv ut lastlog information för användare\n"
+"                        angiven med LOGIN\n"
+"\n"
+
+#, c-format
+msgid "lastlog: Failed to get the entry for UID %lu\n"
+msgstr ""
+
+msgid "Username         Port     From             Latest"
+msgstr "Användarnamn      Port     Från             Senast"
+
+msgid "Username                Port     Latest"
+msgstr "Användarnamn        Port     Senast"
+
+msgid "**Never logged in**"
+msgstr "**Aldrig varit inloggad**"
+
+#, c-format
+msgid "lastlog: unexpected argument: %s\n"
+msgstr "lastlog: oväntat argument: %s\n"
+
+#, c-format
+msgid "lastlog: Cannot get the size of %s: %s\n"
+msgstr ""
+
+#, c-format
+msgid "Usage: %s [-p] [name]\n"
+msgstr "Användning: %s [-p] [namn]\n"
+
+#, c-format
+msgid "       %s [-p] [-h host] [-f name]\n"
+msgstr "       %s [-p] [-h värd] [-f namn]\n"
+
+#, c-format
+msgid "       %s [-p] -r host\n"
+msgstr "       %s [-p] -r värd\n"
+
+#, c-format
+msgid "configuration error - cannot parse %s value: '%d'"
+msgstr ""
+
+msgid "Invalid login time"
+msgstr "Ogiltig inloggningstid"
+
+msgid ""
+"\n"
+"System closed for routine maintenance"
+msgstr ""
+"\n"
+"Systemet nedstängt för rutinmässigt underhåll"
+
+msgid ""
+"\n"
+"[Disconnect bypassed -- root login allowed.]"
+msgstr ""
+"\n"
+"[Nedkoppling kringgådd -- rootinloggning tillåten.]"
+
+#, fuzzy, c-format
+#| msgid ""
+#| "\n"
+#| "Login timed out after %d seconds.\n"
+msgid ""
+"\n"
+"Login timed out after %u seconds.\n"
+msgstr ""
+"\n"
+"Inloggning tog slut efter %d sekunder.\n"
+
+#, c-format
+msgid "%s: Cannot possibly work without effective root\n"
+msgstr ""
+
+msgid "No utmp entry.  You must exec \"login\" from the lowest level \"sh\""
+msgstr "Ingen utmp post.  Du måste köra \"login\" från den lägsta nivån \"sh\""
+
+#, c-format
+msgid "login: PAM Failure, aborting: %s\n"
+msgstr "login: PAM misslyckades, avbryter: %s\n"
+
+#, c-format
+msgid "%s login: "
+msgstr "%s inloggning: "
+
+msgid "login: "
+msgstr "inloggning: "
+
+#, fuzzy, c-format
+#| msgid "Maximum number of tries exceeded (%d)\n"
+msgid "Maximum number of tries exceeded (%u)\n"
+msgstr "Maximalt antal försök överskreds (%d)\n"
+
+msgid "login: abort requested by PAM\n"
+msgstr "login: avbryt begärdes av PAM\n"
+
+msgid "Login incorrect"
+msgstr "Inloggning misslyckad"
+
+#, c-format
+msgid ""
+"\n"
+"%s login: "
+msgstr ""
+"\n"
+"%s inloggning: "
+
+#, c-format
+msgid "%s: failure forking: %s"
+msgstr "%s: fel vid processdelning: %s"
+
+#, c-format
+msgid "TIOCSCTTY failed on %s"
+msgstr "TIOCSCTTY misslyckades på %s"
+
+msgid "Warning: login re-enabled after temporary lockout."
+msgstr "Varning: inloggning återaktiverad efter temporär nedstängning."
+
+#, c-format
+msgid "Last login: %s on %s"
+msgstr "Senast inloggad: %s på %s"
+
+#, c-format
+msgid "Last login: %.19s on %s"
+msgstr "Senast inloggad: %.19s på %s"
+
+#, c-format
+msgid " from %.*s"
+msgstr " från %.*s"
+
+msgid ""
+"login time exceeded\n"
+"\n"
+msgstr ""
+"inloggningstid överskriden\n"
+"\n"
+
+#, fuzzy
+#| msgid "Usage: id\n"
+msgid "Usage: logoutd\n"
+msgstr "Användning: id\n"
+
+msgid "Usage: newgrp [-] [group]\n"
+msgstr "Användning: newgrp [-] [grupp]\n"
+
+msgid "Usage: sg group [[-c] command]\n"
+msgstr "Användning: sg grupp [[-c] kommando]\n"
+
+msgid "Invalid password.\n"
+msgstr "Ogiltigt lösenord.\n"
+
+#, c-format
+msgid "%s: failure forking: %s\n"
+msgstr "%s: fel vid processgrening: %s\n"
+
+#, fuzzy, c-format
+#| msgid "%s: user `%s' does not exist\n"
+msgid "%s: GID '%lu' does not exist\n"
+msgstr "%s: användaren \"%s\" finns inte\n"
+
+msgid "too many groups\n"
+msgstr "för många grupper\n"
+
+#, c-format
+msgid "  -c, --crypt-method            the crypt method (one of %s)\n"
+msgstr ""
+
+msgid "  -r, --system                  create system accounts\n"
+msgstr ""
+
+#, fuzzy, c-format
+#| msgid "%s: group %s is a shadow group, but does not exist in /etc/group\n"
+msgid "%s: group '%s' is a shadow group, but does not exist in /etc/group\n"
+msgstr "%s: gruppen %s är en skugg-grupp, men den finns inte i /etc/group\n"
+
+#, fuzzy, c-format
+#| msgid "%s: invalid user name '%s'\n"
+msgid "%s: invalid user ID '%s'\n"
+msgstr "%s: ogiltigt användarnamn \"%s\"\n"
+
+#, c-format
+msgid "%s: invalid user name '%s'\n"
+msgstr "%s: ogiltigt användarnamn \"%s\"\n"
+
+#, c-format
+msgid "%s: line %d: invalid line\n"
+msgstr "%s: rad %d: ogiltig rad\n"
+
+#, c-format
+msgid "%s: cannot update the entry of user %s (not in the passwd database)\n"
+msgstr ""
+"%s: kan inte uppdatera posten för användaren %s (finns inte i passwd-"
+"databasen)\n"
+
+#, c-format
+msgid "%s: line %d: can't create user\n"
+msgstr "%s: rad %d: kan inte skapa användare\n"
+
+#, c-format
+msgid "%s: line %d: can't create group\n"
+msgstr "%s: rad %d: kan inte skapa grupp\n"
+
+#, fuzzy, c-format
+#| msgid "%s: user `%s' does not exist\n"
+msgid "%s: line %d: user '%s' does not exist in %s\n"
+msgstr "%s: användaren \"%s\" finns inte\n"
+
+#, c-format
+msgid "%s: line %d: can't update password\n"
+msgstr "%s: rad %d: kan inte uppdatera lösenord\n"
+
+#, fuzzy, c-format
+#| msgid "%s: line %d: mkdir failed\n"
+msgid "%s: line %d: mkdir %s failed: %s\n"
+msgstr "%s: rad %d: mkdir misslyckades\n"
+
+#, fuzzy, c-format
+#| msgid "%s: line %d: chown failed\n"
+msgid "%s: line %d: chown %s failed: %s\n"
+msgstr "%s: rad %d: chown misslyckades\n"
+
+#, c-format
+msgid "%s: line %d: can't update entry\n"
+msgstr "%s: rad %d: kan inte uppdatera post\n"
+
+#, fuzzy
+#| msgid ""
+#| "Usage: passwd [options] [LOGIN]\n"
+#| "\n"
+#| "Options:\n"
+#| "  -a, --all                     report password status on all accounts\n"
+#| "  -d, --delete                  delete the password for the named "
+#| "account\n"
+#| "  -e, --expire                  force expire the password for the named "
+#| "account\n"
+#| "  -h, --help                    display this help message and exit\n"
+#| "  -k, --keep-tokens             change password only if expired\n"
+#| "  -i, --inactive INACTIVE       set password inactive after expiration\n"
+#| "                                to INACTIVE\n"
+#| "  -l, --lock                    lock the named account\n"
+#| "  -n, --mindays MIN_DAYS        set minimum number of days before "
+#| "password\n"
+#| "                                change to MIN_DAYS\n"
+#| "  -q, --quiet                   quiet mode\n"
+#| "  -r, --repository REPOSITORY   change password in REPOSITORY repository\n"
+#| "  -S, --status                  report password status on the named "
+#| "account\n"
+#| "  -u, --unlock                  unlock the named account\n"
+#| "  -w, --warndays WARN_DAYS      set expiration warning days to WARN_DAYS\n"
+#| "  -x, --maxdays MAX_DAYS        set maximim number of days before "
+#| "password\n"
+#| "                                change to MAX_DAYS\n"
+#| "\n"
+msgid ""
+"Usage: passwd [options] [LOGIN]\n"
+"\n"
+"Options:\n"
+"  -a, --all                     report password status on all accounts\n"
+"  -d, --delete                  delete the password for the named account\n"
+"  -e, --expire                  force expire the password for the named "
+"account\n"
+"  -h, --help                    display this help message and exit\n"
+"  -k, --keep-tokens             change password only if expired\n"
+"  -i, --inactive INACTIVE       set password inactive after expiration\n"
+"                                to INACTIVE\n"
+"  -l, --lock                    lock the password of the named account\n"
+"  -n, --mindays MIN_DAYS        set minimum number of days before password\n"
+"                                change to MIN_DAYS\n"
+"  -q, --quiet                   quiet mode\n"
+"  -r, --repository REPOSITORY   change password in REPOSITORY repository\n"
+"  -S, --status                  report password status on the named account\n"
+"  -u, --unlock                  unlock the password of the named account\n"
+"  -w, --warndays WARN_DAYS      set expiration warning days to WARN_DAYS\n"
+"  -x, --maxdays MAX_DAYS        set maximum number of days before password\n"
+"                                change to MAX_DAYS\n"
+"\n"
+msgstr ""
+"Användning: passwd [flaggor] [KONTO]\n"
+"\n"
+"Flaggor:\n"
+"  -a, --all                     rapportera lösenordsstatus för alla konton\n"
+"  -d, --delete                  radera lösenordet för det angivna kontot\n"
+"  -e, --expire                  tvinga utlopp av lösenord för det angiva "
+"kontot\n"
+"  -h, --help                    visa detta hjälpmeddelande och avsluta\n"
+"  -k, --keep-tokens             ändra lösenord bara om det har löpt ut\n"
+"  -i, --inactive INAKTIVT       ställ in lösenordet till inaktivt efter\n"
+"                                utlöpsdatum till INAKTIVT\n"
+"  -l, --lock                    lås det angivna kontot\n"
+"  -n, --mindays MIN_DAG         ställ in minimum antal dagar innan "
+"lösenordet\n"
+"                                måste ändras till MIN_DAG\n"
+"  -q, --quiet                   tyst läge\n"
+"  -r, --repository REPOSITORY   ändra lösenordet i REPOSITORY repository\n"
+"  -S, --status                  rapportera lösenordsstatus för angivet "
+"konto\n"
+"  -u, --unlock                  lås upp det angivna kontot\n"
+"  -w, --warndays VARN_DAG       ställ in antal dagar för utlöpsvarning till "
+"VARN_DAG\n"
+"  -x, --maxdays MAX_DAG         ställ in maximum antal dagar innan "
+"lösenordet\n"
+"                                måste ändras till MAX_DAG\n"
+"\n"
+
+msgid "Old password: "
+msgstr "Gammalt lösenord: "
+
+#, c-format
+msgid ""
+"Enter the new password (minimum of %d characters)\n"
+"Please use a combination of upper and lower case letters and numbers.\n"
+msgstr ""
+"Ange det nya lösenordet (minimum %d tecken)\n"
+"Använd en kombination av stora och små bokstäver samt siffror.\n"
+
+#, c-format
+msgid ""
+"Enter the new password (minimum of %d, maximum of %d characters)\n"
+"Please use a combination of upper and lower case letters and numbers.\n"
+msgstr ""
+"Ange det nya lösenordet (minimum %d, maximum %d tecken)\n"
+"Använd en kombination av gemener, versaler och siffror.\n"
+
+msgid "New password: "
+msgstr "Nytt lösenord: "
+
+msgid "Try again."
+msgstr "Försök igen."
+
+msgid ""
+"\n"
+"Warning: weak password (enter it again to use it anyway)."
+msgstr ""
+"\n"
+"Varning: svagt lösenord (ange det igen för att använda det ändå)."
+
+msgid "They don't match; try again.\n"
+msgstr "De stämde inte, försök igen.\n"
+
+#, c-format
+msgid "The password for %s cannot be changed.\n"
+msgstr "Lösenordet för %s kan inte ändras.\n"
+
+#, c-format
+msgid "The password for %s cannot be changed yet.\n"
+msgstr "Lösenordet för %s kan inte ändras ännu.\n"
+
+#, fuzzy, c-format
+#| msgid ""
+#| "%s: unlocking the user would result in a passwordless account.\n"
+#| "You should set a password with usermod -p to unlock this user account.\n"
+msgid ""
+"%s: unlocking the password would result in a passwordless account.\n"
+"You should set a password with usermod -p to unlock the password of this "
+"account.\n"
+msgstr ""
+"%s: upplåsning av användaren skulle resultera i ett konto utan lösenord.\n"
+"Du bör ange ett lösenord med usermod -p för att låsa upp detta "
+"användarkonto.\n"
+
+#, c-format
+msgid "%s: repository %s not supported\n"
+msgstr "%s: repository %s stöds inte\n"
+
+#, c-format
+msgid "%s: %s is not authorized to change the password of %s\n"
+msgstr ""
+
+#, c-format
+msgid "%s: You may not view or modify password information for %s.\n"
+msgstr "%s: Du kan inte visa eller modifiera lösenordsinformationen för %s.\n"
+
+#, c-format
+msgid "Changing password for %s\n"
+msgstr "Ändrar lösenord för %s\n"
+
+#, c-format
+msgid "The password for %s is unchanged.\n"
+msgstr "Lösenordet för %s är oförändrat.\n"
+
+#, fuzzy, c-format
+#| msgid "Password changed."
+msgid "%s: password changed.\n"
+msgstr "Lösenordet ändrat."
+
+#, fuzzy, c-format
+#| msgid "Password Expiration Warning"
+msgid "%s: password expiry information changed.\n"
+msgstr "Utlöpsvarning för lösenord"
+
+#, fuzzy, c-format
+#| msgid "Usage: %s [-q] [-r] [-s] [passwd [shadow]]\n"
+msgid "Usage: %s [-q] [-r] [passwd]\n"
+msgstr "Användning: %s [-q] [-r] [-s] [lösenord [skugga]]\n"
+
+#, c-format
+msgid "Usage: %s [-q] [-r] [-s] [passwd [shadow]]\n"
+msgstr "Användning: %s [-q] [-r] [-s] [lösenord [skugga]]\n"
+
+#, fuzzy, c-format
+#| msgid "%s: -s and -r are incompatibile\n"
+msgid "%s: -s and -r are incompatible\n"
+msgstr "%s: -s och -r är inkompatibla\n"
+
+#, c-format
+msgid "%s: no alternative shadow file allowed when USE_TCB is enabled.\n"
+msgstr ""
+
+msgid "invalid password file entry"
+msgstr "ogiltig post i lösenordsfil"
+
+msgid "duplicate password entry"
+msgstr "duplikata lösenordsposter"
+
+#, c-format
+msgid "invalid user name '%s'\n"
+msgstr "ogiltigt användarnamn \"%s\"\n"
+
+#, fuzzy, c-format
+#| msgid "invalid user name '%s'\n"
+msgid "invalid user ID '%lu'\n"
+msgstr "ogiltigt användarnamn \"%s\"\n"
+
+#, fuzzy, c-format
+#| msgid "user %s: no group %u\n"
+msgid "user '%s': no group %lu\n"
+msgstr "användare %s: ingen grupp %u\n"
+
+#, fuzzy, c-format
+#| msgid "user %s: directory %s does not exist\n"
+msgid "user '%s': directory '%s' does not exist\n"
+msgstr "användare %s: katalogen %s finns inte\n"
+
+#, fuzzy, c-format
+#| msgid "user %s: program %s does not exist\n"
+msgid "user '%s': program '%s' does not exist\n"
+msgstr "användare %s: programmet %s finns inte\n"
+
+#, fuzzy, c-format
+#| msgid "%s: cannot create directory %s\n"
+msgid "no tcb directory for %s\n"
+msgstr "%s: kan inte skapa katalog %s\n"
+
+#, fuzzy, c-format
+#| msgid "%s: cannot create directory %s\n"
+msgid "create tcb directory for %s?"
+msgstr "%s: kan inte skapa katalog %s\n"
+
+#, fuzzy, c-format
+#| msgid "%s: cannot create directory %s\n"
+msgid "failed to create tcb directory for %s\n"
+msgstr "%s: kan inte skapa katalog %s\n"
+
+#, fuzzy, c-format
+#| msgid "%s: cannot lock file %s\n"
+msgid "%s: cannot lock %s.\n"
+msgstr "%s: kan inte låsa filen %s\n"
+
+#, c-format
+msgid "no matching password file entry in %s\n"
+msgstr "ingen matchande lösenordfilpost i %s\n"
+
+#, c-format
+msgid "add user '%s' in %s? "
+msgstr "lägg till grupp \"%s\" i %s? "
+
+#, c-format
+msgid ""
+"user %s has an entry in %s, but its password field in %s is not set to 'x'\n"
+msgstr ""
+
+msgid "invalid shadow password file entry"
+msgstr "ogiltig post i skugglösenordsfil"
+
+msgid "duplicate shadow password entry"
+msgstr "duplikat post för skugglösenord"
+
+#, c-format
+msgid "user %s: last password change in the future\n"
+msgstr "användare %s: senaste lösenordsändringen i framtiden\n"
+
+#, fuzzy, c-format
+#| msgid "%s: cannot open file %s\n"
+msgid "%s: cannot sort entries in %s\n"
+msgstr "%s: kan inte öppna filen %s\n"
+
+#, fuzzy
+#| msgid "Usage: id\n"
+msgid "Usage: pwconv\n"
+msgstr "Användning: id\n"
+
+#, fuzzy, c-format
+#| msgid "%s: can't re-write file\n"
+msgid "%s: can't work with tcb enabled\n"
+msgstr "%s: kan inte skriva om fil\n"
+
+#, c-format
+msgid "%s: failed to change the mode of %s to 0600\n"
+msgstr ""
+
+#, fuzzy
+#| msgid "Usage: id\n"
+msgid "Usage: pwunconv\n"
+msgstr "Användning: id\n"
+
+msgid "Access to su to that account DENIED.\n"
+msgstr "Tillgång med su till det kontot NEKAS.\n"
+
+msgid "Password authentication bypassed.\n"
+msgstr "Lösenordsautentisering kringgådd.\n"
+
+msgid "Please enter your OWN password as authentication.\n"
+msgstr "Vänligen ange ditt EGNA lösenord för autentisering.\n"
+
+msgid " ...killed.\n"
+msgstr ""
+
+msgid " ...waiting for child to terminate.\n"
+msgstr ""
+
+#, fuzzy, c-format
+#| msgid "%s: cannot lock file %s\n"
+msgid "%s: Cannot fork user shell\n"
+msgstr "%s: kan inte låsa filen %s\n"
+
+#, c-format
+msgid "%s: signal malfunction\n"
+msgstr ""
+
+#, c-format
+msgid "%s: signal masking malfunction\n"
+msgstr ""
+
+msgid "Session terminated, terminating shell..."
+msgstr ""
+
+#, c-format
+msgid "%s: %s\n"
+msgstr "%s: %s\n"
+
+msgid " ...terminated.\n"
+msgstr ""
+
+msgid ""
+"Usage: su [options] [LOGIN]\n"
+"\n"
+"Options:\n"
+"  -c, --command COMMAND         pass COMMAND to the invoked shell\n"
+"  -h, --help                    display this help message and exit\n"
+"  -, -l, --login                make the shell a login shell\n"
+"  -m, -p,\n"
+"  --preserve-environment        do not reset environment variables, and\n"
+"                                keep the same shell\n"
+"  -s, --shell SHELL             use SHELL instead of the default in passwd\n"
+"\n"
+msgstr ""
+"Användning: su [flaggor] [KONTO]\n"
+"\n"
+"Flaggor:\n"
+"  -c, --command KOMMANDO        skicka KOMMANDO till anropade skalet\n"
+"  -h, --help                    visa detta hjälpmeddelande och avsluta\n"
+"  -, -l, --login                gör skalet till inloggningsskal\n"
+"  -m, -p,\n"
+"  --preserve-environment        återställ inte miljövariabler och behåll\n"
+"                                samma skal\n"
+"  -s, --shell SKAL              använd SKAL istället för det angivna i "
+"passwd\n"
+"\n"
+
+#, c-format
+msgid "%s: must be run from a terminal\n"
+msgstr "%s: måste köras från en terminal\n"
+
+#, c-format
+msgid "%s: pam_start: error %d\n"
+msgstr "%s: pam_start: fel %d\n"
+
+#, c-format
+msgid "Unknown id: %s\n"
+msgstr "Okänt id: %s\n"
+
+#, c-format
+msgid "You are not authorized to su %s\n"
+msgstr "Du är inte bemyndigad att su %s\n"
+
+msgid "(Enter your own password)"
+msgstr "(Ange ditt egna lösenord)"
+
+#, c-format
+msgid ""
+"%s: %s\n"
+"(Ignored)\n"
+msgstr ""
+"%s: %s\n"
+"(Ignorerad)\n"
+
+#, fuzzy, c-format
+#| msgid "%s: PAM authentication failed\n"
+msgid "%s: Authentication failure\n"
+msgstr "%s: PAM autentisering misslyckades\n"
+
+#, fuzzy, c-format
+#| msgid "You are not authorized to su %s\n"
+msgid "%s: You are not authorized to su at that time\n"
+msgstr "Du är inte bemyndigad att su %s\n"
+
+msgid "No shell\n"
+msgstr "Inget skal\n"
+
+msgid "No password file"
+msgstr "Ingen lösenordsfil"
+
+msgid "TIOCSCTTY failed"
+msgstr "TIOCSCTTY misslyckades"
+
+msgid "No password entry for 'root'"
+msgstr "Ingen lösenordspost för \"root\""
+
+msgid ""
+"\n"
+"Type control-d to proceed with normal startup,\n"
+"(or give root password for system maintenance):"
+msgstr ""
+"\n"
+"Tryck Control-D för att fortsätta med normal uppstart,\n"
+"(eller ange root-lösenordet för systemunderhåll):"
+
+msgid "Entering System Maintenance Mode"
+msgstr "Går över till läge för systemunderhåll"
+
+#, c-format
+msgid "%s: %s was created, but could not be removed\n"
+msgstr ""
+
+#, c-format
+msgid "%s: the %s configuration in %s will be ignored\n"
+msgstr ""
+
+#, c-format
+msgid "%s: cannot create new defaults file\n"
+msgstr "%s: kan inte skapa ny standardfil\n"
+
+#, c-format
+msgid "%s: cannot open new defaults file\n"
+msgstr "%s: kan inte öppna ny fil med standardvärden\n"
+
+#, fuzzy, c-format
+#| msgid "%s: line %d: chown failed\n"
+msgid "%s: line too long in %s: %s..."
+msgstr "%s: rad %d: chown misslyckades\n"
+
+#, fuzzy, c-format
+#| msgid "%s: rename: %s"
+msgid "%s: rename: %s: %s"
+msgstr "%s: byt namn: %s"
+
+#, c-format
+msgid "%s: group '%s' is a NIS group.\n"
+msgstr "%s: gruppen \"%s\" är en NIS-grupp.\n"
+
+#, c-format
+msgid "%s: too many groups specified (max %d).\n"
+msgstr "%s: för många grupper angivna (max %d).\n"
+
+#, fuzzy, c-format
+#| msgid "Usage: %s [input]\n"
+msgid ""
+"Usage: %s [options] LOGIN\n"
+"\n"
+"Options:\n"
+msgstr "Användning: %s [inmatning]\n"
+
+#, fuzzy
+#| msgid ""
+#| "  -s, --sha-rounds              number of SHA rounds for the SHA*\n"
+#| "                                crypt algorithms\n"
+msgid ""
+"  -b, --base-dir BASE_DIR       base directory for the home directory of "
+"the\n"
+"                                new account\n"
+msgstr ""
+"  -s, --sha-rounds              antal SHA-rundor för SHA*-\n"
+"                                krypteringsalgoritmerna\n"
+
+msgid "  -c, --comment COMMENT         GECOS field of the new account\n"
+msgstr ""
+
+msgid "  -d, --home-dir HOME_DIR       home directory of the new account\n"
+msgstr ""
+
+msgid ""
+"  -D, --defaults                print or change default useradd "
+"configuration\n"
+msgstr ""
+
+msgid "  -e, --expiredate EXPIRE_DATE  expiration date of the new account\n"
+msgstr ""
+
+msgid ""
+"  -f, --inactive INACTIVE       password inactivity period of the new "
+"account\n"
+msgstr ""
+
+#, fuzzy
+#| msgid ""
+#| "  -s, --sha-rounds              number of SHA rounds for the SHA*\n"
+#| "                                crypt algorithms\n"
+msgid ""
+"  -g, --gid GROUP               name or ID of the primary group of the new\n"
+"                                account\n"
+msgstr ""
+"  -s, --sha-rounds              antal SHA-rundor för SHA*-\n"
+"                                krypteringsalgoritmerna\n"
+
+#, fuzzy
+#| msgid ""
+#| "  -s, --sha-rounds              number of SHA rounds for the SHA*\n"
+#| "                                crypt algorithms\n"
+msgid ""
+"  -G, --groups GROUPS           list of supplementary groups of the new\n"
+"                                account\n"
+msgstr ""
+"  -s, --sha-rounds              antal SHA-rundor för SHA*-\n"
+"                                krypteringsalgoritmerna\n"
+
+msgid ""
+"  -k, --skel SKEL_DIR           use this alternative skeleton directory\n"
+msgstr ""
+
+#, fuzzy
+#| msgid ""
+#| "  -s, --sha-rounds              number of SHA rounds for the SHA*\n"
+#| "                                crypt algorithms\n"
+msgid ""
+"  -l, --no-log-init             do not add the user to the lastlog and\n"
+"                                faillog databases\n"
+msgstr ""
+"  -s, --sha-rounds              antal SHA-rundor för SHA*-\n"
+"                                krypteringsalgoritmerna\n"
+
+msgid "  -m, --create-home             create the user's home directory\n"
+msgstr ""
+
+msgid ""
+"  -M, --no-create-home          do not create the user's home directory\n"
+msgstr ""
+
+#, fuzzy
+#| msgid ""
+#| "  -s, --sha-rounds              number of SHA rounds for the SHA*\n"
+#| "                                crypt algorithms\n"
+msgid ""
+"  -N, --no-user-group           do not create a group with the same name as\n"
+"                                the user\n"
+msgstr ""
+"  -s, --sha-rounds              antal SHA-rundor för SHA*-\n"
+"                                krypteringsalgoritmerna\n"
+
+#, fuzzy
+#| msgid ""
+#| "  -s, --sha-rounds              number of SHA rounds for the SHA*\n"
+#| "                                crypt algorithms\n"
+msgid ""
+"  -o, --non-unique              allow to create users with duplicate\n"
+"                                (non-unique) UID\n"
+msgstr ""
+"  -s, --sha-rounds              antal SHA-rundor för SHA*-\n"
+"                                krypteringsalgoritmerna\n"
+
+msgid "  -p, --password PASSWORD       encrypted password of the new account\n"
+msgstr ""
+
+msgid "  -s, --shell SHELL             login shell of the new account\n"
+msgstr ""
+
+msgid "  -u, --uid UID                 user ID of the new account\n"
+msgstr ""
+
+msgid ""
+"  -U, --user-group              create a group with the same name as the "
+"user\n"
+msgstr ""
+
+msgid ""
+"  -Z, --selinux-user SEUSER     use a specific SEUSER for the SELinux user "
+"mapping\n"
+msgstr ""
+
+#, c-format
+msgid "%s: invalid base directory '%s'\n"
+msgstr "%s: ogiltig baskatalog \"%s\"\n"
+
+#, c-format
+msgid "%s: invalid comment '%s'\n"
+msgstr "%s: ogiltig kommentar \"%s\"\n"
+
+#, c-format
+msgid "%s: invalid home directory '%s'\n"
+msgstr "%s: ogiltig hemkatalog \"%s\"\n"
+
+#, c-format
+msgid "%s: shadow passwords required for -e\n"
+msgstr "%s: skugglösenord krävs för -e\n"
+
+#, c-format
+msgid "%s: shadow passwords required for -f\n"
+msgstr "%s: skugglösenord krävs för -f\n"
+
+#, c-format
+msgid "%s: invalid field '%s'\n"
+msgstr "%s: ogiltigt fält \"%s\"\n"
+
+#, c-format
+msgid "%s: invalid shell '%s'\n"
+msgstr "%s: ogiltigt skal \"%s\"\n"
+
+#, c-format
+msgid "%s: -Z requires SELinux enabled kernel\n"
+msgstr ""
+
+#, c-format
+msgid "%s: options %s and %s conflict\n"
+msgstr "%s: flaggorna %s och %s står i konflikt\n"
+
+#, c-format
+msgid "%s: failed to reset the faillog entry of UID %lu: %s\n"
+msgstr ""
+
+#, c-format
+msgid "%s: failed to reset the lastlog entry of UID %lu: %s\n"
+msgstr ""
+
+#, c-format
+msgid "%s: warning: the user name %s to %s SELinux user mapping failed.\n"
+msgstr ""
+
+#, c-format
+msgid "%s: cannot create directory %s\n"
+msgstr "%s: kan inte skapa katalog %s\n"
+
+msgid "Creating mailbox file"
+msgstr "Skapar postlådefil"
+
+msgid ""
+"Group 'mail' not found. Creating the user mailbox file with 0600 mode.\n"
+msgstr ""
+"Gruppen \"mail\" hittades inte. Skapar användarens postlådefil med läget "
+"0600.\n"
+
+msgid "Setting mailbox file permissions"
+msgstr "Ställer in rättigheter för postlådefil"
+
+#, fuzzy, c-format
+#| msgid "%s: user %s exists\n"
+msgid "%s: user '%s' already exists\n"
+msgstr "%s: användaren %s finns redan\n"
+
+#, c-format
+msgid ""
+"%s: group %s exists - if you want to add this user to that group, use -g.\n"
+msgstr ""
+"%s: gruppen %s finns redan - om du vill lägga till denna användare till den "
+"gruppen, använd -g.\n"
+
+#, c-format
+msgid "%s: can't create user\n"
+msgstr "%s: kan inte skapa användare\n"
+
+#, fuzzy, c-format
+#| msgid "%s: UID %u is not unique\n"
+msgid "%s: UID %lu is not unique\n"
+msgstr "%s: UID %u är inte unikt\n"
+
+#, fuzzy, c-format
+#| msgid "%s: cannot create directory %s\n"
+msgid "%s: Failed to create tcb directory for %s\n"
+msgstr "%s: kan inte skapa katalog %s\n"
+
+#, c-format
+msgid "%s: can't create group\n"
+msgstr "%s: kan inte skapa grupp\n"
+
+#, c-format
+msgid ""
+"%s: warning: the home directory already exists.\n"
+"Not copying any file from skel directory into it.\n"
+msgstr ""
+"%s: varning: hem-katalogen finns redan.\n"
+"Kopierar ingen fil från skel-katalogen till den.\n"
+
+msgid ""
+"Usage: userdel [options] LOGIN\n"
+"\n"
+"Options:\n"
+"  -f, --force                   force removal of files,\n"
+"                                even if not owned by user\n"
+"  -h, --help                    display this help message and exit\n"
+"  -r, --remove                  remove home directory and mail spool\n"
+"\n"
+msgstr ""
+"Användning: userdel [flaggor] KONTO\n"
+"\n"
+"Flaggor:\n"
+"  -f, --force                   tvinga borttagning av filer, även om\n"
+"                                de inte ägs av användaren\n"
+"  -h, --help                    visa detta hjälpmeddelandet och avsluta\n"
+"  -r, --remove                  ta bort hemkatalog och postkö\n"
+"\n"
+
+#, fuzzy, c-format
+#| msgid ""
+#| "%s: Cannot remove group %s which is a primary group for another user.\n"
+msgid "%s: group %s is the primary group of another user and is not removed.\n"
+msgstr ""
+"%s: Kan inte ta bort gruppen %s som är en primär grupp för en annan "
+"användare.\n"
+
+#, fuzzy, c-format
+#| msgid "%s: warning: can't remove "
+msgid "%s: warning: can't remove %s: %s\n"
+msgstr "%s: varning: kan inte ta bort "
+
+#, c-format
+msgid "%s: %s not owned by %s, not removing\n"
+msgstr "%s: %s ägs inte av %s, tar inte bort\n"
+
+#, c-format
+msgid "%s: Can't allocate memory, tcb entry for %s not removed.\n"
+msgstr ""
+
+#, fuzzy, c-format
+#| msgid "%s: failed to drop privileges (%s)\n"
+msgid "%s: Cannot drop privileges: %s\n"
+msgstr "%s: misslyckades med att kasta rättigheterna (%s)\n"
+
+#, fuzzy, c-format
+#| msgid "%s: cannot rename directory %s to %s\n"
+msgid "%s: Cannot remove the content of %s: %s\n"
+msgstr "%s: kunde inte byta namn på katalogen %s till %s\n"
+
+#, fuzzy, c-format
+#| msgid "%s: cannot rename directory %s to %s\n"
+msgid "%s: Cannot remove tcb files for %s: %s\n"
+msgstr "%s: kunde inte byta namn på katalogen %s till %s\n"
+
+#, c-format
+msgid "%s: user %s is a NIS user\n"
+msgstr "%s: användaren %s är en NIS-användare\n"
+
+#, c-format
+msgid "%s: user %s is currently logged in\n"
+msgstr "%s: användaren %s är för närvarande inloggad\n"
+
+#, fuzzy, c-format
+#| msgid "%s: invalid home directory '%s'\n"
+msgid "%s: %s home directory (%s) not found\n"
+msgstr "%s: ogiltig hemkatalog \"%s\"\n"
+
+#, c-format
+msgid "%s: not removing directory %s (would remove home of user %s)\n"
+msgstr ""
+"%s: tar inte bort katalogen %s (skulle ta bort hemmet för användaren %s)\n"
+
+#, c-format
+msgid "%s: error removing directory %s\n"
+msgstr "%s: fel vid borttagning av katalogen %s\n"
+
+#, fuzzy, c-format
+#| msgid ""
+#| "Usage: usermod [options] LOGIN\n"
+#| "\n"
+#| "Options:\n"
+#| "  -c, --comment COMMENT         new value of the GECOS field\n"
+#| "  -d, --home HOME_DIR           new home directory for the user account\n"
+#| "  -e, --expiredate EXPIRE_DATE  set account expiration date to "
+#| "EXPIRE_DATE\n"
+#| "  -f, --inactive INACTIVE       set password inactive after expiration\n"
+#| "                                to INACTIVE\n"
+#| "  -g, --gid GROUP               force use GROUP as new primary group\n"
+#| "  -G, --groups GROUPS           new list of supplementary GROUPS\n"
+#| "  -a, --append                  append the user to the supplemental "
+#| "GROUPS\n"
+#| "                                mentioned by the -G option without "
+#| "removing\n"
+#| "                                him/her from other groups\n"
+#| "  -h, --help                    display this help message and exit\n"
+#| "  -l, --login NEW_LOGIN         new value of the login name\n"
+#| "  -L, --lock                    lock the user account\n"
+#| "  -m, --move-home               move contents of the home directory to "
+#| "the\n"
+#| "                                new location (use only with -d)\n"
+#| "  -o, --non-unique              allow using duplicate (non-unique) UID\n"
+#| "  -p, --password PASSWORD       use encrypted password for the new "
+#| "password\n"
+#| "  -s, --shell SHELL             new login shell for the user account\n"
+#| "  -u, --uid UID                 new UID for the user account\n"
+#| "  -U, --unlock                  unlock the user account\n"
+#| "\n"
+msgid ""
+"Usage: usermod [options] LOGIN\n"
+"\n"
+"Options:\n"
+"  -c, --comment COMMENT         new value of the GECOS field\n"
+"  -d, --home HOME_DIR           new home directory for the user account\n"
+"  -e, --expiredate EXPIRE_DATE  set account expiration date to EXPIRE_DATE\n"
+"  -f, --inactive INACTIVE       set password inactive after expiration\n"
+"                                to INACTIVE\n"
+"  -g, --gid GROUP               force use GROUP as new primary group\n"
+"  -G, --groups GROUPS           new list of supplementary GROUPS\n"
+"  -a, --append                  append the user to the supplemental GROUPS\n"
+"                                mentioned by the -G option without removing\n"
+"                                him/her from other groups\n"
+"  -h, --help                    display this help message and exit\n"
+"  -l, --login NEW_LOGIN         new value of the login name\n"
+"  -L, --lock                    lock the user account\n"
+"  -m, --move-home               move contents of the home directory to the\n"
+"                                new location (use only with -d)\n"
+"  -o, --non-unique              allow using duplicate (non-unique) UID\n"
+"  -p, --password PASSWORD       use encrypted password for the new password\n"
+"  -s, --shell SHELL             new login shell for the user account\n"
+"  -u, --uid UID                 new UID for the user account\n"
+"  -U, --unlock                  unlock the user account\n"
+"%s\n"
+msgstr ""
+"Användning: usermod [flaggor] KONTO\n"
+"\n"
+"Flaggor:\n"
+"  -a, --append GRUPP            lägg till användaren till tilläggsGRUPP\n"
+"                                (använd endast med -G)\n"
+"  -c, --comment KOMMENTAR       nytt värde för GECOS-fält\n"
+"  -d, --home HEMKATALOG         hemkatalog för nya användarkontot\n"
+"  -e, --expiredate UTGÅNGSDATUM ställ in kontots utgångsdatum till\n"
+"                                UTGÅNGSDATUM\n"
+"  -f, --inactive INAKTIV        ställ in lösenordet till inaktivt efter\n"
+"                                utgångsdatum till INAKTIV\n"
+"  -g, --gid GRUPP               tvinga använda GRUPP som ny initial\n"
+"                                inloggningsgrupp\n"
+"  -G, --groups GRUPPER          lista tilläggsgrupper\n"
+"  -h, --help                    visa detta hjälpmeddelande och avsluta\n"
+"  -l, --login KONTO             nytt värde för inloggningskontots namn\n"
+"  -L, --lock                    lås användarkontot\n"
+"  -m, --move-home               flytta innehållet i hemkatalogen till den\n"
+"                                nya platsen (använd endast med -d)\n"
+"  -o, --non-unique              tillåt dubblett av (icke-unikt) UID\n"
+"  -p, --password LÖSENORD       använd krypterat lösenord för det nya\n"
+"                                lösenordet\n"
+"  -s, --shell SKAL              nytt inloggningsskal för användarkontot\n"
+"  -u, --uid UID                 nytt UID för användarkontot\n"
+"  -U, --unlock                  lås upp användarkontot\n"
+"\n"
+
+msgid ""
+"  -Z, --selinux-user            new SELinux user mapping for the user "
+"account\n"
+msgstr ""
+
+#, fuzzy, c-format
+#| msgid ""
+#| "%s: unlocking the user would result in a passwordless account.\n"
+#| "You should set a password with usermod -p to unlock this user account.\n"
+msgid ""
+"%s: unlocking the user's password would result in a passwordless account.\n"
+"You should set a password with usermod -p to unlock this user's password.\n"
+msgstr ""
+"%s: upplåsning av användaren skulle resultera i ett konto utan lösenord.\n"
+"Du bör ange ett lösenord med usermod -p för att låsa upp detta "
+"användarkonto.\n"
+
+#, fuzzy, c-format
+#| msgid "%s: user %s exists\n"
+msgid "%s: user '%s' already exists in %s\n"
+msgstr "%s: användaren %s finns redan\n"
+
+#, c-format
+msgid "%s: no flags given\n"
+msgstr "%s: inga flaggor angivna\n"
+
+#, c-format
+msgid "%s: shadow passwords required for -e and -f\n"
+msgstr "%s: skugglösenord krävs för -e och -f\n"
+
+#, c-format
+msgid "%s: the -L, -p, and -U flags are exclusive\n"
+msgstr "%s: flaggorna -L, -p och -U är uteslutande\n"
+
+#, fuzzy, c-format
+#| msgid "Member already exists\n"
+msgid "%s: UID '%lu' already exists\n"
+msgstr "Medlemmen finns redan\n"
+
+#, c-format
+msgid "%s: directory %s exists\n"
+msgstr "%s: katalogen %s finns redan\n"
+
+#, c-format
+msgid ""
+"%s: The previous home directory (%s) was not a directory. It is not removed "
+"and no home directories are created.\n"
+msgstr ""
+
+#, fuzzy, c-format
+#| msgid "%s: cannot create directory %s\n"
+msgid "%s: Failed to change ownership of the home directory"
+msgstr "%s: kan inte skapa katalog %s\n"
+
+#, c-format
+msgid "%s: warning: failed to completely remove old home directory %s"
+msgstr ""
+"%s: varning: misslyckades med att ta bort hela den gamla hemkatalogen %s"
+
+#, c-format
+msgid "%s: cannot rename directory %s to %s\n"
+msgstr "%s: kunde inte byta namn på katalogen %s till %s\n"
+
+#, c-format
+msgid "%s: failed to copy the lastlog entry of user %lu to user %lu: %s\n"
+msgstr ""
+
+#, c-format
+msgid "%s: failed to copy the faillog entry of user %lu to user %lu: %s\n"
+msgstr ""
+
+#, c-format
+msgid "%s: warning: %s not owned by %s\n"
+msgstr "%s: varning: %s ägs inte av %s\n"
+
+msgid "failed to change mailbox owner"
+msgstr "misslyckades med att byta ägare på postlåda"
+
+msgid "failed to rename mailbox"
+msgstr "misslyckades med att byta namn på postlåda"
+
+#, fuzzy, c-format
+#| msgid ""
+#| "You have modified %s.\n"
+#| "You may need to modify %s for consistency.\n"
+#| "Please use the command `%s' to do so.\n"
+msgid ""
+"You have modified %s.\n"
+"You may need to modify %s for consistency.\n"
+"Please use the command '%s' to do so.\n"
+msgstr ""
+"Du har ändrat %s.\n"
+"Du kan behöva att ändra %s för att stämma överens.\n"
+"Använd kommandot \"%s\" för att göra det.\n"
+
+#, fuzzy
+#| msgid "Usage: %s [input]\n"
+msgid ""
+"Usage: vipw [options]\n"
+"\n"
+"Options:\n"
+msgstr "Användning: %s [inmatning]\n"
+
+msgid "  -g, --group                   edit group database\n"
+msgstr ""
+
+msgid "  -p, --passwd                  edit passwd database\n"
+msgstr ""
+
+msgid "  -q, --quiet                   quiet mode\n"
+msgstr ""
+
+msgid "  -s, --shadow                  edit shadow or gshadow database\n"
+msgstr ""
+
+msgid "  -u, --user                    which user's tcb shadow file to edit\n"
+msgstr ""
+
+#, fuzzy, c-format
+#| msgid "%s: failed to drop privileges (%s)\n"
+msgid "%s: failed to remove %s\n"
+msgstr "%s: misslyckades med att kasta rättigheterna (%s)\n"
+
+#, fuzzy, c-format
+#| msgid ""
+#| "\n"
+#| "%s: %s is unchanged\n"
+msgid "%s: %s is unchanged\n"
+msgstr ""
+"\n"
+"%s: %s är oförändrad\n"
+
+#, fuzzy
+#| msgid "failed to rename mailbox"
+msgid "failed to create scratch directory"
+msgstr "misslyckades med att byta namn på postlåda"
+
+#, fuzzy
+#| msgid "%s: failed to drop privileges (%s)\n"
+msgid "failed to drop privileges"
+msgstr "%s: misslyckades med att kasta rättigheterna (%s)\n"
+
+#, fuzzy
+#| msgid "Couldn't lock file"
+msgid "Couldn't get file context"
+msgstr "Kunde inte låsa fil"
+
+msgid "setfscreatecon () failed"
+msgstr ""
+
+#, fuzzy
+#| msgid "%s: failed to drop privileges (%s)\n"
+msgid "failed to gain privileges"
+msgstr "%s: misslyckades med att kasta rättigheterna (%s)\n"
+
+msgid "Couldn't lock file"
+msgstr "Kunde inte låsa fil"
+
+msgid "Couldn't make backup"
+msgstr "Kunde inte göra en säkerhetskopia"
+
+#, fuzzy
+#| msgid "Unable to open group file\n"
+msgid "failed to open scratch file"
+msgstr "Kunde inte öppna gruppfilen\n"
+
+#, fuzzy
+#| msgid "%s: fields too long\n"
+msgid "failed to unlink scratch file"
+msgstr "%s: fälten för långa\n"
+
+#, fuzzy
+#| msgid "failed to rename mailbox"
+msgid "failed to stat edited file"
+msgstr "misslyckades med att byta namn på postlåda"
+
+#, fuzzy
+#| msgid "failed to change mailbox owner"
+msgid "failed to allocate memory"
+msgstr "misslyckades med att byta ägare på postlåda"
+
+#, fuzzy
+#| msgid "failed to rename mailbox"
+msgid "failed to create backup file"
+msgstr "misslyckades med att byta namn på postlåda"
+
+#, c-format
+msgid "%s: can't restore %s: %s (your changes are in %s)\n"
+msgstr "%s: kan inte återställa %s: %s (dina ändringar finns i %s)\n"
+
+#, fuzzy, c-format
+#| msgid "%s: invalid base directory '%s'\n"
+msgid "%s: failed to find tcb directory for %s\n"
+msgstr "%s: ogiltig baskatalog \"%s\"\n"
+
+#, fuzzy
+#~| msgid ""
+#~| "Usage: vipw [options]\n"
+#~| "\n"
+#~| "Options:\n"
+#~| "  -g, --group                   edit group database\n"
+#~| "  -h, --help                    display this help message and exit\n"
+#~| "  -p, --passwd                  edit passwd database\n"
+#~| "  -q, --quiet                   quiet mode\n"
+#~| "  -s, --shadow                  edit shadow or gshadow database\n"
+#~| "\n"
+#~ msgid ""
+#~ "Usage: vipw [options]\n"
+#~ "\n"
+#~ "Options:\n"
+#~ "  -g, --group                   edit group database\n"
+#~ "  -h, --help                    display this help message and exit\n"
+#~ "  -p, --passwd                  edit passwd database\n"
+#~ "  -q, --quiet                   quiet mode\n"
+#~ "  -s, --shadow                  edit shadow or gshadow database\n"
+#~ "  -u, --user                    which user's tcb shadow file to edit\n"
+#~ "\n"
+#~ msgstr ""
+#~ "Användning: vipw [flaggor]\n"
+#~ "\n"
+#~ "Flaggor:\n"
+#~ "  -g, --group                   redigera gruppdatabas\n"
+#~ "  -h, --help                    visa detta hjälpmeddelande och avsluta\n"
+#~ "  -p, --passwd                  redigera lösenordsdatabas\n"
+#~ "  -q, --quiet                   tyst läge\n"
+#~ "  -s, --shadow                  redigera databaserna shadow eller "
+#~ "gshadow\n"
+#~ "\n"
+
+#, fuzzy
+#~| msgid "Usage: %s [input]\n"
+#~ msgid ""
+#~ "Usage: useradd [options] LOGIN\n"
+#~ "\n"
+#~ "Options:\n"
+#~ msgstr "Användning: %s [inmatning]\n"
+
+#~ msgid "%s: can't create %s\n"
+#~ msgstr "%s: kan inte skapa %s\n"
+
+#~ msgid "%s: can't chown %s\n"
+#~ msgstr "%s: kan inte chown %s\n"
+
+#, fuzzy
+#~| msgid ""
+#~| "Usage: faillog [options]\n"
+#~| "\n"
+#~| "Options:\n"
+#~| "  -a, --all                     display faillog records for all users\n"
+#~| "  -h, --help                    display this help message and exit\n"
+#~| "  -l, --lock-time SEC           after failed login lock accout to SEC "
+#~| "seconds\n"
+#~| "  -m, --maximum MAX             set maximum failed login counters to "
+#~| "MAX\n"
+#~| "  -r, --reset                   reset the counters of login failures\n"
+#~| "  -t, --time DAYS               display faillog records more recent than "
+#~| "DAYS\n"
+#~| "  -u, --user LOGIN              display faillog record or maintains "
+#~| "failure\n"
+#~| "                                counters and limits (if used with -r, -m "
+#~| "or -l\n"
+#~| "                                options) only for user with LOGIN\n"
+#~| "\n"
+#~ msgid ""
+#~ "Usage: faillog [options]\n"
+#~ "\n"
+#~ "Options:\n"
+#~ "  -a, --all                     display faillog records for all users\n"
+#~ "  -h, --help                    display this help message and exit\n"
+#~ "  -l, --lock-time SEC           after failed login lock account to SEC "
+#~ "seconds\n"
+#~ "  -m, --maximum MAX             set maximum failed login counters to MAX\n"
+#~ "  -r, --reset                   reset the counters of login failures\n"
+#~ "  -t, --time DAYS               display faillog records more recent than "
+#~ "DAYS\n"
+#~ "  -u, --user LOGIN              display faillog record or maintains "
+#~ "failure\n"
+#~ "                                counters and limits (if used with -r, -m "
+#~ "or -l\n"
+#~ "                                options) only for user with LOGIN\n"
+#~ "\n"
+#~ msgstr ""
+#~ "Användning: faillog [flaggor]\n"
+#~ "\n"
+#~ "Flaggor:\n"
+#~ "  -a, --all             visa faillog-information för alla användare\n"
+#~ "  -h, --help            visa detta hjälpmeddelande och avsluta\n"
+#~ "  -l, --lock-time SEK   lås kontot efter misslyckade inloggningar\n"
+#~ "                        i SEK sekunder\n"
+#~ "  -m, --maximum MAX     ställ in maximalt antal misslyckade inloggningar "
+#~ "till MAX\n"
+#~ "  -r, --reset           återställ räknaren för misslyckade inloggningar\n"
+#~ "  -t, --time DAGAR      visa faillog information för senare än DAGAR\n"
+#~ "  -u, --user KONTO      visa faillog information eller hantera räknare "
+#~ "för\n"
+#~ "                        misslyckade inloggningar och begränsa\n"
+#~ "                        (om använd med -r, -m eller -l flaggor) endast\n"
+#~ "                        för användaren KONTO\n"
+#~ "\n"
+
+#~ msgid ""
+#~ "Usage: groupadd [options] GROUP\n"
+#~ "\n"
+#~ "Options:\n"
+#~ "  -f, --force                   force exit with success status if the\n"
+#~ "                                specified group already exists\n"
+#~ "  -g, --gid GID                 use GID for the new group\n"
+#~ "  -h, --help                    display this help message and exit\n"
+#~ "  -K, --key KEY=VALUE           overrides /etc/login.defs defaults\n"
+#~ "  -o, --non-unique              allow create group with duplicate\n"
+#~ "                                (non-unique) GID\n"
+#~ "  -p, --password PASSWORD       use encrypted password for the new group\n"
+#~ "  -r, --system                  create a system account\n"
+#~ "\n"
+#~ msgstr ""
+#~ "Användning: groupadd [flaggor] GRUPP\n"
+#~ "\n"
+#~ "Flaggor:\n"
+#~ "  -f, --force                   tvinga avslut med lyckad status om den\n"
+#~ "                                angivna gruppen redan finns\n"
+#~ "  -g, --gid GID                 använd GID för den nya gruppen\n"
+#~ "  -h, --help                    visa detta hjälpmeddelandet och avsluta\n"
+#~ "  -K, --key KEY=VÄRDE           åsidosätter standardvärden från /etc/"
+#~ "login.defs\n"
+#~ "  -o, --non-unique              tillåter skapande av grupp med duplikat\n"
+#~ "                                (icke-unikt) GID\n"
+#~ "  -p, --password LÖSENORD       använd krypterat lösenord för nya "
+#~ "gruppen\n"
+#~ "  -r, --system                  skapa ett systemkonto\n"
+#~ "\n"
+
+#~ msgid ""
+#~ "Usage: groupmod [options] GROUP\n"
+#~ "\n"
+#~ "Options:\n"
+#~ "  -g, --gid GID                 force use new GID by GROUP\n"
+#~ "  -h, --help                    display this help message and exit\n"
+#~ "  -n, --new-name NEW_GROUP      force use NEW_GROUP name by GROUP\n"
+#~ "  -o, --non-unique              allow using duplicate (non-unique) GID by "
+#~ "GROUP\n"
+#~ "  -p, --password PASSWORD       use encrypted password for the new "
+#~ "password\n"
+#~ "\n"
+#~ msgstr ""
+#~ "Användning: groupmod [flaggor] GRUPP\n"
+#~ "\n"
+#~ "Flaggor:\n"
+#~ "  -g, --gid GID             tvinga användning av nytt GID för GRUPP\n"
+#~ "  -h, --help                visa detta hjälpmeddelande och avsluta\n"
+#~ "  -n, --new-name NY_GRUPP   tvinga användning av namnet NY_GRUPP för "
+#~ "GRUPP\n"
+#~ "  -o, --non-unique          tillåt användning av dubblett (icke-unikt) "
+#~ "GID för GRUPP\n"
+#~ "  -p, --password LÖSENORD       använd krypterat lösenord för nya "
+#~ "lösenordet\n"
+#~ "\n"
+
+#, fuzzy
+#~| msgid ""
+#~| "Usage: useradd [options] LOGIN\n"
+#~| "\n"
+#~| "Options:\n"
+#~| "  -b, --base-dir BASE_DIR       base directory for the new user account\n"
+#~| "                                home directory\n"
+#~| "  -c, --comment COMMENT         set the GECOS field for the new user "
+#~| "account\n"
+#~| "  -d, --home-dir HOME_DIR       home directory for the new user account\n"
+#~| "  -D, --defaults                print or save modified default useradd\n"
+#~| "                                configuration\n"
+#~| "  -e, --expiredate EXPIRE_DATE  set account expiration date to "
+#~| "EXPIRE_DATE\n"
+#~| "  -f, --inactive INACTIVE       set password inactive after expiration\n"
+#~| "                                to INACTIVE\n"
+#~| "  -g, --gid GROUP               force use GROUP for the new user "
+#~| "account\n"
+#~| "  -G, --groups GROUPS           list of supplementary groups for the "
+#~| "new\n"
+#~| "                                user account\n"
+#~| "  -h, --help                    display this help message and exit\n"
+#~| "  -k, --skel SKEL_DIR           specify an alternative skel directory\n"
+#~| "  -K, --key KEY=VALUE           overrides /etc/login.defs defaults\n"
+#~| "  -l,                           do not add the user to the lastlog and\n"
+#~| "                                faillog databases\n"
+#~| "  -m, --create-home             create home directory for the new user\n"
+#~| "                                account\n"
+#~| "  -N, --no-user-group           do not create a group with the same name "
+#~| "as\n"
+#~| "                                the user\n"
+#~| "  -o, --non-unique              allow create user with duplicate\n"
+#~| "                                (non-unique) UID\n"
+#~| "  -p, --password PASSWORD       use encrypted password for the new user\n"
+#~| "                                account\n"
+#~| "  -r, --system                  create a system account\n"
+#~| "  -s, --shell SHELL             the login shell for the new user "
+#~| "account\n"
+#~| "  -u, --uid UID                 force use the UID for the new user "
+#~| "account\n"
+#~| "  -U, --user-group              create a group with the same name as the "
+#~| "user\n"
+#~| "\n"
+#~ msgid ""
+#~ "Usage: useradd [options] LOGIN\n"
+#~ "\n"
+#~ "Options:\n"
+#~ "  -b, --base-dir BASE_DIR       base directory for the new user account\n"
+#~ "                                home directory\n"
+#~ "  -c, --comment COMMENT         set the GECOS field for the new user "
+#~ "account\n"
+#~ "  -d, --home-dir HOME_DIR       home directory for the new user account\n"
+#~ "  -D, --defaults                print or save modified default useradd\n"
+#~ "                                configuration\n"
+#~ "  -e, --expiredate EXPIRE_DATE  set account expiration date to "
+#~ "EXPIRE_DATE\n"
+#~ "  -f, --inactive INACTIVE       set password inactive after expiration\n"
+#~ "                                to INACTIVE\n"
+#~ "  -g, --gid GROUP               force use GROUP for the new user account\n"
+#~ "  -G, --groups GROUPS           list of supplementary groups for the new\n"
+#~ "                                user account\n"
+#~ "  -h, --help                    display this help message and exit\n"
+#~ "  -k, --skel SKEL_DIR           specify an alternative skel directory\n"
+#~ "  -K, --key KEY=VALUE           overrides /etc/login.defs defaults\n"
+#~ "  -l, --no-log-init             do not add the user to the lastlog and\n"
+#~ "                                faillog databases\n"
+#~ "  -m, --create-home             create home directory for the new user\n"
+#~ "                                account\n"
+#~ "  -M, --no-create-home          do not create user's home directory\n"
+#~ "                                (overrides /etc/login.defs)\n"
+#~ "  -N, --no-user-group           do not create a group with the same name "
+#~ "as\n"
+#~ "                                the user\n"
+#~ "  -o, --non-unique              allow create user with duplicate\n"
+#~ "                                (non-unique) UID\n"
+#~ "  -p, --password PASSWORD       use encrypted password for the new user\n"
+#~ "                                account\n"
+#~ "  -r, --system                  create a system account\n"
+#~ "  -s, --shell SHELL             the login shell for the new user account\n"
+#~ "  -u, --uid UID                 force use the UID for the new user "
+#~ "account\n"
+#~ "  -U, --user-group              create a group with the same name as the "
+#~ "user\n"
+#~ "%s\n"
+#~ msgstr ""
+#~ "Användning: useradd [flaggor] KONTO\n"
+#~ "\n"
+#~ "Flaggor:\n"
+#~ "  -b, --base-dir BAS_KATALOG    baskatalog för det nya användarkontots\n"
+#~ "                                hem-map\n"
+#~ "  -c, --comment KOMMENTAR       ställ in GECOS-fältet för det nya "
+#~ "användarkontot\n"
+#~ "  -d, --home-dir HEM_KATALOG    hemkatalog för det nya kontot\n"
+#~ "  -D, --defaults                skriv ut eller spara modifierad standard "
+#~ "för\n"
+#~ "                                useradd konfiguration\n"
+#~ "  -e, --expiredate UTLÖPSDATUM  ställ in kontots utgångsdatum till "
+#~ "UTLÖPSDATUM\n"
+#~ "  -f, --inactive INAKTIV        ställ in lösenordet till inaktivt efter "
+#~ "utlöpsdatum\n"
+#~ "                                till INAKTIV\n"
+#~ "  -g, --gid GRUPP               tvinga använda GRUPP för nya "
+#~ "användarkontot\n"
+#~ "  -G, --groups GRUPPER          lista över tilläggsgrupper för det nya\n"
+#~ "                                användarkontot\n"
+#~ "  -h, --help                    visa detta hjälpmeddelande och avsluta\n"
+#~ "  -k, --skel SKEL_KATALOG       ange en alternativ skelettkatalog\n"
+#~ "  -K, --key KEY=VÄRDE           åsidosätter standardvärden från /etc/"
+#~ "login.defs\n"
+#~ "  -l,                           lägg inte till användaren till "
+#~ "databaserna lastlog och\n"
+#~ "                                faillog\n"
+#~ "  -m, --create-home             skapa hem-katalog för det nya "
+#~ "användarkontot\n"
+#~ "  -N, --no-user-group           skapa inte en grupp med samma namn som\n"
+#~ "                                användaren\n"
+#~ "  -o, --non-unique              tillåt skapa användare med samma "
+#~ "dubblerat\n"
+#~ "                                (icke-unikt) UID\n"
+#~ "  -p, --password LÖSENORD       använd krypterat lösenord för det nya\n"
+#~ "                                användarkontot\n"
+#~ "  -r, --system                  skapa ett systemkonto\n"
+#~ "  -s, --shell SKAL              inloggningsskalet för det nya "
+#~ "användarkontot\n"
+#~ "  -u, --uid UID                 tvinga använda UID för det nya "
+#~ "användarkontot\n"
+#~ "  -U, --user-group              skapa en grupp med samma namn som "
+#~ "användaren\n"
+#~ "\n"
+
+#~ msgid ""
+#~ "Usage: %s [options] [input]\n"
+#~ "\n"
+#~ "  -c, --crypt-method            the crypt method (one of %s)\n"
+#~ "  -r, --system                  create system accounts\n"
+#~ "%s\n"
+#~ msgstr ""
+#~ "Användning: %s [flaggor] [inmatning]\n"
+#~ "\n"
+#~ "  -c, --crypt-method            krypteringsmetoden (en av %s)\n"
+#~ "  -r, --system                  skapa systemkonton\n"
+#~ "%s\n"
+
+#~ msgid "Password set to expire."
+#~ msgstr "Lösenord satt till att löpa ut."
+
+#~ msgid "%s: can't lock password file\n"
+#~ msgstr "%s: kan inte låsa lösenordsfilen\n"
+
+#~ msgid "%s: can't open password file\n"
+#~ msgstr "%s: kan inte öppna lösenordsfilen\n"
+
+#~ msgid "%s: can't lock shadow password file\n"
+#~ msgstr "%s: kan inte låsa skugglösenordsfilen\n"
+
+#~ msgid "%s: can't open shadow password file\n"
+#~ msgstr "%s: kan inte öppna skugglösenordsfilen\n"
+
+#~ msgid "%s: can't rewrite shadow password file\n"
+#~ msgstr "%s: kan inte skriva om skugglösenordsfilen\n"
+
+#~ msgid "%s: can't rewrite password file\n"
+#~ msgstr "%s: kan inte skriva om lösenordsfilen\n"
+
+#~ msgid "%s: can't update password file\n"
+#~ msgstr "%s: kan inte uppdatera lösenordsfilen\n"
+
+#~ msgid "%s: can't update shadow password file\n"
+#~ msgstr "%s: kan inte uppdatera skugglösenordsfilen\n"
+
+#~ msgid "\tFull Name: %s\n"
+#~ msgstr "\tHelt namn: %s\n"
+
+#~ msgid "\tRoom Number: %s\n"
+#~ msgstr "\tRumsnummer: %s\n"
+
+#~ msgid "\tWork Phone: %s\n"
+#~ msgstr "\tTelefonnummer (arbete): %s\n"
+
+#~ msgid "\tHome Phone: %s\n"
+#~ msgstr "\tTelefonnummer (hem): %s\n"
+
+#~ msgid "Cannot lock the password file; try again later.\n"
+#~ msgstr "Kan inte låsa lösenordsfilen, försök igen senare.\n"
+
+#~ msgid "Cannot open the password file.\n"
+#~ msgstr "Kan inte öppna lösenordsfilen.\n"
+
+#~ msgid "%s: %s not found in /etc/passwd\n"
+#~ msgstr "%s: %s finns inte i /etc/passwd\n"
+
+#~ msgid "Error updating the password entry.\n"
+#~ msgstr "Fel vid uppdatering av lösenordsposten.\n"
+
+#~ msgid "Cannot commit password file changes.\n"
+#~ msgstr "Kan inte genomföra ändringarna i lösenordsfilen.\n"
+
+#~ msgid "Cannot unlock the password file.\n"
+#~ msgstr "Kan inte låsa upp lösenordsfilen.\n"
+
+#~ msgid "%s: can't lock group file\n"
+#~ msgstr "%s: kan inte låsa gruppfilen\n"
+
+#~ msgid "%s: can't open group file\n"
+#~ msgstr "%s: kan inte öppna gruppfilen\n"
+
+#~ msgid "%s: can't lock gshadow file\n"
+#~ msgstr "%s: kan inte låsa gshadow-filen\n"
+
+#~ msgid "%s: can't open shadow file\n"
+#~ msgstr "%s: kan inte öppna skuggfilen\n"
+
+#~ msgid "%s: error updating gshadow file\n"
+#~ msgstr "%s: fel vid uppdatering av gshadow-filenl\n"
+
+#~ msgid "%s: error updating group file\n"
+#~ msgstr "%s: fel vid uppdatering av group-filen\n"
+
+#~ msgid "%s: line %d: unknown group %s\n"
+#~ msgstr "%s: rad %d: okänd grupp %s\n"
+
+#~ msgid "%s: line %d: cannot update group entry\n"
+#~ msgstr "%s: rad %d: kan inte uppdatera group-post\n"
+
+#~ msgid "%s: can't lock shadow file\n"
+#~ msgstr "%s: kan inte låsa skuggfilen\n"
+
+#~ msgid "%s: error updating shadow file\n"
+#~ msgstr "%s: fel vid uppdatering av skuggfil\n"
+
+#~ msgid "%s: error updating password file\n"
+#~ msgstr "%s: fel vid uppdatering av lösenordsfil\n"
+
+#~ msgid "%s: line %d: unknown user %s\n"
+#~ msgstr "%s: rad %d: okänd användare %s\n"
+
+#~ msgid "%s: line %d: cannot update password entry\n"
+#~ msgstr "%s: rad %d: kan inte uppdatera lösenordsposten\n"
+
+#~ msgid "%s: unknown user\n"
+#~ msgstr "%s: okänd användare\n"
+
+#~ msgid "Unknown User: %s\n"
+#~ msgstr "Okänd användare: %s\n"
+
+#~ msgid "Usage: %s [-r|-R] group\n"
+#~ msgstr "Användning: %s [-r|-R] grupp\n"
+
+#~ msgid "       %s [-a user] group\n"
+#~ msgstr "       %s [-a användare] grupp\n"
+
+#~ msgid "       %s [-d user] group\n"
+#~ msgstr "       %s [-d användare] grupp\n"
+
+#~ msgid "       %s [-A user,...] [-M user,...] group\n"
+#~ msgstr "       %s [-A användare,...] [-M användare,...] grupp\n"
+
+#~ msgid "       %s [-M user,...] group\n"
+#~ msgstr "       %s [-M användare,...] grupp\n"
+
+#~ msgid "%s: can't get lock\n"
+#~ msgstr "%s: kan inte hämta lås\n"
+
+#~ msgid "%s: can't get shadow lock\n"
+#~ msgstr "%s: kan inte få skugglås\n"
+
+#~ msgid "%s: can't open file\n"
+#~ msgstr "%s: kan inte öppna fil\n"
+
+#~ msgid "%s: can't re-write shadow file\n"
+#~ msgstr "%s: kan inte skriva om skuggfil\n"
+
+#~ msgid "%s: can't unlock file\n"
+#~ msgstr "%s: kan inte låsa upp fil\n"
+
+#~ msgid "%s: can't update entry\n"
+#~ msgstr "%s: kan inte uppdatera post\n"
+
+#~ msgid "%s: can't update shadow entry\n"
+#~ msgstr "%s: kan inte uppdatera skuggpost\n"
+
+#~ msgid "unknown group: %s\n"
+#~ msgstr "okänd grupp: %s\n"
+
+#~ msgid "%s: can't close file\n"
+#~ msgstr "%s: kan inte stänga fil\n"
+
+#~ msgid "%s: can't close shadow file\n"
+#~ msgstr "%s: kan inte stänga skuggfilen\n"
+
+#~ msgid "Who are you?\n"
+#~ msgstr "Vem är du?\n"
+
+#~ msgid "%s: unknown member %s\n"
+#~ msgstr "%s: okänd medlem %s\n"
+
+#~ msgid "%s: error adding new group entry\n"
+#~ msgstr "%s: fel vid tilläggning av ny grupp-post\n"
+
+#~ msgid "%s: cannot rewrite group file\n"
+#~ msgstr "%s: kan inte skriva om gruppfilen\n"
+
+#~ msgid "%s: cannot rewrite shadow group file\n"
+#~ msgstr "%s: kan inte skriva om skuggruppfilen\n"
+
+#~ msgid "%s: unable to lock group file\n"
+#~ msgstr "%s: kunde inte låsa gruppfilen\n"
+
+#~ msgid "%s: unable to open group file\n"
+#~ msgstr "%s: kunde inte öppna gruppfilen\n"
+
+#~ msgid "%s: unable to lock shadow group file\n"
+#~ msgstr "%s: kunde inte låsa skuggruppfilen\n"
+
+#~ msgid "%s: unable to open shadow group file\n"
+#~ msgstr "%s: kunde inte öppna skuggruppfilen\n"
+
+#~ msgid "%s: GID %u is not unique\n"
+#~ msgstr "%s: GID %u är inte unik\n"
+
+#~ msgid "%s: error removing group entry\n"
+#~ msgstr "%s: fel vid borttagning av grupp-post\n"
+
+#~ msgid "%s: error removing shadow group entry\n"
+#~ msgstr "%s: kunde inte ta bort post från skuggrupp\n"
+
+#~ msgid "%s: cannot remove user's primary group.\n"
+#~ msgstr "%s: kan inte ta bort användarens primära grupp.\n"
+
+#~ msgid "Member to remove could not be found\n"
+#~ msgstr "Medlemmen som skulle tas bort kunde inte hittas\n"
+
+#~ msgid ""
+#~ "Usage: groupmems -a username | -d username | -D | -l [-g groupname]\n"
+#~ msgstr ""
+#~ "Användning: groupmems -a användarnamn | -d användarnamn | -D | -l [-g "
+#~ "gruppnamn]\n"
+
+#~ msgid "Only root can add members to different groups\n"
+#~ msgstr "Endast root kan lägga till medlemmar till olika grupper\n"
+
+#~ msgid "Group access is required\n"
+#~ msgstr "Grupptillgång krävs\n"
+
+#~ msgid "Not primary owner of current group\n"
+#~ msgstr "Inte primär ägare av aktuell grupp\n"
+
+#~ msgid "PAM authentication failed for\n"
+#~ msgstr "PAM-autentisering misslyckades för\n"
+
+#~ msgid "Unable to lock group file\n"
+#~ msgstr "Kunde inte låsa gruppfilen\n"
+
+#~ msgid "Cannot close group file\n"
+#~ msgstr "Kan inte stänga gruppfilen\n"
+
+#~ msgid "%s: %s not found in /etc/group\n"
+#~ msgstr "%s: %s hittades inte i /etc/group\n"
+
+#~ msgid "%s: %u is not a unique GID\n"
+#~ msgstr "%s: %u är inte ett unikt GID\n"
+
+#~ msgid "%s: %s is not a unique name\n"
+#~ msgstr "%s: %s är inte ett unikt namn\n"
+
+#~ msgid "%s: cannot rewrite passwd file\n"
+#~ msgstr "%s: kan inte skriva om passwd-filen\n"
+
+#~ msgid "%s: unable to lock password file\n"
+#~ msgstr "%s: kunde inte låsa lösenordsfilen\n"
+
+#~ msgid "%s: unable to open password file\n"
+#~ msgstr "%s: kan inte öppna lösenordsfilen\n"
+
+#~ msgid ""
+#~ "%s: cannot change the primary group of user '%s' from %u to %u, since it "
+#~ "is not in the passwd file.\n"
+#~ msgstr ""
+#~ "%s: kan inte ändra den primära gruppen för användaren \"%s\" från %u till "
+#~ "%u, eftersom den inte finns i passwd-filen.\n"
+
+#~ msgid "%s: can't update shadow entry for %s\n"
+#~ msgstr "%s: kan inte uppdatera skuggpost för %s\n"
+
+#~ msgid "%s: can't update entry for group %s\n"
+#~ msgstr "%s: kan inte uppdatera post för gruppen %s\n"
+
+#~ msgid "%s: can't lock shadow group file\n"
+#~ msgstr "%s: kan inte låsa filen för skuggrupper\n"
+
+#~ msgid "%s: can't open shadow group file\n"
+#~ msgstr "%s: kan inte öppna filen för skuggrupper\n"
+
+#~ msgid "%s: can't remove shadow group %s\n"
+#~ msgstr "%s: kan inte ta bort skuggruppen %s\n"
+
+#~ msgid "%s: can't update shadow group file\n"
+#~ msgstr "%s: kan inte uppdatera filen för skuggrupper\n"
+
+#~ msgid "%s: can't update group file\n"
+#~ msgstr "%s: kan inte uppdatera gruppfilen\n"
+
+#~ msgid "%s: can't delete shadow group file\n"
+#~ msgstr "%s: kan inte radera shadowgruppfilen\n"
+
+#~ msgid "unknown UID: %u\n"
+#~ msgstr "okänt UID: %u\n"
+
+#~ msgid "unknown GID: %lu\n"
+#~ msgstr "okänt GID: %lu\n"
+
+#~ msgid "%s: group ID `%s' is not valid\n"
+#~ msgstr "%s: grupp-id \"%s\" är inte giltigt\n"
+
+#~ msgid ""
+#~ "%s: group %s created, failure during the creation of the corresponding "
+#~ "gshadow group\n"
+#~ msgstr ""
+#~ "%s: gruppen %s skapades, fel under skapandet av motsvarande gshadow-"
+#~ "grupp\n"
+
+#~ msgid "%s: user ID `%s' is not valid\n"
+#~ msgstr "%s: användar-id \"%s\" är inte giltigt\n"
+
+#~ msgid "%s: invalid user name `%s'\n"
+#~ msgstr "%s: ogiltigt användarnamn \"%s\"\n"
+
+#~ msgid "%s: can't lock /etc/passwd.\n"
+#~ msgstr "%s: kan inte låsa /etc/passwd.\n"
+
+#~ msgid "%s: can't lock /etc/shadow.\n"
+#~ msgstr "%s: kan inte låsa /etc/shadow.\n"
+
+#~ msgid "%s: can't lock /etc/group.\n"
+#~ msgstr "%s: kan inte låsa /etc/group.\n"
+
+#~ msgid "%s: can't lock /etc/gshadow.\n"
+#~ msgstr "%s: kan inte låsa /etc/gshadow.\n"
+
+#~ msgid "%s: can't open files\n"
+#~ msgstr "%s: kan inte öppna filer\n"
+
+#~ msgid "%s: error updating files\n"
+#~ msgstr "%s: fel vid uppdatering av filer\n"
+
+#~ msgid "%s: line %d: cannot find user %s\n"
+#~ msgstr "%s: rad %d: kan inte hitta användaren %s\n"
+
+#~ msgid "%s: can't update passwd entry for %s\n"
+#~ msgstr "%s: kan inte uppdatera lösenordspost för %s\n"
+
+#~ msgid "%s: can't lock passwd file\n"
+#~ msgstr "%s: kan inte låsa lösenordsfilen\n"
+
+#~ msgid "%s: can't open passwd file\n"
+#~ msgstr "%s: kan inte öppna lösenordsfilen\n"
+
+#~ msgid "%s: can't remove shadow entry for %s\n"
+#~ msgstr "%s: kan inte ta bort skuggposten för %s\n"
+
+#~ msgid "%s: can't update passwd file\n"
+#~ msgstr "%s: kan inte uppdatera lösenordsfilen\n"
+
+#~ msgid "%s: can't update entry for user %s\n"
+#~ msgstr "%s: kan inte uppdatera post för användaren %s\n"
+
+#~ msgid "%s: can't delete shadow password file\n"
+#~ msgstr "%s: kan inte ta bort skugglösenordsfilen\n"
+
+#~ msgid "%s: unknown GID %s\n"
+#~ msgstr "%s: okänt GID %s\n"
+
+#~ msgid "%s: unknown group %s\n"
+#~ msgstr "%s: okänd grupp %s\n"
+
+#~ msgid "%s: Out of memory. Cannot update the shadow group database.\n"
+#~ msgstr ""
+#~ "%s: Slut på minne. Kan inte uppdatera databasen för skugg-grupper.\n"
+
+#~ msgid "%s: cannot rewrite password file\n"
+#~ msgstr "%s: kan inte skriva om lösenordsfilen\n"
+
+#~ msgid "%s: cannot rewrite shadow password file\n"
+#~ msgstr "%s: kan inte skriva om skuggruppfilen\n"
+
+#~ msgid "%s: cannot lock shadow password file\n"
+#~ msgstr "%s: kan inte låsa skugglösenordsfilen\n"
+
+#~ msgid "%s: cannot open shadow password file\n"
+#~ msgstr "%s: kan inte öppna skugglösenordsfilen\n"
+
+#~ msgid "%s: error locking group file\n"
+#~ msgstr "%s: fel vid låsning av gruppfil\n"
+
+#~ msgid "%s: error opening group file\n"
+#~ msgstr "%s: fel vid öppning av gruppfil\n"
+
+#~ msgid "%s: error locking shadow group file\n"
+#~ msgstr "%s: fel vid låsning av skuggruppfil\n"
+
+#~ msgid "%s: error opening shadow group file\n"
+#~ msgstr "%s: fel vid öppning av skuggruppfil\n"
+
+#~ msgid "%s: error adding new password entry\n"
+#~ msgstr "%s: fel vid tilläggning av ny lösenordspost\n"
+
+#~ msgid "%s: error adding new shadow password entry\n"
+#~ msgstr "%s: fel vid tilläggning av ny skugglösenordspost\n"
+
+#~ msgid "%s: warning: CREATE_HOME not supported, please use -m instead.\n"
+#~ msgstr "%s: varning: CREATE_HOME stöds inte, vänligen använd -m istället.\n"
+
+#~ msgid "%s: error updating group entry\n"
+#~ msgstr "%s: fel vid uppdatering av grupp-post\n"
+
+#~ msgid "%s: error updating shadow group entry\n"
+#~ msgstr "%s: fel vid uppdatering av post för skugg-grupp\n"
+
+#~ msgid "%s: cannot open group file\n"
+#~ msgstr "%s: kan inte öppna gruppfilen\n"
+
+#~ msgid "%s: cannot open shadow group file\n"
+#~ msgstr "%s: kunde inte öppna fil för skuggrupp\n"
+
+#~ msgid "%s: error deleting password entry\n"
+#~ msgstr "%s: fel vid borttagning av lösenordspost\n"
+
+#~ msgid "%s: error deleting shadow password entry\n"
+#~ msgstr "%s: fel vid borttagning av skugglösenordspost\n"
+
+#~ msgid "%s: error adding new shadow group entry\n"
+#~ msgstr "%s: fel när ny post för skugg-grupp lades till\n"
+
+#~ msgid "%s: uid %lu is not unique\n"
+#~ msgstr "%s: uid %lu är inte unikt\n"
+
+#~ msgid "%s: error changing password entry\n"
+#~ msgstr "%s: fel vid ändring av lösenordspost\n"
+
+#~ msgid "%s: error removing password entry\n"
+#~ msgstr "%s: fel vid borttagning av lösenordspost\n"
+
+#~ msgid "%s: error removing shadow password entry\n"
+#~ msgstr "%s: fel vid borttagning av skugglösenordspost\n"
+
+#~ msgid "%s: can't get unique GID\n"
+#~ msgstr "%s: kan inte hämta unikt GID\n"
+
+#~ msgid " on '%.100s' from '%.200s'"
+#~ msgstr " den \"%.100s\" från \"%.200s\""
+
+#~ msgid " on '%.100s'"
+#~ msgstr " den \"%.100s\""
+
+#~ msgid "%s: line %d: can't create UID\n"
+#~ msgstr "%s: rad %d: kan inte skapa UID\n"
+
+#~ msgid "%s: name %s is not unique\n"
+#~ msgstr "%s: namnet %s är inte unikt\n"
+
+#~ msgid ""
+#~ "Usage: chgpasswd [options]\n"
+#~ "\n"
+#~ "Options:\n"
+#~ "  -e, --encrypted\tsupplied passwords are encrypted\n"
+#~ "  -h, --help\t\tdisplay this help message and exit\n"
+#~ "  -m, --md5\t\tuse MD5 encryption instead DES when the supplied\n"
+#~ "\t\t\tpasswords are not encrypted\n"
+#~ "\n"
+#~ msgstr ""
+#~ "Användning: chgpasswd [flaggor]\n"
+#~ "\n"
+#~ "Flaggor:\n"
+#~ "  -e, --encrypted\tangivna lösenord är krypterade\n"
+#~ "  -h, --help\t\tvisa detta hjälpmeddelande och avsluta\n"
+#~ "  -m, --md5\t\tanvänd MD5-kryptering istället för DES när de\n"
+#~ "\t\t\tangivna lösenorden inte är krypterade\n"
+#~ "\n"
+
+#, fuzzy
+#~ msgid "No password.\n"
+#~ msgstr "Ingen lösenordsfil\n"
+
+#~ msgid "Sorry.\n"
+#~ msgstr "Tyvärr.\n"
+
+#~ msgid "Sorry, the password for %s cannot be changed yet.\n"
+#~ msgstr "Tyvärr, lösenordet för %s kan inte ändras ännu.\n"
+
+#~ msgid "Sorry."
+#~ msgstr "Tyvärr."

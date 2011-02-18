@@ -1,0 +1,171 @@
+'\" t
+.\"     Title: passwd
+.\"    Author: [FIXME: author] [see http://docbook.sf.net/el/author]
+.\" Generator: DocBook XSL Stylesheets v1.75.2 <http://docbook.sf.net/>
+.\"      Date: 05.09.2010
+.\"    Manual: Dateiformate und -konvertierung
+.\"    Source: Dateiformate und -konvertierung
+.\"  Language: German
+.\"
+.TH "PASSWD" "5" "05.09.2010" "Dateiformate und -konvertierun" "Dateiformate und \-konvertieru"
+.\" -----------------------------------------------------------------
+.\" * set default formatting
+.\" -----------------------------------------------------------------
+.\" disable hyphenation
+.nh
+.\" disable justification (adjust text to left margin only)
+.ad l
+.\" -----------------------------------------------------------------
+.\" * MAIN CONTENT STARTS HERE *
+.\" -----------------------------------------------------------------
+.SH "NAME"
+passwd \- die Passwortdatei
+.SH "BESCHREIBUNG"
+.PP
+/etc/passwd
+enth\(:alt einen Eintrag pro Benutzerkonto, wobei jeder Eintrag sieben Felder besitzt, die durch Doppelpunkt (\(Bq:\(lq) getrennt sind\&. Diese Felder sind:
+.sp
+.RS 4
+.ie n \{\
+\h'-04'\(bu\h'+03'\c
+.\}
+.el \{\
+.sp -1
+.IP \(bu 2.3
+.\}
+Login\-Name
+.RE
+.sp
+.RS 4
+.ie n \{\
+\h'-04'\(bu\h'+03'\c
+.\}
+.el \{\
+.sp -1
+.IP \(bu 2.3
+.\}
+optional verschl\(:usseltes Passwort
+.RE
+.sp
+.RS 4
+.ie n \{\
+\h'-04'\(bu\h'+03'\c
+.\}
+.el \{\
+.sp -1
+.IP \(bu 2.3
+.\}
+numerische Benutzer\-ID
+.RE
+.sp
+.RS 4
+.ie n \{\
+\h'-04'\(bu\h'+03'\c
+.\}
+.el \{\
+.sp -1
+.IP \(bu 2.3
+.\}
+numerische Gruppen\-ID
+.RE
+.sp
+.RS 4
+.ie n \{\
+\h'-04'\(bu\h'+03'\c
+.\}
+.el \{\
+.sp -1
+.IP \(bu 2.3
+.\}
+Benutzername oder Kommentarfeld
+.RE
+.sp
+.RS 4
+.ie n \{\
+\h'-04'\(bu\h'+03'\c
+.\}
+.el \{\
+.sp -1
+.IP \(bu 2.3
+.\}
+Home\-Verzeichnis des Benutzers
+.RE
+.sp
+.RS 4
+.ie n \{\
+\h'-04'\(bu\h'+03'\c
+.\}
+.el \{\
+.sp -1
+.IP \(bu 2.3
+.\}
+optional Befehlsinterpreter des Benutzers
+.RE
+.PP
+Das Feld f\(:ur das verschl\(:usselte Passwort kann leer sein\&. In diesem Fall wird kein Passwort ben\(:otigt, um sich beim System anzumelden\&. Allerdings werden einige Anwendung, die
+/etc/passwd
+auswerten,
+\fIkeinen\fR
+Zugriff erlauben, wenn das
+\fIPasswort\fR\-Feld leer ist\&. Wenn das
+\fIPasswort\fR\-Feld ein kleines
+\(Bqx\(lq
+enth\(:alt, ist das Passwort in der Datei
+\fBshadow\fR(5)
+gespeichert\&. Es
+\fImuss\fR
+sich dann ein passender Eintrag in
+/etc/shadow
+befinden, oder das Benutzerkonto ist ung\(:ultig\&. Wenn das
+\fIPasswort\fR\-Feld eine andere Zeichenkette enth\(:alt, wird diese als ein verschl\(:usseltes Passwort behandelt\&. Genaueres dazu befindet sich unter
+\fBcrypt\fR(3)\&.
+.PP
+Das Kommentarfeld wird von verschiedenen Systemprogrammen wie z\&.B\&.
+\fBfinger\fR(1)
+ausgewertet\&.
+.PP
+Das Feld f\(:ur das Home\-Verzeichnis gibt den Namen f\(:ur das anf\(:angliche Arbeitsverzeichnis an\&. Das Programm
+\fBlogin\fR
+benutzt diese Information, um den Wert der Umgebungsvariable
+\fB$HOME\fR
+zu setzen\&.
+.PP
+Das Feld f\(:ur den Befehlsinterpreter enth\(:alt den Namen des Befehlssprachen\-Interpreters des Benutzers oder den Namen des Programms, das zuerst ausgef\(:uhrt werden soll\&. Das Programm
+\fBlogin\fR
+benutzt diese Information, um den Wert der Umgebungsvariable
+\fB$SHELL\fR
+zu setzen\&. Falls dieses Feld leer ist, wird ihm standardm\(:a\(ssig der Wert
+/bin/sh
+zugewiesen\&.
+.SH "DATEIEN"
+.PP
+/etc/passwd
+.RS 4
+Informationen zu den Benutzerkonten\&.
+.RE
+.PP
+/etc/shadow
+.RS 4
+optionale Datei f\(:ur verschl\(:usseltes Passwort
+.RE
+.PP
+/etc/passwd\-
+.RS 4
+Backup file for /etc/passwd\&.
+.sp
+Note that this file is used by the tools of the shadow toolsuite, but not by all user and password management tools\&.
+.RE
+.SH "SIEHE AUCH"
+.PP
+
+\fBcrypt\fR(3),
+\fBgetent\fR(1),
+\fBgetpwnam\fR(3),
+\fBlogin\fR(1),
+\fBpasswd\fR(1),
+\fBpwck\fR(8),
+\fBpwconv\fR(8),
+\fBpwunconv\fR(8),
+\fBshadow\fR(5),
+\fBsu\fR(1),
+\fBsulogin\fR(8)\&.

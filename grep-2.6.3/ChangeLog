@@ -1,0 +1,1764 @@
+2010-04-02  Jim Meyering  <meyering@redhat.com>
+
+	version 2.6.3
+	* NEWS: Record release date.
+
+	grep: avoid used-undefined error with truncated multibyte input
+	* src/dfa.c (addtok_wc): Don't use buf[0] (it's undefined) when
+	wcrtomb returns <= 0.
+
+	MBS_SUPPORT-removal: * src/dfa.c (dfastate):
+
+2010-04-01  Jim Meyering  <meyering@redhat.com>
+
+	maint: avoid unnecessary 2nd getenv("TERM")
+	* src/main.c (main): Don't call getenv("TERM") twice -- in the same
+	expression, even.
+
+	tests: remove all unportable uses of echo
+	* src/main.c: Use printf rather than echo -ne in a comment.
+	* tests/fedora: Use printf (not echo) also in ok/fail functions.
+	* cfg.mk (sc_prohibit_echo_minus_en): New rule, to prohibit
+	any future introduction.
+
+	tests: add explicit requirement for en_US.UTF-8
+	* tests/char-class-multibyte: Use require_en_utf8_locale_,
+	rather than open-coding it.
+	* tests/prefix-of-multibyte: Require the locale explicitly.
+	* tests/fgrep-infloop: Likewise.
+	This fixes test failures that would arise on systems without
+	that particular locale.  Reported by Ludovic Courtès.
+
+	tests: new function, to require an en_US UTF8 locale
+	* tests/init.cfg (require_en_utf8_locale_): New function.
+
+	tests: use printf, not echo -n, echo -e, or any combination
+	* tests/fedora: Using printf is more portable.
+
+	grep: remove unnecessary code
+	* src/main.c (print_line_middle): Now that we use RE_ICASE
+	(enabled in commit 70e23616, "dfa: rewrite handling of multibyte
+	case_fold lexing"), this case-conversion code is useless and wasteful.
+	Remove it.
+
+	doc: fix typo: s/AM_V_AT/AM_V_at/
+	* doc/Makefile.am (egrep.1 fgrep.1): The former has case consistent
+	with its sister variable, AM_V_GEN, but the latter is the one that
+	actually works.
+
+	doc: generated files are best made read-only, ...
+	...to minimize risk of accidentally modifying the generated file
+	rather than its template.  These are tiny, so no risk, but it's
+	a good to be consistent, so generated files are easier to spot.
+	* doc/Makefile.am (egrep.1 fgrep.1): When generating these files,
+	ensure that they too are created read-only.
+
+	doc: generate grep.1 from template
+	* doc/Makefile.am (grep.1): New rule.
+	(CLEANFILES): Add grep.1 to the list.
+	* .gitignore: Add /doc/grep.1
+	* doc/grep.in.1: Replace hard-coded "2.5.1-cvs" with @VERSION@.
+	Update copyright year list.
+	Omit the line-splitting \(co directive so that update-copyright
+	will perform future updates automatically.
+	Egmont Koblinger reported the outdated version string
+	and copyright year list in the man page:
+	http://savannah.gnu.org/bugs/?29390
+
+	doc: prepare to generate grep.1
+	* doc/grep.1: Rename to...
+	* doc/grep.in.1: ...this.
+
+2010-03-31  Eric Blake  <eblake@redhat.com>
+
+	build: avoid another warning
+	Noticed on cygwin:
+	get-mb-cur-max.c: In function 'main':
+	get-mb-cur-max.c:27: error: unused parameter 'argc' [-Wunused-parameter]
+
+	* tests/get-mb-cur-max.c (main): Use argc.
+
+2010-03-31  Paolo Bonzini  <bonzini@gnu.org>
+
+	tests: fix on systems with broken sh
+	* tests/Makefile.am (TESTS_ENVIRONMENT): Adjust coreutils remnants.
+	* tests/bre.sh: Invoke script with $SHELL if defined.
+	* tests/ere.sh: Likewise.
+	* tests/spencer1-locale: Likewise.
+	* tests/spencer1.sh: Likewise.
+
+	tests: improve empty test
+	* tests/empty: Add more tests, note expected failure.
+
+	tests: improve empty test with respect to locales
+	* tests/empty: Add tests for multiple locales.
+
+	grep: fix grep -F against empty string
+	* src/searchutils.c (is_mb_middle): Do not return true for empty matches
+	when p == buf.
+
+	tests: rename empty.sh to empty
+	* tests/empty.sh: Rename to...
+	* tests/empty: ... this.
+	* tests/Makefile.am (TESTS): Adjust.
+
+	tests: convert empty.sh to new style
+	* tests/empty.sh: Convert to init.sh, add 10-second timeout.
+
+	tests: use get-mb-cur-max in char-class-multibyte
+	* tests/char-class-multibyte: Use get-mb-cur-max to detect UTF-8 support.
+	Rewrite previous locale detection code as a grep test.
+
+	tests: fix -Wformat failure
+	* tests/get-mb-cur-max (main): Cast MB_CUR_MAX to int.
+
+2010-03-31  Jim Meyering  <meyering@redhat.com>
+
+	doc: add a "Reply-To" to the suggested announcement mail header
+	* README-release: Add "Reply-To" with the list address,
+	to minimize risk of replies to the other announcement recipients.
+	Suggestion from Eric Blake.
+
+2010-03-30  Jim Meyering  <meyering@redhat.com>
+
+	build: avoid compiler warning when building test program
+	* tests/Makefile.am (AM_CPPFLAGS, AM_CFLAGS, AM_LDFLAGS): Define,
+	so that all the usual C compile-and-link machinery comes into play.
+	* tests/get-mb-cur-max.c: Include "progname.h".
+	Remove unnecessary inclusion of <ctype.h>.
+	Mike Frysinger reported the "implicit decl of set_program_name" warning.
+
+	build: detect PCRE support also when <pcre/pcre.h> is the header
+	* m4/pcre.m4: Also check for <pcre/pcre.h>.
+	* src/pcresearch.c: Include <pcre/pcre.h>, if needed.
+	Guard inclusions with HAVE_PCRE_H and HAVE_PCRE_PCRE_H, not HAVE_LIBPCRE.
+	* NEWS (Bug fixes): Mention it.
+	Dmitry V. Levin reported that PCRE support was not detected
+	on systems with <pcre.h> not in the default include path.
+
+2010-03-29  Jim Meyering  <meyering@redhat.com>
+
+	post-release administrivia
+	* NEWS: Add header line for next release.
+	* .prev-version: Record previous version.
+	* cfg.mk (old_NEWS_hash): Auto-update.
+
+	version 2.6.2
+	* NEWS: Record release date.
+
+2010-03-29  Eric Blake  <eblake@redhat.com>
+
+	build: avoid warnings on cygwin
+	* lib/savedir.c (isdir): Avoid shadowing a declaration.
+	* src/main.c (get_nondigit_option): Cast away const to avoid
+	compiler warning.
+
+	maint: ignore new test executable
+	* .gitignore: Enhance.
+
+2010-03-29  Jim Meyering  <meyering@redhat.com>
+
+	doc: consolidate redundant-looking entries
+	* NEWS: Consolidate the two --include/exclude-related entries.
+	Suggested by Eric Blake.
+
+2010-03-29  Paolo Bonzini  <bonzini@gnu.org>
+
+	tests: use $(...) consistently
+	* tests/backref.sh: Use `...' instead of ``...'' in comments.
+	* tests/bre.awk: Use $(...) instead of `...`.
+	* tests/ere.awk: Use $(...) instead of `...`.
+	* tests/euc-mb: Use $(...) instead of `...`.
+	* tests/fmbtest: Use $(...) instead of `...`.
+	* tests/foad1: Use $(...) instead of `...`.
+	* tests/pcre-z: Use $(...) instead of `...`.  Quote output of grep.
+	* tests/spencer1-locale.awk: Use $(...) instead of `...`.
+	* tests/spencer1.awk: Use $(...) instead of `...`.
+	* tests/yesno.sh: Use $(...) instead of `...`.
+
+2010-03-29  Jim Meyering  <meyering@redhat.com>
+
+	build: make doc/Makefile.am cleaner and more robust
+	* doc/Makefile.am (egrep.1 fgrep.1): Generate robustly, i.e.,
+	do not redirect directly to $@.
+	Use $(AM_V_GEN).
+	Do not distribute intermediate files like fgrep.man and egrep.man.
+	Likewise, do not use them to generate their %.1 images.
+	Instead, generate the .1 files directly.
+
+2010-03-29  Paolo Bonzini  <bonzini@gnu.org>
+
+	tests: add program to detect locales
+	* tests/Makefile.am (check_PROGRAMS): Add get-mb-cur-max.
+	* tests/get-mb-cur-max.c: New.
+	* tests/euc-mb: Use it.  Fail if the former detection test fails.
+	* tests/sjis-mb: Use it.  Fail if the former detection test fails.  Expand
+	comments.
+
+	tests: add tests for SJIS character sets
+	The attached test will be skipped unless (on a glibc system) you run
+	something like
+
+	  mkdir /usr/lib/locale/ja_JP.SHIFT_JIS
+	  zcat /usr/share/i18n/charmaps/SHIFT_JIS.gz | \
+	    localedef \
+	      -f - \
+	      -i /usr/share/i18n/locales/ja_JP \
+	      /usr/lib/locale/ja_JP.SHIFT_JIS
+
+	* tests/Makefile.am: Add sjis-mb.
+	* tests/sjis-mb: New.
+
+	grep -F: fix a bug with SJIS character sets
+	Commit db9d6 would erroneously skip matches in SJIS character sets.  In
+	this character set low bytes (i.e. ASCII bytes) are also valid second
+	bytes in a double-byte character, so you have to continue looking for
+	a match, even if you match in the middle of a double-byte character.
+
+	* src/kwsearch.c: Ensure that beg is advanced by at least one byte,
+	but do not fail immediately after matching in the middle of a double-byte
+	character.
+
+2010-03-29  Bruno Haible  <bruno@clisp.org>
+
+	build: update after change in gnulib's lib-ignore module
+	* src/Makefile.am (AM_LDFLAGS): Define.  Use gnulib's new
+	$(IGNORE_UNUSED_LIBRARIES_CFLAGS).
+
+2010-03-29  Jim Meyering  <meyering@redhat.com>
+
+	tests: disable new texinfo-acronym syntax-check from gnulib
+	* cfg.mk (local-checks-to-skip): Add new sc_texinfo_acronym, to skip it.
+
+2010-03-28  Norihiro Tanaka  <noritnk@kcn.ne.jp>
+
+	tests: exercise fix for improper match of incomplete MB char prefix
+	* tests/prefix-of-multibyte: New file.
+	* tests/Makefile.am (TESTS): Add it.
+
+2010-03-28  Jim Meyering  <meyering@redhat.com>
+
+	grep -F: fix a multi-byte erroneous-match-in-middle bug
+	Just as Perl prints nothing in this case,
+	  printf '\357\274\241\n' | perl -CIO -lne '/\357/ and print'
+
+	grep should also print nothing when used as follows.
+	However, these would mistakenly match with grep prior to 2.6.2:
+	  printf '\357\274\241\n' | LC_ALL=en_US.UTF-8 src/grep -F $'\357'
+	  printf '\357\274\241\n' | LC_ALL=en_US.UTF-8 src/grep -F $'\357\274'
+
+	* src/searchutils.c (is_mb_middle): New parameter: the length of the
+	match, in bytes, as determined by kwsexec.  Use this to detect when
+	the nominal match found by kwsexec must be skipped because it is for
+	an incomplete multi-byte character that is a prefix of a character
+	in the input.
+	* src/dfasearch.c (EGexecute): Update caller.
+	* src/kwsearch.c (Fexecute): Likewise.
+	* src/search.h: Update prototype.
+	* NEWS (Bug fixes): Mention it.
+	Report and analysis by Norihiro Tanaka.
+
+2010-03-28  Norihiro Tanaka  <noritnk@kcn.ne.jp>
+
+	tests: add tests for the fgrep-infloop bug
+	* tests/init.cfg (require_timeout_): New function.
+	* tests/fgrep-infloop: New file.  Test for the above fix.
+	* tests/Makefile.am (TESTS): Add it.
+
+2010-03-28  Jim Meyering  <meyering@redhat.com>
+
+	grep -F: avoid infinite loop when searching for incomplete MB character
+	Searching for an incomplete non-prefix of a multi-byte character
+	should find no match.
+
+	  Just as these print nothing,
+	    printf '\357\274\241\357\274\241\n' \
+	      | perl -CIO -ne '/\241\357/ and print'
+	    printf '\357\274\241\n' | perl -CIO -ne '/\274\241/ and print'
+	    printf '\357\274\241\n' | perl -CIO -ne '/\241/ and print'
+	    printf '\357\274\241\n' | perl -CIO -ne '/\274/ and print'
+
+	  These should also print nothing, but with grep-2.6 and grep-2.6.1,
+	  they would infloop:
+	    printf '\357\274\241\n' | LC_ALL=en_US.UTF-8 src/grep -F $'\241'
+	    printf '\357\274\241\n' | LC_ALL=en_US.UTF-8 src/grep -F $'\274'
+	    printf '\357\274\241\n' | LC_ALL=en_US.UTF-8 src/grep -F $'\274\241'
+
+	* src/kwsearch.c (Fexecute): Don't infloop when searching for
+	an incomplete non-prefix part of a multi-byte character.
+	* NEWS (Bug fixes): Mention it.
+	Reported and diagnosed by Norihiro Tanaka.
+
+	tests: rename: fmbtest.sh -> fmbtest
+	* tests/fmbtest.sh: Rename to ...
+	* tests/fmbtest: ...this, dropping the .sh suffix.
+	* tests/Makefile.am (TESTS): Reflect renaming.
+
+	tests: convert fmbtest.sh to use init.sh
+	* tests/fmbtest.sh: Use init.sh and adapt accordingly:
+	Use "grep", not ${GREP}.  Use Exit, not exit.
+
+	tests: also exercise the --include + glob path
+	* tests/include-exclude: Exercise Javier's fix.
+
+2010-03-28  Javier Villavicencio  <the_paya@gentoo.org>
+
+	grep -r: fix --include with globs, too
+	The previous fix addressed only the non-glob case.
+	* src/main.c (main): Use add_exclude's EXCLUDE_WILDCARDS option,
+	to enable the use of fnmatch with --include=GLOB.
+	gnulib: Update to latest, for the fixed exclude.c.
+
+2010-03-28  Jim Meyering  <meyering@redhat.com>
+
+	grep -r: fix --include with non-globs
+	* lib/savedir.c (savedir): Fix logic error.  Introduced by commit
+	bf3bd92c, "build: adapt to the newer exclude API we now get from gnulib"
+	* tests/include-exclude: Test for this bug by exercising --include, too.
+	* NEWS (Bug fixes): Mention it.
+	Reported by Philipp Kohlbecher in http://savannah.gnu.org/bugs/?29358
+
+2010-03-27  Jim Meyering  <meyering@redhat.com>
+
+	kwset: correct comments; require non-NULL kwsmatch argument
+	* src/kwset.c (kwsexec): Correct comments.  This function has been
+	returning an offset, not a pointer, for 9 years.
+	Do not test for kwsmatch == NULL.  All callers pass non-NULL.
+	(cwexec): Likewise.
+	* src/kwset.h (kwsexec): Mark the 4th parameter, kwsmatch, as non-NULL.
+	Include "arg-nonnull.h".
+
+	build: add -I$(top_builddir)/lib so we also find generated .h files
+	* src/Makefile.am (AM_CPPFLAGS): Rename from INCLUDES to avoid
+	warning from automake -Wall.
+	Add -I$(top_builddir)/lib, so we find generated .h files like
+	getopt.h in a non-srcdir build.
+
+	build: remove superfluous LOCALEDIR definition
+	* src/Makefile.am (INCLUDES): Remove unnecessary definition of
+	LOCALEDIR here.  Now, it's defined via gnulib's configmake.h.
+	* src/system.h: Include "configmake.h" for its LOCALEDIR definition.
+
+	grep: don't segfault upon use of --include or --exclude* options
+	* lib/savedir.c (isdir1): Fix fatal typo: deref "dir" argument,
+	not the global (initially-NULL) "path".  Reported by Standish Parsley.
+	* tests/include-exclude: New file.
+	* tests/Makefile.am (TESTS): Add it.
+	* NEWS (Bug fixes): Mention it.
+
+2010-03-26  Jim Meyering  <meyering@redhat.com>
+
+	tests: rename: foad1.sh -> foad1
+	* tests/foad1.sh: Rename to ...
+	* tests/foad1: ...this, dropping the .sh suffix.
+	* tests/Makefile.am (TESTS): Reflect renaming.
+
+	tests: convert foad1.sh to use init.sh
+	This fixes a spurious test failure when "make check" is run with
+	certain envvars set, e.g., "make check GREP_COLOR=always"
+	* tests/foad1.sh: Use init.sh and adapt accordingly:
+	Use "grep", not ${GREP}.  Test VERBOSE against "yes", not "1",
+	to be consistent with init.sh.
+	Use Exit, not exit.
+	Reported by Nelson H. F. Beebe.
+
+	tests: insulate tests from envvar settings
+	* tests/init.cfg (vars_): Unset each envvar that can affect how
+	grep works.  This protects only those tests that have been
+	converted to use init.sh.
+
+2010-03-26  Eric Blake  <eblake@redhat.com>
+
+	maint: ignore 'make dist pdf' droppings
+	* .gitignore: Add more exemptions.
+
+2010-03-26  Jim Meyering  <meyering@redhat.com>
+
+	tests: avoid spurious test failure due to lack of a French UTF8 locale
+	* tests/init.cfg: New file.  If either $LOCALE_FR or $LOCALE_FR_UTF8
+	is set to "none", reset it to the empty string.
+	Reported by Mike Frysinger and Sven Joachim.
+	* tests/Makefile.am (EXTRA_DIST): Add init.cfg.
+
+	build: do not use pkg-config to test for PCRE support
+	* configure.ac: Do not use PKG_PROG_PKG_CONFIG or PKG_CHECK_MODULES.
+	Do not modify CPPFLAGS; that belongs to those who invoke make.
+	Instead, use autoconf's AC_CHECK_HEADERS and AC_SEARCH_LIBS via the
+	new macro, gl_FUNC_PCRE, defined in...
+	* m4/pcre.m4 (gl_FUNC_PCRE): New macro, to handle pcre-related
+	configure-time tests.
+	* src/Makefile.am (grep_LDADD): Use LIB_PCRE, not PCRE_LIBS.
+	* src/pcresearch.c: Test HAVE_LIBPCRE via "#if", not "#ifdef".
+	All other cpp tests of this symbol used "#if".
+	Prompted by a suggestion from Bruno Haible.
+	* NEWS (Build-related): Mention this.
+
+2010-03-25  Jim Meyering  <meyering@redhat.com>
+
+	doc: correct and amend NEWS entries for 2.6.1
+	* NEWS (Bug fixes): Correct character ranges bug description.
+	Add an example from Dmitry V. Levin.
+	Add that the word-with-backref bug was introduced in 2.5.1.
+	* cfg.mk (old_NEWS_hash): Update to match.
+
+	post-release administrivia
+	* NEWS: Add header line for next release.
+	* .prev-version: Record previous version.
+	* cfg.mk (old_NEWS_hash): Auto-update.
+
+	version 2.6.1
+	* NEWS: Record release date.
+
+2010-03-25  Tony Abou-Assaleh  <taa@acm.org>
+
+	tests: use awk's -v option more portably
+	* tests/spencer1-locale: Add a space between awk's "-v" option and
+	the following VAR=value string, to avoid test failure on Mac OS X.
+
+2010-03-25  Norihirio Tanaka  <noritnk@kcn.ne.jp>
+
+	dfa/grep: fix compilation with MBS_SUPPORT
+	* src/dfa.c (cur_mb_len): Initialize to 1 and always make it available.
+	(setbit_case_fold): Do not use wint_t in prototype if !MBS_SUPPORT.
+	(parse_bracket_exp): Fix compilation with !MBS_SUPPORT.
+	* src/kwsearch.c (kwsinit): Do not use mbtolower and MB_CUR_MAX
+	if !MBS_SUPPORT.
+	* src/searchutils.c (kwsinit): Do not refer to MB_CUR_MAX if !MBS_SUPPORT.
+
+	* tests/char-class-multibyte: Skip if UTF-8 matching does not work.
+	* tests/fmbtest.sh: Likewise.
+
+2010-03-25  Jim Meyering  <meyering@redhat.com>
+
+	build: avoid warnings about unnecessary use of "return"
+	* src/grep.c (Gcompile, Ecompile, Acompile): Do not "return X"
+	from a function returning void, not even when X itself is a
+	function returning void.  This avoids warnings from Sun Studio 11
+	reported by Dagobert Michelsen.
+	* src/egrep.c (Ecompile): Likewise.
+
+2010-03-25  Norihirio Tanaka  <noritnk@kcn.ne.jp>
+
+	grep: fix printing when -w is used and regex is needed for matching
+	* NEWS: Document bugfix.
+	* src/dfasearch.c (EGexecute): After assess_pattern_match len, is either
+	invalid or end-beg; jump to success.
+	* tests/Makefile.am (TESTS): Add new test.
+	* tests/backref-word: New.
+
+2010-03-25  Paolo Bonzini  <bonzini@gnu.org>
+
+	dfa: fix single byte character ranges
+	* src/dfa.c (in_coll_range): Fix ordering for second strcoll.  Reported
+	by Dmitry V. Levin.
+	* tests/spencer1-locale.awk: Also test single-byte character sets.
+	* NEWS: Add a note about this bugfix.
+	* THANKS: Add Dmitry.
+
+2010-03-25  Norihirio Tanaka  <noritnk@kcn.ne.jp>
+
+	grep: reset state after truncated or invalid multibyte sequences
+	* src/searchutils.c (is_mb_middle): When treating an invalid sequence
+	or a truncated multibyte character as a single byte character, reset
+	mbstate
+
+	grep: do lowercase conversion in print_line_middle only for single-byte case
+	* src/main.c (print_line_middle): Restrict match_icase code
+	to MB_CUR_MAX == 1.  Adjust comments.
+
+2010-03-25  Jim Meyering  <meyering@redhat.com>
+
+	tests: provide framework_failure_ function
+	The shell function "framework_failure" was called in the unusual
+	event that some fundamental test set-up operation would fail.
+	However it was not defined.  Define it, but with a trailing underscore
+	to impinge less on the test writer's name space.  Adjust all uses.
+	* tests/init.sh (framework_failure_): New function.
+	* tests/case-fold-backref: s/framework_failure/framework_failure_/
+	* tests/case-fold-char-class: Likewise.
+	* tests/case-fold-char-range: Likewise.
+	* tests/case-fold-char-type: Likewise.
+	* tests/char-class-multibyte: Likewise.
+	* tests/dfaexec-multibyte: Likewise.
+	* tests/max-count-vs-context: Likewise.
+	* tests/word-multi-file: Likewise.
+
+	doc: tweak THANKS
+	* THANKS: Update Arnold's name and address, per request.
+
+2010-03-24  Jim Meyering  <meyering@redhat.com>
+
+	portability: use gnulib's lseek wrapper
+	* bootstrap.conf (gnulib_modules): Use gnulib's lseek wrapper,
+	for improved portability.  lseek does not fail with ESPIPE on
+	pipes on some systems.
+
+	build: avoid link failure on Solaris 8
+	* bootstrap.conf (gnulib_modules): Add wctob.
+	* NEWS (Portability): Mention this.
+	Reported by Dagobert Michelsen in <http://sv.gnu.org/bugs/?29325>.
+
+2010-03-24  Petr Písař  <petr.pisar@atlas.cz>
+
+	doc: translate new --help message
+	* src/main.c: Translate "after_options".
+
+2010-03-24  Jim Meyering  <meyering@redhat.com>
+
+	doc: NEWS make it clear that the bug was introduced in 2.6
+	* NEWS: Clarify.
+
+2010-03-24  Paolo Bonzini  <bonzini@gnu.org>
+
+	tests: fix char-class-multibyte
+	* tests/char-class-multibyte: Make it pass.
+
+2010-03-23  Jim Meyering  <meyering@redhat.com>
+
+	build: avoid compilation failure when MBS_SUPPORT not defined
+	* src/dfa.c (setbit_case_fold) [!MBS_SUPPORT]: Fix curly brace mismatch.
+
+2010-03-23  Paolo Bonzini  <bonzini@gnu.org>
+
+	dfa: fix sigsegv on multibyte character classes
+	Reported by Jaroslav Škarvada <jskarvad@redhat.com>.  This is
+	unfortunate.  grep needs an automatic testcase generator.
+
+	* NEWS: Document bug.
+	* THANKS: Mention reporter.
+	* src/dfa.c (set_bit_casefold): Change type of first argument for
+	self-documentation.
+	(parse_bracket_exp): Fix call.
+	* tests/Makefile.am: Add new testcase.
+	* tests/char-class-multibyte: New testcase.
+
+2010-03-23  Jim Meyering  <meyering@redhat.com>
+
+	post-release administrivia
+	* NEWS: Add header line for next release.
+	* .prev-version: Record previous version.
+	* cfg.mk (old_NEWS_hash): Auto-update.
+
+	version 2.6
+	* NEWS: Record release date.
+
+	build: avoid warnings: tell gcc and clang that dfaerror never returns
+	* src/dfa.h (__attribute__): Define.
+	(dfaerror): Declare with the "noreturn" attribute.
+	* src/dfasearch.c (dfaerror): Add an unreachable use of abort.
+
+2010-03-22  Eric Blake  <eblake@redhat.com>
+
+	build: fix cygwin build
+	Portions of gnulib depend on -lintl, and cygwin does not allow
+	lazy linking.
+
+	* src/Makefile.am (LDADD): Include libraries in correct order.
+
+2010-03-22  Paolo Bonzini  <bonzini@gnu.org>
+
+	grep: remove --mmap
+	mmap is a bad idea for sequentially accessed file because it will cause
+	a page fault for every read page.  Just consider it a failed experiment,
+	and ignore --mmap while accepting it for backwards compatibility.
+
+	* configure.ac (AC_FUNC_MMAP): Remove.
+	* doc/grep.texi (Other options): Say --mmap is ignored.
+	* src/grep.c (mmap_option): Remove.
+	(long_options): Do not reference it.
+	(bufmapped, initial_bufoffset): Remove.
+	(reset, fillbuf): Remove HAVE_MMAP code.
+	(grepfile): Remove bufmapped reference.
+	(usage): Say --mmap is ignored.
+
+	grep: rename files for intuitiveness
+	* Makefile.am (libgrep_a_SOURCES, grep_SOURCES, egrep_SOURCES,
+	fgrep_SOURCES): Adjust.
+	* grep.c: Rename to main.c.
+	* esearch.c: Rename to egrep.c.
+	* fsearch.c: Rename to fgrep.c.
+	* gsearch.c: Rename to grep.c.
+
+	grep: kill GREP_PROGRAM/EGREP_PROGRAM/FGREP_PROGRAM
+	* NEWS: Document slight semantic change.
+	* TODO: #ifdefs are gone.
+	* po/POTFILES.in: Update.
+	* src/Makefile.am (grep_SOURCES, egrep_SOURCES, fgrep_SOURCES): Remove
+	grep.c/egrep.c/fgrep.c.
+	(noinst_LIBRARIES): Change libsearch.a to libgrep.a.
+	(libsearch_a_SOURCES): Rename to libgrep_a_SOURCES, add grep.c
+	(LDADD): Change libsearch.a to libgrep.a.
+	* src/esearch.c: Add before_options and after_options.
+	* src/fsearch.c: Likewise.
+	* src/gsearch.c: Likewise.
+	* src/grep.c (short_options, long_options): Remove GREP_PROGRAM
+	special-casing.
+	(usage): Use before_options and after_options, look at matchers.
+	(setmatcher): Merge with install_matcher.
+	(main): Call setmatcher (NULL) instead of install_matcher.
+	* src/grep.h (GREP_PROGRAM): Remove.
+	(before_options, after_options): Add.
+
+	thank Eric Blake
+	* THANKS: Add Eric Blake, who reported the warning fixed by 774d0ee.
+
+	grep: libify *search.c
+	* src/Makefile.am (libsearch_a_SOURCES): Add dfasearch.c, kwsearch.c,
+	pcresearch.c.
+	* src/esearch.c, src/fsearch.c, * src/gsearch.c: Only include search.h.
+	* src/dfasearch.c (GEAcompile, EGexecute): Export.
+	* src/kwsearch.c (Fcompile, Fexecute): Export.
+	* src/pcresearch.c (Pcompile, Pexecute): Export.
+	* src/search.h: Add new exported functions.
+
+	grep: prepare for libification of *search.c
+	* src/dfasearch.c (Ecompile): Remove.
+	* src/esearch.c: Place it here...
+	* src/gsearch.c: ... and here.
+
+	grep: split search.c
+	* po/POTFILES.in: Update.
+	* src/Makefile.am (grep_SOURCES, egrep_SOURCES, fgrep_SOURCES): Move
+	kwset.c and dfa.c to libsearch.a.  Add searchutils.c there too.
+	* src/search.h, src/dfasearch.c, src/pcresearch.c, src/kwsearch.c,
+	src/searchutils.c: New files, split out of src/search.c.
+	* src/esearch.c, src/fsearch.c: Include the new files instead of search.c.
+	* src/gsearch.c: Likewise, plus move Gcompile/Acompile here.
+
+	grep: remove one #ifdef
+	* search.c (GEAcompile) [EGREP_PROGRAM]: Use common code.  Inline IF_BK.
+
+	grep: eliminate {COMPILE,EXECUTE}_{RET,ARGS,FCT}
+	Modern compilers warn about type mismatches.
+
+	* src/grep.c (do_execute): Write full declaration.
+	* src/grep.h (COMPILE_RET, COMPILE_ARGS, COMPILE_FCT, EXECUTE_RET,
+	EXECUTE_ARGS, EXECUTE_FCT): Remove.
+	(compile_fp_t, execute_fp_t): Write full declaration.
+	* src/search.c (GEAcompile, Gcompile, Acompile, Ecompile, EGexecute,
+	Fcompile, Fexecute, Pcompile, Pexecute): Write full declaration.
+
+	grep: make egrep/fgrep use struct matcher
+	* Makefile.am (grep_SOURCES): Add gsearch.c.
+	(EXTRA_DIST): Add search.c.
+	* esearch.c (matchers): New.
+	* fsearch.c (matchers): New.
+	* gsearch.c: New.
+	* search.c (matchers): Remove.
+	* grep.c: Always compile most !GREP_PROGRAM sections.
+	(main): Use first matcher if none is explicitly provided.  Remove
+	"default" matcher.
+	* grep.h (struct matcher): Adjust comments.
+
+	grep: change struct matcher termination
+	* src/grep.c (setmatcher): Look for NULL matchers[i].name.
+	* src/grep.h (struct matcher): Change name to pointer.  Adjust comments.
+	* src/search.c (matchers): Terminate with three NULLs.
+
+	grep: remove one #ifdef
+	* search.c (Ecompile): Always go through GEAcompile to use same code path
+	for both grep and egrep.
+
+	grep: remove getpagesize.h
+	* src/getpagesize.h: Remove.
+	* src/Makefile.am (noinst_HEADERS): Remove getpagesize.h.
+
+2010-03-21  Jim Meyering  <meyering@redhat.com>
+
+	build: use the fcntl-h module, not "fcntl"
+	* bootstrap.conf (gnulib_modules): We might need fcntl.h somewhere,
+	but don't use the fcntl function.  Reported by Bruno Haible.
+
+	build: avoid link failure on systems using gnulib's fcntl but not open
+	* bootstrap.conf (gnulib_modules): Using gnulib's fcntl module
+	and including <fcntl.h>, but not also using gnulib's "open" module
+	would result in link failure due to references to rpl_open
+	on systems requiring the replacement (e.g., Cygwin and Darwin).
+
+	build: avoid compilation failure on systems using rpl_open
+	This new build failure has arisen as a result of using gnulib's
+	"fcntl" module.  Now that an inadequate "open" syscall is replace
+	by gnulib's wrapper, it is essential to include <fcntl.h>.
+	* src/grep.c: Include <fcntl.h>.
+	This is required, for grepfile's use of open, at least on
+	Cygwin and Darwin.
+
+	maint: use gnulib's fcntl module, just in case
+	* bootstrap.conf (gnulib_modules): Add fcntl.
+	Grep uses at least O_BINARY, which may be defined therein.
+
+	maint: remove TYPE_* definitions from src/system.h
+	* src/system.h (TYPE_MAXIMUM, TYPE_MINIMUM, TYPE_SIGNED): Remove
+	definitions.  They are provided by intprops.h.
+	* src/grep.c: Include "intprops.h"
+	* bootstrap.conf (gnulib_modules): Add intprops.
+
+	maint: alphabetize #include directives
+	* src/grep.c: Alphabetize #include directives.
+
+2010-03-20  Jim Meyering  <meyering@redhat.com>
+
+	build: stop using gnulib's memmove module
+	* bootstrap.conf (gnulib_modules): Remove obsolete module: memmove
+
+	build: reinstate gnulib's fcntl-h-tests
+	* bootstrap.conf (gnulib_tool_option_extras): Do not avoid
+	the fcntl-h-tests.  I cannot reproduce the failure.
+
+2010-03-20  Eric Blake  <eblake@redhat.com>
+
+	build: allow compilation on cygwin
+	Gnulib is incompatible with -Wunused-macros.  Addtionally,
+	cygwin 1.7.1 coupled with --enable-gcc-warnings tripped on:
+
+	grep.c: In function 'print_line_middle':
+	grep.c:805: error: array subscript has type 'char' [-Wchar-subscripts]
+	grep.c: In function 'main':
+	grep.c:1833: error: 'optarg' redeclared without dllimport attribute: previous dllimport ignored [-Wattributes]
+	grep.c:1834: error: 'optind' redeclared without dllimport attribute after being referenced with dll linkage
+
+	* configure.ac (GNULIB_WARN_FLAGS): Disable -Wunused-macros.
+	* src/grep.c (print_line_middle): Use correct type to tolower.
+	(main): Drop useless redeclarations.
+	* .gitignore: Ignore more built files.
+
+2010-03-20  Jim Meyering  <meyering@redhat.com>
+
+	tests: ensure that all programs handle [b-a] consistently
+	* tests/reversed-range-endpoints: New test.
+	* tests/Makefile.am (TESTS): Add it.
+
+	build: update gnulib submodule to latest
+	This pulls in the latest regex module from gnulib, including a fix
+	to make it honor the RE_NO_EMPTY_RANGES syntax bit.
+
+	tests: temporarily disable irrelevant-to-grep failing C++ fcntl-h-tests
+	* bootstrap.conf (gnulib_tool_option_extras): Temporarily add
+	--avoid=fcntl-h-tests, until the C++ part of that test is fixed.
+
+	reject reversed-endpoint ranges, with all regex variants
+	* src/search.c: Add RE_NO_EMPTY_RANGES to the syntax bits
+	in three places, so that all of grep, egrep, and grep -E reject
+	a range with reversed endpoints like '[b-a]'.  This is required,
+	when using the latest version of gnulib's regex module, since it
+	now honors the RE_NO_EMPTY_RANGES flag, rather than acting as if
+	it were always set.
+	Based on a change by Matthew Burgess.
+
+2010-03-19  Jim Meyering  <meyering@redhat.com>
+
+	maint: correct macro parameter parentheses
+	* src/dfa.c (FETCH_WC, FETCH): Parenthesize macro parameters.
+
+2010-03-19  Paolo Bonzini  <bonzini@gnu.org>
+
+	tests: change help-version to per-program functions
+	* help-version: Change each *_args variable to a *_setup function.
+
+	dfa: fix wchar_t/wint_t type mismatch
+	* src/dfa.c (FETCH_WC): Pass a local wchar_t variable to mbrtowc.
+	(FETCH): Rename temporary second argument to FETCH_WC.
+	(parse_bracket_exp): Always use FETCH_WC.
+
+2010-03-19  Jim Meyering  <meyering@redhat.com>
+
+	doc: add README-prereq, referenced from README-hacking
+	* README-prereq: New file.  Cloned from coreutils, s/coreutils/grep/
+	Reported by Tony Abou-Assaleh.
+
+2010-03-19  Arnold Robbins  <arnold@skeeve.com>
+
+	maint: sync dfa comments from gawk
+	* src/dfa.h (struct dfa) [newlines]: Amend comment.
+	* src/dfa.c: Update copyright year list to include gawk's.
+
+2010-03-17  Jim Meyering  <meyering@redhat.com>
+
+	maint: remove obsolete "cvs-clean" make target
+	* Makefile.am (cvs-clean): Remove obsolete target.
+
+2010-03-17  Paolo Bonzini  <bonzini@gnu.org>
+
+	dfa: initialize struct mbcset using memset
+	* src/dfa.c (parse_bracket_exp): Use memset to initialize workmbc.
+
+	dfa: spell out "unsigned int"
+	* dfa.c (setbit, tstbit, clrbit, setbit_case_fold, lex, dfaoptimize,
+	free_mbdata): Put "int" after unsigned.
+	* dfa.h (struct position, struct dfa): Likewise.
+
+	dfa: optimize simple character sets under UTF-8 charsets
+	Only use a bitset when possible without involving MBCSET.  Testcase:
+	   yes 'the quick brown fox jumps over the lazy dog' | sed 100000q | \
+	     time grep -c [ABCDEFGHIJKLMNOPQRSTUVWXYZ,]
+
+	Before: 51ms (best of three runs); after: 16ms(best of three runs).
+
+	* src/dfa.c (parse_bracket_exp): For simple bracket expressions
+	under UTF-8, use a CSET.
+
+	dfa: speed up handling of brackets
+	This patch has two sides.  One is to fold the parsing of brackets in the
+	single- and multi-byte cases.  The second is to leverage this change,
+	and use a bitset to test for single-byte characters in the charset.
+	Splitting the two would be very hard.
+
+	Testcase:
+	   yes 'the quick brown fox jumps over the lazy dog' | sed 100000q | \
+	     time grep -c [ABCDEFGHIJKLMNOPQRSTUVWXYZ,]
+
+	Before: 59ms (best of three runs); after: 51ms (best of three runs).
+	Nice, but mostly providing infrastructure for the next patch.
+
+	* src/dfa.c (setbit_case_fold): Try applying towlower/towupper.
+	(looking_at): Remove.
+	(FETCH_WC): New.
+	(fetch_wc): Merge into FETCH_WC [MBS_SUPPORT].
+	(FETCH) [MBS_SUPPORT]: Call FETCH_WC.
+	(prednames, find_pred, is_blank and other predicates): Move above,
+	remove K&R syntax support.
+	(parse_bracket_exp): New name of parse_bracket_exp_mb, rewritten to
+	include single-byte character set parsing of brackets.
+	(lex): Adjust for fetch_wc->FETCH_WC change, remove single-byte
+	character set parsing of brackets.
+	(match_mb_charset): Test against work_mbc->cset.
+	* src/dfa.h (struct mb_char_classes): Add cset.
+
+	syntax-check: remove space-tab exception
+	* .x-sc_space_tab: Remove.
+	* src/dfa.c: Fix space-tab occurrence.
+
+	THANKS: fix Jim Meyering's email address
+	* THANKS: Jim is now with Red Hat.
+
+	dfa: add missing function
+	* src/dfa.c (using_utf8): New.
+	(addtok_wc, free_mbdata, dfaoptimize) [!MBS_SUPPORT]: Do not define.
+	(dfacomp) [!MBS_SUPPORT]: Do not call dfaoptimize.
+
+	tests: fix typo
+	* fedora: Fix typo.
+
+	tests: use Exit
+	* euc-mb: exit with "Exit 0".
+
+	grep: remove more register keywords
+	* dosbuf.c: Remove register keywords.
+	* grep.c: Remove register keywords.
+	* kwset.c: Remove register keywords.
+	* search.c: Remove register keywords.
+
+	dfa: run simple UTF-8 regexps as a single-byte character set
+	This provides a speedup whenever fgrep is "almost" sufficient but
+	not quite (e.g. grep ^abc).  This affects test cases such as
+	https://savannah.gnu.org/bugs/?29117, which are already worked around
+	by the line-by-line matching patch c32c04; without that patch the
+	speedup can reach 1000x even on non-contrived testcases.
+
+	* src/dfa.c (dfaoptimize): New.
+	(dfacomp): Call it.
+
+	tests: fix syntax-check failures
+	* tests/case-fold-backref: Use "foo" instead of "the".
+	* tests/dfaexec-multibyte: Remove trailing blanks.
+
+	grep: remove check_multibyte_string, fix non-UTF8 missed match
+	Avoid computing ahead something that can be computed lazily as efficiently
+	(or more efficiently in the case of UTF-8, though this is left as TODO).
+	At the same time, "soften" the rejection condition for matching in the
+	middle of a multibyte sequence to fix bug 23814.
+
+	Multibyte "grep -i" would still be very slow if it wasn't for the workaround
+	patch c32c042 (grep: match multibyte charsets line-by-line when using -i,
+	2010-03-08).
+
+	* NEWS: Document bugfix.
+	* src/search.c (check_multibyte_string): Rewrite as...
+	(is_mb_middle): ... this.
+	(EGexecute, Fexecute): Adjust.
+	* tests/Makefile.am (TESTS): Add euc-mb.
+	* tests/euc-mb: New testcase.
+
+	dfa: cache MB_CUR_MAX for dfaexec
+	* src/dfa.c (state_index, dfaexec): Use d->mb_cur_max.
+	(dfainit): Initialize it.
+	(free_mbdata): New, extracted out of dfafree.
+	(dfafree): Use it.
+
+	dfa: improve documentation of struct dfa
+	* src/dfa.h (struct dfa): Reword some comments.
+
+	tests: factor name of output files into a variable
+	* tests/case-fold-backref, tests/case-fold-char-class,
+	tests/case-fold-char-range, tests/case-fold-char-type,
+	tests/dfaexec-multibyte: Use a variable for the output filename,
+	as it is common to the grep and compare invocations.
+
+	tests: use different output files to simplify reading failed .log files
+	* tests/case-fold-backref, tests/case-fold-char-class,
+	tests/case-fold-char-range, tests/case-fold-char-type: Use a different
+	name for each output file from grep.
+	* tests/dfaexec-multibyte: Likewise, and merge some grep invocations.
+
+	tests: add another grep -i testcase, from bug 16179
+	* tests/case-fold-backref: New.
+	* tests/Makefile.am (TESTS): Add it.
+
+	dfa: rewrite handling of multibyte case_fold lexing
+	Let dfacomp do the folding to lowercase of multibyte input strings,
+	and remove it from grep.c.  Input strings to kwset.c are still folded
+	outside kwset.c, so we still need to do mbtolower in search.c.
+
+	* NEWS: Document bugfixes.
+	* .x-sc_cast_of_argument_to_free: Remove.
+	* src/dfa.c (wctok, addtok_wc): New.
+	(cur_mb_index, update_mb_len_index): Remove.
+	(FETCH): Do not call it.
+	(parse_bracket_exp_mb) [GREP]: Disable case-folding of ranges and
+	characters.
+	(addtok): Extract part to...
+	(addtok_mb): ... this new function.
+	(lex): Call fetch_wc in the main loop for MB_CUR_MAX > 1.  Return WCHAR
+	for normal characters if MB_CUR_MAX > 1.
+	(atom): Handle WCHAR instead of treating multibyte characters specially.
+	Do case folding of multibyte characters here.
+	(dfacomp): Remove case_fold special casing.
+	* src/dfa.h (WCHAR): New.
+	* src/grep.c (mb_icase_keys): Remove.
+	(main): Do not call it.
+	* src/search.c (kwsinit): Init transition table only for MB_CUR_MAX == 1.
+	(mbtolower): New.
+	(kwsincr_case): New.
+	(kwsmusts): Call it instead of kwsincr.
+	(check_multibyte_string): Remove.
+	(check_multibyte_string_no_icase): Rename to check_multibyte_string.
+	(GEAcompile, EGexecute, Fcompile): Use mbtolower instead of the old
+	check_multibyte_string.
+	* tests/Makefile.am (TESTS): Add case-fold-backslash-w.
+	* tests/foad1.sh: Enable fixed tests.
+	* tests/case-fold-backslash-w: New.
+
+2010-03-16  Paolo Bonzini  <bonzini@gnu.org>
+
+	grep: match multibyte charsets line-by-line when using -i
+	The turtle combination -i + MB_CUR_MAX>1 requires case conversion ahead
+	of time.  Avoid doing this repeatedly when many matches succeed.  Together
+	with the previous changes, this fixes https://savannah.gnu.org/bugs/?29117
+	and https://savannah.gnu.org/bugs/?14472.
+
+	* NEWS: Document new speedup.
+	* src/grep.c (do_execute): New.
+	(grepbuf): Use it.
+
+2010-03-15  Paolo Bonzini  <bonzini@gnu.org>
+
+	dfa: fix handling of ranges in multibyte character sets
+	* src/dfa.c (parse_bracket_exp_mb): Add separate ranges for
+	lowercase and uppercase endpoints if folding case.
+	* tests/Makefile.am (TESTS): Add case-fold-char-range.
+	* tests/case-fold-char-range: New.
+
+	tests: add more UTF-8 test cases
+	* tests/Makefile.am (TESTS): Add spencer1-locale.
+	(EXTRA_DIST): Add spencer1-locale.awk.
+	* tests/spencer1-locale.awk: New.
+	* tests/spencer1-locale: New.
+
+2010-03-15  Jim Meyering  <meyering@redhat.com>
+
+	tests: complete the renaming fedora.sh -> fedora
+	* tests/Makefile.am (TESTS): Rename fedora.sh -> fedora here, too.
+
+	* tests/fedora.sh: Rename to...
+	* tests/fedora: ...this, to reflect new convention:
+	Use the lack of a suffix to indicate we've converted to the new
+	init.sh-using test framework.
+
+	tests: adjust fedora.sh to handle traps more portably
+
+	tests: adjust fedora.sh to handle traps more portably
+	* tests/fedora.sh: Use "Exit", not "exit".
+
+	tests: for each test, set an envvar to its name
+	* tests/Makefile.am (TESTS_ENVIRONMENT): Set GREP_TEST_NAME for
+	each test.  This is used to help make the output of hundreds of
+	independent, often-parallel valgrind runs more manageable.
+
+2010-03-14  Jim Meyering  <meyering@redhat.com>
+
+	tests: clean up fedora.sh
+	* tests/fedora.sh: Use "grep", not ${GREP}.
+	Use init.sh.
+	Use timeout 10, not sleep 1 (three times).
+	The latter would always sleep for 3 seconds, and the test would
+	fail with a false positive on a slow system or with a heavily
+	instrumented (valgrind) executable.
+
+2010-03-12  Jim Meyering  <meyering@redhat.com>
+
+	build: avoid build failure with --enable-gcc-warnings
+	* src/dfa.c: Don't include <assert.h>, now that it is not used.
+	[DEBUG]: Remove #ifdef block.
+
+2010-03-12  Paolo Bonzini  <bonzini@gnu.org>
+
+	syntax-check: enable space-tab
+	* cfg.mk (local-checks-to-skip): Enable space-tab.
+	* .x-sc_space_tab: Add exceptions.
+	* tests/status.sh: Fix occurrence.
+
+	syntax-check: enable m4-quote-check
+	* cfg.mk (local-checks-to-skip): Enable m4-quote-check.
+	* configure.ac: Fix occurrence.
+
+	syntax-check: enable makefile-TAB-only-indentation
+	* cfg.mk (local-checks-to-skip): Enable makefile-TAB-only-indentation.
+	* Makefile.am: Fix only occurrence.
+
+	grep: fix error-message-uppercase
+	* cfg.mk (local-checks-to-skip): Enable error-message-uppercase.
+	* src/dfa.c (parse_bracket_exp_mb, lex, dfaparse): Fix occurrences.
+	* src/search.c (Pcompile, Pexecute): Fix occurrences.
+
+	dfa, grep: cleanup if-before-free and cast-of-argument-to-free
+	* .x-sc_avoid_if_before_free: Remove.
+	* .x-sc_cast_of_alloca_return_value: Remove.
+	* .x-sc_cast_of_x_alloc_return_value: Remove.
+	* .x-sc_cast_of_argument_to_free: Temporarily add src/search.c.
+	* cfg.mk (local-checks-to-skip): Remove sc_cast_of_argument_to_free.
+	* src/dfa.c (ifree): Remove.
+	(dfamust, build_state, transit_state, dfafree): Do not do if-before-free,
+	do not cast free argument to ptr_t or char *.
+	(freelist): Call free instead of ifree.
+	* src/dfa.h (ptr_t): Remove.
+
+	dfa: remove CRANGE dead code
+	The only use of CRANGE was removed by commit 193830d.  In theory it is
+	more correct to do what CRANGE did, but in practice it seems like it did
+	not work.
+
+	* src/dfa.h (token): Remove CRANGE.
+	* src/dfa.c (atom): Do not handle CRANGE.
+	(prtok): Likewise.
+
+	dfa: get rid of x*alloc
+	* src/dfa.c: Include xalloc.h.
+	(xmalloc, xrealloc, xcalloc): Remove.
+
+	grep: cleanup one const cast
+	* src/search.c (GEAcompile): Do not reuse motif when operating on the
+	(const) pattern, so we can make it non-const.  Remove cast from free.
+
+	kwset/system: remove ptr_t
+	* src/kwset.h: Declare kwset using an incomplete struct type.
+	* src/system.h (ptr_t): Remove.
+
+2010-03-12  Jim Meyering  <meyering@redhat.com>
+
+	tests: add test cases for dfaexec bug
+	* tests/dfaexec-multibyte: New test.
+	* tests/Makefile.am (TESTS): Add it.
+	Reported by Paolo Bonzini in http://bugzilla.redhat.com/544407
+	and http://bugzilla.redhat.com/544406 .
+
+	dfa: manually merge gawk's dfaexec
+	* src/dfa.c (dfaexec): Adjust API: return pointer, not offset, and
+	take an "end" pointer parameter, rather than integral "size".
+	Adjust comment accordingly.
+	(build_state): Maintain d->newlines.
+	(copytoks): Update multibyte_prop indices.
+	(SKIP_REMAINS_MB_IF_INITIAL_STATE): Update a cast.
+	Return NULL, rather than (size_t) -1.
+	(realloc_trans_if_necessary): Realloc d->newlines.
+	* src/dfa.h (struct dfa): New member, "newlines".
+	(struct dfa) [GAWK]: New member, "broken".
+	(dfaexec): Update prototype and copy the new comment from dfa.c.
+
+	dfa: make search.c use the new dfaexec API
+
+	* src/search.c: Adjust to new dfaexec API.
+	Now, dfaexec returns a pointer, not an integer,
+	and the third parameter is END, not buffer size.
+	* src/dfa.c (dfaexec): Rewrite the function's comment.
+	Don't just clobber *END.  While doing that happens to be
+	fine for gawk's usage, in grep, *END usually points to the
+	first byte of the next buffer.  Save the initial value,
+	and restore it just before returning.
+	* src/dfa.h (dfaexec): Update comment; include parameter names.
+
+	dfa: appease static analyzers
+	* src/dfa.c (transit_state_singlebyte): Call abort rather
+	than returning in a "can't happen" scenario.
+	This stops clang from emitting a false-positive report (I think it
+	was used-uninitialized) about a caller.
+
+2010-03-11  Jim Meyering  <meyering@redhat.com>
+
+	dfa: do not accept [[:UPPER:]] or [[:LOWER:]] internally
+	* src/dfa.c (parse_bracket_exp_mb): Those class names are not
+	valid, and rejected elsewhere, so there is no point in allowing
+	upper or mixed-case versions here.
+
+	maint: remove a trailing space
+	* src/search.c (EXECUTE_FCT): Remove trailing space.
+
+	maint: remove all uses of PARAMS
+	Remove most with this:
+	git grep -lw PARAMS |xargs perl -pi -e 's/\bPARAMS *\((.*)\);/$1;/'
+	Remove the remainder manually.
+
+	maint: remove all uses of PARAMS
+	* lib/savedir.h (PARAMS): Remove definitions manually.
+	Remove the remaining ones via this command:
+	  git grep -l define.PARAMS |xargs perl -ni -e '/define PARAMS/ or print'
+	* src/dfa.h (PARAMS): Remove definitions.
+	* src/system.h (PARAMS): Likewise.
+	Remove most uses with this:
+	  git grep -lw PARAMS |xargs perl -pi -e 's/\bPARAMS *\((.*)\);/$1;/'
+	Remove the remainder manually.
+
+	maint: remove now-useless prototypes
+	* src/dfa.c: Remove the prototype of each static, non-recursive
+	function whose definition precedes first use.
+
+	grep: plug an inconsequential leak
+	* src/grep.c (main): Plug a leak: free "keys".
+
+	grep: avoid useless allocations for empty GREP_OPTIONS
+	* src/grep.c (prepend_default_options): Ignore GREP_OPTIONS
+	when it's empty, not just when it's undefined.
+	There are still relatively harmless leaks when GREP_OPTIONS
+	is set and non-empty.  We'll address those, eventually.
+
+2010-03-09  Jim Meyering  <meyering@redhat.com>
+
+	build: record build-from-clone tool requirements
+	* bootstrap.conf (buildreq): This makes bootstrap fail with
+	a clear explanation of the problem.  Otherwise, you'd get into
+	the build process and fail with something far more cryptic.
+
+	dfa: remove a trailing blank
+	* src/dfa.c (dfaexec): No trailing blanks allowed.
+
+	dfa: sync a tiny change from gawk
+	* src/dfa.c (state_index) [MBS_SUPPORT]: Initialize .mpbs.nelem member
+	unconditionally.  Also initialize .mbps.elems.
+
+	dfa: avoid a leak (work_mbc->chars)
+	* src/dfa.c (parse_bracket_exp_mb): Remove useless (and leaked MALLOC).
+
+	doc+bootstrap: document build-from-git-clone process
+	* bootstrap: Update from coreutils/gnulib.
+	* README-hacking: New file, nearly identical to the one in coreutils.
+
+2010-03-08  Paolo Bonzini  <bonzini@gnu.org>
+
+	more work on TODO
+	* TODO: More work on the first section.  Use clearer section headers.
+
+2010-03-08  Reuben Thomas  <rrt@sc3d.org>
+
+	bring TODO up-to-date
+	* TODO: merge with TODO section of http://www.gnu.org/software/grep/devel.html
+	and remove done items. Some small bits of tidying also.
+
+2010-03-07  Paolo Bonzini  <bonzini@gnu.org>
+
+	simplify parsing of [a-z]
+	* src/dfa.c (in_coll_range): New.
+	(lex): Use it instead of regcomp/regexec.
+
+	Small refactoring in src/dfa.c
+	* src/dfa.c (parse_bracket_exp_mb): Return MBCSET.
+	(lex): Assign return value of parse_bracket_exp_mb to lasttok, return it.
+
+	use do...while(0) idiom
+	* dfa.c (FETCH): Wrap with do...while(0).
+
+2010-03-06  Paolo Bonzini  <bonzini@gnu.org>
+
+	extract common code from if/else
+	* dfa.c (dfaexec): Simplify logic for MB_CUR_MAX > 1 case.
+
+	remove register variable hacks
+	* dfa.c (dfaexec): We can extract the address of a variable without fearing
+	performance problems, modern compilers know better.
+
+	remove register keywords
+	* dfa.c (dfaexec): Modern compilers just ignore it.
+
+	allow grep -Pz
+	* NEWS: Document grep -P improvements.
+	* src/search.c (Pcompile): Remove restriction on grep -Pz.
+	* tests/pcre-z: New.
+	* tests/Makefile.am (TESTS): Add pcre-z.
+
+	fix cross-line matching in PCRE backend
+	* search.c (Pexecute): Split the buffer in lines and match each line
+	separately.
+	* tests/fedora.sh: Add regression testsuite.
+
+	fix formatting of NEWS
+	* NEWS: fix formatting of 2.6 entries.
+
+	fix a bug in handling of -i and character type
+	* dfa.c (parse_bracket_exp_mb): Convert [[:lower:]] and [[:upper]] to
+	[[:alpha:]] when folding case.
+	* tests/case-fold-char-type: New file.  Test for the bug.
+	* tests/Makefile.am (TESTS): Add it.
+	* NEWS (Bug fixes): Mention it.
+
+	fix previous test case change
+	* tests/case-fold-char-class: Do not reset fail to 0 after first test.
+
+2010-03-06  Mike Frysinger  <vapier@gentoo.org>
+
+	grep(1) man page: touchup --label option
+	* doc/grep.1 (--label): Don't italicize ending period.  Point to -H
+	option.
+
+2010-03-06  Paolo Bonzini  <bonzini@gnu.org>
+
+	augment case-fold-char-class test case
+	* tests/case-fold-char-class: Test matching lowercase against uppercase
+	as well as vice versa.
+
+2010-03-06  Reuben Thomas  <rrt@sc3d.org>
+
+	doc: improve the discussion of PCRE
+	* doc/grep.1: Add a sentence about Perl regular expressions,
+	and point to pcresyntax(3) and pcrepattern(3).
+	* doc/grep.texi: Likewise.
+
+2010-03-05  Jim Meyering  <meyering@redhat.com>
+
+	maint: dfa-sync: comment and dead-to-grep code: no semantic change
+	* src/dfa.c: Sync a comment and some #ifdef GAWK code.
+
+	maint: dfa-sync: don't malloc zero
+	* src/dfa.c (dfacomp): Skip case_fold logic when length is zero.
+	This probably "no semantic change", but does improve efficiency in
+	a degenerate case.
+
+	maint: dfa-sync: use CALLOC rather than equiv. MALLOC+initialize-loop
+	* src/dfa.c (dfaanalyze): Sync from gawk.  No semantic change.
+
+	dfa.c: add support for \s and \S
+	* src/dfa.c (lex): Sync from gawk's dfa.c.
+
+	maint: dfa-sync: add omitted array initializer
+	* src/dfa.c (prednames): Add a "0" to final initializer.
+	No semantic change.
+
+	fix a bug in handling of -i and character classes
+	* dfa.c (parse_bracket_exp_mb): Sync one part of this function
+	from gawk's dfa.c, which was patched by Arnold D. Robbins.
+	* tests/case-fold-char-class: New file.  Test for the bug.
+	* tests/Makefile.am (TESTS): Add it.
+	(TESTS_ENVIRONMENT): Propagate LOCALE_FR and LOCALE_FR_UTF8
+	definitions into tests.
+	* NEWS (Bug fixes): Mention it.
+
+2010-03-05  Paolo Bonzini  <pbonzini@redhat.com>
+
+	Fedora Grep regression test suite
+	* tests/Makefile.am (TESTS): Add fedora.sh.
+	(CLEANFILES): Add several new files.
+	* tests/fedora.sh: New file, originally by Lubomir Rintel but somewhat
+	rewritten to avoid bashisms.
+
+2010-03-05  Paolo Bonzini  <bonzini@gnu.org>
+
+	convert AUTHORS file to UTF-8
+	* AUTHORS: Convert to UTF-8.
+
+	eliminate invalid "ptr += (ptr2 - ptr1)"
+	* lib/savedir.c (savedir): new_name_space and name_space do not point into
+	the same object, so computing their difference is invalid.  Similarly,
+	summing the difference to namep is invalid because namep and the result
+	point into different objects.  Avoid this.
+
+	fix for bug 21276
+	* lib/savedir.c (isdir1): Use realloc instead of calloc.  Remove
+	dead code.
+	(savedir): Do not leak name_space if allocation of new_name_space fails.
+
+2010-03-04  Jim Meyering  <meyering@redhat.com>
+
+	tests: add a test based on an example from Paolo Bonzini
+	* tests/word-multi-file: New test.
+	* tests/Makefile.am (TESTS): Add it.
+
+	doc: document release procedure
+	* README-release: New file.
+
+	build: update gnulib submodule to latest
+
+2010-02-22  Paolo Bonzini  <bonzini@gnu.org>
+
+	add --group-separator=FOO and --no-group-separator
+	* src/grep.c (group_separator): New.
+	(long_options): Add --group-separator=FOO and --no-group-separator.
+	(prtext): Print group_separator instead of SEP_STR_GROUP.  Optionally
+	suppress the separator altogether.
+	(main) Handle GROUP_SEPARATOR_OPTION.
+	* doc/grep.texi (Context control): Document it.
+	* NEWS: Mention it.
+	* tests/yesno.sh: Add testcases.
+
+2010-02-21  Jim Meyering  <meyering@redhat.com>
+
+	tests: don't use "echo -n"
+	* tests/foad1.sh: Use printf, not echo -n.  The latter is not portable.
+	Reported by Daniel Richman.
+
+2010-02-08  Jim Meyering  <meyering@redhat.com>
+
+	remove useless DJGPP-specific code
+	* src/grep.c (grepfile): Remove now-useless DJGPP-specific code.
+	Now, all S_IS* macros are guaranteed to be defined via gnulib.
+
+2010-02-07  Jim Meyering  <meyering@redhat.com>
+
+	tests: add help-version sanity tests from coreutils
+	* tests/help-version: New test, from coreutils.
+	* tests/Makefile.am (TESTS): Add it.
+	(TESTS_ENVIRONMENT) [built_programs]: Define it.
+
+	tests: correct TESTS_ENVIRONMENT's PATH setting
+	* tests/Makefile.am (TESTS_ENVIRONMENT): Set PATH to start with
+	$(abs_top_builddir)/src, so that we test the programs we've just built.
+
+	grep: use the correct exit status (2) upon write failure, not 1
+	* src/grep.c (main): Initialize exit_failure to EXIT_TROUBLE.
+	* NEWS (Bug fixes): Mention this fix.
+
+	maint: enable the prohibit_magic_number_exit syntax check
+	* cfg.mk (local-checks-to-skip): Remove sc_prohibit_magic_number_exit,
+	to enable that check.
+	* src/system.h (EXIT_TROUBLE): Define.
+	* src/grep.c: Use symbolic names, EXIT_SUCCESS, EXIT_FAILURE, and
+	EXIT_TROUBLE, not 0, 1, 2.
+	* src/search.c: Likewise.
+	* src/vms_fab.c (string): Likewise.
+
+2010-02-05  Jim Meyering  <meyering@redhat.com>
+
+	doc: adjust NEWS item
+	* NEWS: Correct a description.
+
+2010-02-04  Jim Meyering  <meyering@redhat.com>
+
+	tests: exercise surprising -m1 vs. --context behavior
+	* tests/max-count-vs-context: New test.  Exercise the surprising,
+	but documented, behavior reported by Markus Jochim in
+	http://savannah.gnu.org/bugs/?28588.
+	* tests/Makefile.am (TESTS): Add it.
+
+2010-02-03  Jim Meyering  <meyering@redhat.com>
+
+	tests: use init.sh from gnulib
+	* tests/init.sh: New file, from gnulib.
+	* tests/Makefile.am (EXTRA_DIST): Add it.
+	(TESTS_ENVIRONMENT): Add variables and features.
+	(VERBOSE): Define.
+
+	maint: remove unused Makefile rule
+	* tests/Makefile.am (dist-hook): Remove rule.  No longer needed.
+
+	maint: adjust formatting in tests/Makefile.am
+	* tests/Makefile.am (TESTS, CLEANFILES): Align and sort.
+
+	build: avoid warnings in gnulib-supplied regex files
+	Now that we enable more warnings in lib/, we choose
+	to avoid some via patches applied by bootstrap, using
+	files in the gl/ hierarchy.  Other, less-important
+	warnings are avoided simply by turning off the
+	-Wold-style-definition option and using a slightly
+	relaxed set of warnings $(GNULIB_WARN_CFLAGS) in lib/.
+	* gl/lib/regcomp.c.diff: Avoid warnings.
+	* gl/lib/regex_internal.c.diff: Likewise.
+	* gl/lib/regex_internal.h.diff: Likewise.
+	* gl/lib/regexec.c.diff: Likewise.
+	* configure.ac (GNULIB_PORTCHECK): Disable only -Wold-style-definition.
+	* lib/Makefile.am (AM_CFLAGS): Use $(GNULIB_WARN_CFLAGS) rather
+	than the slightly more strict $(WARN_CFLAGS).
+
+	tests: adjust spencer #37 to pass with gnulib's regex code
+	* tests/spencer1.tests: Change #37 to expect an exit status of 2, not 1.
+	grep 'a[b-a]' reports "Invalid range end".
+
+	maint: use regex from gnulib, rather than our bit-rotting one
+	* bootstrap.conf (gnulib_modules): Add regex.
+	* configure.ac: Don't use jm_INCLUDED_REGEX.
+	Update use of cache variable.
+	* lib/regex.c: Remove file.
+	* lib/regex.h: Likewise.
+	* m4/regex.m4: Likewise.
+	* POTFILES.in: Update to match.
+
+	build: update gnulib submodule to latest
+
+2010-01-28  Jim Meyering  <meyering@redhat.com>
+
+	maint: update to latest gnulib; adjust cfg.mk
+	* gnulib: Update submodule to latest.
+	* cfg.mk (old_NEWS_hash): Update to reflect NEWS Copyright line change.
+
+2010-01-06  Jim Meyering  <meyering@redhat.com>
+
+	maint: avoid old jm_* macros
+	There were jm_* macros here, until very recently.
+	* cfg.mk (sc_prohibit_jm_in_m4): New rule, from coreutils.
+
+	maint: remove decl.m4
+	* m4/decl.m4: Remove unused file.
+
+	maint: rely on gnulib's new isdir.h
+	* src/grep.c: Include "isdir.h".
+	* src/system.h: Remove declaration of isdir.
+
+	build: rename local to avoid shadowing global, dfa
+	* src/dfa.c (dfamust): Rename parameter: s/dfa/d/.
+
+	build: avoid warning from -Wmissing-prototypes
+	* src/dfa.c (match_mb_charset): Declare to be static.
+
+	build: avoid shadowing warning for "link"
+	* src/kwset.c (link): Define to kwset_link, to avoid shadowing
+	the function.
+
+	build: avoid shadowing warning for unused "rs"
+	* src/dfa.c (transit_state): Remove dead stores;
+	move a declaration "down".
+	Ignore transit_state_consume_1char return value.
+
+	build: avoid shadowing warnings
+	* src/dfa.c (match_mb_charset): Rename parameter: s/index/idx/.
+	(check_matching_with_multibyte_ops, match_anychar): Likewise.
+
+	build: avoid warning about unused definition of N_
+	* src/dfa.c (N_): Remove unused definition.
+
+	build: avoid format-string warnings
+	* src/search.c (dfaerror): Use literal "%s" as format string.
+	(kwsmusts, GEAcompile): Likewise.
+	(Pcompile): Likewise.
+
+	build: add configure-time --enable-gcc-warnings option; avoid warnings
+	* bootstrap.conf (gnulib_modules): Add "manywarnings" module.
+	* configure.ac: Add --enable-gcc-warnings, derived from code in bison.
+	* src/Makefile.am (AM_CFLAGS): Set to $(WARN_CFLAGS) $(WERROR_CFLAGS)
+	* lib/Makefile.am (AM_CFLAGS): Likewise, but append.
+
+	build: remove now-useless -I../intl option
+	* src/Makefile.am (INCLUDES): Remove -I../intl, now that intl is gone.
+
+	maint: avoid more warnings
+	* src/grep.c (MAX): Remove definition of unused macro.
+	(usage): Declare with __attribute__ ((noreturn)).
+	Split long strings into chunks of length < 509.
+
+	fix a possible bug: remove errant semicolon
+	* src/grep.c (prline): Remove erroneous semicolon-after-if-expr.
+
+	maint: avoid compilation warnings
+	* bootstrap.conf (gnulib_modules): Add ignore-value.
+	* src/search.c (check_multibyte_string_no_icase): A variant of
+	check_multibyte_string that does *not* convert case, and hence
+	does not modify its BUF parameter.
+	(check_multibyte_string): Use xcalloc in place of xmalloc+memset.
+	Use ignore_value to ignore the return value from wcrtomb.  This is
+	ok, since we know the input is a valid upper case wide character.
+	(Fexecute, EGexecute): Update callers of check_multibyte_string
+	to use both it and check_multibyte_string_no_icase.
+
+	maint: avoid warnings about unused fwrite return value
+	* bootstrap.conf (gnulib_modules): Add unlocked-io.
+	* src/system.h: Include "unlocked-io.h".
+
+	maint: remove {m4,lib}/.gitignore; they were undergoing too much churn
+	* .gitignore: Ignore all of m4/* except m4/djgpp.m4
+	and all of lib/* except Makefile.am, savedir.c and savedir.h.
+	* m4/.gitignore: Remove file.
+	* lib/.gitignore: Remove file.
+
+2010-01-05  Jim Meyering  <meyering@redhat.com>
+
+	build: run gnulib's tests, too
+	* Makefile.am (SUBDIRS): Add gnulib-tests.
+	* gnulib-tests/Makefile.am: New file.
+	* bootstrap.conf (bootstrap_epilogue): New function, from coreutils.
+	(gnulib_tool_option_extras): Define.
+	* configure.ac: Add gnulib-tests/Makefile.
+
+2010-01-03  Jim Meyering  <meyering@redhat.com>
+
+	maint: record update-copyright options for this package
+	* cfg.mk: Next time, just run "make update-copyright".
+
+2010-01-01  Jim Meyering  <meyering@redhat.com>
+
+	maint: update all FSF copyright year lists to include 2010
+	Use this command:
+	git ls-files |grep -vE '^(\..*|COPYING|gnulib)$' |xargs \
+	env UPDATE_COPYRIGHT_USE_INTERVALS=1 build-aux/update-copyright
+
+2009-12-23  Jim Meyering  <meyering@redhat.com>
+
+	fix multi-byte-locale read-beyond-end-of-buffer error
+	Avoid read-beyond-end-of-buffer errors, evoked by running this:
+	LC_ALL=en_US.UTF-8 valgrind src/grep -f <(printf 'a\nb\n') <(echo c)
+
+	Conditional jump or move depends on uninitialised value(s)
+	   at 0x78136D: __gconv_transform_utf8_internal (in /lib/libc-2.11.so)
+	   by 0x7E7232: mbrtowc (in /lib/libc-2.11.so)
+	   by 0x8055773: dfaexec (dfa.c:2816)
+	   by 0x804D7B0: EGexecute (search.c:353)
+	   by 0x804ACD8: grepbuf (grep.c:1036)
+	   by 0x804B023: grep (grep.c:1156)
+	   by 0x804B460: grepfile (grep.c:1287)
+	   by 0x804CF0D: main (grep.c:2282)
+
+	Conditional jump or move depends on uninitialised value(s)
+	   at 0x7E7248: mbrtowc (in /lib/libc-2.11.so)
+	   by 0x8055773: dfaexec (dfa.c:2816)
+	   by 0x804D7B0: EGexecute (search.c:353)
+	   by 0x804ACD8: grepbuf (grep.c:1036)
+	   by 0x804B023: grep (grep.c:1156)
+	   by 0x804B460: grepfile (grep.c:1287)
+	   by 0x804CF0D: main (grep.c:2282)
+
+	* src/dfa.c (dfaexec) [MBS_SUPPORT]: Do not access one byte beyond
+	end of buffer.
+
+	build: update gnulib submodule to latest
+
+2009-12-23  Paolo Bonzini  <bonzini@gnu.org>
+
+	Speed up insert.
+	Suggested by Johan Walles <johan.walles@gmail.com> (bug 23354).
+
+	* src/dfa.c (insert): Use binary search.
+
+2009-12-23  Johan Walles  <johan.walles@gmail.com>
+
+	Decrease epsclosure memory usage
+	Fixes bug 23321.
+
+	* src/dfa.c (epsclosure): Make visited an array of char.
+
+2009-12-22  Paolo Bonzini  <bonzini@gnu.org>
+
+	Make 'grep -1 -2' and 'grep -1v2' equivalent to grep -2
+	Fixes bug 12128.
+
+	* src/grep.c (get_nondigit_option): Reset the buffer every time
+	a non-digit option is found or a new argument is started.
+
+	Improve description of --label
+	Fixes bug 22681.
+
+	* doc/grep.1 (--label): Use -H in the example, improve wording.
+	* doc/grep.texi (Output Line Prefix Control): Likewise.
+
+	Avoid using an invalid memchr result.
+	Related to bug 13161.  I cannot find a testcase, but it is better to be
+	defensive considering that these bug were found in the past.
+
+	* src/search.c (EGexecute, Fexecute): Check for memchr return values.
+
+2009-12-11  Jim Meyering  <meyering@redhat.com>
+
+	build: update gnulib submodule to latest
+
+2009-12-04  Jim Meyering  <meyering@redhat.com>
+
+	maint: enable prohibit_have_config_h check
+	* cfg.mk (local-checks-to-skip): Enable sc_prohibit_have_config_h
+	* lib/regex.c: Remove useless cpp test of HAVE_CONFIG_H.
+	* lib/savedir.c: Likewise.
+	* src/grep.c: Likewise.
+	* src/kwset.c: Likewise.
+	* src/search.c: Likewise.
+
+	maint: enable cast_of_x_alloc_return_value check
+	* cfg.mk (local-checks-to-skip): Enable sc_cast_of_x_alloc_return_value.
+	* .x-sc_cast_of_x_alloc_return_value:
+	* src/dfa.c (CALLOC, MALLOC, REALLOC): Remove casts.
+	* src/dosbuf.c (undossify_input): Likewise.
+	* src/grep.c (print_line_middle, prepend_default_options): Likewise.
+
+	maint: enable cast_of_alloca_return_value check
+	* cfg.mk (local-checks-to-skip): Enable sc_cast_of_alloca_return_value.
+	* .x-sc_cast_of_alloca_return_value: New file.
+
+2009-12-04  Paolo Bonzini  <bonzini@gnu.org>
+
+	fix "grep -Ff" on CRLF-terminated files
+	* src/search.c (Fcompile) [HAVE_DOS_FILE_CONTENTS]: Recognize \r\n as
+	a line terminator.
+
+	fix compilation with included regex
+	* Makefile.am (libgreputils_a_DEPENDENCIES): New.
+
+	switch to pkg-config for PCRE detection
+	* configure.ac: use pkg-config to detect PCRE
+	* src/Makefile.am (grep_LDADD): link grep with PCRE_LIBS
+
+2009-12-04  Jim Meyering  <meyering@redhat.com>
+
+	maint: remove "missing" script
+	* missing: Remove now-unused file.
+
+	maint: make .gitignore ignore more
+	* .gitignore: Ignore more.
+
+	maint: enable useless-if-before-free check
+	* cfg.mk (local-checks-to-skip): Enable sc_avoid_if_before_free.
+	* .x-sc_avoid_if_before_free: New file.  Exempt regex.c and dfa.c,
+	in case anyone ever tries to merge their contents with other versions.
+	* src/grep.c (print_line_middle, grepdir): Remove useless if-before-free.
+	* src/search.c (IF_BK, EXECUTE_FCT): Likewise.
+
+	maint: enable po-check
+	* cfg.mk (local-checks-to-skip): Enable sc_po_check.
+	* po/POTFILES.in: Sort and update.
+
+2009-12-03  Paolo Bonzini  <bonzini@gnu.org>
+
+	update gnulib, fixing missing inclusion of stdbool.h
+	* gnulib: Update.
+
+2009-11-30  Jim Meyering  <meyering@redhat.com>
+
+	maint: enable two checks
+	* cfg.mk (local-checks-to-skip): Enable two:
+	sc_prohibit_xalloc_without_use sc_two_space_separator_in_usage
+	* src/grep.c (usage): Conform: use two spaces, not 1.
+	* src/kwset.c (malloc): Define as a function-macro so that the
+	syntax-check rule sees that we are indeed using xmalloc here.
+
+	maint: enable makefile_path_separator check
+	* cfg.mk (local-checks-to-skip): Enable sc_makefile_path_separator_check,
+	now that the sole offender, an old po/Makefile.in.in, is gone.
+
+	maint: remove now-generated file: po/Makefile.in.in
+	* po/Makefile.in.in: Remove file, now generated via bootstrap.
+
+	maint: enable makefile @...@ check
+	* cfg.mk (local-checks-to-skip): Enable sc_makefile_check.
+	* lib/Makefile.am (libgreputils_a_LIBADD): Use $(...), rather than
+	anachronistic @...@ notation.
+	* src/Makefile.am (LDADD): Likewise.
+	* tests/Makefile.am (AWK): Remove definition.
+
+	maint: enable trailing_blank check
+	* cfg.mk (local-checks-to-skip): Enable sc_trailing_blank.
+	* AUTHORS: Remove trailing blanks.
+	* COPYING: Likewise.
+	* README: Likewise.
+	* README-alpha: Likewise.
+	* README-boot: Likewise.
+	* THANKS: Likewise.
+	* TODO: Likewise.
+	* src/dfa.c: Likewise.
+	* src/mbsupport.h: Likewise.
+	* tests/backref.sh: Likewise.
+	* tests/file.sh: Likewise.
+	* tests/options.sh: Likewise.
+	* tests/tests: Likewise.
+	* vms/README: Likewise.
+	* vms/make.com: Likewise.
+
+	maint: enable unmarked_diagnostics check
+	* cfg.mk (local-checks-to-skip): Enable sc_unmarked_diagnostics
+	* src/grep.c (fillbuf): Mark a diagnostic for translation.
+	(reset): Likewise.
+
+	maint: enable require_config_h checks
+	* cfg.mk (local-checks-to-skip): Enable sc_require_config_h
+	and sc_require_config_h_first.
+	* src/dosbuf.c: Include <config.h>.
+	* src/vms_fab.c: Likewise.
+	* .x-sc_require_config_h: New file: list the exceptions.
+	* .x-sc_require_config_h_first: Likewise.
+
+	maint: use gnulib's progname module; enable set_program_name check
+	* bootstrap.conf (gnulib_modules): Add progname.
+	* src/grep.c: Include "progname.h".
+	(program_name): Remove declaration.
+	(main): Call set_program_name.
+	* cfg.mk (local-checks-to-skip): Add sc_program_name.
+
+	maint: enable "file system" check
+	* cfg.mk (local-checks-to-skip): Enable sc_file_system.
+	* lib/savedir.c (savedir): Tweak spelling.  Remove trailing blanks.
+
+	maint: enable immutable_NEWS check
+	* NEWS: Move copyright to the bottom.
+	Use the format required by release-related tools.
+	* .prev-version: New file.
+	* cfg.mk (old_NEWS_hash): Define.
+	(local-checks-to-skip): Enable check: sc_immutable_NEWS.
+
+	maint: disable the many failing syntax-checks
+	* cfg.mk: New file.
+	(local-checks-to-skip): Define to the list of disabled rules.
+	Subsequent change-sets will enable them, one by one.
+
+	build: require automake-1.11, enable silent-rules, parallel tests, xz
+	* configure.ac (AM_INIT_AUTOMAKE): Create xz-compressed tarballs,
+	not bzip2-compressed ones.  Enable automake's silent-rules,
+	parallel tests, and test PASS/FAIL coloring options.
+	Use AC_CONFIG_HEADERS, not AM_CONFIG_HEADER.  Quote the argument.
+
+	build: use git-version-gen for inter-release version strings
+	* configure.ac (AC_INIT): Use git-version-gen.
+
+	build: add several build- and release-related gnulib modules
+	* bootstrap.conf (gnulib_modules): Add announce-gen update-copyright
+	do-release-commit-and-tag git-version-gen gnu-web-doc-update
+	gnupload maintainer-makefile useless-if-before-free
+
+	build: adapt to the newer closeout module from gnulib
+	* src/grep.c: Include "exitfail.h".
+	(main) [-q]: Set the global variable, exit_failure, rather than
+	calling the now-removed close_stdout_set_file_name function.
+
+	build: adapt to the newer exclude API we now get from gnulib
+	* src/grep.c (main): Adapt to newer exclude.c: add EXCLUDE_WILDCARDS as
+	the new "option" argument in calls to add_exclude and add_exclude_file.
+
+	build: get more lib/* files from gnulib, adjust savedir
+	* bootstrap.conf (gnulib_modules): Add the following:
+	closeout exclude hard-locale isdir strtoumax.
+	* lib/.gitignore, m4/.gitignore: Update.
+	* lib/closeout.c, lib/closeout.h: Remove.
+	* lib/exclude.c, lib/exclude.h: Remove.
+	* lib/hard-locale.c, lib/hard-locale.h: Remove.
+	* lib/strtoumax.c: Remove.
+	* lib/isdir.c: Remove.
+	* lib/Makefile.am: Remove here, too.
+	* lib/savedir.c: Adapt to new exclude module:
+	s/excluded_filename/excluded_file_name/ and remove 3rd argument.
+
+	build: update gnulib submodule to latest
+
+	maint: generate ChangeLog from git logs
+	* Makefile.am (dist-hook, gen-ChangeLog): New rules.
+	* bootstrap.conf (gnulib_modules): Add gitlog-to-changelog.
+	Ensure that ChangeLog exists.
+	* ChangeLog-2009: Rename from ChangeLog
+	* ChangeLog: Remove file.
+	* .gitignore: Add ChangeLog.
+
+	maint: list gnulib modules one per line
+	* bootstrap.conf (gnulib_modules): List them one per line.
+
+2009-11-30  Tony Abou-Assaleh  <taa@acm.org>
+
+	Acknowledge new maintainers, update README-alpha
+	* AUTHORS: new maintainers added
+	* THANKS: same
+	* README-alpha: change CVS references to Git

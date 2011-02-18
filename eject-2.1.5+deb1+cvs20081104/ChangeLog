@@ -1,0 +1,288 @@
+2006-06-03  Jeff Tranter  <tranter@pobox.com>
+
+	* Version 2.1.5
+
+	* bug fix to -T option
+
+	* added Czech translation
+
+	* added Brazilian Portuguese translation
+
+	* updated Turkish Translation
+	
+2005-12-10  Jeff Tranter  <tranter@pobox.com>
+
+	* Version 2.1.4
+
+	* Incorporates Debian patches from Frank Lichtenheld.
+
+2005-10-01  Jeff Tranter  <tranter@pobox.com>
+
+	* Version 2.1.3
+
+	* Incorporates several Gentoo patches from Mike Frysinger
+
+2005-08-24  Jeff Tranter  <tranter@pobox.com>
+
+	* Version 2.1.2
+
+	* Incorporates several Red Hat patches from Than Ngo
+
+2005-08-23  Jeff Tranter  <tranter@pobox.com>
+
+	* Version 2.1.1
+
+	* Incorporates Debian patch for deprecated SCSO ioctl error bug
+
+2005-05-01  Jeff Tranter  <tranter@pobox.com>
+
+	* Version 2.1.0
+
+	* Incorporates Debian patches including a new -m option
+
+2002-12-09  Jeff Tranter  <tranter@pobox.com>
+
+	* Version 2.0.13 released
+	
+	* Fixed a symlink security vulnerability reported by SuSE
+	
+	* Fixed security issue in error message
+	
+	* Fix to PREFIX in po/Makefile from Pawel Golaszewski
+	
+	* Better French translations from Yoni Girard
+	
+	* Better German translations from Nordi
+
+	* Updated with Debian maintainers patches
+
+2001-10-01  Jeff Tranter  <tranter@pobox.com>
+
+	* Version 2.0.12 released
+
+	* modify Makefile.am so po files are included in package
+
+2001-09-17  Jeff Tranter  <tranter@pobox.com>
+
+	* Version 2.0.11 released
+
+	* add .po file for Japanese, thanks to TAKEDA Hirofumi
+
+	<takepin@turbolinux.co.jp>
+
+	* updated .po file for French, thanks to Warly
+	<warly@mandrakesoft.com> and Christophe Combelles
+	<combech@gemse.fr>
+
+2001-07-01  Jeff Tranter  <tranter@pobox.com>
+
+	* Version 2.0.10 released
+
+	* updated .spec file (thanks to Volker Moell <volker@die-moells.de>)
+
+	* localization support with Taiwanese translation (thanks to
+	Kun-Chung Hsieh)
+
+	* French po file by me (in broken French)
+
+2001-05-22  Jeff Tranter  <tranter@pobox.com>
+	
+
+	* Version 2.0.9 released
+
+	* add new --proc/-p option to use /proc/mounts instead of
+	/etc/mstab (thanks to Stanislav Ievlev <inger@altlinux.ru>)
+
+2001-05-18  Jeff Tranter  <tranter@pobox.com>
+
+	* Version 2.0.8 released
+
+	* --cdspeed/-x option added to set CD-ROM speed (thanks to
+	Nobuyuki Tsuchimura <tutimura@nn.iij4u.or.jp>)
+
+2001-05-15  Jeff Tranter  <tranter@pobox.com>
+
+	* Version 2.0.7 released
+
+	* checks for mounted devices with same device numbers (patch from
+	Vladimir Nadvornik <nadvornik@suse.cz>)
+
+	* cleanup of some comments
+
+	* use indent level of 4 rather than 2
+
+	* volname now uses DEFAULTDEVICE rather than being hardcoded to
+	use /dev/cdrom
+
+2001-05-05  Jeff Tranter  <tranter@pobox.com>
+ 
+        * Version 2.0.6 released
+	* now uses GNU automake/autoconf
+
+2001-05-02  Jeff Tranter  <tranter@pobox.com>
+
+	* Version 2.0.5 released
+        * fixed possible buffer overrun (thanks to Nico Schottelius for noticing this)
+
+2001-04-25  Jeff Tranter  <tranter@pobox.com>
+
+	* Version 2.0.4 released
+	* fixed man page formatting error (Debian bug #90283)
+	* added limit when following symlinks (Debian bug #80596)
+	* add --version/-V option to display version
+	* updated debian directory from Debian maintainer
+	* added note on why volname is not installed
+	* updated Makefile for package building
+	* install is now more FHS compliant
+
+2001-04-19  Jeff Tranter  <tranter@pobox.com>
+
+	* Version 2.0.3 released
+	* incorporated Debian packager's patches
+	* added volname program
+	* ignore comments in /etc/fstab
+	* partial support for devfs (/dev/cdroms)
+	* force kernel to re-read partition table when new media inserted
+	* handle symlinks that are not canonical
+	* #include changes for recent (2.4.x) kernels
+	* former sunsite archive site is now ibiblio.org
+
+1999-02-14  Jeff Tranter  <tranter@pobox.com>
+
+	* Version 2.0.2 released
+	* eject.c: under 2.1/2.2 kernels CDROM_SELECT_DISC returns the
+	  slot number, so the check for error should be for a return value
+	  less than 0; added parenthesis to suppress an egcs compile
+	  warning; these changes thanks to Richard Simpson
+	  <rs@rcsimpson.demon.co.ukdump.demon.co.uk>
+	* Makefile: add rule for 'ci' (RCS checkin)
+
+1999-02-08  Jeff Tranter  <tranter@pobox.com>
+
+	* Version 2.0.1 released
+	* -c option did not allow value of 0, fix submitted by Dariusz
+	  Kowalewski
+
+1999-01-21  Jeff Tranter  <tranter@pobox.com>
+
+	* Version 2.0 released
+	* Changelog: changed to use standard GNU changelog format
+	* Makefile: added RPM_OPT_FLAGS to Makefile
+	* README: mentioned related tools
+	* TODO: possibly add ziptool functionality in future
+	* eject.1: show -n option in synopsis
+	* eject.c: show -n option in usage
+	* eject.c: -n option should not say "device to be *ejected*",
+	  because another option, such as tray close, may have been
+	  selected
+	* eject.1: added description of what examples do
+	* eject.1: documented return codes
+
+1999-01-10  Jeff Tranter  <tranter@pobox.com>
+
+	* Version 2.0beta4 released
+	* Makefile: uses variables to make it easier to modify
+	* Makefile: separate CFLAGS and CPPFLAGS
+	* Makefile: added -I/usr/src/linux for systems that do not have
+	  /usr/include/scsi linked to /usr/src/linux/include/scsi
+	* Makefile: can set default device in Makefile
+	* eject.1: clarified some statements
+	* eject.c: now checks for devices in /dev/rdsk and /dev/dsk for
+	  systems that use devfs such as Solaris and probably Linux in future
+	* eject.c: moved up processing of -d option to earlier in main()
+	* eject.c: added -n option
+	* eject.c: use of getopt_long is now conditional
+	* eject.c: if device is not mounted according to /proc/mounts, now
+	  also checks /etc/fstab to see if it is a potential mount point
+	* eject.c: only check /etc/mtab because /proc/mounts shows names
+	  of devices without following symlinks (too bad, because /proc/mounts
+	  is faster)
+	* provided RPM spec file for building a Red Hat package (thanks
+	  to Jochen A. Stein)
+
+1999-01-05  Jeff Tranter  <tranter@pobox.com>
+
+	* Version 2.0beta3 released
+	* eject.c: now tries to unmount all partitions of a multi-partition 
+	  device
+	* eject.c: a couple of internal functions were made static
+	* eject.c: -q option was omitted from usage dsplay
+	* eject.1: added examples to man page
+	* INSTALL: added list of possible problems
+
+1999-01-03  Jeff Tranter  <tranter@pobox.com>
+
+	* Version 2.0beta2 released
+	* eject.c: strip any trailing slash from name in case user used
+	  bash/tcsh style filename completion (suggested by Tobias Richter)
+	* eject.c: new -q option for ejecting using magnetic tape ioctl
+	* eject.c: made status messages less technical (use English rather
+	  than ioctl names)
+	* eject.c: set effective user ID to user ID before execl
+	* eject.c: quit if umount fails
+
+1999-01-01  Jeff Tranter  <tranter@pobox.com>
+
+	* Version 2.0beta1 released
+	* eject.c: almost completely an entire rewrite
+	* eject.c: no longer uses old nickname scheme, uses heuristics to
+	  find device instead
+	* eject.c: no longer uses CDROM environment variable (could be added,
+	  but did anyone actually use it?)
+	* eject.c: supports naming mount points
+	* eject.c: does not attempt to check for specific SCSI devices
+	* eject.c: support for tray close command added
+	* eject.c: always tries to unmount mounted devices
+	* eject.c: alternate long option names
+
+1997-01-05  Jeff Tranter  <tranter@pobox.com>
+
+	* Version 1.5 released
+	* changes submitted by Donnie Barnes (djb@redhat.com):
+	* supports Zip and Jaz drives
+	* can now unmount multiple partitions
+	* no longer need -f option in order for -u option to work
+	* uses new CDROM_SELECT_DISC ioctl in favour of CDROMLOADFROMSLOT
+
+1996-09-08  Jeff Tranter  <tranter@pobox.com>
+
+	* Version 1.4 released
+	* changes submitted by Donnie Barnes (djb@redhat.com):
+	* support for ejecting floppy drives under Linux on the Sun/SPARC
+	  platform
+	* minor formatting and code changes
+	* new author's e-mail address
+	* added a few more nicknames
+
+199?-??-??  Jeff Tranter  <tranter@pobox.com>
+
+	* Version 1.3 released
+	* changes submitted by Ben Galliart (bgallia@luc.edu):
+	* added support for IDE/ATAPI CD-ROM changers using
+	  CDROMLOADFROMSLOT ioctl call
+	* additional changes made at the suggestion of Markus Pilzecker 
+	  (markus.pilzecker@rhein-neckar.netsurf.de)
+
+199?-??-??  Jeff Tranter  <tranter@pobox.com>
+
+	* Version 1.2 released
+	* changes submitted by Doug L. Hoffman (hoffman@cs.unc.edu):
+	* fixes non null-terminated string bug
+	* uses system() to call umount(8) instead of umount system call
+
+199?-??-??  Jeff Tranter  <tranter@pobox.com>
+
+	* Version 1.1 released
+	* now handles case where device is a relative symbolic link
+	* looks at $CDROM environment variable for default device
+	* updated man page to reflect $CDROM environment variable
+	* added more device nicknames
+	* install using "install" instead of "cp" in Makefile
+	* handles old kernels without CDROMEJECT_SW support
+	* now includes file COPYING in distribution
+	* thanks to Dick Streefland and Mark Lord for suggestions/patches
+
+199?-??-??  Jeff Tranter  <tranter@pobox.com>
+
+	* Version 1.0 released
+	* first release

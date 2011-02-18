@@ -1,0 +1,80 @@
+2010-07-27  Andreas Schwab  <schwab@redhat.com>
+
+	* version.h (VERSION): Bump for 2.12.1 release.
+
+2010-06-02  Kirill A. Shutemov  <kirill@shutemov.name>
+
+	* elf/dl-reloc.c: Flush cache after solving TEXTRELs if arch
+	requires it.
+
+2010-06-02  Andreas Schwab  <schwab@redhat.com>
+
+	* nis/nss_nis/nis-initgroups.c (get_uid): Properly resize buffer.
+
+2010-06-07  Jakub Jelinek  <jakub@redhat.com>
+
+	* libio/stdio.h (sscanf, vsscanf): Use __REDIRECT_NTH instead of
+	__REDIRECT followed by __THROW.
+	* wcsmbs/wchar.h (swscanf, vswscanf): Likewise.
+	* posix/getopt.h (getopt): Likewise.
+
+2010-05-26  H.J. Lu  <hongjiu.lu@intel.com>
+
+	[BZ #11640]
+	* sysdeps/x86_64/multiarch/init-arch.c (__init_cpu_features):
+	Properly check family and model.
+
+2010-05-26  Takashi Yoshii  <takashi.yoshii.zj@renesas.com>
+
+	* sysdeps/unix/sysv/linux/sh/sh4/register-dump.h: Fix iov[] size.
+
+2010-05-21  Ulrich Drepper  <drepper@redhat.com>
+
+	* elf/dl-runtime.c (_dl_profile_fixup): Don't crash on unresolved weak
+	symbol reference.
+
+2010-05-19  Andreas Schwab  <schwab@redhat.com>
+
+	* elf/dl-runtime.c (_dl_fixup): Don't crash on unresolved weak
+	symbol reference.
+
+2010-05-21  Andreas Schwab  <schwab@redhat.com>
+
+	* sysdeps/unix/sysv/linux/Makefile (sysdep_routines): Add recvmmsg
+	and internal_recvmmsg.
+	* sysdeps/unix/sysv/linux/recvmmsg.c: New file.
+	* sysdeps/unix/sysv/linux/internal_recvmmsg.S: New file.
+	* sysdeps/unix/sysv/linux/socketcall.h (SOCKOP_recvmmsg): Define.
+	* sysdeps/unix/sysv/linux/syscalls.list (recvmmsg): Remove.
+
+2010-05-21  Andreas Schwab  <schwab@redhat.com>
+
+	* sunrpc/clnt_tcp.c (clnttcp_control): Add missing break.
+	* sunrpc/clnt_udp.c (clntudp_control): Likewise.
+	* sunrpc/clnt_unix.c (clntunix_control): Likewise.
+
+2010-05-20  Andreas Schwab  <schwab@redhat.com>
+
+	* sysdeps/unix/sysv/linux/sys/timex.h: Use __REDIRECT_NTH.
+
+2010-05-12  Andrew Stubbs  <ams@codesourcery.com>
+
+	* sysdeps/sh/sh4/fpu/feholdexcpt.c (feholdexcept): Really disable all
+	exceptions.  Return 0.
+
+2010-05-07  Roland McGrath  <roland@redhat.com>
+
+	* elf/ldconfig.c (main): Add a const.
+
+2010-05-06  Ulrich Drepper  <drepper@redhat.com>
+
+	* nss/getent.c (idn_flags): Default to AI_IDN|AI_CANONIDN.
+	(args_options): Add no-idn option.
+	(ahosts_keys_int): Add idn_flags to ai_flags.
+	(parse_option): Handle 'i' option to clear idn_flags.
+
+	* malloc/malloc.c (_int_free): Possible race in the most recently
+	added check.  Only act on the data if no current modification
+	happened.
+
+See ChangeLog.17 for earlier changes.

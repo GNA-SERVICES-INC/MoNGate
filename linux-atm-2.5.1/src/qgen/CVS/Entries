@@ -1,0 +1,15 @@
+/.cvsignore/1.1.2.1.2.1/Mon Aug  3 20:36:57 2009//TV2_5_1
+/Makefile-0.79/1.2/Tue Oct  9 22:33:07 2001//TV2_5_1
+/Makefile.am/1.2.2.4.2.1/Mon Aug  3 20:36:57 2009//TV2_5_1
+/common.c/1.2.4.1/Mon Aug  3 20:36:57 2009//TV2_5_1
+/common.h/1.2/Tue Oct  9 22:33:07 2001//TV2_5_1
+/file.c/1.2.4.1/Mon Aug  3 20:36:57 2009//TV2_5_1
+/file.h/1.2/Tue Oct  9 22:33:07 2001//TV2_5_1
+/first.c/1.2.4.1/Mon Aug  3 20:36:57 2009//TV2_5_1
+/qgen.c/1.2.4.1/Mon Aug  3 20:36:57 2009//TV2_5_1
+/qgen.h/1.2/Tue Oct  9 22:33:07 2001//TV2_5_1
+/ql_l.l/1.2.4.1/Mon Aug  3 20:36:57 2009//TV2_5_1
+/ql_y.y/1.2.4.2/Mon Aug  3 20:36:57 2009//TV2_5_1
+/second.c/1.2.4.1/Mon Aug  3 20:36:57 2009//TV2_5_1
+/third.c/1.2.4.1/Mon Aug  3 20:36:57 2009//TV2_5_1
+D

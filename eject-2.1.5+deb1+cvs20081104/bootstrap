@@ -1,0 +1,4 @@
+#!/bin/sh
+# This script creates the autotools generated files (e.g. configure).
+aclocal && autoheader && automake -a -c && autoconf
+

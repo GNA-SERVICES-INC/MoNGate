@@ -1,0 +1,117 @@
+'\" t
+.\"     Title: vipw
+.\"    Author: [FIXME: author] [see http://docbook.sf.net/el/author]
+.\" Generator: DocBook XSL Stylesheets v1.75.2 <http://docbook.sf.net/>
+.\"      Date: 05/09/2010
+.\"    Manual: Commandes de gestion du syst\(`eme
+.\"    Source: Commandes de gestion du syst\(`eme
+.\"  Language: French
+.\"
+.TH "VIPW" "8" "05/09/2010" "Commandes de gestion du syst\(`em" "Commandes de gestion du syst\(`em"
+.\" -----------------------------------------------------------------
+.\" * set default formatting
+.\" -----------------------------------------------------------------
+.\" disable hyphenation
+.nh
+.\" disable justification (adjust text to left margin only)
+.ad l
+.\" -----------------------------------------------------------------
+.\" * MAIN CONTENT STARTS HERE *
+.\" -----------------------------------------------------------------
+.SH "NOM"
+vipw, vigr \- \('editer les fichiers passwd, group, shadow ou gshadow
+.SH "SYNOPSIS"
+.HP \w'\fBvipw\fR\ 'u
+\fBvipw\fR [\fIoptions\fR]
+.HP \w'\fBvigr\fR\ 'u
+\fBvigr\fR [\fIoptions\fR]
+.SH "DESCRIPTION"
+.PP
+\fBVipw\fR
+et
+\fBvigr\fR
+permettent de modifier les fichiers
+/etc/passwd
+et
+/etc/group, respectivement\&. Avec l\*(Aqoption
+\fB\-s\fR, ils permettent d\*(Aq\('editer les versions cach\('ees de ces fichiers\ \&:
+/etc/shadow
+et
+/etc/gshadow, respectivement\&. Ces programmes placent les verrous n\('ecessaires afin d\*(Aq\('eviter toute corruption des fichiers\&. L\*(Aq\('editeur utilis\('e est choisi d\*(Aqabord en fonction de la variable d\*(Aqenvironnement
+\fB$VISUAL\fR, puis de la variable d\*(Aqenvironnement
+\fB$EDITOR\fR\&. \(`A d\('efaut, l\*(Aq\('editeur,
+\fBvi\fR(1)
+est utilis\('e quand ces variables ne sont pas positionn\('ees\&.
+.SH "OPTIONS"
+.PP
+Les options applicables aux commandes
+\fBvipw\fR
+et
+\fBvigr\fR
+sont\ \&:
+.PP
+\fB\-g\fR, \fB\-\-group\fR
+.RS 4
+\('Editer la base de donn\('ees de groupes\&.
+.RE
+.PP
+\fB\-h\fR, \fB\-\-help\fR
+.RS 4
+Afficher un message d\*(Aqaide et quitter\&.
+.RE
+.PP
+\fB\-p\fR, \fB\-\-passwd\fR
+.RS 4
+\('Editer la base de donn\('ees de mots de passe\&.
+.RE
+.PP
+\fB\-q\fR, \fB\-\-quiet\fR
+.RS 4
+Mode silencieux\&.
+.RE
+.PP
+\fB\-s\fR, \fB\-\-shadow\fR
+.RS 4
+\('Editer les bases de donn\('ees shadow ou gshadow\&.
+.RE
+.SH "ENVIRONNEMENT"
+.PP
+\fBVISUAL\fR
+.RS 4
+L\*(Aq\('editeur \(`a utiliser
+.RE
+.PP
+\fBEDITOR\fR
+.RS 4
+L\*(Aq\('editeur \(`a utiliser si
+\fBVISUAL\fR
+n\*(Aqest pas d\('efinie\&.
+.RE
+.SH "FICHIERS"
+.PP
+/etc/group
+.RS 4
+Informations sur les groupes\&.
+.RE
+.PP
+/etc/gshadow
+.RS 4
+Informations s\('ecuris\('ees sur les groupes\&.
+.RE
+.PP
+/etc/passwd
+.RS 4
+Informations sur les comptes des utilisateurs\&.
+.RE
+.PP
+/etc/shadow
+.RS 4
+Informations s\('ecuris\('ees sur les comptes utilisateurs\&.
+.RE
+.SH "VOIR AUSSI"
+.PP
+\fBvi\fR(1),
+\fBgroup\fR(5),
+\fBgshadow\fR(5),
+\fBpasswd\fR(5), ,
+\fBshadow\fR(5)\&.

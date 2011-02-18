@@ -1,0 +1,24 @@
+/.cvsignore/1.1.2.1/Fri Aug 31 14:50:28 2007//TV2_5_1
+/CHANGELOG/1.2/Tue Oct  9 22:33:07 2001//TV2_5_1
+/Makefile-0.79/1.2/Tue Oct  9 22:33:07 2001//TV2_5_1
+/Makefile.am/1.2/Tue Oct  9 22:33:07 2001//TV2_5_1
+/README.mpoa/1.2/Tue Oct  9 22:33:07 2001//TV2_5_1
+/TODO/1.2/Tue Oct  9 22:33:07 2001//TV2_5_1
+/get_vars.c/1.2/Tue Oct  9 22:33:07 2001//TV2_5_1
+/get_vars.h/1.2/Tue Oct  9 22:33:07 2001//TV2_5_1
+/id_list.c/1.2/Tue Oct  9 22:33:07 2001//TV2_5_1
+/io.c/1.2.2.1/Tue Dec 11 17:46:12 2007//TV2_5_1
+/io.h/1.2/Tue Oct  9 22:33:07 2001//TV2_5_1
+/k_interf.c/1.2.2.1.2.1/Thu Jan 10 18:13:10 2008//TV2_5_1
+/k_interf.h/1.2/Tue Oct  9 22:33:07 2001//TV2_5_1
+/lecs.c/1.2.2.1/Tue Dec 11 17:46:12 2007//TV2_5_1
+/lecs.h/1.2/Tue Oct  9 22:33:07 2001//TV2_5_1
+/main.c/1.2.2.1/Tue Dec 11 17:46:12 2007//TV2_5_1
+/mpcd.8/1.2/Tue Oct  9 22:33:07 2001//TV2_5_1
+/p_factory.c/1.2.2.2/Tue Dec 11 17:46:12 2007//TV2_5_1
+/p_recogn.c/1.2.2.1/Tue Dec 11 17:46:12 2007//TV2_5_1
+/packets.h/1.2/Tue Oct  9 22:33:07 2001//TV2_5_1
+/poll2select.c/1.2/Tue Oct  9 22:33:07 2001//TV2_5_1
+/poll2select.h/1.2/Tue Oct  9 22:33:07 2001//TV2_5_1
+/tag_list.c/1.2/Tue Oct  9 22:33:07 2001//TV2_5_1
+D

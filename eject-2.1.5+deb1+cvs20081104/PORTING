@@ -1,0 +1,8 @@
+The methods used to eject are mostly Linux specific. A version for
+SunOS or Solaris could likely be done by stripping out much of the
+code.
+
+It should compile as is on all Linux platforms.  Support for long
+option names requires the GNU getopt_long functions.  It also needs
+the POSIX regex functions, which I would think are included in most
+Linux distributions.

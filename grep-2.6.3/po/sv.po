@@ -1,0 +1,702 @@
+# Swedish messages for GNU Grep version 2.5.4
+# Copyright (C) 2006, 2007, 2008, 2009 Free Software Foundation, Inc.
+# This file is distributed under the same license as the grep package.
+# Thomas Olsson <cid95tho@student1.lu.se>, 1996.
+# Daniel Resare <daniel@resare.com>, 1998, 1999, 2000, 2001
+# Daniel Nylander <po@danielnylander.se>, 2006, 2007, 2008, 2009.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: grep 2.5.4-pre6\n"
+"Report-Msgid-Bugs-To: bug-grep@gnu.org\n"
+"POT-Creation-Date: 2010-04-02 10:57+0200\n"
+"PO-Revision-Date: 2009-02-24 02:04+0100\n"
+"Last-Translator: Daniel Nylander <po@danielnylander.se>\n"
+"Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: lib/closeout.c:112
+msgid "write error"
+msgstr "skrivfel"
+
+#: lib/error.c:153
+msgid "Unknown system error"
+msgstr "Okänt systemfel"
+
+#: lib/getopt.c:525 lib/getopt.c:541
+#, fuzzy, c-format
+msgid "%s: option '%s' is ambiguous\n"
+msgstr "%s: flaggan \"%s\" är tvetydig\n"
+
+#: lib/getopt.c:574 lib/getopt.c:578
+#, fuzzy, c-format
+msgid "%s: option '--%s' doesn't allow an argument\n"
+msgstr "%s: flaggan \"%s\" tar inget argument\n"
+
+#: lib/getopt.c:587 lib/getopt.c:592
+#, fuzzy, c-format
+msgid "%s: option '%c%s' doesn't allow an argument\n"
+msgstr "%s: flaggan \"%c%s\" tar inget argument\n"
+
+#: lib/getopt.c:635 lib/getopt.c:654 lib/getopt.c:957 lib/getopt.c:976
+#, fuzzy, c-format
+msgid "%s: option '%s' requires an argument\n"
+msgstr "%s: flaggan \"%s\" behöver ett argument\n"
+
+#: lib/getopt.c:692 lib/getopt.c:695
+#, fuzzy, c-format
+msgid "%s: unrecognized option '--%s'\n"
+msgstr "%s: okänd flagga \"--%s\"\n"
+
+#: lib/getopt.c:703 lib/getopt.c:706
+#, fuzzy, c-format
+msgid "%s: unrecognized option '%c%s'\n"
+msgstr "%s: okänd flagga \"%c%s\"\n"
+
+#: lib/getopt.c:755 lib/getopt.c:758
+#, fuzzy, c-format
+msgid "%s: invalid option -- '%c'\n"
+msgstr "%s: otillåten flagga -- %c\n"
+
+#: lib/getopt.c:808 lib/getopt.c:825 lib/getopt.c:1028 lib/getopt.c:1046
+#, fuzzy, c-format
+msgid "%s: option requires an argument -- '%c'\n"
+msgstr "%s: flagga behöver ett argument -- %c\n"
+
+#: lib/getopt.c:878 lib/getopt.c:894
+#, fuzzy, c-format
+msgid "%s: option '-W %s' is ambiguous\n"
+msgstr "%s: flaggan \"-W %s\" är tvetydig\n"
+
+#: lib/getopt.c:918 lib/getopt.c:936
+#, fuzzy, c-format
+msgid "%s: option '-W %s' doesn't allow an argument\n"
+msgstr "%s: flaggan \"-W %s\" tillåter inget argument\n"
+
+#: lib/obstack.c:423 lib/obstack.c:425 lib/xalloc-die.c:34 src/dfasearch.c:153
+#: src/kwset.c:178 src/kwset.c:186 src/kwset.c:409 src/pcresearch.c:149
+#, c-format
+msgid "memory exhausted"
+msgstr "minnet är slut"
+
+# Då det skulle krävas att spara hela filen i UTF-8 för att kunna göra
+# detta rätt, känns det inte värt det. Speciellt eftersom funktionen
+# inte används i grep
+#
+#. TRANSLATORS:
+#. Get translations for open and closing quotation marks.
+#.
+#. The message catalog should translate "`" to a left
+#. quotation mark suitable for the locale, and similarly for
+#. "'".  If the catalog has no translation,
+#. locale_quoting_style quotes `like this', and
+#. clocale_quoting_style quotes "like this".
+#.
+#. For example, an American English Unicode locale should
+#. translate "`" to U+201C (LEFT DOUBLE QUOTATION MARK), and
+#. should translate "'" to U+201D (RIGHT DOUBLE QUOTATION
+#. MARK).  A British English Unicode locale should instead
+#. translate these to U+2018 (LEFT SINGLE QUOTATION MARK)
+#. and U+2019 (RIGHT SINGLE QUOTATION MARK), respectively.
+#.
+#. If you don't know what to put here, please see
+#. <http://en.wikipedia.org/wiki/Quotation_mark#Glyphs>
+#. and use glyphs suitable for your language.
+#: lib/quotearg.c:272
+msgid "`"
+msgstr "\""
+
+#: lib/quotearg.c:273
+msgid "'"
+msgstr "\""
+
+#: lib/regcomp.c:134
+msgid "Success"
+msgstr "Lyckades"
+
+#: lib/regcomp.c:137
+msgid "No match"
+msgstr "Ingen matchning"
+
+#: lib/regcomp.c:140
+msgid "Invalid regular expression"
+msgstr "Ogiltigt reguljärt uttryck"
+
+#: lib/regcomp.c:143
+msgid "Invalid collation character"
+msgstr "Ogiltigt sorteringstecken"
+
+#: lib/regcomp.c:146
+msgid "Invalid character class name"
+msgstr "Ogiltigt teckenklassnamn"
+
+#: lib/regcomp.c:149
+msgid "Trailing backslash"
+msgstr "Efterföljande omvänt snedstreck"
+
+#: lib/regcomp.c:152
+msgid "Invalid back reference"
+msgstr "Ogiltig bakåtreferens"
+
+#: lib/regcomp.c:155
+msgid "Unmatched [ or [^"
+msgstr "Omatchad [ eller [^"
+
+#: lib/regcomp.c:158
+msgid "Unmatched ( or \\("
+msgstr "Omatchad ( eller \\("
+
+#: lib/regcomp.c:161
+msgid "Unmatched \\{"
+msgstr "Omatchad \\{"
+
+#: lib/regcomp.c:164
+msgid "Invalid content of \\{\\}"
+msgstr "Ogiltigt innehåll i \\{\\}"
+
+#: lib/regcomp.c:167
+msgid "Invalid range end"
+msgstr "Ogiltigt intervallslut"
+
+#: lib/regcomp.c:170
+msgid "Memory exhausted"
+msgstr "Minnet är slut"
+
+#: lib/regcomp.c:173
+msgid "Invalid preceding regular expression"
+msgstr "Ogiltigt inledande reguljärt uttryck"
+
+#: lib/regcomp.c:176
+msgid "Premature end of regular expression"
+msgstr "För tidigt slut på reguljärt uttryck"
+
+#: lib/regcomp.c:179
+msgid "Regular expression too big"
+msgstr "Reguljärt uttryck är för stort"
+
+#: lib/regcomp.c:182
+msgid "Unmatched ) or \\)"
+msgstr "Omatchad ) eller \\)"
+
+#: lib/regcomp.c:703
+msgid "No previous regular expression"
+msgstr "Inget tidigare reguljärt uttryck"
+
+#: lib/xstrtol-error.c:63
+#, c-format
+msgid "invalid %s%s argument `%s'"
+msgstr ""
+
+#: lib/xstrtol-error.c:68
+#, c-format
+msgid "invalid suffix in %s%s argument `%s'"
+msgstr ""
+
+#: lib/xstrtol-error.c:72
+#, c-format
+msgid "%s%s argument `%s' too large"
+msgstr ""
+
+#: src/dfa.c:501 src/dfa.c:504 src/dfa.c:522 src/dfa.c:535 src/dfa.c:547
+#: src/dfa.c:613 src/dfa.c:622 src/dfa.c:625 src/dfa.c:630 src/dfa.c:644
+#: src/dfa.c:696
+#, fuzzy
+msgid "unbalanced ["
+msgstr "Obalanserad ["
+
+#: src/dfa.c:574
+#, fuzzy
+msgid "invalid character class"
+msgstr "Ogiltigt teckenklassnamn"
+
+#: src/dfa.c:805
+#, fuzzy
+msgid "unfinished \\ escape"
+msgstr "Oavslutad \\-sekvens"
+
+#: src/dfa.c:938 src/dfa.c:944 src/dfa.c:954 src/dfa.c:962 src/dfa.c:977
+msgid "unfinished repeat count"
+msgstr "oavslutad repetitionsräknare"
+
+#: src/dfa.c:951 src/dfa.c:968 src/dfa.c:976 src/dfa.c:980
+msgid "malformed repeat count"
+msgstr "felformaterad repetionsräknare"
+
+#: src/dfa.c:1264
+#, fuzzy
+msgid "unbalanced ("
+msgstr "Obalanserad ("
+
+#: src/dfa.c:1395
+#, fuzzy
+msgid "no syntax specified"
+msgstr "Ingen specificerad syntax"
+
+#: src/dfa.c:1403
+#, fuzzy
+msgid "unbalanced )"
+msgstr "Obalanserad )"
+
+#: src/egrep.c:16
+msgid "PATTERN is an extended regular expression (ERE).\n"
+msgstr "MÖNSTER är ett utökat reguljärt uttryck (ERE).\n"
+
+#: src/egrep.c:18
+msgid "Invocation as `egrep' is deprecated; use `grep -E' instead.\n"
+msgstr "Körning som \"egrep\" är föråldrat; använd \"grep -E\" istället.\n"
+
+#: src/fgrep.c:10
+msgid "PATTERN is a set of newline-separated fixed strings.\n"
+msgstr "MÖNSTER är en uppsättning nyradsseparerade fasta strängar.\n"
+
+#: src/fgrep.c:12
+msgid "Invocation as `fgrep' is deprecated; use `grep -F' instead.\n"
+msgstr "Körning som \"fgrep\" är föråldrat; använd \"grep -F\" istället.\n"
+
+#: src/grep.c:35
+msgid "PATTERN is, by default, a basic regular expression (BRE).\n"
+msgstr "MÖNSTER är, som standard, ett enkelt reguljärt uttryck (BRE).\n"
+
+#: src/grep.c:37
+msgid ""
+"`egrep' means `grep -E'.  `fgrep' means `grep -F'.\n"
+"Direct invocation as either `egrep' or `fgrep' is deprecated.\n"
+msgstr ""
+"\"egrep\" betyder \"grep -E\".  \"fgrep\" betyder \"grep -F\".\n"
+"Direktanrop som antingen \"egrep\" eller \"fgrep\" är föråldrat.\n"
+
+#: src/main.c:398
+msgid "invalid context length argument"
+msgstr "ogiltigt argument till -A, -B eller -C"
+
+#: src/main.c:453
+#, c-format
+msgid "lseek failed"
+msgstr ""
+
+#: src/main.c:600
+#, c-format
+msgid "input is too large to count"
+msgstr "det är för mycket indata för att räkna"
+
+#: src/main.c:842
+#, c-format
+msgid "writing output"
+msgstr "skriver utdata"
+
+#: src/main.c:1165
+#, c-format
+msgid "Binary file %s matches\n"
+msgstr "Binär fil %s matchar\n"
+
+#: src/main.c:1179
+msgid "(standard input)"
+msgstr "(standard in)"
+
+#: src/main.c:1310
+#, c-format
+msgid "warning: %s: %s\n"
+msgstr "varning: %s: %s\n"
+
+#: src/main.c:1311
+msgid "recursive directory loop"
+msgstr "rekursiv katalogloop"
+
+#: src/main.c:1359 src/main.c:1366
+#, c-format
+msgid "Usage: %s [OPTION]... PATTERN [FILE]...\n"
+msgstr "Användning: %s [FLAGGA]... MÖNSTER [FIL]...\n"
+
+#: src/main.c:1361
+#, c-format
+msgid "Try `%s --help' for more information.\n"
+msgstr "Försök med \"%s --help\" för mer information\n"
+
+#: src/main.c:1367
+#, c-format
+msgid "Search for PATTERN in each FILE or standard input.\n"
+msgstr "Sök efter MÖNSTER i varje FIL eller standard in.\n"
+
+#: src/main.c:1370
+#, c-format
+msgid ""
+"Example: %s -i 'hello world' menu.h main.c\n"
+"\n"
+"Regexp selection and interpretation:\n"
+msgstr ""
+"Exempel: %s -i \"hello world\" menu.h main.c\n"
+"\n"
+"Val och tolkning av reguljära uttryck:\n"
+
+#: src/main.c:1375
+#, c-format
+msgid ""
+"  -E, --extended-regexp     PATTERN is an extended regular expression (ERE)\n"
+"  -F, --fixed-strings       PATTERN is a set of newline-separated fixed "
+"strings\n"
+"  -G, --basic-regexp        PATTERN is a basic regular expression (BRE)\n"
+"  -P, --perl-regexp         PATTERN is a Perl regular expression\n"
+msgstr ""
+" -E, --extended-regexp      MÖNSTER är ett utökat reguljärt uttryck (ERE)\n"
+" -F, --fixed-strings        MÖNSTER är ett antal strängar separerade med "
+"nyrad\n"
+" -G, --basic-regexp         MÖNSTER är ett enkelt reguljärt uttryck (BRE)\n"
+" -P, --perl-regexp          MÖNSTER är ett reguljärt uttryck som i Perl\n"
+
+#: src/main.c:1381
+#, c-format
+msgid ""
+"  -e, --regexp=PATTERN      use PATTERN for matching\n"
+"  -f, --file=FILE           obtain PATTERN from FILE\n"
+"  -i, --ignore-case         ignore case distinctions\n"
+"  -w, --word-regexp         force PATTERN to match only whole words\n"
+"  -x, --line-regexp         force PATTERN to match only whole lines\n"
+"  -z, --null-data           a data line ends in 0 byte, not newline\n"
+msgstr ""
+" -e, --regexp=MÖNSTER       använd MÖNSTER som ett reguljärt uttryck\n"
+" -f, --file=FIL             hämta MÖNSTER från FIL\n"
+" -i, --ignore-case          skilj ej på gemener och versaler\n"
+" -w, --word-regexp          tvinga MÖNSTER att endast matcha hela ord\n"
+" -x, --line-regexp          tvinga MÖNSTER att endast matcha hela rader\n"
+" -z, --null-data            en datarad slutar i 0 byte, inte nyradstecken\n"
+
+#: src/main.c:1388
+#, fuzzy, c-format
+msgid ""
+"\n"
+"Miscellaneous:\n"
+"  -s, --no-messages         suppress error messages\n"
+"  -v, --invert-match        select non-matching lines\n"
+"  -V, --version             print version information and exit\n"
+"      --help                display this help and exit\n"
+"      --mmap                ignored for backwards compatibility\n"
+msgstr ""
+"\n"
+"Diverse:\n"
+"  -s, --no-messages         visa inga felmeddelanden\n"
+"  -v, --invert-match        välj rader utan träffar\n"
+"  -V, --version             visa versionsinformation och avsluta\n"
+"      --help                visa detta hjälpmeddelande och avsluta\n"
+"      --mmap                använd om möjligt minesmappning vid\n"
+"                            läsning av indata.\n"
+
+#: src/main.c:1396
+#, c-format
+msgid ""
+"\n"
+"Output control:\n"
+"  -m, --max-count=NUM       stop after NUM matches\n"
+"  -b, --byte-offset         print the byte offset with output lines\n"
+"  -n, --line-number         print line number with output lines\n"
+"      --line-buffered       flush output on every line\n"
+"  -H, --with-filename       print the filename for each match\n"
+"  -h, --no-filename         suppress the prefixing filename on output\n"
+"      --label=LABEL         print LABEL as filename for standard input\n"
+msgstr ""
+
+#: src/main.c:1407
+#, c-format
+msgid ""
+"  -o, --only-matching       show only the part of a line matching PATTERN\n"
+"  -q, --quiet, --silent     suppress all normal output\n"
+"      --binary-files=TYPE   assume that binary files are TYPE;\n"
+"                            TYPE is `binary', `text', or `without-match'\n"
+"  -a, --text                equivalent to --binary-files=text\n"
+msgstr ""
+
+#: src/main.c:1414
+#, c-format
+msgid ""
+"  -I                        equivalent to --binary-files=without-match\n"
+"  -d, --directories=ACTION  how to handle directories;\n"
+"                            ACTION is `read', `recurse', or `skip'\n"
+"  -D, --devices=ACTION      how to handle devices, FIFOs and sockets;\n"
+"                            ACTION is `read' or `skip'\n"
+"  -R, -r, --recursive       equivalent to --directories=recurse\n"
+msgstr ""
+
+#: src/main.c:1422
+#, c-format
+msgid ""
+"      --include=FILE_PATTERN  search only files that match FILE_PATTERN\n"
+"      --exclude=FILE_PATTERN  skip files and directories matching "
+"FILE_PATTERN\n"
+"      --exclude-from=FILE   skip files matching any file pattern from FILE\n"
+"      --exclude-dir=PATTERN  directories that match PATTERN will be "
+"skipped.\n"
+msgstr ""
+
+#: src/main.c:1428
+#, c-format
+msgid ""
+"  -L, --files-without-match  print only names of FILEs containing no match\n"
+"  -l, --files-with-matches  print only names of FILEs containing matches\n"
+"  -c, --count               print only a count of matching lines per FILE\n"
+"  -T, --initial-tab         make tabs line up (if needed)\n"
+"  -Z, --null                print 0 byte after FILE name\n"
+msgstr ""
+
+#: src/main.c:1434
+#, c-format
+msgid ""
+"\n"
+"Context control:\n"
+"  -B, --before-context=NUM  print NUM lines of leading context\n"
+"  -A, --after-context=NUM   print NUM lines of trailing context\n"
+"  -C, --context=NUM         print NUM lines of output context\n"
+msgstr ""
+
+#: src/main.c:1441
+#, fuzzy, c-format
+msgid ""
+"  -NUM                      same as --context=NUM\n"
+"      --color[=WHEN],\n"
+"      --colour[=WHEN]       use markers to highlight the matching strings;\n"
+"                            WHEN is `always', `never', or `auto'\n"
+"  -U, --binary              do not strip CR characters at EOL (MSDOS)\n"
+"  -u, --unix-byte-offsets   report offsets as if CRs were not there (MSDOS)\n"
+"\n"
+msgstr ""
+"\n"
+"Kontroll av sammanhang:\n"
+"  -B, --before-context=ANTAL  skriv ANTAL rader före träffad rad\n"
+"  -A, --after-context=ANTAL   skriv ANTAL rader efter träffad rad\n"
+"  -C, --context=ANTAL         skriv ANTAL rader runt träffad rad\n"
+"  -ANTAL                      motsvarar --context=ANTAL\n"
+"      --color[=NÄR],\n"
+"      --colour[=NÄR]        använd  markörer för att särskilja träff\n"
+"                            NÄR kan vara \"always\", \"never\" eller \"auto"
+"\".\n"
+"  -U, --binary                ta inte bort CR-tecken vid radslut (MSDOS)\n"
+"  -u, --unix-byte-offsets     skriv offset som om CR-tecken inte förekommit\n"
+"\n"
+
+#: src/main.c:1450
+#, c-format
+msgid ""
+"With no FILE, or when FILE is -, read standard input.  If less than two "
+"FILEs\n"
+"are given, assume -h.  Exit status is 0 if any line was selected, 1 "
+"otherwise;\n"
+"if any error occurs and -q was not given, the exit status is 2.\n"
+msgstr ""
+"Utan någon FIL eller när FIL är -, läs från standard in.  Om mindre än två "
+"FILer\n"
+"anges, anta -h.  Avslutningsstatus är 0 om någon rad valdes, annars 1;\n"
+"om något fel inträffar och -q inte angavs, är avslutningsstatusen 2.\n"
+
+#: src/main.c:1454
+#, fuzzy, c-format
+msgid ""
+"\n"
+"Report bugs to: %s\n"
+msgstr ""
+"\n"
+"Rapportera fel till <%s>\n"
+"Skicka synpunkter på översättningen till <tp-sv@listor.tp-sv.se>\n"
+
+#: src/main.c:1455
+#, c-format
+msgid "GNU Grep home page: <%s>\n"
+msgstr "Webbplats för GNU Grep: <%s>\n"
+
+#: src/main.c:1457
+msgid "General help using GNU software: <http://www.gnu.org/gethelp/>\n"
+msgstr "Allmän hjälp för GNU-programvara: <http://www.gnu.org/gethelp/>\n"
+
+#: src/main.c:1487
+#, c-format
+msgid "%s can only use the %s pattern syntax"
+msgstr ""
+
+#: src/main.c:1490
+#, c-format
+msgid "conflicting matchers specified"
+msgstr "motstridiga söksträngar specificerade"
+
+#: src/main.c:1504
+#, fuzzy, c-format
+msgid "invalid matcher %s"
+msgstr "Ogiltigt teckenklassnamn"
+
+#: src/main.c:1693
+#, c-format
+msgid ""
+"In GREP_COLORS=\"%s\", the \"%s\" capacity needs a value (\"=...\"); skipped."
+msgstr ""
+"I GREP_COLORS=\"%s\", \"%s\"-kapaciteten behöver ett värde (\"=...\"); "
+"hoppades över."
+
+#: src/main.c:1697
+#, c-format
+msgid ""
+"In GREP_COLORS=\"%s\", the \"%s\" capacity is boolean and cannot take a "
+"value (\"=%s\"); skipped."
+msgstr ""
+"I GREP_COLORS=\"%s\", \"%s\"-kapaciteten är boolesk och kan inte ta ett "
+"värde (\"=%s\"); hoppades över."
+
+#: src/main.c:1706
+#, c-format
+msgid "In GREP_COLORS=\"%s\", the \"%s\" capacity %s."
+msgstr "I GREP_COLORS=\"%s\", \"%s\"-kapaciteten %s."
+
+#: src/main.c:1729
+#, c-format
+msgid ""
+"Stopped processing of ill-formed GREP_COLORS=\"%s\" at remaining substring "
+"\"%s\"."
+msgstr ""
+"Stoppade behandling av felformulerad GREP_COLORS=\"%s\" på återstående "
+"understrängen \"%s\"."
+
+#: src/main.c:1800
+#, c-format
+msgid "unknown devices method"
+msgstr "okänd metod för enheter"
+
+#: src/main.c:1872
+#, c-format
+msgid "unknown directories method"
+msgstr "okänd metod gällande kataloger"
+
+#: src/main.c:1940
+#, c-format
+msgid "invalid max count"
+msgstr "ogiltigt värde för antal träffar"
+
+#: src/main.c:1995
+#, c-format
+msgid "unknown binary-files type"
+msgstr "okänd binärfiltyp"
+
+#: src/main.c:2104
+#, c-format
+msgid ""
+"Copyright (C) %s Free Software Foundation, Inc.\n"
+"License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl."
+"html>\n"
+"This is free software: you are free to change and redistribute it.\n"
+"There is NO WARRANTY, to the extent permitted by law.\n"
+msgstr ""
+"Copyright © %s Free Software Foundation, Inc.\n"
+"Licens GPLv3+: GNU GPL version 3 eller senare <http://gnu.org/licenses/gpl."
+"html>\n"
+"Det här är fri programvara: du får ändra och distribuera den.\n"
+"Det finns INGEN GARANTI, så långt som tillåts enligt lag.\n"
+
+#: src/pcresearch.c:42
+#, fuzzy
+msgid ""
+"support for the -P option is not compiled into this --disable-perl-regexp "
+"binary"
+msgstr ""
+"Stöd för flaggan -P är inte inbyggd i den här binären med --disable-perl-"
+"regexp"
+
+#: src/pcresearch.c:56
+#, fuzzy, c-format
+msgid "the -P option only supports a single pattern"
+msgstr "Flaggan -P har endast stöd för ett mönster"
+
+#~ msgid "The -P and -z options cannot be combined"
+#~ msgstr "Flaggorna -P och -z kan inte kombineras"
+
+#, fuzzy
+#~ msgid ""
+#~ "\n"
+#~ "Output control:\n"
+#~ "  -m, --max-count=NUM       stop after NUM matches\n"
+#~ "  -b, --byte-offset         print the byte offset with output lines\n"
+#~ "  -n, --line-number         print line number with output lines\n"
+#~ "      --line-buffered       flush output on every line\n"
+#~ "  -H, --with-filename       print the filename for each match\n"
+#~ "  -h, --no-filename         suppress the prefixing filename on output\n"
+#~ "      --label=LABEL         print LABEL as filename for standard input\n"
+#~ "  -o, --only-matching       show only the part of a line matching "
+#~ "PATTERN\n"
+#~ "  -q, --quiet, --silent     suppress all normal output\n"
+#~ "      --binary-files=TYPE   assume that binary files are TYPE;\n"
+#~ "                            TYPE is `binary', `text', or `without-match'\n"
+#~ "  -a, --text                equivalent to --binary-files=text\n"
+#~ "  -I                        equivalent to --binary-files=without-match\n"
+#~ "  -d, --directories=ACTION  how to handle directories;\n"
+#~ "                            ACTION is `read', `recurse', or `skip'\n"
+#~ "  -D, --devices=ACTION      how to handle devices, FIFOs and sockets;\n"
+#~ "                            ACTION is `read' or `skip'\n"
+#~ "  -R, -r, --recursive       equivalent to --directories=recurse\n"
+#~ "      --include=FILE_PATTERN  search only files that match FILE_PATTERN\n"
+#~ "      --exclude=FILE_PATTERN  skip files and directories matching "
+#~ "FILE_PATTERN\n"
+#~ "      --exclude-from=FILE   skip files matching any file pattern from "
+#~ "FILE\n"
+#~ "      --exclude-dir=PATTERN  directories that match PATTERN will be "
+#~ "skipped.\n"
+#~ "  -L, --files-without-match  print only names of FILEs containing no "
+#~ "match\n"
+#~ "  -l, --files-with-matches  print only names of FILEs containing matches\n"
+#~ "  -c, --count               print only a count of matching lines per "
+#~ "FILE\n"
+#~ "  -T, --initial-tab         make tabs line up (if needed)\n"
+#~ "  -Z, --null                print 0 byte after FILE name\n"
+#~ msgstr ""
+#~ "\n"
+#~ "Styrning av utskrift:\n"
+#~ "  -m, --max-count=NUM       skriv bara ut NUM träffar\n"
+#~ "  -b, --byte-offset         skriv position med visade rader\n"
+#~ "  -n, --line-number         skriv radnummer med visade rader\n"
+#~ "      --line-buffered       töm utskriftsbuffer efter varje rad\n"
+#~ "  -H, --with-filename       skriv filnamn vid varje träff\n"
+#~ "  -h, --no-filename         skriv inte filnamn vid varje visad rad\n"
+#~ "      --label=ETIKETT       skriv ut ETIKETT som filnamn för standard in\n"
+#~ "  -o, --only-matching       visa endast delen av en rad som matchar "
+#~ "MÖNSTER\n"
+#~ "  -q, --quiet, --silent     undvik all normal utskrift\n"
+#~ "      --binary-files=TYP    antag att binära filer är av TYP\n"
+#~ "                            TYP är \"binary\", \"text\" eller \"without-"
+#~ "match\"\n"
+#~ "  -a, --text                motsvarar --binary-files=text\n"
+#~ "  -I                        motsvarar --binary-files=without-match\n"
+#~ "  -d, --directories=ÅTGÄRD  hur kataloger skall hanteras\n"
+#~ "                            ÅTGÄRD är \"read\", \"recurse\" eller \"skip"
+#~ "\".\n"
+#~ "  -D, --devices=ÅTGÄRD      hur enheter hanteras, FIFO:er och uttag\n"
+#~ "                            ÅTGÄRD är \"read\" eller \"skip\"\n"
+#~ "  -R, -r, --recursive       motsvarar --directories=recurse\n"
+#~ "      --include=MÖNSTER     filer som matchar MÖNSTER undersöks\n"
+#~ "      --exclude=MÖNSTER     filer som matchar MÖNSTER hoppas över\n"
+#~ "      --exclude-from=FIL    filer som matchar mönster i FIL hoppas över\n"
+#~ "      --exclude-dir=MÖNSTER kataloger som matchar MÖNSTER hoppas över.\n"
+#~ "  -L, --files-without-match skriv bara ut FILnamn utan träffar\n"
+#~ "  -l, --files-with-matches  skriv bara ut FILnamn med träffar\n"
+#~ "  -c, --count               skriv för varje FIL bara ut antal träffade "
+#~ "rader\n"
+#~ "  -T, --initial-tab         gör så tabulatorer radar upp (om det behövs)\n"
+#~ "  -Z, --null                skriv 0-byte efter FILnamn\n"
+
+#~ msgid "%s: illegal option -- %c\n"
+#~ msgstr "%s: otillåten flagga -- %c\n"
+
+#~ msgid "Copyright (C) 2008 Free Software Foundation, Inc.\n"
+#~ msgstr "Copyright © 2008 Free Software Foundation, Inc.\n"
+
+#~ msgid ""
+#~ "This is free software; see the source for copying conditions.  There is "
+#~ "NO\n"
+#~ "warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR "
+#~ "PURPOSE.\n"
+#~ msgstr ""
+#~ "Det här är fri programvara, se källkoden för kopieringsvillkor. Det\n"
+#~ "finns INGEN garanti, inte ens för SÄLJBARHET eller LÄMPLIGHET FÖR NÅGOT\n"
+#~ "SPECIELLT ÄNDAMÅL.\n"
+
+#~ msgid "out of memory"
+#~ msgstr "minnet slut"
+
+#~ msgid "Usage: %s [OPTION]... PATTERN [FILE] ...\n"
+#~ msgstr "Användning: %s [FLAGGA]... MÖNSTER [FIL]...\n"
+
+#~ msgid "%s (GNU grep) %s\n"
+#~ msgstr "%s (GNU grep) %s\n"

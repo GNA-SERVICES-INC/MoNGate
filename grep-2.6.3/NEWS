@@ -1,0 +1,360 @@
+GNU grep NEWS                                    -*- outline -*-
+
+* Noteworthy changes in release 2.6.3 (2010-04-02) [stable]
+
+** Bug fixes
+
+  Searching with grep -F for an empty string in a multibyte locale
+  would hang grep. [bug introduced in 2.6.2]
+
+  PCRE support is once again detected on systems with <pcre/pcre.h>
+  [bug introduced in 2.6.2]
+
+
+* Noteworthy changes in release 2.6.2 (2010-03-29) [stable]
+
+** Bug fixes
+
+  grep -F no longer mistakenly reports a match when searching
+  for an incomplete prefix of a multibyte character.
+  [bug present since "the beginning"]
+
+  grep -F no longer goes into an infinite loop when it finds a match for an
+  incomplete (non-prefix of a) multibyte character.  [bug introduced in 2.6]
+
+  Using any of the --include or --exclude* options would cause a NULL
+  dereference.  [bugs introduced in 2.6]
+
+** Build-related
+
+  configure no longer relies on pkg-config to detect PCRE support.
+
+
+* Noteworthy changes in release 2.6.1 (2010-03-25) [stable]
+
+** Bug fixes
+
+  Character classes could cause a segmentation fault if they included a
+  multibyte character.  [bug introduced in 2.6]
+
+  Character ranges would not work in single-byte character sets other
+  than C (for example, ISO-8859-1 or KOI8-R) and some multi-byte locales.
+  For example, this should print "1", but would find no match:
+    $ echo 1 | env -i LC_COLLATE=en_US.UTF-8 grep '[0-9]'
+  [bug introduced in 2.6]
+
+  The output of grep was incorrect for whole-word (-w) matches if the
+  patterns included a back-reference. [bug introduced in grep-2.5.2]
+
+** Portability
+
+  Avoid a link failure on Solaris 8.
+
+
+* Noteworthy changes in release 2.6 (2010-03-23) [stable]
+
+** Speed improvements
+
+  grep is much faster on multibyte character sets, especially (but not
+  limited to) UTF-8 character sets.  The speed improvement is also very
+  pronounced with case-insensitive matches.
+
+** Bug fixes
+
+  Character classes would malfunction in multi-byte locales when using grep -i.
+  Examples which would print nothing for LC_ALL=en_US.UTF-8 include:
+  - for ranges, echo Z | grep -i '[a-z]'
+  - for single characters, echo Y | grep -i '[y]'
+  - for character types, echo Y | grep -i '[[:lower:]]'
+
+  grep -i -o would fail to report some matches; grep -i --color, while not
+  missing any line containing a match, would fail to color some matches.
+
+  grep would fail to report a match in a multibyte character set other than
+  UTF-8, if another match occurred earlier in the line but started in the
+  middle of a multibyte character.
+
+  Various bugs in grep -P, caused by expressions such as [^b] or \S matching
+  newlines, were fixed.  grep -P also supports the special sequences \Z and
+  \z, and can be combined with the command-line option -z to perform searches
+  on NUL-separated records.
+
+  grep would mistakenly exit with status 1 upon error, rather than 2,
+  as it is documented to do.
+
+  Using options like -1 -2 or -1 -v -2 results in two lines of
+  context (the last value that appears on the command line) instead
+  twelve (the concatenation of all the values).  This is consistent
+  with the behavior of options -A/-B/-C.
+
+  Two new command-line options, --group-separator=ARGUMENT and
+  --no-group-separator, enable further customization of the output
+  when -A, -B or -C is being used.
+
+** Other changes
+
+  egrep accepts the -E option and fgrep accepts the -F option.  If egrep
+  and fgrep are given another of the -E/-F/-G options, they print a more
+  meaningful error message.
+
+* Noteworthy changes in release 2.5.4 (2009-02-10) [stable]
+
+  - This is a bugfix release. No new features.
+
+Version 2.5.3
+  - The new option --exclude-dir allows to specify a directory pattern that
+    will be excluded from recursive grep.
+  - Numerous bug fixes
+
+Version 2.5.1
+  - This is a bugfix release. No new features.
+
+Version 2.5
+  - The new option --label allows to specify a different name for input
+    from stdin. See the man or info pages for details.
+
+  - The internal lib/getopt* files are no longer used on systems providing
+    getopt functionality in their libc (e.g. glibc 2.2.x).
+    If you need the old getopt files, use --with-included-getopt.
+
+  - The new option --only-matching (-o) will print only the part of matching
+    lines that matches the pattern. This is useful, for example, to extract
+    IP addresses from log files.
+
+  - i18n bug fixed ([A-Z0-9] wouldn't match A in locales other than C on
+    systems using recent glibc builds
+
+  - GNU grep can now be built with autoconf 2.52.
+
+  - The new option --devices controls how grep handles device files. Its usage
+    is analogous to --directories.
+
+  - The new option --line-buffered fflush on everyline.  There is a noticeable
+    slow down when forcing line buffering.
+
+  - Back references  are now local to the regex.
+    grep -e '\(a\)\1' -e '\(b\)\1'
+    The last backref \1 in the second expression refer to \(b\)
+
+  - The new option --include=PATTERN will search only matching files
+    when recursing in directories
+
+  - The new option --exclude=PATTERN will skip matching files when
+    recursing in directories.
+
+  - The new option --color will use the environment variable GREP_COLOR
+    (default is red) to highlight the matching string.
+    --color takes an optional argument specifying when to colorize a line:
+      --color=always, --color=tty, --color=never
+
+  - The following changes are for POSIX.2 conformance:
+
+    . The -q or --quiet or --silent option now causes grep to exit
+      with zero status when a input line is selected, even if an error
+      also occurs.
+
+    . The -s or --no-messages option no longer affects the exit status.
+
+    . Bracket regular expressions like [a-z] are now locale-dependent.
+      For example, many locales sort characters in dictionary order,
+      and in these locales the regular expression [a-d] is not
+      equivalent to [abcd]; it might be equivalent to [aBbCcDd], for
+      example.  To obtain the traditional interpretation of bracket
+      expressions, you can use the C locale by setting the LC_ALL
+      environment variable to the value "C".
+
+  - The -C or --context option now requires an argument, partly for
+    consistency, and partly because POSIX.2 recommends against
+    optional arguments.
+
+  - The new -P or --perl-regexp option tells grep to interpert the pattern as
+    a Perl regular expression.
+
+  - The new option --max-count=num makes grep stop reading a file after num
+    matching lines.
+    New option -m; equivalent to --max-count.
+
+  - Translations for bg, ca, da, nb and tr have been added.
+
+Version 2.4.2
+
+  - Added more check in configure to default the grep-${version}/src/regex.c
+    instead of the one in GNU Lib C.
+
+Version 2.4.1
+
+  - If the final byte of an input file is not a newline, grep now silently
+    supplies one.
+
+  - The new option --binary-files=TYPE makes grep assume that a binary input
+    file is of type TYPE.
+    --binary-files='binary' (the default) outputs a 1-line summary of matches.
+    --binary-files='without-match' assumes binary files do not match.
+    --binary-files='text' treats binary files as text
+	(equivalent to the -a or --text option).
+
+  - New option -I; equivalent to --binary-files='without-match'.
+
+Version 2.4:
+
+  - egrep is now equivalent to `grep -E' as required by POSIX,
+    removing a longstanding source of confusion and incompatibility.
+    `grep' is now more forgiving about stray `{'s, for backward
+    compatibility with traditional egrep.
+
+  - The lower bound of an interval is not optional.
+    You must use an explicit zero, e.g. `x{0,10}' instead of `x{,10}'.
+    (The old documentation incorrectly claimed that it was optional.)
+
+  - The --revert-match option has been renamed to --invert-match.
+
+  - The --fixed-regexp option has been renamed to --fixed-string.
+
+  - New option -H or --with-filename.
+
+  - New option --mmap.  By default, GNU grep now uses read instead of mmap.
+    This is faster on some hosts, and is safer on all.
+
+  - The new option -z or --null-data causes `grep' to treat a zero byte
+    (the ASCII NUL character) as a line terminator in input data, and
+    to treat newlines as ordinary data.
+
+  - The new option -Z or --null causes `grep' to output a zero byte
+    instead of the normal separator after a file name.
+
+  - These two options can be used with commands like `find -print0',
+    `perl -0', `sort -z', and `xargs -0' to process arbitrary file names,
+    even those that contain newlines.
+
+  - The environment variable GREP_OPTIONS specifies default options;
+    e.g. GREP_OPTIONS='--directories=skip' reestablishes grep 2.1's
+    behavior of silently skipping directories.
+
+  - You can specify a matcher multiple times without error, e.g.
+    `grep -E -E' or `fgrep -F'.  It is still an error to specify
+    conflicting matchers.
+
+  - -u and -U are now allowed on non-DOS hosts, and have no effect.
+
+  - Modifications of the tests scripts to go around the "Broken Pipe"
+    errors from bash. See Bash FAQ.
+
+  - New option -r or --recursive or --directories=recurse.
+    (This option was also in grep 2.3, but wasn't announced here.)
+
+  - --without-included-regex disable, was causing bogus reports .i.e
+    doing more harm then good.
+
+Version 2.3:
+
+  - When searching a binary file FOO, grep now just reports
+    `Binary file FOO matches' instead of outputting binary data.
+    This is typically more useful than the old behavior,
+    and it is also more consistent with other utilities like `diff'.
+    A file is considered to be binary if it contains a NUL (i.e. zero) byte.
+
+    The new -a or --text option causes `grep' to assume that all
+    input is text.  (This option has the same meaning as with `diff'.)
+    Use it if you want binary data in your output.
+
+  - `grep' now searches directories just like ordinary files; it no longer
+    silently skips directories.  This is the traditional behavior of
+    Unix text utilities (in particular, of traditional `grep').
+    Hence `grep PATTERN DIRECTORY' should report
+    `grep: DIRECTORY: Is a directory' on hosts where the operating system
+    does not permit programs to read directories directly, and
+    `grep: DIRECTORY: Binary file matches' (or nothing) otherwise.
+
+    The new -d ACTION or --directories=ACTION option affects directory handling.
+    `-d skip' causes `grep' to silently skip directories, as in grep 2.1;
+    `-d read' (the default) causes `grep' to read directories if possible,
+    as in earlier versions of grep.
+
+  - The MS-DOS and Microsoft Windows ports now behave identically to the
+    GNU and Unix ports with respect to binary files and directories.
+
+Version 2.2:
+
+Bug fix release.
+
+  - Status error number fix.
+  - Skipping directories removed.
+  - Many typos fix.
+  - -f /dev/null fix(not to consider as an empty pattern).
+  - Checks for wctype/wchar.
+  - -E was using the wrong matcher fix.
+  - bug in regex char class fix
+  - Fixes for DJGPP
+
+Version 2.1:
+
+This is a bug fix release(see Changelog) i.e. no new features.
+
+  - More compliance to GNU standard.
+  - Long options.
+  - Internationalisation.
+  - Use automake/autoconf.
+  - Directory hierarchy change.
+  - Sigvec with -e on Linux corrected.
+  - Sigvec with -f on Linux corrected.
+  - Sigvec with the mmap() corrected.
+  - Bug in kwset corrected.
+  - -q, -L and -l stop on first match.
+  - New and improve regex.[ch] from Ulrich Drepper.
+  - New and improve dfa.[ch] from Arnold Robbins.
+  - Prototypes for over zealous C compiler.
+  - Not scanning a file, if it's a directory
+    (cause problems on Sun).
+  - Ported to MS-DOS/MS-Windows with DJGPP tools.
+
+See Changelog for the full story and proper credits.
+
+Version 2.0:
+
+The most important user visible change is that egrep and fgrep have
+disappeared as separate programs into the single grep program mandated
+by POSIX 1003.2.  New options -G, -E, and -F have been added,
+selecting grep, egrep, and fgrep behavior respectively.  For
+compatibility with historical practice, hard links named egrep and
+fgrep are also provided.  See the manual page for details.
+
+In addition, the regular expression facilities described in Posix
+draft 11.2 are now supported, except for internationalization features
+related to locale-dependent collating sequence information.
+
+There is a new option, -L, which is like -l except it lists
+files which don't contain matches.  The reason this option was
+added is because '-l -v' doesn't do what you expect.
+
+Performance has been improved; the amount of improvement is platform
+dependent, but (for example) grep 2.0 typically runs at least 30% faster
+than grep 1.6 on a DECstation using the MIPS compiler.  Where possible,
+grep now uses mmap() for file input; on a Sun 4 running SunOS 4.1 this
+may cut system time by as much as half, for a total reduction in running
+time by nearly 50%.  On machines that don't use mmap(), the buffering
+code has been rewritten to choose more favorable alignments and buffer
+sizes for read().
+
+Portability has been substantially cleaned up, and an automatic
+configure script is now provided.
+
+The internals have changed in ways too numerous to mention.
+People brave enough to reuse the DFA matcher in other programs
+will now have their bravery amply "rewarded", for the interface
+to that file has been completely changed.  Some changes were
+necessary to track the evolution of the regex package, and since
+I was changing it anyway I decided to do a general cleanup.
+
+========================================================================
+Copyright (C) 1992, 1997-2002, 2004-2010 Free Software Foundation, Inc.
+
+  Copying and distribution of this file, with or without modification,
+  are permitted in any medium without royalty provided the copyright
+  notice and this notice are preserved.
+
+Permission is granted to copy, distribute and/or modify this document
+under the terms of the GNU Free Documentation License, Version 1.3 or
+any later version published by the Free Software Foundation; with no
+Invariant Sections, with no Front-Cover Texts, and with no Back-Cover
+Texts.  A copy of the license is included in the ``GNU Free
+Documentation License'' file as part of this distribution.

@@ -1,0 +1,430 @@
+# Translation of eject.po to Russian
+# Copyright (C) 2001, 2006 Free Software Foundation, Inc.
+#
+# Jeff Tranter <tranter@pobox.com>, 2001.
+# Victor Ananjevsky <ananasik@gmail.com>, 2006.
+# Pavel Maryanov <acid_jack@ukr.net>, 2006.
+msgid ""
+msgstr ""
+"Project-Id-Version: eject\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2006-11-18 18:36+0200\n"
+"PO-Revision-Date: 2006-11-18 20:27+0200\n"
+"Last-Translator: Pavel Maryanov <acid_jack@ukr.net>\n"
+"Language-Team: Russian <ru@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: ../eject.c:156
+#, c-format
+msgid ""
+"Eject version %s by Jeff Tranter (tranter@pobox.com)\n"
+"Usage:\n"
+"  eject -h\t\t\t\t-- display command usage and exit\n"
+"  eject -V\t\t\t\t-- display program version and exit\n"
+"  eject [-vnrsfqpm] [<name>]\t\t-- eject device\n"
+"  eject [-vn] -d\t\t\t-- display default device\n"
+"  eject [-vn] -a on|off|1|0 [<name>]\t-- turn auto-eject feature on or off\n"
+"  eject [-vn] -c <slot> [<name>]\t-- switch discs on a CD-ROM changer\n"
+"  eject [-vn] -t [<name>]\t\t-- close tray\n"
+"  eject [-vn] -T [<name>]\t\t-- toggle tray\n"
+"  eject [-vn] -x <speed> [<name>]\t-- set CD-ROM max speed\n"
+"  eject [-vn] -X [<name>]\t\t-- list CD-ROM available speeds\n"
+"Options:\n"
+"  -v\t-- enable verbose output\n"
+"  -n\t-- don't eject, just show device found\n"
+"  -r\t-- eject CD-ROM\n"
+"  -s\t-- eject SCSI device\n"
+"  -f\t-- eject floppy\n"
+"  -q\t-- eject tape\n"
+"  -p\t-- use /proc/mounts instead of /etc/mtab\n"
+"  -m\t-- do not unmount device even if it is mounted\n"
+msgstr ""
+"Eject версия %s, Jeff Tranter (tranter@pobox.com)\n"
+"Использование:\n"
+"  eject -h\t\t\t\t-- показать справку по использованию и выйти\n"
+"  eject -V\t\t\t\t-- показать версию программы и выйти\n"
+"  eject [-vnrsfq] [<имя>]\t\t-- извлечь устройство\n"
+"  eject [-vn] -d\t\t\t-- показать устройство по умолчанию\n"
+"  eject [-vn] -a on|off|1|0 [<имя>]\t-- включить/выключить автоизвлечение\n"
+"  eject [-vn] -c <слот> [<имя>]\t-- сменить диск в CD-чейнджере\n"
+"  eject [-vn] -t [<имя>]\t\t-- закрыть лоток\n"
+"  eject [-vn] -T [<имя>]\t\t-- переключить положение лотка\n"
+"  eject [-vn] -x <скорость> [<имя>]\t-- установить максимальную скорость привода\n"
+"  eject [-vn] -X [<имя>]\t\t-- вывести список доступных скоростей привода\n"
+"Опции:\n"
+"  -v\t-- подробный вывод данных\n"
+"  -n\t-- не извлекать, просто показать найденное устройство\n"
+"  -r\t-- извлечь CD-ROM\n"
+"  -s\t-- извлечь устройство SCSI\n"
+"  -f\t-- извлечь дискету\n"
+"  -q\t-- извлечь ленту\n"
+"  -p\t-- использовать /proc/mounts вместо /etc/mtab\n"
+"  -m\t-- не отмонтировать устройство\n"
+
+#: ../eject.c:187
+#, c-format
+msgid ""
+"Long options:\n"
+"  -h --help   -v --verbose      -d --default\n"
+"  -a --auto   -c --changerslot  -t --trayclose  -x --cdspeed\n"
+"  -r --cdrom  -s --scsi         -f --floppy     -X --listspeed     -q --"
+"tape\n"
+"  -n --noop   -V --version\n"
+"  -p --proc   -m --no-unmount   -T --traytoggle\n"
+msgstr ""
+"Длинные опции:\n"
+"  -h --help   -v --verbose      -d --default\n"
+"  -a --auto   -c --changerslot  -t --trayclose  -x --cdspeed\n"
+"  -r --cdrom  -s --scsi         -f --floppy     -X --listspeed     -q --tape\n"
+"  -n --noop   -V --version\n"
+"  -p --proc   -m --no-unmount   -T --traytoggle\n"
+
+#: ../eject.c:206
+#, c-format
+msgid ""
+"Parameter <name> can be a device file or a mount point.\n"
+"If omitted, name defaults to `%s'.\n"
+"By default tries -r, -s, -f, and -q in order until success.\n"
+msgstr ""
+"Параметр <имя> может представлять файл устройства или точку монтирования.\n"
+"Если он не указан, будет использоваться `%s'.\n"
+"По умолчанию используются опции -r, -s, -f и -q (до первого успешного выполнения).\n"
+
+#: ../eject.c:261
+#, c-format
+msgid "%s: invalid argument to --auto/-a option\n"
+msgstr "%s: недопустимый аргумент для опции --auto/-a\n"
+
+#: ../eject.c:273
+#, c-format
+msgid "%s: invalid argument to --changerslot/-c option\n"
+msgstr "%s: недопустимый аргумент для опции --changerslot/-c\n"
+
+#: ../eject.c:285
+#, c-format
+msgid "%s: invalid argument to --cdspeed/-x option\n"
+msgstr "%s: недопустимый аргумент для опции --cdspeed/-x\n"
+
+#: ../eject.c:331
+#, c-format
+msgid "eject version %s by Jeff Tranter (tranter@pobox.com)\n"
+msgstr "eject версии %s, Jeff Tranter (tranter@pobox.com)\n"
+
+#: ../eject.c:341
+#, c-format
+msgid "%s: too many arguments\n"
+msgstr "%s: слишком много аргументов\n"
+
+#: ../eject.c:396 ../eject.c:1037
+#, c-format
+msgid "%s: could not allocate memory\n"
+msgstr "%s: не удаётся выделить память\n"
+
+#: ../eject.c:401
+#, c-format
+msgid "%s: FindDevice called too often\n"
+msgstr "%s: слишком много вызовов функции FindDevice\n"
+
+#: ../eject.c:475
+#, c-format
+msgid "%s: CD-ROM auto-eject command failed: %s\n"
+msgstr "%s: сбой команды автоизвлечения лотка: %s\n"
+
+#: ../eject.c:492
+#, c-format
+msgid "%s: CD-ROM select disc command failed: %s\n"
+msgstr "%s: сбой команды выбора диска: %s\n"
+
+#: ../eject.c:498
+#, c-format
+msgid "%s: CD-ROM load from slot command failed: %s\n"
+msgstr "%s: сбой команды загрузки диска из слота: %s\n"
+
+#: ../eject.c:502
+#, c-format
+msgid "%s: IDE/ATAPI CD-ROM changer not supported by this kernel\n"
+msgstr "%s: IDE/ATAPI-чейнджер CD не поддерживается ядром\n"
+
+#: ../eject.c:521
+#, c-format
+msgid "%s: CD-ROM tray close command failed: %s\n"
+msgstr "%s: сбой команды закрытия лотка привода: %s\n"
+
+#: ../eject.c:525
+#, c-format
+msgid "%s: CD-ROM tray close command not supported by this kernel\n"
+msgstr "%s: закрытие лотка привода не поддерживается ядром\n"
+
+#: ../eject.c:572
+#, c-format
+msgid "%s: CD-ROM tray toggle command not supported by this kernel\n"
+msgstr "%s: закрытие лотка привода не поддерживается ядром\n"
+
+#: ../eject.c:589
+#, c-format
+msgid "%s: CD-ROM select speed command failed: %s\n"
+msgstr "%s: сбой команды выбора скорости привода: %s\n"
+
+#: ../eject.c:593 ../eject.c:674
+#, c-format
+msgid "%s: CD-ROM select speed command not supported by this kernel\n"
+msgstr "%s: выбор скорости привода не поддерживается ядром\n"
+
+#: ../eject.c:608
+#, c-format
+msgid "%s: unable to read the speed from /proc/sys/dev/cdrom/info\n"
+msgstr "%s: не удаётся прочитать значение скорости из /proc/sys/dev/cdrom/info\n"
+
+#: ../eject.c:624
+#, c-format
+msgid "%s: error while finding CD-ROM name\n"
+msgstr "%s: не удалось найти имя привода\n"
+
+#: ../eject.c:637 ../eject.c:645
+#, c-format
+msgid "%s: error while reading speed\n"
+msgstr "%s: сбой чтения значения скорости\n"
+
+#: ../eject.c:794
+#, c-format
+msgid "%s: unable to exec umount of `%s': %s\n"
+msgstr "%s: не удаётся выполнить umount для `%s': %s\n"
+
+#: ../eject.c:799
+#, c-format
+msgid "%s: unable to fork: %s\n"
+msgstr "%s: не удаётся создать дочерний процесс: %s\n"
+
+#: ../eject.c:804
+#, c-format
+msgid "%s: unmount of `%s' did not exit normally\n"
+msgstr "%s: некорректное отмонтирование `%s'\n"
+
+#: ../eject.c:808
+#, c-format
+msgid "%s: unmount of `%s' failed\n"
+msgstr "%s: сбой при отмонтировании `%s'\n"
+
+#: ../eject.c:821
+#, c-format
+msgid "%s: unable to open `%s'\n"
+msgstr "%s: не удаётся открыть`%s'\n"
+
+#: ../eject.c:867 ../eject.c:954
+#, c-format
+msgid "unable to open %s: %s\n"
+msgstr "не удаётся открыть%s: %s\n"
+
+#: ../eject.c:914
+#, c-format
+msgid "%s: unable to open /etc/fstab: %s\n"
+msgstr "%s: не удаётся открыть /etc/fstab: %s\n"
+
+#: ../eject.c:964
+#, c-format
+msgid "%s: unmounting `%s'\n"
+msgstr "%s: отмонтирование `%s'\n"
+
+#: ../eject.c:1044
+#, c-format
+msgid "%s: `%s' is a multipartition device\n"
+msgstr "%s: `%s' является устройством с несколькими разделами\n"
+
+#: ../eject.c:1049
+#, c-format
+msgid "%s: `%s' is not a multipartition device\n"
+msgstr "%s: `%s' не является устройством с несколькими разделами\n"
+
+#: ../eject.c:1062
+#, c-format
+msgid "%s: setting CD-ROM speed to auto\n"
+msgstr "%s: установка автоматического выбора скорости привода\n"
+
+#: ../eject.c:1064
+#, c-format
+msgid "%s: setting CD-ROM speed to %dX\n"
+msgstr "%s: установка скорости привода в %dX\n"
+
+#: ../eject.c:1102
+#, c-format
+msgid "%s: default device: `%s'\n"
+msgstr "%s: устройство по умолчанию: `%s'\n"
+
+#: ../eject.c:1110
+#, c-format
+msgid "%s: using default device `%s'\n"
+msgstr "%s: используется устройство по умолчанию `%s'\n"
+
+#: ../eject.c:1119
+#, c-format
+msgid "%s: device name is `%s'\n"
+msgstr "%s: имя устройства - `%s'\n"
+
+#: ../eject.c:1125
+#, c-format
+msgid "%s: unable to find or open device for: `%s'\n"
+msgstr "%s: не удаётся найти или открыть устройство для `%s'\n"
+
+#: ../eject.c:1130
+#, c-format
+msgid "%s: expanded name is `%s'\n"
+msgstr "%s: полное имя -  `%s'\n"
+
+#: ../eject.c:1139
+#, c-format
+msgid "%s: `%s' is a link to `%s'\n"
+msgstr "%s: `%s' является ссылкой на `%s'\n"
+
+#: ../eject.c:1150
+#, c-format
+msgid "%s: maximum symbolic link depth exceeded: `%s'\n"
+msgstr "%s: превышена максимальная глубина символьных ссылок: `%s'\n"
+
+#: ../eject.c:1158
+#, c-format
+msgid "%s: `%s' is mounted at `%s'\n"
+msgstr "%s: `%s' примонтирован в `%s'\n"
+
+#: ../eject.c:1161
+#, c-format
+msgid "%s: `%s' is not mounted\n"
+msgstr "%s: `%s' не примонтирован\n"
+
+#: ../eject.c:1173
+#, c-format
+msgid "%s: `%s' can be mounted at `%s'\n"
+msgstr "%s: `%s' может быть примонтирован в `%s'\n"
+
+#: ../eject.c:1175
+#, c-format
+msgid "%s: `%s' is not a mount point\n"
+msgstr "%s: `%s' не является точкой монтирования\n"
+
+#: ../eject.c:1182
+#, c-format
+msgid "%s: tried to use `%s' as device name but it is no block device\n"
+msgstr "%s: попытка использования `%s' в качестве имени устройства, которое не является блочным устройством\n"
+
+#: ../eject.c:1190
+#, c-format
+msgid "%s: device is `%s'\n"
+msgstr "%s: устройство - `%s'\n"
+
+#: ../eject.c:1192
+#, c-format
+msgid "%s: exiting due to -n/--noop option\n"
+msgstr "%s: выход из-за опции -n/--noop\n"
+
+#: ../eject.c:1200
+#, c-format
+msgid "%s: enabling auto-eject mode for `%s'\n"
+msgstr "%s: включается режима автоизвлечения для `%s'\n"
+
+#: ../eject.c:1202
+#, c-format
+msgid "%s: disabling auto-eject mode for `%s'\n"
+msgstr "%s: отключается режим автоизвлечения для `%s'\n"
+
+#: ../eject.c:1212
+#, c-format
+msgid "%s: closing tray\n"
+msgstr "%s: лоток закрывается\n"
+
+#: ../eject.c:1222
+#, c-format
+msgid "%s: listing CD-ROM speed\n"
+msgstr "%s: выводится список скоростей привода\n"
+
+#: ../eject.c:1234
+#, c-format
+msgid "%s: unmounting device `%s' from `%s'\n"
+msgstr "%s: устройство `%s' отмонтируется от `%s'\n"
+
+#: ../eject.c:1247
+#, c-format
+msgid "%s: toggling tray\n"
+msgstr "%s: переключается состояние лотка\n"
+
+#: ../eject.c:1257
+#, c-format
+msgid "%s: selecting CD-ROM disc #%d\n"
+msgstr "%s: выбирается диск #%d\n"
+
+#: ../eject.c:1275
+#, c-format
+msgid "%s: trying to eject `%s' using CD-ROM eject command\n"
+msgstr "%s: попытка извлечь `%s' с помощью команды извлечения лотка\n"
+
+#: ../eject.c:1279
+#, c-format
+msgid "%s: CD-ROM eject command succeeded\n"
+msgstr "%s: извлечение лотка прошло успешно\n"
+
+#: ../eject.c:1281
+#, c-format
+msgid "%s: CD-ROM eject command failed\n"
+msgstr "%s: сбой при извлечении лотка\n"
+
+#: ../eject.c:1288
+#, c-format
+msgid "%s: trying to eject `%s' using SCSI commands\n"
+msgstr "%s: попытка извлечь `%s' с помощью команд SCSI\n"
+
+#: ../eject.c:1292
+#, c-format
+msgid "%s: SCSI eject succeeded\n"
+msgstr "%s: извлечение SCSI прошло успешно\n"
+
+#: ../eject.c:1294
+#, c-format
+msgid "%s: SCSI eject failed\n"
+msgstr "%s: сбой при извлечении SCSI\n"
+
+#: ../eject.c:1302
+#, c-format
+msgid "%s: trying to eject `%s' using floppy eject command\n"
+msgstr "%s: попытка извлечь `%s' с помощью команды извлечения дискеты\n"
+
+#: ../eject.c:1306
+#, c-format
+msgid "%s: floppy eject command succeeded\n"
+msgstr "%s: извлечение дискеты прошло успешно\n"
+
+#: ../eject.c:1308
+#, c-format
+msgid "%s: floppy eject command failed\n"
+msgstr "%s: сбой при извлечении дискеты\n"
+
+#: ../eject.c:1316
+#, c-format
+msgid "%s: trying to eject `%s' using tape offline command\n"
+msgstr "%s: попытка извлечь `%s' с помощью команды остановки ленты\n"
+
+#: ../eject.c:1320
+#, c-format
+msgid "%s: tape offline command succeeded\n"
+msgstr "%s: остановка ленты прошла успешно\n"
+
+#: ../eject.c:1322
+#, c-format
+msgid "%s: tape offline command failed\n"
+msgstr "%s: сбой при остановке ленты\n"
+
+#: ../eject.c:1328
+#, c-format
+msgid "%s: unable to eject, last error: %s\n"
+msgstr "%s: не удаётся извлечь, последняя ошибка: %s\n"
+
+#: ../volname.c:59
+#, c-format
+msgid "usage: volname [<device-file>]\n"
+msgstr "Использование: метка_тома [<файл_устройства>]\n"
+
+#: ../volname.c:65 ../volname.c:71 ../volname.c:77
+msgid "volname"
+msgstr "метка_тома"
+

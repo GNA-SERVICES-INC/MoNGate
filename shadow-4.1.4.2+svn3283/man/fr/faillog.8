@@ -1,0 +1,146 @@
+'\" t
+.\"     Title: faillog
+.\"    Author: [FIXME: author] [see http://docbook.sf.net/el/author]
+.\" Generator: DocBook XSL Stylesheets v1.75.2 <http://docbook.sf.net/>
+.\"      Date: 05/09/2010
+.\"    Manual: Commandes de gestion du syst\(`eme
+.\"    Source: Commandes de gestion du syst\(`eme
+.\"  Language: French
+.\"
+.TH "FAILLOG" "8" "05/09/2010" "Commandes de gestion du syst\(`em" "Commandes de gestion du syst\(`em"
+.\" -----------------------------------------------------------------
+.\" * set default formatting
+.\" -----------------------------------------------------------------
+.\" disable hyphenation
+.nh
+.\" disable justification (adjust text to left margin only)
+.ad l
+.\" -----------------------------------------------------------------
+.\" * MAIN CONTENT STARTS HERE *
+.\" -----------------------------------------------------------------
+.SH "NOM"
+faillog \- Examiner le fichier faillog, et fixer les limites d\*(Aq\('echecs de connexion
+.SH "SYNOPSIS"
+.HP \w'\fBfaillog\fR\ 'u
+\fBfaillog\fR [\fIoptions\fR]
+.SH "DESCRIPTION"
+.PP
+
+\fBfaillog\fR
+displays the contents of the failure log database (/var/log/faillog)\&. It can also set the failure counters and limits\&. When
+\fBfaillog\fR
+is run without arguments, it only displays the faillog records of the users who had a login failure\&.
+.SH "OPTIONS"
+.PP
+Les options disponibles pour la commande
+\fBfaillog\fR
+sont\ \&:
+.PP
+\fB\-a\fR, \fB\-\-all\fR
+.RS 4
+Display (or act on) faillog records for all users having an entry in the
+faillog
+database\&.
+.sp
+The range of users can be restricted with the
+\fB\-u\fR
+option\&.
+.sp
+In display mode, this is still restricted to existing users but forces the display of the faillog entries even if they are empty\&.
+.sp
+With the
+\fB\-l\fR,
+\fB\-m\fR,
+\fB\-r\fR,
+\fB\-t\fR
+options, the users\*(Aq records are changed, even if the user does not exist on the system\&. This is useful to reset records of users that have been deleted or to set a policy in advance for a range of users\&.
+.RE
+.PP
+\fB\-h\fR, \fB\-\-help\fR
+.RS 4
+Afficher un message d\*(Aqaide et quitter\&.
+.RE
+.PP
+\fB\-l\fR, \fB\-\-lock\-secs\fR \fISEC\fR
+.RS 4
+Verrouiller le compte pendant
+\fISEC\fR
+secondes apr\(`es un \('echec de connexion\&.
+.sp
+L\*(Aqacc\(`es en \('ecriture sur
+/var/log/faillog
+est n\('ecessaire pour cette option\&.
+.RE
+.PP
+\fB\-m\fR, \fB\-\-maximum\fR \fIMAX\fR
+.RS 4
+Set the maximum number of login failures after the account is disabled to
+\fIMAX\fR\&.
+.sp
+Selecting a
+\fIMAX\fR
+value of 0 has the effect of not placing a limit on the number of failed logins\&.
+.sp
+The maximum failure count should always be 0 for
+\fIroot\fR
+to prevent a denial of services attack against the system\&.
+.sp
+L\*(Aqacc\(`es en \('ecriture sur
+/var/log/faillog
+est n\('ecessaire pour cette option\&.
+.RE
+.PP
+\fB\-r\fR, \fB\-\-reset\fR
+.RS 4
+Reset the counters of login failures\&.
+.sp
+L\*(Aqacc\(`es en \('ecriture sur
+/var/log/faillog
+est n\('ecessaire pour cette option\&.
+.RE
+.PP
+\fB\-t\fR, \fB\-\-time\fR \fIJOURS\fR
+.RS 4
+Afficher les entr\('ees de faillog plus r\('ecentes que
+\fIJOURS\fR\&.
+.RE
+.PP
+\fB\-u\fR, \fB\-\-user\fR \fILOGIN\fR|\fIINTERVALLE\fR
+.RS 4
+Afficher l\*(Aqentr\('ee de faillog ou maintient le d\('ecompte et les limitations (suivant que l\*(Aqoption
+\fB\-l\fR,
+\fB\-m\fR
+ou
+\fB\-r\fR
+est utilis\('ee) seulement pour les utilisateurs indiqu\('es\&.
+.sp
+The users can be specified by a login name, a numerical user ID, or a
+\fIRANGE\fR
+of users\&. This
+\fIRANGE\fR
+of users can be specified with a min and max values (\fIUID_MIN\-UID_MAX\fR), a max value (\fI\-UID_MAX\fR), or a min value (\fIUID_MIN\-\fR)\&.
+.RE
+.PP
+When none of the
+\fB\-l\fR,
+\fB\-m\fR, or
+\fB\-r\fR
+options are used,
+\fBfaillog\fR
+displays the faillog record of the specified user(s)\&.
+.SH "AVERTISSEMENTS"
+.PP
+\fBFaillog\fR
+n\*(Aqaffiche que les utilisateurs n\*(Aqayant pas eu de connexion r\('eussie depuis leur dernier \('echec\&. Pour afficher un utilisateur ayant eu une connexion r\('eussie depuis son dernier \('echec, vous devez explicitement demander cet utilisateur avec l\*(Aqoption
+\fB\-u\fR, ou demander l\*(Aqaffichage de tous les utilisateurs avec l\*(Aqoption
+\fB\-a\fR\&.
+.SH "FICHIERS"
+.PP
+/var/log/faillog
+.RS 4
+Journal des \('echecs de connexion\&.
+.RE
+.SH "VOIR AUSSI"
+.PP
+\fBlogin\fR(1),
+\fBfaillog\fR(5)\&.
